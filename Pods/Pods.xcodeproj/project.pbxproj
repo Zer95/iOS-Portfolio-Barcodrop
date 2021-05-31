@@ -1,0 +1,990 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BA46128F8D7479CCD09B2E88C109DB5 /* CBTabItemBasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00749FE9A8B2336A440122A60D0E1AF0 /* CBTabItemBasicAnimation.swift */; };
+		1581223AF4F0FE59348D536BCA716582 /* Pods-Barcodrop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 517A19B32961A75110D7B0916B3278B1 /* Pods-Barcodrop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16C01C338F6464BF981101644C03E3E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3194E95772974CADAECD1FB23E86E5CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		43E52BE29672339B818A3966BDACE71E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4DCBE3FD9516343EC2F88E21C98F6545 /* CBFlashyTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB596A9DACCCB6DAF36A5A1C56817CFC /* CBFlashyTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A07D51B33F89901622711F6D772A99F /* Pods-Barcodrop-BarcodropUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CBADA27432E8914CEC8BE7229AA04D /* Pods-Barcodrop-BarcodropUITests-dummy.m */; };
+		5A15123627499A1087BD267801BA5BFC /* CBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A6300EBCB41FD7B34F326B516BE34 /* CBTabBarButton.swift */; };
+		5D6E2AE9285D55CAB6000F96FA2D7507 /* Pods-Barcodrop-BarcodropUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A691F7C4330AC19C3C62F5BB8737083 /* Pods-Barcodrop-BarcodropUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		710484A3C1469A343F1DC5FE1B3CF619 /* Pods-BarcodropTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41114CAA91710FAE43B24B788F48F006 /* Pods-BarcodropTests-dummy.m */; };
+		87E32330C480E15EA28EE9F7D772696F /* CBTabItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B72846F02B66DA70547C1C782A72A /* CBTabItemAnimation.swift */; };
+		8986CC7B2C9C15F1917E798117F644DC /* CBFlashyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903C4764E54275687F82F569246DC64A /* CBFlashyTabBar.swift */; };
+		92492D08B5FF542DDD2DF65BBEC64727 /* CBTabItemDeselectAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B272F6765715577EFB85FD0922E9D /* CBTabItemDeselectAnimation.swift */; };
+		A211362205D10B7E1EB641AC03BB97EF /* CBTabItemSelectAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A4B418B4459890015AEEE51771CC8 /* CBTabItemSelectAnimation.swift */; };
+		A65021288B8FA31E1CFA6D605C769F05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B62CE540AEC6C3C0CCEBC83B4EC04514 /* CBFlashyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ADB6780A2B4374E942771268853941 /* CBFlashyTabBarController.swift */; };
+		E6F267D26FB54D5921E6E9BEEBD73728 /* Pods-BarcodropTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 014AECDE0B77A1FBD26C214C0BB3C857 /* Pods-BarcodropTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E82E20D4B21D30CC8A06C5CF540FDCF8 /* CBFlashyTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 964F055F8F54441F9105859AB238C261 /* CBFlashyTabBarController-dummy.m */; };
+		F85C91DD9E685DCB63ED7AFDA7D4CE33 /* Pods-Barcodrop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B667F2A8C2EFD358209A9072216CE876 /* Pods-Barcodrop-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CAA8AFF2DAB4E4C09A9E4A6E8D2F984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC678BDE1892213387200EE1D1CD20A3;
+			remoteInfo = "Pods-Barcodrop";
+		};
+		9C5F184999CCACD0F73142985F10C916 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5737872A76EFCB2A97F445D9434307C7;
+			remoteInfo = CBFlashyTabBarController;
+		};
+		A0FC0DEC1A5D8D112E5CD291AAB693C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5737872A76EFCB2A97F445D9434307C7;
+			remoteInfo = CBFlashyTabBarController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00749FE9A8B2336A440122A60D0E1AF0 /* CBTabItemBasicAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemBasicAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemBasicAnimation.swift; sourceTree = "<group>"; };
+		014AECDE0B77A1FBD26C214C0BB3C857 /* Pods-BarcodropTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BarcodropTests-umbrella.h"; sourceTree = "<group>"; };
+		03CAE88AECD3AEEA158737D4F857A9D1 /* CBFlashyTabBarController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CBFlashyTabBarController.release.xcconfig; sourceTree = "<group>"; };
+		061B272F6765715577EFB85FD0922E9D /* CBTabItemDeselectAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemDeselectAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemDeselectAnimation.swift; sourceTree = "<group>"; };
+		07D4E958BAD766CBA1D48DEB63D524C9 /* CBFlashyTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CBFlashyTabBarController.framework; path = CBFlashyTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2A4B418B4459890015AEEE51771CC8 /* CBTabItemSelectAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemSelectAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemSelectAnimation.swift; sourceTree = "<group>"; };
+		1CDBE2B8B17180334977F3C97F6737BE /* Pods-Barcodrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Barcodrop.release.xcconfig"; sourceTree = "<group>"; };
+		20CBADA27432E8914CEC8BE7229AA04D /* Pods-Barcodrop-BarcodropUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Barcodrop-BarcodropUITests-dummy.m"; sourceTree = "<group>"; };
+		2A691F7C4330AC19C3C62F5BB8737083 /* Pods-Barcodrop-BarcodropUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Barcodrop-BarcodropUITests-umbrella.h"; sourceTree = "<group>"; };
+		30F72D281A801F0BD7A6399DA3A57D19 /* Pods-BarcodropTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BarcodropTests.release.xcconfig"; sourceTree = "<group>"; };
+		318DCD975CFD19B2B9E04FA3EB54D291 /* Pods-Barcodrop-BarcodropUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Barcodrop-BarcodropUITests.release.xcconfig"; sourceTree = "<group>"; };
+		35D90971C61E2DBCECB4CAB1774B9D6F /* Pods-Barcodrop-BarcodropUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Barcodrop-BarcodropUITests.modulemap"; sourceTree = "<group>"; };
+		364246EE6D37F31B42392637F9342C71 /* Pods_Barcodrop_BarcodropUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Barcodrop_BarcodropUITests.framework; path = "Pods-Barcodrop-BarcodropUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41114CAA91710FAE43B24B788F48F006 /* Pods-BarcodropTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BarcodropTests-dummy.m"; sourceTree = "<group>"; };
+		46958210DAC232A644200C92AF3141B3 /* Pods-BarcodropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BarcodropTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E0B72846F02B66DA70547C1C782A72A /* CBTabItemAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabItemAnimation.swift; path = CBFlashyTabBarController/Classes/Animation/CBTabItemAnimation.swift; sourceTree = "<group>"; };
+		4E98DA7A5FE3157EC6B5438FD8BE683E /* Pods_BarcodropTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BarcodropTests.framework; path = "Pods-BarcodropTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		504DD74D9C558A97C8742543CDA57095 /* Pods-Barcodrop-BarcodropUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Barcodrop-BarcodropUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		50A39A5788A7AF93F79E8C8C52BA0CF0 /* Pods-BarcodropTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BarcodropTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		517A19B32961A75110D7B0916B3278B1 /* Pods-Barcodrop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Barcodrop-umbrella.h"; sourceTree = "<group>"; };
+		59324C9ED03BBE1602CC9E6FACD1A498 /* Pods-Barcodrop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Barcodrop.modulemap"; sourceTree = "<group>"; };
+		5A184BCDCE7CE27DCBE6C0C220BC691A /* Pods-Barcodrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Barcodrop.debug.xcconfig"; sourceTree = "<group>"; };
+		66ADB6780A2B4374E942771268853941 /* CBFlashyTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBFlashyTabBarController.swift; path = CBFlashyTabBarController/Classes/CBFlashyTabBarController.swift; sourceTree = "<group>"; };
+		6D63D866FBC097F9BD3303318FF60FA3 /* Pods-Barcodrop-BarcodropUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Barcodrop-BarcodropUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		73BA637C7147298AF9A7F1A3BCF8B781 /* Pods-BarcodropTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BarcodropTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		77F6E113DD35D55EA43E9FF6BDCF14DD /* CBFlashyTabBarController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CBFlashyTabBarController.modulemap; sourceTree = "<group>"; };
+		7B91B1098565DC7A60758DC07DDC5908 /* CBFlashyTabBarController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CBFlashyTabBarController.debug.xcconfig; sourceTree = "<group>"; };
+		891F91B2C714076D0E722850FCA62679 /* Pods-Barcodrop-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Barcodrop-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8D357D22C297C079D4616D6B02B8D09A /* CBFlashyTabBarController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CBFlashyTabBarController-Info.plist"; sourceTree = "<group>"; };
+		903C4764E54275687F82F569246DC64A /* CBFlashyTabBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBFlashyTabBar.swift; path = CBFlashyTabBarController/Classes/CBFlashyTabBar.swift; sourceTree = "<group>"; };
+		921242BD79648E4BD07A4A1588F83765 /* Pods-Barcodrop-BarcodropUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Barcodrop-BarcodropUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		941BE188C756CE7699F45A802B5EE906 /* CBFlashyTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CBFlashyTabBarController-prefix.pch"; sourceTree = "<group>"; };
+		95AD7462826103675EFA2AE30D15E813 /* Pods-BarcodropTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BarcodropTests-Info.plist"; sourceTree = "<group>"; };
+		964F055F8F54441F9105859AB238C261 /* CBFlashyTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CBFlashyTabBarController-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A932D50FF7DC00EDBF8EF6C1C6EC52C4 /* Pods-Barcodrop-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Barcodrop-Info.plist"; sourceTree = "<group>"; };
+		AB09F3D636A1C53ED47C2E3FB078D24B /* Pods-Barcodrop-BarcodropUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Barcodrop-BarcodropUITests-Info.plist"; sourceTree = "<group>"; };
+		ADC0F656CA1190E4586FFF5384769ED4 /* Pods-BarcodropTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BarcodropTests.modulemap"; sourceTree = "<group>"; };
+		B667F2A8C2EFD358209A9072216CE876 /* Pods-Barcodrop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Barcodrop-dummy.m"; sourceTree = "<group>"; };
+		BCA299BCDCEEBAC0DA9A3A4C5592499D /* Pods-Barcodrop-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Barcodrop-frameworks.sh"; sourceTree = "<group>"; };
+		C7190D53F872BDB7C623E9CF4B64EC4A /* Pods-Barcodrop-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Barcodrop-acknowledgements.plist"; sourceTree = "<group>"; };
+		CB596A9DACCCB6DAF36A5A1C56817CFC /* CBFlashyTabBarController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CBFlashyTabBarController-umbrella.h"; sourceTree = "<group>"; };
+		D605CE6048281C3B3978F2BA2CCCB14A /* Pods-Barcodrop-BarcodropUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Barcodrop-BarcodropUITests-frameworks.sh"; sourceTree = "<group>"; };
+		EA263919FACF6C598C9E44BFF2BC6D7C /* Pods_Barcodrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Barcodrop.framework; path = "Pods-Barcodrop.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6A6300EBCB41FD7B34F326B516BE34 /* CBTabBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBTabBarButton.swift; path = CBFlashyTabBarController/Classes/CBTabBarButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09D7892CF9D187F84635304CB20CBE1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A65021288B8FA31E1CFA6D605C769F05 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BEE1D632B16A9ACCFF58495438976F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3194E95772974CADAECD1FB23E86E5CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D4126F4B5BEEF1FC554E23AA8EECC3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E52BE29672339B818A3966BDACE71E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D882363269CBF3BB4391F985D73847C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16C01C338F6464BF981101644C03E3E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		079754D3F01B868A996A8F5D25D033E1 /* CBFlashyTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				903C4764E54275687F82F569246DC64A /* CBFlashyTabBar.swift */,
+				66ADB6780A2B4374E942771268853941 /* CBFlashyTabBarController.swift */,
+				FF6A6300EBCB41FD7B34F326B516BE34 /* CBTabBarButton.swift */,
+				4E0B72846F02B66DA70547C1C782A72A /* CBTabItemAnimation.swift */,
+				00749FE9A8B2336A440122A60D0E1AF0 /* CBTabItemBasicAnimation.swift */,
+				061B272F6765715577EFB85FD0922E9D /* CBTabItemDeselectAnimation.swift */,
+				1A2A4B418B4459890015AEEE51771CC8 /* CBTabItemSelectAnimation.swift */,
+				E53E6D4D0E20AAA92C9BC54F3D923D48 /* Support Files */,
+			);
+			name = CBFlashyTabBarController;
+			path = CBFlashyTabBarController;
+			sourceTree = "<group>";
+		};
+		0C4CD34D236FF361DE546D30F31BBBEA /* Pods-Barcodrop */ = {
+			isa = PBXGroup;
+			children = (
+				59324C9ED03BBE1602CC9E6FACD1A498 /* Pods-Barcodrop.modulemap */,
+				891F91B2C714076D0E722850FCA62679 /* Pods-Barcodrop-acknowledgements.markdown */,
+				C7190D53F872BDB7C623E9CF4B64EC4A /* Pods-Barcodrop-acknowledgements.plist */,
+				B667F2A8C2EFD358209A9072216CE876 /* Pods-Barcodrop-dummy.m */,
+				BCA299BCDCEEBAC0DA9A3A4C5592499D /* Pods-Barcodrop-frameworks.sh */,
+				A932D50FF7DC00EDBF8EF6C1C6EC52C4 /* Pods-Barcodrop-Info.plist */,
+				517A19B32961A75110D7B0916B3278B1 /* Pods-Barcodrop-umbrella.h */,
+				5A184BCDCE7CE27DCBE6C0C220BC691A /* Pods-Barcodrop.debug.xcconfig */,
+				1CDBE2B8B17180334977F3C97F6737BE /* Pods-Barcodrop.release.xcconfig */,
+			);
+			name = "Pods-Barcodrop";
+			path = "Target Support Files/Pods-Barcodrop";
+			sourceTree = "<group>";
+		};
+		4043363B37297A64FA9F3AFEDD31AC28 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C4CD34D236FF361DE546D30F31BBBEA /* Pods-Barcodrop */,
+				5C54FE9253E1D4B8BF0AF8D7A59FD4FE /* Pods-Barcodrop-BarcodropUITests */,
+				8E5A37096CAE06A6674DCEB5C3768C36 /* Pods-BarcodropTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5A1D44C3B1A35E05B2F214DAF6009B6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				079754D3F01B868A996A8F5D25D033E1 /* CBFlashyTabBarController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5C54FE9253E1D4B8BF0AF8D7A59FD4FE /* Pods-Barcodrop-BarcodropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				35D90971C61E2DBCECB4CAB1774B9D6F /* Pods-Barcodrop-BarcodropUITests.modulemap */,
+				504DD74D9C558A97C8742543CDA57095 /* Pods-Barcodrop-BarcodropUITests-acknowledgements.markdown */,
+				921242BD79648E4BD07A4A1588F83765 /* Pods-Barcodrop-BarcodropUITests-acknowledgements.plist */,
+				20CBADA27432E8914CEC8BE7229AA04D /* Pods-Barcodrop-BarcodropUITests-dummy.m */,
+				D605CE6048281C3B3978F2BA2CCCB14A /* Pods-Barcodrop-BarcodropUITests-frameworks.sh */,
+				AB09F3D636A1C53ED47C2E3FB078D24B /* Pods-Barcodrop-BarcodropUITests-Info.plist */,
+				2A691F7C4330AC19C3C62F5BB8737083 /* Pods-Barcodrop-BarcodropUITests-umbrella.h */,
+				6D63D866FBC097F9BD3303318FF60FA3 /* Pods-Barcodrop-BarcodropUITests.debug.xcconfig */,
+				318DCD975CFD19B2B9E04FA3EB54D291 /* Pods-Barcodrop-BarcodropUITests.release.xcconfig */,
+			);
+			name = "Pods-Barcodrop-BarcodropUITests";
+			path = "Target Support Files/Pods-Barcodrop-BarcodropUITests";
+			sourceTree = "<group>";
+		};
+		6CF0E33EB9C7423DF5FEBFCC38C8CEF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07D4E958BAD766CBA1D48DEB63D524C9 /* CBFlashyTabBarController.framework */,
+				EA263919FACF6C598C9E44BFF2BC6D7C /* Pods_Barcodrop.framework */,
+				364246EE6D37F31B42392637F9342C71 /* Pods_Barcodrop_BarcodropUITests.framework */,
+				4E98DA7A5FE3157EC6B5438FD8BE683E /* Pods_BarcodropTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E5A37096CAE06A6674DCEB5C3768C36 /* Pods-BarcodropTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADC0F656CA1190E4586FFF5384769ED4 /* Pods-BarcodropTests.modulemap */,
+				73BA637C7147298AF9A7F1A3BCF8B781 /* Pods-BarcodropTests-acknowledgements.markdown */,
+				50A39A5788A7AF93F79E8C8C52BA0CF0 /* Pods-BarcodropTests-acknowledgements.plist */,
+				41114CAA91710FAE43B24B788F48F006 /* Pods-BarcodropTests-dummy.m */,
+				95AD7462826103675EFA2AE30D15E813 /* Pods-BarcodropTests-Info.plist */,
+				014AECDE0B77A1FBD26C214C0BB3C857 /* Pods-BarcodropTests-umbrella.h */,
+				46958210DAC232A644200C92AF3141B3 /* Pods-BarcodropTests.debug.xcconfig */,
+				30F72D281A801F0BD7A6399DA3A57D19 /* Pods-BarcodropTests.release.xcconfig */,
+			);
+			name = "Pods-BarcodropTests";
+			path = "Target Support Files/Pods-BarcodropTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				5A1D44C3B1A35E05B2F214DAF6009B6C /* Pods */,
+				6CF0E33EB9C7423DF5FEBFCC38C8CEF4 /* Products */,
+				4043363B37297A64FA9F3AFEDD31AC28 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E53E6D4D0E20AAA92C9BC54F3D923D48 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				77F6E113DD35D55EA43E9FF6BDCF14DD /* CBFlashyTabBarController.modulemap */,
+				964F055F8F54441F9105859AB238C261 /* CBFlashyTabBarController-dummy.m */,
+				8D357D22C297C079D4616D6B02B8D09A /* CBFlashyTabBarController-Info.plist */,
+				941BE188C756CE7699F45A802B5EE906 /* CBFlashyTabBarController-prefix.pch */,
+				CB596A9DACCCB6DAF36A5A1C56817CFC /* CBFlashyTabBarController-umbrella.h */,
+				7B91B1098565DC7A60758DC07DDC5908 /* CBFlashyTabBarController.debug.xcconfig */,
+				03CAE88AECD3AEEA158737D4F857A9D1 /* CBFlashyTabBarController.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CBFlashyTabBarController";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		29F51742F570D0514C4094648844BDE8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F267D26FB54D5921E6E9BEEBD73728 /* Pods-BarcodropTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E489358A923509CC39C43D715B04150 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1581223AF4F0FE59348D536BCA716582 /* Pods-Barcodrop-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62F1978C0B37B6CF768BDE43DCEC1CA1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DCBE3FD9516343EC2F88E21C98F6545 /* CBFlashyTabBarController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2BBE9B2F5937E10CF7DFE2E2627AF10 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6E2AE9285D55CAB6000F96FA2D7507 /* Pods-Barcodrop-BarcodropUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5737872A76EFCB2A97F445D9434307C7 /* CBFlashyTabBarController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4EA1075817653C75969BB78FDE8A3E2 /* Build configuration list for PBXNativeTarget "CBFlashyTabBarController" */;
+			buildPhases = (
+				62F1978C0B37B6CF768BDE43DCEC1CA1 /* Headers */,
+				2C7B8389C126323DF24AC36765366A63 /* Sources */,
+				3BEE1D632B16A9ACCFF58495438976F8 /* Frameworks */,
+				79005B9247B9C53EC894D5771438BAC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CBFlashyTabBarController;
+			productName = CBFlashyTabBarController;
+			productReference = 07D4E958BAD766CBA1D48DEB63D524C9 /* CBFlashyTabBarController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B56851F4C6C176968D9D43F8337E07D4 /* Pods-BarcodropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75A64ADC2D6D1CAFBEE066FB39267C97 /* Build configuration list for PBXNativeTarget "Pods-BarcodropTests" */;
+			buildPhases = (
+				29F51742F570D0514C4094648844BDE8 /* Headers */,
+				92A255492B384660ABA317100283B910 /* Sources */,
+				D882363269CBF3BB4391F985D73847C9 /* Frameworks */,
+				89D89DF57EDED127CF8E31CD7ACA7284 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F250C1EF5AA6F17B841AF3357D6094F6 /* PBXTargetDependency */,
+			);
+			name = "Pods-BarcodropTests";
+			productName = "Pods-BarcodropTests";
+			productReference = 4E98DA7A5FE3157EC6B5438FD8BE683E /* Pods_BarcodropTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC678BDE1892213387200EE1D1CD20A3 /* Pods-Barcodrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98CD15CA8E121CC41545BCF60CE4DEBB /* Build configuration list for PBXNativeTarget "Pods-Barcodrop" */;
+			buildPhases = (
+				4E489358A923509CC39C43D715B04150 /* Headers */,
+				27F91D9F1C3B55C7382B289817AD41D9 /* Sources */,
+				6D4126F4B5BEEF1FC554E23AA8EECC3A /* Frameworks */,
+				6EE5DE6A504A3943E0D26FA7E2016327 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAC6EF72EB6A851BE44BB468C6B94C04 /* PBXTargetDependency */,
+			);
+			name = "Pods-Barcodrop";
+			productName = "Pods-Barcodrop";
+			productReference = EA263919FACF6C598C9E44BFF2BC6D7C /* Pods_Barcodrop.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F51D43630CF82E12D36CE60A4F42B7A1 /* Pods-Barcodrop-BarcodropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1402AF309B0268440961EE0B8A73A8D /* Build configuration list for PBXNativeTarget "Pods-Barcodrop-BarcodropUITests" */;
+			buildPhases = (
+				C2BBE9B2F5937E10CF7DFE2E2627AF10 /* Headers */,
+				EEA037E2C24D6527E96856EF3DDAFD68 /* Sources */,
+				09D7892CF9D187F84635304CB20CBE1F /* Frameworks */,
+				B58F27366B4F52A3A0B151A6880ABBCF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8F4B3B64341DD5D579502B314407E17 /* PBXTargetDependency */,
+			);
+			name = "Pods-Barcodrop-BarcodropUITests";
+			productName = "Pods-Barcodrop-BarcodropUITests";
+			productReference = 364246EE6D37F31B42392637F9342C71 /* Pods_Barcodrop_BarcodropUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 6CF0E33EB9C7423DF5FEBFCC38C8CEF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5737872A76EFCB2A97F445D9434307C7 /* CBFlashyTabBarController */,
+				EC678BDE1892213387200EE1D1CD20A3 /* Pods-Barcodrop */,
+				F51D43630CF82E12D36CE60A4F42B7A1 /* Pods-Barcodrop-BarcodropUITests */,
+				B56851F4C6C176968D9D43F8337E07D4 /* Pods-BarcodropTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6EE5DE6A504A3943E0D26FA7E2016327 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79005B9247B9C53EC894D5771438BAC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89D89DF57EDED127CF8E31CD7ACA7284 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B58F27366B4F52A3A0B151A6880ABBCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27F91D9F1C3B55C7382B289817AD41D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85C91DD9E685DCB63ED7AFDA7D4CE33 /* Pods-Barcodrop-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C7B8389C126323DF24AC36765366A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8986CC7B2C9C15F1917E798117F644DC /* CBFlashyTabBar.swift in Sources */,
+				E82E20D4B21D30CC8A06C5CF540FDCF8 /* CBFlashyTabBarController-dummy.m in Sources */,
+				B62CE540AEC6C3C0CCEBC83B4EC04514 /* CBFlashyTabBarController.swift in Sources */,
+				5A15123627499A1087BD267801BA5BFC /* CBTabBarButton.swift in Sources */,
+				87E32330C480E15EA28EE9F7D772696F /* CBTabItemAnimation.swift in Sources */,
+				0BA46128F8D7479CCD09B2E88C109DB5 /* CBTabItemBasicAnimation.swift in Sources */,
+				92492D08B5FF542DDD2DF65BBEC64727 /* CBTabItemDeselectAnimation.swift in Sources */,
+				A211362205D10B7E1EB641AC03BB97EF /* CBTabItemSelectAnimation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A255492B384660ABA317100283B910 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710484A3C1469A343F1DC5FE1B3CF619 /* Pods-BarcodropTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEA037E2C24D6527E96856EF3DDAFD68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A07D51B33F89901622711F6D772A99F /* Pods-Barcodrop-BarcodropUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C8F4B3B64341DD5D579502B314407E17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CBFlashyTabBarController;
+			target = 5737872A76EFCB2A97F445D9434307C7 /* CBFlashyTabBarController */;
+			targetProxy = A0FC0DEC1A5D8D112E5CD291AAB693C6 /* PBXContainerItemProxy */;
+		};
+		F250C1EF5AA6F17B841AF3357D6094F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Barcodrop";
+			target = EC678BDE1892213387200EE1D1CD20A3 /* Pods-Barcodrop */;
+			targetProxy = 8CAA8AFF2DAB4E4C09A9E4A6E8D2F984 /* PBXContainerItemProxy */;
+		};
+		FAC6EF72EB6A851BE44BB468C6B94C04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CBFlashyTabBarController;
+			target = 5737872A76EFCB2A97F445D9434307C7 /* CBFlashyTabBarController */;
+			targetProxy = 9C5F184999CCACD0F73142985F10C916 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4AD727133B5DACBABBC1F4845B1F3D14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B91B1098565DC7A60758DC07DDC5908 /* CBFlashyTabBarController.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController.modulemap";
+				PRODUCT_MODULE_NAME = CBFlashyTabBarController;
+				PRODUCT_NAME = CBFlashyTabBarController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4CE5460058D143772E564BA98D8C518E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 318DCD975CFD19B2B9E04FA3EB54D291 /* Pods-Barcodrop-BarcodropUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5501743B9E9EDCABEE25B6AC4F0584D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46958210DAC232A644200C92AF3141B3 /* Pods-BarcodropTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BarcodropTests/Pods-BarcodropTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BarcodropTests/Pods-BarcodropTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A9A25ADAF5902DB3B1F5EC0FAB0365C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CDBE2B8B17180334977F3C97F6737BE /* Pods-Barcodrop.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Barcodrop/Pods-Barcodrop-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Barcodrop/Pods-Barcodrop.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F2C61D52957A53A05B4443EDE257E04A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A184BCDCE7CE27DCBE6C0C220BC691A /* Pods-Barcodrop.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Barcodrop/Pods-Barcodrop-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Barcodrop/Pods-Barcodrop.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F4364B0C325294E70DB3450DCDD5B063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30F72D281A801F0BD7A6399DA3A57D19 /* Pods-BarcodropTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BarcodropTests/Pods-BarcodropTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BarcodropTests/Pods-BarcodropTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F8B9C56DBFE81FE6896D3EBE0A91CBD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03CAE88AECD3AEEA158737D4F857A9D1 /* CBFlashyTabBarController.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CBFlashyTabBarController/CBFlashyTabBarController.modulemap";
+				PRODUCT_MODULE_NAME = CBFlashyTabBarController;
+				PRODUCT_NAME = CBFlashyTabBarController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB2279E2E4ABF8528E6BE7EA8B831776 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D63D866FBC097F9BD3303318FF60FA3 /* Pods-Barcodrop-BarcodropUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */,
+				C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75A64ADC2D6D1CAFBEE066FB39267C97 /* Build configuration list for PBXNativeTarget "Pods-BarcodropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5501743B9E9EDCABEE25B6AC4F0584D2 /* Debug */,
+				F4364B0C325294E70DB3450DCDD5B063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98CD15CA8E121CC41545BCF60CE4DEBB /* Build configuration list for PBXNativeTarget "Pods-Barcodrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2C61D52957A53A05B4443EDE257E04A /* Debug */,
+				A9A25ADAF5902DB3B1F5EC0FAB0365C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4EA1075817653C75969BB78FDE8A3E2 /* Build configuration list for PBXNativeTarget "CBFlashyTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AD727133B5DACBABBC1F4845B1F3D14 /* Debug */,
+				F8B9C56DBFE81FE6896D3EBE0A91CBD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1402AF309B0268440961EE0B8A73A8D /* Build configuration list for PBXNativeTarget "Pods-Barcodrop-BarcodropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB2279E2E4ABF8528E6BE7EA8B831776 /* Debug */,
+				4CE5460058D143772E564BA98D8C518E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

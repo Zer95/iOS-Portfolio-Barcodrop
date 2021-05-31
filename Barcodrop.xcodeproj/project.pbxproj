@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B8FB47B46F45EE468800B18 /* Pods_Barcodrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DF504C4C45D6ABBA3CE992 /* Pods_Barcodrop.framework */; };
+		7F6F0DF98443B8D521CC33F1 /* Pods_BarcodropTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9B128D7F4F8DB4FF811506 /* Pods_BarcodropTests.framework */; };
+		9CD183286D17F9B43F96120F /* Pods_Barcodrop_BarcodropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */; };
 		D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B3266536C3007CF148 /* AppDelegate.swift */; };
 		D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B5266536C3007CF148 /* SceneDelegate.swift */; };
 		D24611B8266536C3007CF148 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B7266536C3007CF148 /* ViewController.swift */; };
@@ -35,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110788D3DC854141A67D779D /* Pods-BarcodropTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodropTests.release.xcconfig"; path = "Target Support Files/Pods-BarcodropTests/Pods-BarcodropTests.release.xcconfig"; sourceTree = "<group>"; };
+		113242E647AAA028BF2ACA3E /* Pods-Barcodrop-BarcodropUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcodrop-BarcodropUITests.debug.xcconfig"; path = "Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F135A52C6F9664559A66EE3 /* Pods-BarcodropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodropTests.debug.xcconfig"; path = "Target Support Files/Pods-BarcodropTests/Pods-BarcodropTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6046F15322BA1C85655DBF67 /* Pods-Barcodrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcodrop.debug.xcconfig"; path = "Target Support Files/Pods-Barcodrop/Pods-Barcodrop.debug.xcconfig"; sourceTree = "<group>"; };
+		8E61B9BF7FF58E9C1DC06B83 /* Pods-Barcodrop-BarcodropUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcodrop-BarcodropUITests.release.xcconfig"; path = "Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A26CAB178CE5A3E309217B18 /* Pods-Barcodrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcodrop.release.xcconfig"; path = "Target Support Files/Pods-Barcodrop/Pods-Barcodrop.release.xcconfig"; sourceTree = "<group>"; };
+		AA9B128D7F4F8DB4FF811506 /* Pods_BarcodropTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarcodropTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop_BarcodropUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24611B0266536C3007CF148 /* Barcodrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barcodrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24611B3266536C3007CF148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D24611B5266536C3007CF148 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +60,7 @@
 		D24611D1266536C4007CF148 /* BarcodropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24611D5266536C4007CF148 /* BarcodropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodropUITests.swift; sourceTree = "<group>"; };
 		D24611D7266536C4007CF148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8DF504C4C45D6ABBA3CE992 /* Pods_Barcodrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8FB47B46F45EE468800B18 /* Pods_Barcodrop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6F0DF98443B8D521CC33F1 /* Pods_BarcodropTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD183286D17F9B43F96120F /* Pods_Barcodrop_BarcodropUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CB41120EC1C9E3293431FF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6046F15322BA1C85655DBF67 /* Pods-Barcodrop.debug.xcconfig */,
+				A26CAB178CE5A3E309217B18 /* Pods-Barcodrop.release.xcconfig */,
+				113242E647AAA028BF2ACA3E /* Pods-Barcodrop-BarcodropUITests.debug.xcconfig */,
+				8E61B9BF7FF58E9C1DC06B83 /* Pods-Barcodrop-BarcodropUITests.release.xcconfig */,
+				3F135A52C6F9664559A66EE3 /* Pods-BarcodropTests.debug.xcconfig */,
+				110788D3DC854141A67D779D /* Pods-BarcodropTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		704413DECBA88A2E3D61D064 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8DF504C4C45D6ABBA3CE992 /* Pods_Barcodrop.framework */,
+				B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */,
+				AA9B128D7F4F8DB4FF811506 /* Pods_BarcodropTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D24611A7266536C3007CF148 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				D24611C9266536C4007CF148 /* BarcodropTests */,
 				D24611D4266536C4007CF148 /* BarcodropUITests */,
 				D24611B1266536C3007CF148 /* Products */,
+				3CB41120EC1C9E3293431FF8 /* Pods */,
+				704413DECBA88A2E3D61D064 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D24611DA266536C4007CF148 /* Build configuration list for PBXNativeTarget "Barcodrop" */;
 			buildPhases = (
+				03FAFC6E98E519F91D15C6B2 /* [CP] Check Pods Manifest.lock */,
 				D24611AC266536C3007CF148 /* Sources */,
 				D24611AD266536C3007CF148 /* Frameworks */,
 				D24611AE266536C3007CF148 /* Resources */,
+				CFB370790C0D81014B778A62 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D24611DD266536C4007CF148 /* Build configuration list for PBXNativeTarget "BarcodropTests" */;
 			buildPhases = (
+				6B8A73A5B9E2960B4113033D /* [CP] Check Pods Manifest.lock */,
 				D24611C2266536C4007CF148 /* Sources */,
 				D24611C3266536C4007CF148 /* Frameworks */,
 				D24611C4266536C4007CF148 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D24611E0266536C4007CF148 /* Build configuration list for PBXNativeTarget "BarcodropUITests" */;
 			buildPhases = (
+				357B9A8299453269149DFA61 /* [CP] Check Pods Manifest.lock */,
 				D24611CD266536C4007CF148 /* Sources */,
 				D24611CE266536C4007CF148 /* Frameworks */,
 				D24611CF266536C4007CF148 /* Resources */,
+				59C6410EF4A96EB4CF0E615D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03FAFC6E98E519F91D15C6B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Barcodrop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		357B9A8299453269149DFA61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Barcodrop-BarcodropUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59C6410EF4A96EB4CF0E615D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Barcodrop-BarcodropUITests/Pods-Barcodrop-BarcodropUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B8A73A5B9E2960B4113033D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BarcodropTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFB370790C0D81014B778A62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Barcodrop/Pods-Barcodrop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Barcodrop/Pods-Barcodrop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Barcodrop/Pods-Barcodrop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D24611AC266536C3007CF148 /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		D24611DB266536C4007CF148 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6046F15322BA1C85655DBF67 /* Pods-Barcodrop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +602,7 @@
 		};
 		D24611DC266536C4007CF148 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A26CAB178CE5A3E309217B18 /* Pods-Barcodrop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +622,7 @@
 		};
 		D24611DE266536C4007CF148 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F135A52C6F9664559A66EE3 /* Pods-BarcodropTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +645,7 @@
 		};
 		D24611DF266536C4007CF148 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 110788D3DC854141A67D779D /* Pods-BarcodropTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +668,7 @@
 		};
 		D24611E1266536C4007CF148 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 113242E647AAA028BF2ACA3E /* Pods-Barcodrop-BarcodropUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +689,7 @@
 		};
 		D24611E2266536C4007CF148 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E61B9BF7FF58E9C1DC06B83 /* Pods-Barcodrop-BarcodropUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
