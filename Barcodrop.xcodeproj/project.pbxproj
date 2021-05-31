@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B3266536C3007CF148 /* AppDelegate.swift */; };
+		D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B5266536C3007CF148 /* SceneDelegate.swift */; };
+		D24611B8266536C3007CF148 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B7266536C3007CF148 /* ViewController.swift */; };
+		D24611BB266536C3007CF148 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24611B9266536C3007CF148 /* Main.storyboard */; };
+		D24611BD266536C4007CF148 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24611BC266536C4007CF148 /* Assets.xcassets */; };
+		D24611C0266536C4007CF148 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24611BE266536C4007CF148 /* LaunchScreen.storyboard */; };
+		D24611CB266536C4007CF148 /* BarcodropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611CA266536C4007CF148 /* BarcodropTests.swift */; };
+		D24611D6266536C4007CF148 /* BarcodropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611D5266536C4007CF148 /* BarcodropUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D24611C7266536C4007CF148 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D24611A8266536C3007CF148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D24611AF266536C3007CF148;
+			remoteInfo = Barcodrop;
+		};
+		D24611D2266536C4007CF148 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D24611A8266536C3007CF148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D24611AF266536C3007CF148;
+			remoteInfo = Barcodrop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D24611B0266536C3007CF148 /* Barcodrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barcodrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24611B3266536C3007CF148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D24611B5266536C3007CF148 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D24611B7266536C3007CF148 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D24611BA266536C3007CF148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D24611BC266536C4007CF148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D24611BF266536C4007CF148 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D24611C1266536C4007CF148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D24611C6266536C4007CF148 /* BarcodropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24611CA266536C4007CF148 /* BarcodropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodropTests.swift; sourceTree = "<group>"; };
+		D24611CC266536C4007CF148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D24611D1266536C4007CF148 /* BarcodropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24611D5266536C4007CF148 /* BarcodropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodropUITests.swift; sourceTree = "<group>"; };
+		D24611D7266536C4007CF148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D24611AD266536C3007CF148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24611C3266536C4007CF148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24611CE266536C4007CF148 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D24611A7266536C3007CF148 = {
+			isa = PBXGroup;
+			children = (
+				D24611B2266536C3007CF148 /* Barcodrop */,
+				D24611C9266536C4007CF148 /* BarcodropTests */,
+				D24611D4266536C4007CF148 /* BarcodropUITests */,
+				D24611B1266536C3007CF148 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D24611B1266536C3007CF148 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D24611B0266536C3007CF148 /* Barcodrop.app */,
+				D24611C6266536C4007CF148 /* BarcodropTests.xctest */,
+				D24611D1266536C4007CF148 /* BarcodropUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D24611B2266536C3007CF148 /* Barcodrop */ = {
+			isa = PBXGroup;
+			children = (
+				D24611B3266536C3007CF148 /* AppDelegate.swift */,
+				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
+				D24611B7266536C3007CF148 /* ViewController.swift */,
+				D24611B9266536C3007CF148 /* Main.storyboard */,
+				D24611BC266536C4007CF148 /* Assets.xcassets */,
+				D24611BE266536C4007CF148 /* LaunchScreen.storyboard */,
+				D24611C1266536C4007CF148 /* Info.plist */,
+			);
+			path = Barcodrop;
+			sourceTree = "<group>";
+		};
+		D24611C9266536C4007CF148 /* BarcodropTests */ = {
+			isa = PBXGroup;
+			children = (
+				D24611CA266536C4007CF148 /* BarcodropTests.swift */,
+				D24611CC266536C4007CF148 /* Info.plist */,
+			);
+			path = BarcodropTests;
+			sourceTree = "<group>";
+		};
+		D24611D4266536C4007CF148 /* BarcodropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D24611D5266536C4007CF148 /* BarcodropUITests.swift */,
+				D24611D7266536C4007CF148 /* Info.plist */,
+			);
+			path = BarcodropUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D24611AF266536C3007CF148 /* Barcodrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D24611DA266536C4007CF148 /* Build configuration list for PBXNativeTarget "Barcodrop" */;
+			buildPhases = (
+				D24611AC266536C3007CF148 /* Sources */,
+				D24611AD266536C3007CF148 /* Frameworks */,
+				D24611AE266536C3007CF148 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Barcodrop;
+			productName = Barcodrop;
+			productReference = D24611B0266536C3007CF148 /* Barcodrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D24611C5266536C4007CF148 /* BarcodropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D24611DD266536C4007CF148 /* Build configuration list for PBXNativeTarget "BarcodropTests" */;
+			buildPhases = (
+				D24611C2266536C4007CF148 /* Sources */,
+				D24611C3266536C4007CF148 /* Frameworks */,
+				D24611C4266536C4007CF148 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D24611C8266536C4007CF148 /* PBXTargetDependency */,
+			);
+			name = BarcodropTests;
+			productName = BarcodropTests;
+			productReference = D24611C6266536C4007CF148 /* BarcodropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D24611D0266536C4007CF148 /* BarcodropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D24611E0266536C4007CF148 /* Build configuration list for PBXNativeTarget "BarcodropUITests" */;
+			buildPhases = (
+				D24611CD266536C4007CF148 /* Sources */,
+				D24611CE266536C4007CF148 /* Frameworks */,
+				D24611CF266536C4007CF148 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D24611D3266536C4007CF148 /* PBXTargetDependency */,
+			);
+			name = BarcodropUITests;
+			productName = BarcodropUITests;
+			productReference = D24611D1266536C4007CF148 /* BarcodropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D24611A8266536C3007CF148 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					D24611AF266536C3007CF148 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					D24611C5266536C4007CF148 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = D24611AF266536C3007CF148;
+					};
+					D24611D0266536C4007CF148 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = D24611AF266536C3007CF148;
+					};
+				};
+			};
+			buildConfigurationList = D24611AB266536C3007CF148 /* Build configuration list for PBXProject "Barcodrop" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D24611A7266536C3007CF148;
+			productRefGroup = D24611B1266536C3007CF148 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D24611AF266536C3007CF148 /* Barcodrop */,
+				D24611C5266536C4007CF148 /* BarcodropTests */,
+				D24611D0266536C4007CF148 /* BarcodropUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D24611AE266536C3007CF148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24611C0266536C4007CF148 /* LaunchScreen.storyboard in Resources */,
+				D24611BD266536C4007CF148 /* Assets.xcassets in Resources */,
+				D24611BB266536C3007CF148 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24611C4266536C4007CF148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24611CF266536C4007CF148 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D24611AC266536C3007CF148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24611B8266536C3007CF148 /* ViewController.swift in Sources */,
+				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,
+				D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24611C2266536C4007CF148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24611CB266536C4007CF148 /* BarcodropTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D24611CD266536C4007CF148 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24611D6266536C4007CF148 /* BarcodropUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D24611C8266536C4007CF148 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D24611AF266536C3007CF148 /* Barcodrop */;
+			targetProxy = D24611C7266536C4007CF148 /* PBXContainerItemProxy */;
+		};
+		D24611D3266536C4007CF148 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D24611AF266536C3007CF148 /* Barcodrop */;
+			targetProxy = D24611D2266536C4007CF148 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D24611B9266536C3007CF148 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D24611BA266536C3007CF148 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D24611BE266536C4007CF148 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D24611BF266536C4007CF148 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D24611D8266536C4007CF148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D24611D9266536C4007CF148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D24611DB266536C4007CF148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2HU44QQL5;
+				INFOPLIST_FILE = Barcodrop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sg.project.Barcodrop.Barcodrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D24611DC266536C4007CF148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2HU44QQL5;
+				INFOPLIST_FILE = Barcodrop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sg.project.Barcodrop.Barcodrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D24611DE266536C4007CF148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2HU44QQL5;
+				INFOPLIST_FILE = BarcodropTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sg.project.Barcodrop.BarcodropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barcodrop.app/Barcodrop";
+			};
+			name = Debug;
+		};
+		D24611DF266536C4007CF148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2HU44QQL5;
+				INFOPLIST_FILE = BarcodropTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sg.project.Barcodrop.BarcodropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barcodrop.app/Barcodrop";
+			};
+			name = Release;
+		};
+		D24611E1266536C4007CF148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2HU44QQL5;
+				INFOPLIST_FILE = BarcodropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sg.project.Barcodrop.BarcodropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Barcodrop;
+			};
+			name = Debug;
+		};
+		D24611E2266536C4007CF148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2HU44QQL5;
+				INFOPLIST_FILE = BarcodropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sg.project.Barcodrop.BarcodropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Barcodrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D24611AB266536C3007CF148 /* Build configuration list for PBXProject "Barcodrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D24611D8266536C4007CF148 /* Debug */,
+				D24611D9266536C4007CF148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D24611DA266536C4007CF148 /* Build configuration list for PBXNativeTarget "Barcodrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D24611DB266536C4007CF148 /* Debug */,
+				D24611DC266536C4007CF148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D24611DD266536C4007CF148 /* Build configuration list for PBXNativeTarget "BarcodropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D24611DE266536C4007CF148 /* Debug */,
+				D24611DF266536C4007CF148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D24611E0266536C4007CF148 /* Build configuration list for PBXNativeTarget "BarcodropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D24611E1266536C4007CF148 /* Debug */,
+				D24611E2266536C4007CF148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D24611A8266536C3007CF148 /* Project object */;
+}
