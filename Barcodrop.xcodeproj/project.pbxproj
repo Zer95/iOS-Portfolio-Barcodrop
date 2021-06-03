@@ -23,6 +23,7 @@
 		D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8B2667410900598CCA /* HomeViewController.swift */; };
 		D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */; };
 		D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0826689D59001E1CC1 /* DetailViewController.swift */; };
+		D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0A2668D945001E1CC1 /* ProductInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		D2DB6E8B2667410900598CCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2E17D0826689D59001E1CC1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D2E17D0A2668D945001E1CC1 /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
 		D8DF504C4C45D6ABBA3CE992 /* Pods_Barcodrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 				D2DB6E8B2667410900598CCA /* HomeViewController.swift */,
 				D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */,
 				D2E17D0826689D59001E1CC1 /* DetailViewController.swift */,
+				D2E17D0A2668D945001E1CC1 /* ProductInfo.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
 				D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */,
 				D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */,
+				D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

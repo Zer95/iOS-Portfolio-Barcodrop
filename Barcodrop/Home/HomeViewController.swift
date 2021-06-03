@@ -10,8 +10,36 @@ import MaterialComponents.MaterialButtons
 
 class HomeViewController: UIViewController {
     
-    let nameList = ["apple","fork","milk","water","beer","food","egg"]
-    let Dday = ["D-3","D-5","D-day","D-1","D-6","D-2","D+4"]
+    
+    // MVVM
+    
+    
+    // Model
+    // -Info
+    
+    
+    
+    // View
+    // - ListCell
+    
+    // View Model
+    
+    
+    
+//    let productInfoList: [ProductInfo] = [
+//    ProductInfo(name: "apple", D_day: "D-3"),
+//    ProductInfo(name: "fork", D_day: "D-5"),
+//    ProductInfo(name: "milk", D_day: "D-day"),
+//    ProductInfo(name: "water", D_day: "D-1"),
+//    ProductInfo(name: "beer", D_day: "D-7"),
+//    ProductInfo(name: "food", D_day: "D-2"),
+//    ProductInfo(name: "egg", D_day: "D-4")
+//    ]
+    
+    let viewModel = ProductViewModel()
+    
+//    let nameList = ["apple","fork","milk","water","beer","food","egg"] 
+//    let Dday = ["D-3","D-5","D-day","D-1","D-6","D-2","D+4"]
     
 
     // view 로드전 준비되는 단계
@@ -20,8 +48,15 @@ class HomeViewController: UIViewController {
         if segue.identifier == "showDetail" {
             let vc = segue.destination as? DetailViewController
             if let index = sender as? Int {
-                vc?.name = nameList[index]
-                vc?.d_day = Dday[index]
+                
+                let productInfo = viewModel.productInfo(at: index)
+//                vc?.name = nameList[index]
+//                vc?.d_day = Dday[index]
+                  
+                vc?.viewModel.update(model:productInfo)
+//                  vc?.name = productInfo.name
+//                  vc?.d_day = productInfo.D_day
+                
             }
         }
     }
@@ -67,7 +102,8 @@ extension HomeViewController: UICollectionViewDataSource{
     
     // 표시할 항목 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return nameList.count
+       // return nameList.count
+        return viewModel.numOfBountyInfoList
     }
     
     // 셀 표시 방법
@@ -77,11 +113,17 @@ extension HomeViewController: UICollectionViewDataSource{
             return UICollectionViewCell()
         }
         
-        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
-        cell.Thumbnail.image = img
-        cell.Title.text = nameList[indexPath.row]
-        cell.D_day.text = Dday[indexPath.row]
+//        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
+//        cell.Thumbnail.image = img
+//        cell.Title.text = nameList[indexPath.row]
+//        cell.D_day.text = Dday[indexPath.row]
         
+        let productInfo = viewModel.productInfo(at: indexPath.row)
+        cell.update(info: productInfo)
+//        cell.Thumbnail.image = productInfo.image
+//        cell.Title.text = productInfo.name
+//        cell.D_day.text = productInfo.D_day
+    
         return cell
     }
     
@@ -113,5 +155,30 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: width , height: height)
         
+    }
+}
+
+
+
+
+class ProductViewModel  {
+    let productInfoList: [ProductInfo] = [
+    ProductInfo(name: "apple", D_day: "D-3"),
+    ProductInfo(name: "fork", D_day: "D-5"),
+    ProductInfo(name: "milk", D_day: "D-day"),
+    ProductInfo(name: "water", D_day: "D-1"),
+    ProductInfo(name: "beer", D_day: "D-7"),
+    ProductInfo(name: "food", D_day: "D-2"),
+    ProductInfo(name: "egg", D_day: "D-4")
+    ]
+    
+    
+    var numOfBountyInfoList: Int {
+        return productInfoList.count
+    }
+    
+    
+    func productInfo(at index: Int) -> ProductInfo {
+        return productInfoList[index]
     }
 }

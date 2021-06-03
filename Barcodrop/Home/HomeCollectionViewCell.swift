@@ -19,6 +19,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     
+    func update(info: ProductInfo) {
+        Thumbnail.image = info.image
+        Title.text = info.name
+        D_day.text = info.D_day
+    }
+    
     
     
 }
