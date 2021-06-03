@@ -157,6 +157,7 @@
                     <navigationItem key="navigationItem" id="YBF-eL-cFZ"/>
                     <connections>
                         <segue destination="GAZ-YS-Yv4" kind="presentation" identifier="showDetail" id="8YN-Wu-4pd"/>
+                        <segue destination="uwf-1h-TrA" kind="presentation" identifier="showFloating" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="MYq-r4-kEJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UXF-B8-8Bx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIH-ys-8Om" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="131"/>
+            <point key="canvasLocation" x="2988" y="161"/>
         </scene>
         <!--Flashy Tab Bar Controller-->
         <scene sceneID="FbO-kn-Siv">
@@ -326,6 +327,34 @@
             </objects>
             <point key="canvasLocation" x="2343" y="-1315"/>
         </scene>
+        <!--Floating Menu View Controller-->
+        <scene sceneID="O1f-kM-HRI">
+            <objects>
+                <viewController id="uwf-1h-TrA" customClass="FloatingMenuViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cGG-dX-JrK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-EU-jqv">
+                                <rect key="frame" x="138" y="160" width="133" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="menu_scan"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I61-q9-yYt">
+                                <rect key="frame" x="138" y="454" width="138" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="menu_edit"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J9q-zn-qvW"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yj1-fW-cNc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kz6-YI-WeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1766.6666666666667" y="160.71428571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Events" width="22" height="22"/>
@@ -334,6 +363,8 @@
         <image name="Settings" width="21" height="14"/>
         <image name="background" width="5000" height="5000"/>
         <image name="close_ic" width="128" height="128"/>
+        <image name="menu_edit" width="1007" height="1007"/>
+        <image name="menu_scan" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

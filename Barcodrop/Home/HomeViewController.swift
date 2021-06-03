@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     
     // 플로팅 버튼 클릭시 동작
     @objc func tap(_ sender: Any) {
-        print("insert page")
+        performSegue(withIdentifier: "showFloating", sender: nil)
     }
 
     // 플로팅 버튼 정의
