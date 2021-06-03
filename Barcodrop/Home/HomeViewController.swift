@@ -9,7 +9,25 @@ import UIKit
 import MaterialComponents.MaterialButtons
 
 class HomeViewController: UIViewController {
+    
+    let nameList = ["apple","fork","milk","water","beer","food","egg"]
+    let Dday = ["D-3","D-5","D-day","D-1","D-6","D-2","D+4"]
+    
 
+    // view 로드전 준비되는 단계
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // DetialViewController 데이터 전달
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as? DetailViewController
+            if let index = sender as? Int {
+                vc?.name = nameList[index]
+                vc?.d_day = Dday[index]
+            }
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,7 +67,7 @@ extension HomeViewController: UICollectionViewDataSource{
     
     // 표시할 항목 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return nameList.count
     }
     
     // 셀 표시 방법
@@ -58,6 +76,11 @@ extension HomeViewController: UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else {
             return UICollectionViewCell()
         }
+        
+        let img = UIImage(named: "\(nameList[indexPath.row]).jpg")
+        cell.Thumbnail.image = img
+        cell.Title.text = nameList[indexPath.row]
+        cell.D_day.text = Dday[indexPath.row]
         
         return cell
     }
@@ -70,6 +93,8 @@ extension HomeViewController: UICollectionViewDelegate {
     
     // 셀 클릭시 동작하는 부분
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("-->\(indexPath.row)")
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
         
     }
 }

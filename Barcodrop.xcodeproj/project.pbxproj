@@ -22,6 +22,7 @@
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8B2667410900598CCA /* HomeViewController.swift */; };
 		D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */; };
+		D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0826689D59001E1CC1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D2DB6E8B2667410900598CCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2E17D0826689D59001E1CC1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D8DF504C4C45D6ABBA3CE992 /* Pods_Barcodrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 			children = (
 				D2DB6E8B2667410900598CCA /* HomeViewController.swift */,
 				D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */,
+				D2E17D0826689D59001E1CC1 /* DetailViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */,
 				D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */,
 				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,
+				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
 				D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */,
 				D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */,
 			);
