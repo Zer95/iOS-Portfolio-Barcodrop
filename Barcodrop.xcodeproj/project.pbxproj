@@ -151,16 +151,16 @@
 		D24611B2266536C3007CF148 /* Barcodrop */ = {
 			isa = PBXGroup;
 			children = (
-				D2DB6E89266740F000598CCA /* Home */,
-				D28D5886266640D0000426D4 /* logo_eng.png */,
-				D28D5887266640D0000426D4 /* logo_kor.png */,
 				D24611B3266536C3007CF148 /* AppDelegate.swift */,
 				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
+				D24611C1266536C4007CF148 /* Info.plist */,
+				D2DB6E89266740F000598CCA /* Home */,
 				D24611E3266539C0007CF148 /* CBSampleViewController.swift */,
 				D24611B9266536C3007CF148 /* Main.storyboard */,
-				D24611BC266536C4007CF148 /* Assets.xcassets */,
 				D24611BE266536C4007CF148 /* LaunchScreen.storyboard */,
-				D24611C1266536C4007CF148 /* Info.plist */,
+				D24611BC266536C4007CF148 /* Assets.xcassets */,
+				D28D5886266640D0000426D4 /* logo_eng.png */,
+				D28D5887266640D0000426D4 /* logo_kor.png */,
 			);
 			path = Barcodrop;
 			sourceTree = "<group>";

@@ -18,13 +18,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
         D_day.textColor = UIColor.systemGray2
     }
     
-    
     func update(info: ProductInfo) {
         Thumbnail.image = info.image
         Title.text = info.name
         D_day.text = info.D_day
     }
-    
-    
-    
 }
