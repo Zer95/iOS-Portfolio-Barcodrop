@@ -17,9 +17,14 @@ class DetailViewController: UIViewController {
     var name: String?
     var d_day: String?
     
+ 
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Thumbnail.layer.cornerRadius = 10
         updateUI()
     }
     
