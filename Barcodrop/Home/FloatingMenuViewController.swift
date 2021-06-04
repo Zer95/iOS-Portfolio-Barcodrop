@@ -16,12 +16,6 @@ class FloatingMenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesBegan(touches, with: event)
-//        self.dismiss(animated: true, completion: nil)
-//        
-//    }
-    
     // 플로팅 버튼 클릭시 동작
     @objc func tap(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
