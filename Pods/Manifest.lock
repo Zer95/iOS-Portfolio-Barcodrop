@@ -50,10 +50,12 @@ PODS:
     - MDFTextAccessibility
   - MDFInternationalization (3.0.0)
   - MDFTextAccessibility (2.0.1)
+  - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
   - CBFlashyTabBarController
   - MaterialComponents/Buttons
+  - TextFieldEffects
 
 SPEC REPOS:
   trunk:
@@ -61,13 +63,15 @@ SPEC REPOS:
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
   MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 5b636548964327a86564ca8ae5ace8e0318b6290
+PODFILE CHECKSUM: 1fa960b2fe2c913e3dae9110c9e985efea5ba10b
 
 COCOAPODS: 1.10.1

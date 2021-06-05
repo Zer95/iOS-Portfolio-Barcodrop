@@ -18,4 +18,5 @@ target 'Barcodrop' do
 
 pod 'CBFlashyTabBarController'
 pod 'MaterialComponents/Buttons'
+pod 'TextFieldEffects'
 end
