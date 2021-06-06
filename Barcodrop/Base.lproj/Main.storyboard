@@ -372,12 +372,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikW-Ei-xnf">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_img" translatesAutoresizingMaskIntoConstraints="NO" id="GG2-th-ooa">
-                                                <rect key="frame" x="87" y="10" width="240" height="288"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="GG2-th-ooa" secondAttribute="height" multiplier="50:60" id="3sV-25-xYA"/>
-                                                </constraints>
-                                            </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ho2-S5-wCv" customClass="HoshiTextField" customModule="TextFieldEffects">
                                                 <rect key="frame" x="34" y="332" width="218" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -521,13 +515,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNE-ua-egL">
+                                                <rect key="frame" x="94" y="8" width="226" height="219"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="addImage:" destination="ewc-Cw-ysj" eventType="touchUpInside" id="pjw-R7-3kM"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_img" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-T8-ZI0">
+                                                <rect key="frame" x="94" y="8" width="226" height="219"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="GG2-th-ooa" secondAttribute="trailing" constant="87" id="4YM-OR-tFA"/>
-                                            <constraint firstItem="GG2-th-ooa" firstAttribute="leading" secondItem="ikW-Ei-xnf" secondAttribute="leading" constant="87" id="5mu-xu-R6h"/>
                                             <constraint firstAttribute="height" constant="1000" id="DsS-Of-DqT"/>
-                                            <constraint firstItem="GG2-th-ooa" firstAttribute="top" secondItem="ikW-Ei-xnf" secondAttribute="top" constant="10" id="zOJ-K6-laK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -588,6 +591,7 @@
                         <outlet property="etcBtn" destination="cc5-Ea-ku4" id="7kf-DU-X4S"/>
                         <outlet property="freshBtn" destination="eEV-U1-Goy" id="UFD-fM-XTl"/>
                         <outlet property="iceBtn" destination="fxr-Wh-gBN" id="UD3-m4-eS9"/>
+                        <outlet property="imageView" destination="GYN-T8-ZI0" id="hwU-uk-VxT"/>
                         <outlet property="roomtemperatureBtn" destination="mV2-mW-BQQ" id="huA-gw-Ckz"/>
                     </connections>
                 </viewController>
@@ -618,6 +622,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="Sga-0w-Vke">
+            <size key="intrinsicContentSize" width="32" height="28.5"/>
+        </designable>
         <designable name="ho2-S5-wCv">
             <size key="intrinsicContentSize" width="34" height="38"/>
         </designable>

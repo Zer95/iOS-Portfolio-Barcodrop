@@ -23,16 +23,18 @@ class EditViewController: UIViewController {
     
     
     
-    
+    @IBOutlet weak var imageView: UIImageView!
+    let picker = UIImagePickerController() // 이미지 컨트롤러
     
     @IBOutlet weak var ScrollView: UIScrollView!
+    
         override func viewDidLoad() {
         super.viewDidLoad()
 
             endDayPicker.backgroundColor = .white
             endDayPicker.tintColor = .orange
-            
-            
+    
+            picker.delegate = self
             
         // scrollView 클릭시 키보드 내리기
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyTapMethod))
@@ -74,6 +76,41 @@ class EditViewController: UIViewController {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil) // 메인으로 dismiss
     }
     
+    @IBAction func addImage(_ sender: Any) {
+        let alert =  UIAlertController(title: "타이뜰", message: "원하는 메세지", preferredStyle: .actionSheet)
+                let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+                }
+                let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+                    self.openCamera()
+                
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+                
+                alert.addAction(library)
+                alert.addAction(camera)
+                alert.addAction(cancel)
+                present(alert, animated: true, completion: nil)
+    }
+    
+      func openLibrary()
+      {
+          picker.sourceType = .photoLibrary
+          present(picker, animated: false, completion: nil)
+
+      }
+      func openCamera()
+      {
+          if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+              picker.sourceType = .camera
+            
+           
+              present(picker, animated: false, completion: nil)
+          }
+          else{
+              print("Camera not available")
+          }
+      }
+
     
 
 
@@ -110,3 +147,21 @@ class EditViewController: UIViewController {
     
 }
 
+extension EditViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+
+        
+        if let image = info[.originalImage] as? UIImage {
+            imageView.image = image
+            print("log[이미지 값 확인]: \(image)")
+        }
+        
+       
+        
+
+        dismiss(animated: true, completion: nil)
+
+    }
+}
