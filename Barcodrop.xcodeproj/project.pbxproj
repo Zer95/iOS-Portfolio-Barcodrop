@@ -25,6 +25,7 @@
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D2CA6F892669CD0100DE2AA8 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */; };
 		D2CA7006266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA7005266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift */; };
+		D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */; };
 		D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8B2667410900598CCA /* HomeViewController.swift */; };
 		D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */; };
 		D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0826689D59001E1CC1 /* DetailViewController.swift */; };
@@ -78,6 +79,7 @@
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		D2CA7005266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_IN_DatePicker.swift; sourceTree = "<group>"; };
+		D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSelectViewController.swift; sourceTree = "<group>"; };
 		D2DB6E8B2667410900598CCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2E17D0826689D59001E1CC1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */,
 				D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */,
 				D2CA7005266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift */,
+				D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */,
+				D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */,
 				D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */,
 				D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */,
 				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,

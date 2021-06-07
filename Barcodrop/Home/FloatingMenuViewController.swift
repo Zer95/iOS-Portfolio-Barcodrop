@@ -10,10 +10,22 @@ import MaterialComponents.MaterialButtons
 
 class FloatingMenuViewController: UIViewController {
 
+    @IBOutlet var viewMain: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setFloatingButton()
-        // Do any additional setup after loading the view.
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewMapTapped))
+        viewMain.addGestureRecognizer(tapGestureRecognizer)
+
+       
+
+      
+    }
+    
+    @objc func viewMapTapped(sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
+
     }
     
     // 플로팅 버튼 클릭시 동작
