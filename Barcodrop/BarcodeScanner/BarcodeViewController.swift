@@ -75,13 +75,13 @@ extension BarcodeViewController: ReaderViewDelegate {
             let session = URLSession(configuration: config)
 
             let basicURL = "http://openapi.foodsafetykorea.go.kr/api/8ec4f851bb8a45deb394/C005/json/1/1/BAR_CD="
-            var insertURL = code
+            let insertURL = code
             let totalURL = basicURL + insertURL
             
             print(totalURL)
             // URL
             // URL Components
-            var urlComponents = URLComponents(string: totalURL)!
+            let urlComponents = URLComponents(string: totalURL)!
             let requestURL = urlComponents.url!
 
             //let requestURL = "http://openapi.foodsafetykorea.go.kr/api/sample/C005/json/1/5/BAR_CD=8801649120355"
@@ -148,7 +148,7 @@ extension BarcodeViewController: ReaderViewDelegate {
                    
                     let respones = try decoder.decode(Response.self, from: resultData)
                    
-                    self.sendTitle = respones.C005.row!.first!.BSSH_NM
+                    self.sendTitle = respones.C005.row!.first!.PRDLST_NM
                     print(respones.C005.RESULT!.MSG)
                     print(respones.C005.row!.first!.BAR_CD)
                     print(respones.C005.row!.first!.BSSH_NM)
@@ -156,7 +156,7 @@ extension BarcodeViewController: ReaderViewDelegate {
                     print(respones.C005.row!.first!.POG_DAYCNT)
                     
                     
-                    let value = respones.C005.row?.first?.BAR_CD
+                  //  let value = respones.C005.row?.first?.BAR_CD
 
                
                  
