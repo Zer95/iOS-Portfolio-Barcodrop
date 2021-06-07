@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class EditViewController: UIViewController {
 
+    
+    @IBOutlet weak var inputText: HoshiTextField!
     
     
     @IBOutlet weak var buyDay_inputField: UITextField!
@@ -22,6 +25,8 @@ class EditViewController: UIViewController {
     @IBOutlet weak var etcBtn: UIButton!
     
     
+    var barcodeTitle = "기본"
+    
     
     @IBOutlet weak var imageView: UIImageView!
     let picker = UIImagePickerController() // 이미지 컨트롤러
@@ -30,7 +35,9 @@ class EditViewController: UIViewController {
     
         override func viewDidLoad() {
         super.viewDidLoad()
-
+            inputText.text = barcodeTitle
+            
+            
             endDayPicker.backgroundColor = .white
             endDayPicker.tintColor = .orange
     
@@ -73,7 +80,7 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func success_Btn(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil) // 메인으로 dismiss
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil) // 메인으로 dismiss
     }
     
     @IBAction func addImage(_ sender: Any) {

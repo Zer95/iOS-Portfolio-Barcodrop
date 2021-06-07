@@ -12,7 +12,7 @@ class BarcodeViewController: UIViewController {
     @IBOutlet weak var readerView: ReaderView!
     @IBOutlet weak var readButton: UIButton!
     
-    
+    var sendTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,10 @@ class BarcodeViewController: UIViewController {
         sender.isSelected = self.readerView.isRunning
     }
     
-
+    @IBAction func cancleBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 
 }
@@ -145,7 +148,7 @@ extension BarcodeViewController: ReaderViewDelegate {
                    
                     let respones = try decoder.decode(Response.self, from: resultData)
                    
-              
+                    self.sendTitle = respones.C005.row!.first!.BSSH_NM
                     print(respones.C005.RESULT!.MSG)
                     print(respones.C005.row!.first!.BAR_CD)
                     print(respones.C005.row!.first!.BSSH_NM)
@@ -206,8 +209,22 @@ extension BarcodeViewController: ReaderViewDelegate {
         }
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+     
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: { (action) in
+            let VC =  self.storyboard?.instantiateViewController(withIdentifier:"EditView") as! EditViewController
+            
+            
+            
+            VC.barcodeTitle = self.sendTitle
+            VC.modalPresentationStyle = .currentContext
+            
+            self.present(VC, animated: false, completion: nil)
+            
+        }
+                                    
+                                
+        
+        )
 
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
