@@ -14,7 +14,7 @@ class FloatingMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setFloatingButton()
+      //  setFloatingButton()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewMapTapped))
         viewMain.addGestureRecognizer(tapGestureRecognizer)
 

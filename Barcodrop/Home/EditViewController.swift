@@ -76,11 +76,11 @@ class EditViewController: UIViewController {
     
     
     @IBAction func cancle_Btn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
     }
     
     @IBAction func success_Btn(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil) // 메인으로 dismiss
+        self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
     }
     
     @IBAction func addImage(_ sender: Any) {
