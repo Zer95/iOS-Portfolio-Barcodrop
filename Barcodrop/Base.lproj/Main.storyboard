@@ -777,8 +777,16 @@
             <point key="canvasLocation" x="3072" y="893"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="EOc-Nb-ydW">
+            <size key="intrinsicContentSize" width="34" height="38"/>
+        </designable>
+        <designable name="UTr-Zu-6PC">
+            <size key="intrinsicContentSize" width="32" height="28.666666666666668"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="G5p-QD-ZO4"/>
+        <segue reference="Y4B-OQ-CZI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
