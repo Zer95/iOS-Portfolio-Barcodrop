@@ -154,8 +154,16 @@
                             <constraint firstItem="APX-bf-HPf" firstAttribute="trailing" secondItem="ljL-5p-gwF" secondAttribute="trailing" id="H7t-oS-0Tp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YBF-eL-cFZ"/>
+                    <navigationItem key="navigationItem" id="YBF-eL-cFZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="bFN-C8-olH">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapAddd:" destination="Oay-1E-cAc" id="mpJ-eK-t2k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="ljL-5p-gwF" id="r0z-N2-vxC"/>
                         <segue destination="GAZ-YS-Yv4" kind="presentation" identifier="showDetail" id="8YN-Wu-4pd"/>
                         <segue destination="uwf-1h-TrA" kind="presentation" identifier="showFloating" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="MYq-r4-kEJ"/>
                     </connections>
@@ -317,6 +325,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -555,20 +566,6 @@
                                                     <segue destination="Z1I-2h-Cwf" kind="presentation" modalPresentationStyle="overFullScreen" id="G5p-QD-ZO4"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTr-Zu-6PC" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="29" y="525" width="308" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                        <color key="value" systemColor="systemRedColor"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                        <color key="value" systemColor="systemOrangeColor"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-Nb-ydW" customClass="HoshiTextField" customModule="TextFieldEffects">
                                                 <rect key="frame" x="29" y="294" width="210" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -594,6 +591,11 @@
                                                     <segue destination="izt-3d-PEi" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="iay-3u-6jY"/>
                                                 </connections>
                                             </button>
+                                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9Kn-ol-PUY">
+                                                <rect key="frame" x="29" y="531" width="331" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                            </datePicker>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -652,7 +654,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ScrollView" destination="ArH-Bn-Vdz" id="0vg-ez-V7p"/>
-                        <outlet property="buyDay_inputField" destination="UTr-Zu-6PC" id="GU1-QY-bA6"/>
+                        <outlet property="buyDayPicker" destination="9Kn-ol-PUY" id="3Sc-UG-icd"/>
                         <outlet property="endDayPicker" destination="BLY-35-DRZ" id="daQ-TI-Zbk"/>
                         <outlet property="etcBtn" destination="cc5-Ea-ku4" id="7kf-DU-X4S"/>
                         <outlet property="freshBtn" destination="eEV-U1-Goy" id="UFD-fM-XTl"/>
@@ -781,12 +783,9 @@
         <designable name="EOc-Nb-ydW">
             <size key="intrinsicContentSize" width="34" height="38"/>
         </designable>
-        <designable name="UTr-Zu-6PC">
-            <size key="intrinsicContentSize" width="32" height="28.666666666666668"/>
-        </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Y4B-OQ-CZI"/>
+        <segue reference="G5p-QD-ZO4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
@@ -823,9 +822,6 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

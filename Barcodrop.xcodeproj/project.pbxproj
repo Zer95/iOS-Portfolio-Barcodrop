@@ -24,6 +24,9 @@
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
+		D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */; };
+		D2A82054267090D7005E04B1 /* ProductListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A82052267090D7005E04B1 /* ProductListItem+CoreDataProperties.swift */; };
+		D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */; };
 		D2CA6F892669CD0100DE2AA8 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */; };
 		D2CA7006266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA7005266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift */; };
 		D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */; };
@@ -79,6 +82,9 @@
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
+		D2A8204B26708F40005E04B1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		D2A82052267090D7005E04B1 /* ProductListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		D2CA7005266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_IN_DatePicker.swift; sourceTree = "<group>"; };
 		D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSelectViewController.swift; sourceTree = "<group>"; };
@@ -177,12 +183,14 @@
 		D24611B2266536C3007CF148 /* Barcodrop */ = {
 			isa = PBXGroup;
 			children = (
+				D2A8205126709057005E04B1 /* Data */,
 				D24611B3266536C3007CF148 /* AppDelegate.swift */,
 				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
 				D24611C1266536C4007CF148 /* Info.plist */,
 				D2DB6E89266740F000598CCA /* Home */,
 				D208CE0D266F95D10025ECDE /* Edit */,
 				D24611B9266536C3007CF148 /* Main.storyboard */,
+				D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */,
 				D24611BE266536C4007CF148 /* LaunchScreen.storyboard */,
 				D24611E3266539C0007CF148 /* CBSampleViewController.swift */,
 				D24611BC266536C4007CF148 /* Assets.xcassets */,
@@ -217,6 +225,15 @@
 				D26C7EF9266CAAB500133504 /* ReaderView.swift */,
 			);
 			path = BarcodeScanner;
+			sourceTree = "<group>";
+		};
+		D2A8205126709057005E04B1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */,
+				D2A82052267090D7005E04B1 /* ProductListItem+CoreDataProperties.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D2DB6E89266740F000598CCA /* Home */ = {
@@ -476,10 +493,13 @@
 				D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */,
 				D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */,
 				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,
+				D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */,
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
+				D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */,
 				D2CA7006266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift in Sources */,
 				D208CE0F266F98A90025ECDE /* DataModel.swift in Sources */,
 				D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */,
+				D2A82054267090D7005E04B1 /* ProductListItem+CoreDataProperties.swift in Sources */,
 				D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */,
 				D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */,
 				D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */,
@@ -823,6 +843,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2A8204B26708F40005E04B1 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = D2A8204B26708F40005E04B1 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D24611A8266536C3007CF148 /* Project object */;
 }

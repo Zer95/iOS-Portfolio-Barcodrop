@@ -8,16 +8,25 @@
 import UIKit
 import TextFieldEffects
 
+
+
 class EditViewController: UIViewController {
 
+    // coreDate
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var models = [ProductListItem]()
+    
+    
+   
     
     @IBOutlet weak var inputText: HoshiTextField!
     
     
-    @IBOutlet weak var buyDay_inputField: UITextField!
+    
     
     private var datePicker: UIDatePicker? // 데이터 피커
     @IBOutlet weak var endDayPicker: UIDatePicker!
+    @IBOutlet weak var buyDayPicker: UIDatePicker!
     
     @IBOutlet weak var freshBtn: UIButton!
     @IBOutlet weak var iceBtn: UIButton!
@@ -26,7 +35,7 @@ class EditViewController: UIViewController {
     
     
     var barcodeTitle = "기본"
-    
+    var categotySave = ""
     
     @IBOutlet weak var imageView: UIImageView!
     let picker = UIImagePickerController() // 이미지 컨트롤러
@@ -37,7 +46,7 @@ class EditViewController: UIViewController {
         super.viewDidLoad()
             inputText.text = barcodeTitle
             
-            
+            print("바코드에서 넘어온 값: \(barcodeTitle)")
             endDayPicker.backgroundColor = .white
             endDayPicker.tintColor = .orange
     
@@ -50,20 +59,42 @@ class EditViewController: UIViewController {
         singleTapGestureRecognizer.cancelsTouchesInView = false
         ScrollView.addGestureRecognizer(singleTapGestureRecognizer)
 
-        // 데이터 피커 호출
-        self.buyDay_inputField.setDatePickerAsInputViewFor(target: self, selector: #selector(dateSelected))
+       
         
         
     }
     
-    @objc func dateSelected() {
-        if let datePicker = self.buyDay_inputField.inputView as? UIDatePicker {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            self.buyDay_inputField.text = dateFormatter.string(from: datePicker.date)
+    //coredata
+ 
+    
+    func createItem(title: String) {
+        let newItem = ProductListItem(context: context)
+        newItem.title = title
+        newItem.createDay = Date()
+        
+        do{
+            try context.save()
+     
         }
-        self.buyDay_inputField.resignFirstResponder()
+        catch {
+            
+        }
+        
     }
+    
+    func getAllItems() {
+        do {
+            models = try context.fetch(ProductListItem.fetchRequest())
+            
+            DispatchQueue.main.async {
+                
+            }
+        }
+        catch {
+            //error
+        }
+    }
+    
     
     
     
@@ -80,6 +111,26 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func success_Btn(_ sender: Any) {
+        
+      
+        
+        //coredata 저장
+        
+        guard let title = inputText.text else {
+            return
+        }
+        
+        self.createItem(title: title)
+        
+        print("현재 입력된 값--------")
+        print("상품명:\(title)")
+        print("카테고리: \(categotySave)")
+        print("구입일: \(buyDayPicker.date)")
+        print("유통기한: \(endDayPicker.date)")
+        print("알람일: ")
+        print("이미지값: ")
+        
+        
         self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
     }
     
@@ -122,6 +173,7 @@ class EditViewController: UIViewController {
 
 
     @IBAction func freshBtn(_ sender: Any) {
+        categotySave = "냉장"
         freshBtn.isSelected = true
         iceBtn.isSelected = false
         roomtemperatureBtn.isSelected = false
@@ -131,6 +183,7 @@ class EditViewController: UIViewController {
     
     
     @IBAction func iceBtn(_ sender: Any) {
+        categotySave = "냉동"
         iceBtn.isSelected = true
         freshBtn.isSelected = false
         roomtemperatureBtn.isSelected = false
@@ -138,6 +191,7 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func roomtemperatureBtn(_ sender: Any) {
+        categotySave = "실온"
         roomtemperatureBtn.isSelected = true
         freshBtn.isSelected = false
         iceBtn.isSelected = false
@@ -145,6 +199,7 @@ class EditViewController: UIViewController {
     }
 
     @IBAction func etcBtn(_ sender: Any) {
+        categotySave = "기타"
         etcBtn.isSelected = true
         freshBtn.isSelected = false
         iceBtn.isSelected = false

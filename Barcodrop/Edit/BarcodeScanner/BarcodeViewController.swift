@@ -177,22 +177,6 @@ extension BarcodeViewController: ReaderViewDelegate {
 
 
 
-
-
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
         case .fail:
             title = "에러"

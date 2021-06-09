@@ -10,7 +10,13 @@ import MaterialComponents.MaterialButtons
 
 class HomeViewController: UIViewController {
     
+    // coreDate
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var models = [ProductListItem]()
+    
     let viewModel = ProductViewModel()
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // view 로드전 준비되는 단계
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,11 +31,51 @@ class HomeViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("hi")
+    }
+    
+    
     // view load
     override func viewDidLoad() {
         super.viewDidLoad()
         setFloatingButton() // 플로팅 버튼 load
+        
+      
+        // 로드 시 데이터 패치
+        getAllItems()
+        
     }
+    
+    
+    
+  
+    
+    @objc private func didTapAdd(){
+        print("dds")
+        let alert = UIAlertController(title: "New Item", message: "엔터키누르세요", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { [weak self]_ in
+            guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else {
+                return
+            }
+
+            self?.createItem(title: text)
+        }))
+        
+    }
+    
+    @IBAction func didTapAddd(_ sender: Any) {
+        print("ddd")
+       
+        
+
+            getAllItems()
+        }
+                
+        
+    
+    
     
     
     // 플로팅 버튼 클릭시 동작
@@ -51,6 +97,65 @@ class HomeViewController: UIViewController {
             view.addConstraint(NSLayoutConstraint(item: floatingButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: -120))
             view.addConstraint(NSLayoutConstraint(item: floatingButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: -22))
         }
+    
+    
+    // coredata 작업
+    
+    func getAllItems() {
+        do {
+            models = try context.fetch(ProductListItem.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        catch {
+            //error
+        }
+    }
+    
+    func createItem(title: String) {
+        let newItem = ProductListItem(context: context)
+        newItem.title = title
+        newItem.createDay = Date()
+        
+        do{
+            try context.save()
+            getAllItems()
+        }
+        catch {
+            
+        }
+        
+    }
+    
+    func deleteItem(item: ProductListItem) {
+        context.delete(item)
+        do{
+            try context.save()
+        }
+        catch {
+            
+        }
+        
+        
+    }
+    
+    func updateItem(item: ProductListItem, newTitle: String) {
+        item.title = newTitle
+        do{
+            try context.save()
+        }
+        catch {
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
 }
 
 
@@ -59,7 +164,8 @@ extension HomeViewController: UICollectionViewDataSource{
     // 표시할 항목 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        // return nameList.count
-        return viewModel.numOfBountyInfoList
+        //return viewModel.numOfBountyInfoList
+        return models.count
     }
     
     // 셀 표시 방법
@@ -69,8 +175,10 @@ extension HomeViewController: UICollectionViewDataSource{
             return UICollectionViewCell()
         }
         
-        let productInfo = viewModel.productInfo(at: indexPath.row)
-        cell.update(info: productInfo)
+        let model = models[indexPath.row]
+        cell.Title?.text = model.title
+//        let productInfo = viewModel.productInfo(at: indexPath.row)
+//        cell.update(info: productInfo)
         return cell
     }
     
