@@ -4,9 +4,10 @@
         <attribute name="buyDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="endDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="imgURL" optional="YES" attributeType="String"/>
         <attribute name="productName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="89"/>
+        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="104"/>
     </elements>
 </model>

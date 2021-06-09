@@ -22,11 +22,11 @@
 		D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611E3266539C0007CF148 /* CBSampleViewController.swift */; };
 		D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */; };
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
+		D28973B5267101E000AE2F7C /* ProductListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28973B4267101E000AE2F7C /* ProductListItem+CoreDataProperties.swift */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */; };
 		D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */; };
-		D2A820592670AC7F005E04B1 /* ProductListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A820582670AC7F005E04B1 /* ProductListItem+CoreDataProperties.swift */; };
 		D2CA6F892669CD0100DE2AA8 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */; };
 		D2CA7006266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CA7005266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift */; };
 		D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */; };
@@ -80,11 +80,11 @@
 		D24611E3266539C0007CF148 /* CBSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSampleViewController.swift; sourceTree = "<group>"; };
 		D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		D28973B4267101E000AE2F7C /* ProductListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductListItem+CoreDataProperties.swift"; path = "../../ProductListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D2A8204B26708F40005E04B1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D2A820582670AC7F005E04B1 /* ProductListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductListItem+CoreDataProperties.swift"; path = "../../ProductListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		D2CA7005266A56CB00DE2AA8 /* TextField_IN_DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_IN_DatePicker.swift; sourceTree = "<group>"; };
 		D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSelectViewController.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */,
-				D2A820582670AC7F005E04B1 /* ProductListItem+CoreDataProperties.swift */,
+				D28973B4267101E000AE2F7C /* ProductListItem+CoreDataProperties.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */,
 				D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */,
 				D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */,
-				D2A820592670AC7F005E04B1 /* ProductListItem+CoreDataProperties.swift in Sources */,
+				D28973B5267101E000AE2F7C /* ProductListItem+CoreDataProperties.swift in Sources */,
 				D2CA6F892669CD0100DE2AA8 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

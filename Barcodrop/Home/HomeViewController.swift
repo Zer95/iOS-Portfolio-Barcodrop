@@ -63,9 +63,7 @@ class HomeViewController: UIViewController {
       
         // 로드 시 데이터 패치
         getAllItems()
-        print("디비 모델")
-        print(models[0])
-        print(models[1])
+ 
     }
     
     
@@ -202,6 +200,32 @@ extension HomeViewController: UICollectionViewDataSource{
         cell.Title?.text = model.productName
         cell.D_day.text = model.category
         print("data save zone")
+        
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+            {
+             
+            let fileName = "imagee.jpg"
+            let fileNameRead = "\(model.productName!).jpg"
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
+//                let image    = UIImage(contentsOfFile: imageURL.path)
+//
+//                print("기존 주소값은:\(image!)")
+            print("불러온 값은:\(model.imgURL!)")
+            
+    
+   
+            let image    = UIImage(contentsOfFile: imageURL.path)
+        
+     
+            
+                cell.Thumbnail.image = image
+        }
+        
+        
+        
     //    print(model.buyDay)
      //   print(model.endDay)
         
