@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
     
     let viewModel = ProductViewModel()
     
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // view 로드전 준비되는 단계
@@ -25,11 +27,28 @@ class HomeViewController: UIViewController {
         if segue.identifier == "showDetail" {
             let vc = segue.destination as? DetailViewController
             if let index = sender as? Int {
-               let productInfo = viewModel.productInfo(at: index)
-               vc?.viewModel.update(model:productInfo)
+               let productInfo = models[index]
+                vc?.re_title = productInfo.productName!
+                vc?.re_category = productInfo.category!
+                vc?.re_buyDay = productInfo.buyDay!
+                vc?.re_endDay = productInfo.endDay!
+               
             }
         }
     }
+    
+    // view 로드전 준비되는 단계
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        // DetialViewController 데이터 전달
+//        if segue.identifier == "showDetail" {
+//            let vc = segue.destination as? DetailViewController
+//            if let index = sender as? Int {
+//               let productInfo = viewModel.productInfo(at: index)
+//               vc?.viewModel.update(model:productInfo)
+//            }
+//        }
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         print("hi")
@@ -44,7 +63,9 @@ class HomeViewController: UIViewController {
       
         // 로드 시 데이터 패치
         getAllItems()
-        
+        print("디비 모델")
+        print(models[0])
+        print(models[1])
     }
     
     
@@ -107,6 +128,8 @@ class HomeViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                print("전체 디비 리스트")
+               
             }
         }
         catch {
@@ -179,8 +202,8 @@ extension HomeViewController: UICollectionViewDataSource{
         cell.Title?.text = model.productName
         cell.D_day.text = model.category
         print("data save zone")
-        print(model.buyDay)
-        print(model.endDay)
+    //    print(model.buyDay)
+     //   print(model.endDay)
         
 //        let productInfo = viewModel.productInfo(at: indexPath.row)
 //        cell.update(info: productInfo)
@@ -226,7 +249,7 @@ class ProductViewModel  {
     ProductInfo(name: "water", D_day: "D-1"),
     ProductInfo(name: "beer", D_day: "D-7"),
     ProductInfo(name: "food", D_day: "D-2"),
-    ProductInfo(name: "egg", D_day: "D-4")
+    ProductInfo(name: "egg", D_day: "D-4"),
     ]
     
     var numOfBountyInfoList: Int {

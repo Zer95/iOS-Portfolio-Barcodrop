@@ -253,8 +253,11 @@
                         <outlet property="Name_lable" destination="1Xb-LT-zye" id="rbB-dA-3JG"/>
                         <outlet property="Name_lableCenterX" destination="F0v-c3-Wk1" id="qeH-Ca-kTi"/>
                         <outlet property="Thumbnail" destination="olS-9h-WvI" id="dvc-aj-ohl"/>
+                        <outlet property="buyDay_lable" destination="Q1R-Ec-Tlj" id="JdG-ae-SbI"/>
+                        <outlet property="category_lable" destination="l1G-R3-hpk" id="jfx-uP-Otd"/>
                         <outlet property="d_day_lable" destination="hSE-oD-sXc" id="Ncq-F5-lwQ"/>
                         <outlet property="d_day_lableCenterX" destination="A5e-6u-H2M" id="eiV-MR-GxN"/>
+                        <outlet property="endDay_lable" destination="2zJ-Kh-zLo" id="UlU-BK-mFN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIH-ys-8Om" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

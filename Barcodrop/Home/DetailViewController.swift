@@ -11,23 +11,56 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var Thumbnail: UIImageView!
     @IBOutlet weak var Name_lable: UILabel!
+    @IBOutlet weak var category_lable: UILabel!
+    @IBOutlet weak var buyDay_lable: UILabel!
+    @IBOutlet weak var endDay_lable:UILabel!
+    
+    
+    
     @IBOutlet weak var d_day_lable: UILabel!
     @IBOutlet weak var Name_lableCenterX: NSLayoutConstraint!
     @IBOutlet weak var d_day_lableCenterX: NSLayoutConstraint!
     
     let viewModel = DetailViewModel()
+ 
+
+    // 전달받은 값 저장
+    var re_title:String = ""
+    var re_category:String = ""
+    var re_buyDay:Date = Date()
+    var re_endDay:Date = Date()
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Thumbnail.layer.cornerRadius = 10
-        updateUI()
+        
+        // 넘어온 값 세팅
+        Name_lable.text = re_title
+        category_lable.text = re_category
+        buyDay_lable.text = "구입일: " + DateToString(RE_Date: re_buyDay)
+        endDay_lable.text = "유통기한: " + DateToString(RE_Date: re_endDay)
+        
+        
+        
+        //updateUI()
         prepareAnimation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showAnimation()
+    }
+    
+    // 날짜 데이터 문자열로 변환
+    func DateToString(RE_Date: Date) -> String {
+        let date:Date = RE_Date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: date)
+        return dateString
     }
     
     private func prepareAnimation() {
