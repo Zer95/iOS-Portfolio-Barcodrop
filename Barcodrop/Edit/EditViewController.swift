@@ -69,8 +69,11 @@ class EditViewController: UIViewController {
     
     func createItem(title: String) {
         let newItem = ProductListItem(context: context)
-        newItem.title = title
-        newItem.createDay = Date()
+        newItem.productName = title
+        newItem.category = categotySave
+        newItem.buyDay = buyDayPicker.date
+        newItem.endDay = endDayPicker.date
+        
         
         do{
             try context.save()

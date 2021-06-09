@@ -16,7 +16,9 @@ extension ProductListItem {
         return NSFetchRequest<ProductListItem>(entityName: "ProductListItem")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var createDay: Date?
+    @NSManaged public var productName: String?
+    @NSManaged public var category: String?
+    @NSManaged public var buyDay: Date?
+    @NSManaged public var endDay: Date?
 
 }

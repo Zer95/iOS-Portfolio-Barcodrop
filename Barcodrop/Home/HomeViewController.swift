@@ -116,8 +116,8 @@ class HomeViewController: UIViewController {
     
     func createItem(title: String) {
         let newItem = ProductListItem(context: context)
-        newItem.title = title
-        newItem.createDay = Date()
+        newItem.productName = title
+        
         
         do{
             try context.save()
@@ -142,7 +142,7 @@ class HomeViewController: UIViewController {
     }
     
     func updateItem(item: ProductListItem, newTitle: String) {
-        item.title = newTitle
+        item.productName = newTitle
         do{
             try context.save()
         }
@@ -176,7 +176,12 @@ extension HomeViewController: UICollectionViewDataSource{
         }
         
         let model = models[indexPath.row]
-        cell.Title?.text = model.title
+        cell.Title?.text = model.productName
+        cell.D_day.text = model.category
+        print("data save zone")
+        print(model.buyDay)
+        print(model.endDay)
+        
 //        let productInfo = viewModel.productInfo(at: indexPath.row)
 //        cell.update(info: productInfo)
         return cell
