@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     let viewModel = ProductViewModel()
     
-    
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
                 vc?.re_category = productInfo.category!
                 vc?.re_buyDay = productInfo.buyDay!
                 vc?.re_endDay = productInfo.endDay!
+          
                
             }
         }
@@ -209,6 +210,7 @@ extension HomeViewController: UICollectionViewDataSource{
              
             let fileName = "imagee.jpg"
             let fileNameRead = "\(model.productName!).jpg"
+        
             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
 //                let image    = UIImage(contentsOfFile: imageURL.path)
 //

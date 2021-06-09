@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
     var re_category:String = ""
     var re_buyDay:Date = Date()
     var re_endDay:Date = Date()
-    
+ 
     
     
     
@@ -42,6 +42,30 @@ class DetailViewController: UIViewController {
         category_lable.text = re_category
         buyDay_lable.text = "구입일: " + DateToString(RE_Date: re_buyDay)
         endDay_lable.text = "유통기한: " + DateToString(RE_Date: re_endDay)
+        
+        
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+            {
+             
+            let fileNameRead = "\(re_title).jpg"
+           
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
+//                let image    = UIImage(contentsOfFile: imageURL.path)
+//
+//                print("기존 주소값은:\(image!)")
+     
+            
+    
+   
+            let image    = UIImage(contentsOfFile: imageURL.path)
+        
+     
+            
+              Thumbnail.image = image
+        }
         
         
         
