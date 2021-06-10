@@ -151,6 +151,10 @@ class EditViewController: UIViewController {
            }
         
         
+        //옵저버
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"),object: nil)
+        
+        
         
         self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
     }

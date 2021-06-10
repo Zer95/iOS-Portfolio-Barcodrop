@@ -64,11 +64,16 @@ class HomeViewController: UIViewController {
       
         // 로드 시 데이터 패치
         getAllItems()
+        
+        // 옵저버
+        NotificationCenter.default.addObserver(self,selector: #selector(obServing),name: NSNotification.Name(rawValue: "reload"),object: nil)
  
     }
     
     
-    
+    @objc private func obServing(){
+        getAllItems()
+    }
   
     
     @objc private func didTapAdd(){
