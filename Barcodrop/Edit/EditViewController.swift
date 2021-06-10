@@ -136,6 +136,22 @@ class EditViewController: UIViewController {
         print("이미지값: \(self.saveURL)")
         
         
+        // 카메라 저장
+        let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
+           let newPath = path.appendingPathComponent("\(title).jpg") //Possibly you Can pass the dynamic name here
+           // Save this name in core Data using you code as a String.
+        
+        self.saveURL =  ("\(newPath)")
+        
+        let jpgImageData = self.imageView.image?.jpegData(compressionQuality: 1.0)
+           do {
+               try jpgImageData!.write(to: newPath)
+           } catch {
+               print(error)
+           }
+        
+        
+        
         self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
     }
     
@@ -229,18 +245,18 @@ extension EditViewController : UIImagePickerControllerDelegate, UINavigationCont
             }
             
             
-            let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
-               let newPath = path.appendingPathComponent("\(title).jpg") //Possibly you Can pass the dynamic name here
-               // Save this name in core Data using you code as a String.
-            
-            self.saveURL =  ("\(newPath)")
-            
-            let jpgImageData = image.jpegData(compressionQuality: 1.0)
-               do {
-                   try jpgImageData!.write(to: newPath)
-               } catch {
-                   print(error)
-               }
+//            let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
+//               let newPath = path.appendingPathComponent("\(title).jpg") //Possibly you Can pass the dynamic name here
+//               // Save this name in core Data using you code as a String.
+//
+//            self.saveURL =  ("\(newPath)")
+//
+//            let jpgImageData = image.jpegData(compressionQuality: 1.0)
+//               do {
+//                   try jpgImageData!.write(to: newPath)
+//               } catch {
+//                   print(error)
+//               }
            }
             
             
