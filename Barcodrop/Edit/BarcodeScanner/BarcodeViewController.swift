@@ -14,6 +14,12 @@ class BarcodeViewController: UIViewController {
     
     var sendTitle = ""
     
+    // 표시 정보
+    var productName = ""
+    var productCompany = ""
+    var wontEndDay = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +60,9 @@ extension BarcodeViewController: ReaderViewDelegate {
 
         var title = ""
         var message = ""
+        
+    
+        
         switch status {
         case let .success(code):
             guard let code = code else {
@@ -62,9 +71,10 @@ extension BarcodeViewController: ReaderViewDelegate {
                 break
             }
 
-            title = "알림"
-            message = "인식성공\n\(code)"
+            title = "스캔완료"
+           // message = "\(code)\n\(self.productCompany)"
             print("\(code)")
+   
             
             
             
@@ -155,6 +165,11 @@ extension BarcodeViewController: ReaderViewDelegate {
                     print(respones.C005.row!.first!.PRDLST_NM)
                     print(respones.C005.row!.first!.POG_DAYCNT)
                     
+                    self.productCompany = "\(respones.C005.row!.first!.BSSH_NM)"
+                    self.productName = "\(respones.C005.row!.first!.PRDLST_NM)"
+                    self.wontEndDay = "\(respones.C005.row!.first!.POG_DAYCNT)"
+                    
+             
                     
                   //  let value = respones.C005.row?.first?.BAR_CD
 
@@ -191,7 +206,12 @@ extension BarcodeViewController: ReaderViewDelegate {
                 return
             }
         }
-
+        sleep(3)
+        print("스캐너 출력값&&&&&&&&&&&&&&&&")
+        print(self.productCompany)
+        message = "\n\(self.productName)\n\(self.productCompany)\n\(self.wontEndDay)"
+        
+     
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
      
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { (action) in
