@@ -14,13 +14,9 @@ class HomeViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     
-    let viewModel = ProductViewModel()
-    
-
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    // view 로드전 준비되는 단계
+    // view 로드전 준비 -> detailView 전송시 필요한 객체 담기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // DetialViewController 데이터 전달
@@ -32,78 +28,29 @@ class HomeViewController: UIViewController {
                 vc?.re_category = productInfo.category!
                 vc?.re_buyDay = productInfo.buyDay!
                 vc?.re_endDay = productInfo.endDay!
-          
-               
             }
         }
     }
-    
-    // view 로드전 준비되는 단계
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        // DetialViewController 데이터 전달
-//        if segue.identifier == "showDetail" {
-//            let vc = segue.destination as? DetailViewController
-//            if let index = sender as? Int {
-//               let productInfo = viewModel.productInfo(at: index)
-//               vc?.viewModel.update(model:productInfo)
-//            }
-//        }
-//    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("hi")
-    }
-    
-    
-    // view load
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         setFloatingButton() // 플로팅 버튼 load
+        getAllItems() // 컬렉션 뷰 실시간
         
-      
-        // 로드 시 데이터 패치
-        getAllItems()
-        
-        // 옵저버
+        // 데이터 저장 후 바로 reload 옵저버
         NotificationCenter.default.addObserver(self,selector: #selector(obServing),name: NSNotification.Name(rawValue: "reload"),object: nil)
- 
     }
-    
     
     @objc private func obServing(){
         getAllItems()
     }
   
-    
-    @objc private func didTapAdd(){
-        print("dds")
-        let alert = UIAlertController(title: "New Item", message: "엔터키누르세요", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: nil)
-        alert.addAction(UIAlertAction(title: "Submit", style: .cancel, handler: { [weak self]_ in
-            guard let field = alert.textFields?.first, let text = field.text, !text.isEmpty else {
-                return
-            }
-
-            self?.createItem(title: text)
-        }))
-        
-    }
-    
+    // 수동갱신
     @IBAction func didTapAddd(_ sender: Any) {
-        print("ddd")
-       
-        
-
             getAllItems()
         }
                 
-        
-    
-    
-    
-    
-    // 플로팅 버튼 클릭시 동작
+    // 플로팅 버튼 클릭시 -> 바코드 & 입력창 띄우기
     @objc func tap(_ sender: Any) {
         performSegue(withIdentifier: "showFloating", sender: nil)
     }
@@ -123,35 +70,28 @@ class HomeViewController: UIViewController {
             view.addConstraint(NSLayoutConstraint(item: floatingButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: -22))
         }
     
-    
-    // coredata 작업
-    
+
+    // MARK: - Core Data 사용 기능
     func getAllItems() {
         do {
             models = try context.fetch(ProductListItem.fetchRequest())
-            
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                print("전체 디비 리스트")
-               
             }
         }
         catch {
-            //error
+            print("getAllItmes 오류")
         }
     }
     
     func createItem(title: String) {
         let newItem = ProductListItem(context: context)
         newItem.productName = title
-        
-        
         do{
             try context.save()
             getAllItems()
         }
         catch {
-            
         }
         
     }
@@ -162,10 +102,7 @@ class HomeViewController: UIViewController {
             try context.save()
         }
         catch {
-            
         }
-        
-        
     }
     
     func updateItem(item: ProductListItem, newTitle: String) {
@@ -174,70 +111,41 @@ class HomeViewController: UIViewController {
             try context.save()
         }
         catch {
-            
         }
-        
-        
     }
-    
-    
-    
-    
 }
 
-
+// MARK: - 컬렉션 뷰 세팅
 extension HomeViewController: UICollectionViewDataSource{
     
     // 표시할 항목 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       // return nameList.count
-        //return viewModel.numOfBountyInfoList
         return models.count
     }
     
-    // 셀 표시 방법
+    // 셀 표시
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else {
             return UICollectionViewCell()
         }
         
+        // 각 cell에 데이터 매칭
         let model = models[indexPath.row]
         cell.Title?.text = model.productName
         cell.D_day.text = model.category
-        print("data save zone")
-        
+       
+        // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
         let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
         if let dirPath          = paths.first
             {
-             
-            let fileName = "imagee.jpg"
             let fileNameRead = "\(model.productName!).jpg"
-        
             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
-//                let image    = UIImage(contentsOfFile: imageURL.path)
-//
-//                print("기존 주소값은:\(image!)")
-            print("불러온 값은:\(model.imgURL!)")
-            
-    
-   
+
             let image    = UIImage(contentsOfFile: imageURL.path)
-        
-     
-            
-                cell.Thumbnail.image = image
+            cell.Thumbnail.image = image
         }
-        
-        
-        
-    //    print(model.buyDay)
-     //   print(model.endDay)
-        
-//        let productInfo = viewModel.productInfo(at: indexPath.row)
-//        cell.update(info: productInfo)
         return cell
     }
     
@@ -250,44 +158,19 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("-->\(indexPath.row)")
         performSegue(withIdentifier: "showDetail", sender: indexPath.row)
-        
     }
 }
 
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    
+
     // 셀 사이즈 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSpacing: CGFloat = 20
         let margin: CGFloat = 20
         let width = (collectionView.bounds.width - itemSpacing - margin * 2)/2
         let height = width + 60
-        
         return CGSize(width: width , height: height)
         
-    }
-}
-
-
-
-
-class ProductViewModel  {
-    let productInfoList: [ProductInfo] = [
-    ProductInfo(name: "apple", D_day: "D-3"),
-    ProductInfo(name: "fork", D_day: "D-5"),
-    ProductInfo(name: "milk", D_day: "D-day"),
-    ProductInfo(name: "water", D_day: "D-1"),
-    ProductInfo(name: "beer", D_day: "D-7"),
-    ProductInfo(name: "food", D_day: "D-2"),
-    ProductInfo(name: "egg", D_day: "D-4"),
-    ]
-    
-    var numOfBountyInfoList: Int {
-        return productInfoList.count
-    }
-    
-    func productInfo(at index: Int) -> ProductInfo {
-        return productInfoList[index]
     }
 }

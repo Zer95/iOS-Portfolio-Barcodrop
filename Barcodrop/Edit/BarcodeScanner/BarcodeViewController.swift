@@ -12,9 +12,9 @@ class BarcodeViewController: UIViewController {
     @IBOutlet weak var readerView: ReaderView!
     @IBOutlet weak var readButton: UIButton!
     
-    var sendTitle = ""
     
     // 표시 정보
+    var sendTitle = ""
     var productName = ""
     var productCompany = ""
     var wontEndDay = ""
@@ -22,9 +22,7 @@ class BarcodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.readerView.delegate = self
-        
         self.readButton.layer.masksToBounds = true
         self.readButton.layer.cornerRadius = 15
     }
@@ -51,8 +49,6 @@ class BarcodeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
-
 }
 
 extension BarcodeViewController: ReaderViewDelegate {
@@ -60,8 +56,6 @@ extension BarcodeViewController: ReaderViewDelegate {
 
         var title = ""
         var message = ""
-        
-    
         
         switch status {
         case let .success(code):
@@ -72,14 +66,8 @@ extension BarcodeViewController: ReaderViewDelegate {
             }
 
             title = "스캔완료"
-           // message = "\(code)\n\(self.productCompany)"
             print("\(code)")
    
-            
-            
-            
-            
-            
             
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
@@ -96,10 +84,9 @@ extension BarcodeViewController: ReaderViewDelegate {
 
             //let requestURL = "http://openapi.foodsafetykorea.go.kr/api/sample/C005/json/1/5/BAR_CD=8801649120355"
 
+            // JSON 구조정의 #클래스 분리 예정
             struct Response: Codable {
                 let C005:reC005
-
-              
             }
 
             struct reC005: Codable {
@@ -129,9 +116,6 @@ extension BarcodeViewController: ReaderViewDelegate {
                 
             }
 
-
-
-
             let dataTask = session.dataTask(with: requestURL) { (data,response,error) in
                 guard error == nil else {return}
                 
@@ -144,20 +128,12 @@ extension BarcodeViewController: ReaderViewDelegate {
                     
                 }
                 
-                
                 guard let resultData = data else {return}
-              //  let resultString = String(data: resultData, encoding: .utf8)
-                
-               // print("--> result:  \(resultData)")
-               // print("--> result:  \(resultString)")
-                
-                
+  
                 // 파싱 및 트랙 가져오기
                 do{
                     let decoder = JSONDecoder()
-                   
                     let respones = try decoder.decode(Response.self, from: resultData)
-                   
                     self.sendTitle = respones.C005.row!.first!.PRDLST_NM
                     print(respones.C005.RESULT!.MSG)
                     print(respones.C005.row!.first!.BAR_CD)
@@ -168,31 +144,14 @@ extension BarcodeViewController: ReaderViewDelegate {
                     self.productCompany = "\(respones.C005.row!.first!.BSSH_NM)"
                     self.productName = "\(respones.C005.row!.first!.PRDLST_NM)"
                     self.wontEndDay = "\(respones.C005.row!.first!.POG_DAYCNT)"
-                    
-             
-                    
-                  //  let value = respones.C005.row?.first?.BAR_CD
 
-               
-                 
-                    
-                    
-                    
-               
                 } catch let error{
                     print("\(error)")
                 }
-                
-                
-                
             }
-
             dataTask.resume()
 
 
-
-
-            
         case .fail:
             title = "에러"
             message = "QR코드 or 바코드를 인식하지 못했습니다.\n다시 시도해주세요."
@@ -213,21 +172,16 @@ extension BarcodeViewController: ReaderViewDelegate {
         
      
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-     
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { (action) in
             let VC =  self.storyboard?.instantiateViewController(withIdentifier:"EditView") as! EditViewController
             
-            
-            
+
             VC.barcodeTitle = self.sendTitle
             VC.modalPresentationStyle = .currentContext
             
             self.present(VC, animated: false, completion: nil)
             
         }
-                                    
-                                
-        
         )
 
         alert.addAction(okAction)

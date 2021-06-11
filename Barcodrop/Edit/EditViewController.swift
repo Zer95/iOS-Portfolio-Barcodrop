@@ -12,45 +12,41 @@ import TextFieldEffects
 
 class EditViewController: UIViewController {
 
-    // coreDate
+    // coreDate settings
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
-    
-    
+
+    // 입력 데이터 저장변수
+    var barcodeTitle = ""
+    var categotySave = ""
     var saveURL = ""
     
+    // Data Input 아웃렛 연결
+    @IBOutlet weak var inputText: HoshiTextField!  // 제목
+    @IBOutlet weak var endDayPicker: UIDatePicker! // 유통기한
+    @IBOutlet weak var buyDayPicker: UIDatePicker! // 구입일
     
-    @IBOutlet weak var inputText: HoshiTextField!
-    
-    
-    
+    // 카테고리 버튼
+    @IBOutlet weak var freshBtn: UIButton! //냉장
+    @IBOutlet weak var iceBtn: UIButton!   //냉동
+    @IBOutlet weak var roomtemperatureBtn: UIButton! // 실온
+    @IBOutlet weak var etcBtn: UIButton! // 기타
     
     private var datePicker: UIDatePicker? // 데이터 피커
-    @IBOutlet weak var endDayPicker: UIDatePicker!
-    @IBOutlet weak var buyDayPicker: UIDatePicker!
-    
-    @IBOutlet weak var freshBtn: UIButton!
-    @IBOutlet weak var iceBtn: UIButton!
-    @IBOutlet weak var roomtemperatureBtn: UIButton!
-    @IBOutlet weak var etcBtn: UIButton!
-    
-    
-    var barcodeTitle = "기본"
-    var categotySave = ""
-    
-    @IBOutlet weak var imageView: UIImageView!
     let picker = UIImagePickerController() // 이미지 컨트롤러
-    
+
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ScrollView: UIScrollView!
     
         override func viewDidLoad() {
         super.viewDidLoad()
-            inputText.text = barcodeTitle
-            
             print("바코드에서 넘어온 값: \(barcodeTitle)")
+            
+            inputText.text = barcodeTitle // 바코드 스캔후 넘어온 상품명 입력
+            
+            // 유통기한 피커 UI 설정
             endDayPicker.backgroundColor = .white
             endDayPicker.tintColor = .orange
-    
             picker.delegate = self
             
         // scrollView 클릭시 키보드 내리기
@@ -59,15 +55,14 @@ class EditViewController: UIViewController {
         singleTapGestureRecognizer.isEnabled = true
         singleTapGestureRecognizer.cancelsTouchesInView = false
         ScrollView.addGestureRecognizer(singleTapGestureRecognizer)
-
-       
-        
-        
     }
     
-    //coredata
- 
+    // 키보드 내리기
+    @objc func MyTapMethod(sender: UITapGestureRecognizer) {
+          self.view.endEditing(true)
+      }
     
+    // MARK: - Core Data 사용 기능
     func createItem(title: String) {
         let newItem = ProductListItem(context: context)
         newItem.productName = title
@@ -75,8 +70,6 @@ class EditViewController: UIViewController {
         newItem.buyDay = buyDayPicker.date
         newItem.endDay = endDayPicker.date
         newItem.imgURL = self.saveURL
-        
-        
         do{
             try context.save()
      
@@ -96,37 +89,22 @@ class EditViewController: UIViewController {
             }
         }
         catch {
-            //error
         }
     }
-    
-    
-    
-    
-      @objc func MyTapMethod(sender: UITapGestureRecognizer) {
-            self.view.endEditing(true)
-        }
 
-
-    
-    
-    
+    // 메뉴바 클릭시 동작
     @IBAction func cancle_Btn(_ sender: Any) {
         self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
     }
     
     @IBAction func success_Btn(_ sender: Any) {
         
-      
-        
         //coredata 저장
-        
         guard let title = inputText.text else {
             return
         }
-        
+    
         self.createItem(title: title)
-        
         print("현재 입력된 값--------")
         print("상품명:\(title)")
         print("카테고리: \(categotySave)")
@@ -150,15 +128,11 @@ class EditViewController: UIViewController {
                print(error)
            }
         
-        
-        //옵저버
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"),object: nil)
-        
-        
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"),object: nil) // 실시간 reload 되게 Notification 보내기
         self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
     }
     
+    // 카메라 & 앨범 load
     @IBAction func addImage(_ sender: Any) {
         let alert =  UIAlertController(title: "타이뜰", message: "원하는 메세지", preferredStyle: .actionSheet)
                 let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
@@ -168,7 +142,6 @@ class EditViewController: UIViewController {
                 
                 }
                 let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-                
                 alert.addAction(library)
                 alert.addAction(camera)
                 alert.addAction(cancel)
@@ -195,8 +168,7 @@ class EditViewController: UIViewController {
       }
 
     
-
-
+    
     @IBAction func freshBtn(_ sender: Any) {
         categotySave = "냉장"
         freshBtn.isSelected = true
@@ -235,40 +207,14 @@ class EditViewController: UIViewController {
 }
 
 extension EditViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
-
-        
         if let image = info[.originalImage] as? UIImage {
             imageView.image = image
             print("log[이미지 값 확인]: \(image)")
-            
             guard let title = inputText.text else {
                 return
             }
-            
-            
-//            let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
-//               let newPath = path.appendingPathComponent("\(title).jpg") //Possibly you Can pass the dynamic name here
-//               // Save this name in core Data using you code as a String.
-//
-//            self.saveURL =  ("\(newPath)")
-//
-//            let jpgImageData = image.jpegData(compressionQuality: 1.0)
-//               do {
-//                   try jpgImageData!.write(to: newPath)
-//               } catch {
-//                   print(error)
-//               }
            }
-            
-            
-        
-        
-       
-        
-
         dismiss(animated: true, completion: nil)
 
     }

@@ -10,7 +10,6 @@ import UIKit
 struct ProductInfo {
     let name: String
     let D_day: String
-    
     var image: UIImage? {
         return UIImage(named: "\(name).jpg")
     }

@@ -30,10 +30,7 @@ extension UITextField {
         toolBar.tintColor = .black
         toolBar.setItems([cancel,flexbleSpace,done], animated: false)
         self.inputAccessoryView = toolBar
-        
-        
     }
-    
     
     @objc func tapCancel() {
         self.resignFirstResponder()

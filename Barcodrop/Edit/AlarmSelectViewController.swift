@@ -17,7 +17,7 @@ class AlarmSelectViewController: UIViewController {
         viewMain.addGestureRecognizer(tapGestureRecognizer)
 
     }
-    
+
     @objc func viewMapTapped(sender: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }
