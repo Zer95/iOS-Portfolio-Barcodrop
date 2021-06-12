@@ -27,6 +27,7 @@ class DetailViewController: UIViewController {
     var re_category:String = ""
     var re_buyDay:Date = Date()
     var re_endDay:Date = Date()
+    var re_dDay:Int = 0
  
     
     override func viewDidLoad() {
@@ -38,6 +39,27 @@ class DetailViewController: UIViewController {
         category_lable.text = re_category
         buyDay_lable.text = "구입일: " + DateToString(RE_Date: re_buyDay)
         endDay_lable.text = "유통기한: " + DateToString(RE_Date: re_endDay)
+        print("넘어온 디데이 값은:\(re_dDay)")
+        
+        // D-day 값 세팅
+        let calendar = Calendar.current
+        let currentDate = Date()
+        func days(from date: Date) -> Int {
+            return calendar.dateComponents([.day], from: date, to: currentDate).day!
+        }
+        let dDay =  days(from: re_endDay)
+        
+        // cell D-day
+        if dDay > 0 {
+            d_day_lable.text = "D+\(dDay)"
+            d_day_lable.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else if dDay < 0{
+            d_day_lable.text = "D\(dDay)"
+            d_day_lable.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+        } else {
+            d_day_lable.text = "D-day"
+            d_day_lable.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+        }
         
         // 이미지 세팅
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory

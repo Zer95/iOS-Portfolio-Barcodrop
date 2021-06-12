@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // view 로드전 준비 -> detailView 전송시 필요한 객체 담기
@@ -131,8 +132,32 @@ extension HomeViewController: UICollectionViewDataSource{
         
         // 각 cell에 데이터 매칭
         let model = models[indexPath.row]
+        // cell 제목
         cell.Title?.text = model.productName
-        cell.D_day.text = model.category
+     
+        
+        // 날짜 계산하기
+        let calendar = Calendar.current
+        let currentDate = Date()
+        func days(from date: Date) -> Int {
+            return calendar.dateComponents([.day], from: date, to: currentDate).day!
+        }
+        let dDay =  days(from: model.endDay!)
+        
+        // cell D-day
+        if dDay > 0 {
+            cell.D_day?.text = "D+\(dDay)"
+            cell.D_day?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else if dDay < 0{
+            cell.D_day?.text = "D\(dDay)"
+            cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+        } else {
+            cell.D_day?.text = "D-day"
+            cell.D_day?.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+        }
+
+        print("디데이는 정확할까:\(dDay)")
+    
        
         // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
@@ -174,3 +199,5 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
     }
 }
+
+
