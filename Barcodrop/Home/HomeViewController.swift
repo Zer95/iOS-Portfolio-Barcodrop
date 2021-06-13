@@ -10,10 +10,12 @@ import MaterialComponents.MaterialButtons
 
 class HomeViewController: UIViewController {
     
-    // coreDate
+    // longPress
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     
+    // 길게 클릭
+    var longpress = UILongPressGestureRecognizer()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -40,6 +42,33 @@ class HomeViewController: UIViewController {
         
         // 데이터 저장 후 바로 reload 옵저버
         NotificationCenter.default.addObserver(self,selector: #selector(obServing),name: NSNotification.Name(rawValue: "reload"),object: nil)
+    
+        // longPress
+        longpress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized))
+        collectionView.addGestureRecognizer(longpress)
+    }
+    
+    @objc func longPressGestureRecognized(gestureRecognizer: UIGestureRecognizer) {
+            let longPress = gestureRecognizer as! UILongPressGestureRecognizer
+            if longPress.state == UIGestureRecognizer.State.began {
+                let locationInColletionView = longPress.location(in: collectionView)
+                let indexPath = collectionView?.indexPathForItem(at: locationInColletionView)
+                print("길게게게:\(indexPath!)")
+                
+                // alert창
+                let alert =  UIAlertController(title: "컨텐츠", message: "원하는 메뉴선택", preferredStyle: .actionSheet)
+                        let edit =  UIAlertAction(title: "수정", style: .default) { (action) in print("수정")
+                        }
+                        let delete =  UIAlertAction(title: "삭제", style: .default) { (action) in
+                            print("수정")
+                        
+                        }
+                        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+                        alert.addAction(edit)
+                        alert.addAction(delete)
+                        alert.addAction(cancel)
+                        present(alert, animated: true, completion: nil)
+            }
     }
     
     @objc private func obServing(){
