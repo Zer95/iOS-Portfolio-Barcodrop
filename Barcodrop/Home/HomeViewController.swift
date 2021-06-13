@@ -53,6 +53,8 @@ class HomeViewController: UIViewController {
             if longPress.state == UIGestureRecognizer.State.began {
                 let locationInColletionView = longPress.location(in: collectionView)
                 let indexPath = collectionView?.indexPathForItem(at: locationInColletionView)
+                
+                let item = models[indexPath!.row]
                 print("길게게게:\(indexPath!)")
                 
                 // alert창
@@ -60,7 +62,7 @@ class HomeViewController: UIViewController {
                         let edit =  UIAlertAction(title: "수정", style: .default) { (action) in print("수정")
                         }
                         let delete =  UIAlertAction(title: "삭제", style: .default) { (action) in
-                            print("수정")
+                            self.deleteItem(item: item)
                         
                         }
                         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -130,6 +132,7 @@ class HomeViewController: UIViewController {
         context.delete(item)
         do{
             try context.save()
+            getAllItems()
         }
         catch {
         }
