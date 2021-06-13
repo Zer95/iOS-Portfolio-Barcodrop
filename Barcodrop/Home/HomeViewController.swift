@@ -53,13 +53,13 @@ class HomeViewController: UIViewController {
             if longPress.state == UIGestureRecognizer.State.began {
                 let locationInColletionView = longPress.location(in: collectionView)
                 let indexPath = collectionView?.indexPathForItem(at: locationInColletionView)
-                
                 let item = models[indexPath!.row]
                 print("길게게게:\(indexPath!)")
                 
                 // alert창
                 let alert =  UIAlertController(title: "컨텐츠", message: "원하는 메뉴선택", preferredStyle: .actionSheet)
-                        let edit =  UIAlertAction(title: "수정", style: .default) { (action) in print("수정")
+                        let edit =  UIAlertAction(title: "수정", style: .default) { (action) in
+                            self.updateItem(item: item, path: indexPath!.row)
                         }
                         let delete =  UIAlertAction(title: "삭제", style: .default) { (action) in
                             self.deleteItem(item: item)
@@ -138,13 +138,12 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func updateItem(item: ProductListItem, newTitle: String) {
-        item.productName = newTitle
-        do{
-            try context.save()
-        }
-        catch {
-        }
+    func updateItem(item: ProductListItem, path:Int) {
+        let VC =  self.storyboard?.instantiateViewController(withIdentifier:"EditView") as! EditViewController
+        VC.modalPresentationStyle = .fullScreen
+        VC.edit_models = item
+        VC.checkCode = 1
+        self.present(VC, animated: false, completion: nil)
     }
 }
 

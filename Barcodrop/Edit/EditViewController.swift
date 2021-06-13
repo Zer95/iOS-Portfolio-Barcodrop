@@ -16,10 +16,18 @@ class EditViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
 
+    // CODE=0 생성모드, CODE=1 수정모드
+    var checkCode = 0
+    
     // 입력 데이터 저장변수
     var barcodeTitle = ""
     var categotySave = ""
     var saveURL = ""
+    
+    // 수정 데이터 모델 받기
+    var edit_models = ProductListItem()
+    
+   
     
     // Data Input 아웃렛 연결
     @IBOutlet weak var inputText: HoshiTextField!  // 제목
@@ -41,8 +49,15 @@ class EditViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
             print("바코드에서 넘어온 값: \(barcodeTitle)")
-            
-            inputText.text = barcodeTitle // 바코드 스캔후 넘어온 상품명 입력
+            print("수정에서 넘어온  값: \(edit_models)")
+            print("수정 값:\(edit_models.productName!)")
+   
+            if checkCode == 0 {
+                inputText.text = barcodeTitle // 바코드 스캔후 넘어온 상품명 입력
+            }
+            else if checkCode == 1{
+                updateUI()
+            }
             
             // 유통기한 피커 UI 설정
             endDayPicker.backgroundColor = .white
@@ -57,6 +72,42 @@ class EditViewController: UIViewController {
         ScrollView.addGestureRecognizer(singleTapGestureRecognizer)
     }
     
+    // 수정시 로드 한 값 세팅
+    func updateUI(){
+        self.inputText.text = edit_models.productName
+        self.buyDayPicker.date = edit_models.buyDay!
+        self.endDayPicker.date = edit_models.endDay!
+        
+        let re_Category = edit_models.category
+        switch re_Category {
+        case "냉장":
+            freshBtn.isSelected = true
+        case "냉동":
+            iceBtn.isSelected = true
+        case "실온":
+            roomtemperatureBtn.isSelected = true
+        case "기타":
+            etcBtn.isSelected = true
+        default:
+            print("none")
+        }
+        
+        // cell <- 데이터 이미지 load
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+            {
+            let fileNameRead = "\(edit_models.productName!).jpg"
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
+
+            let image    = UIImage(contentsOfFile: imageURL.path)
+            imageView.image = image
+        }
+  
+        
+    }
+    
     // 키보드 내리기
     @objc func MyTapMethod(sender: UITapGestureRecognizer) {
           self.view.endEditing(true)
@@ -64,6 +115,7 @@ class EditViewController: UIViewController {
     
     // MARK: - Core Data 사용 기능
     func createItem(title: String) {
+        if checkCode == 0 {
         let newItem = ProductListItem(context: context)
         newItem.productName = title
         newItem.category = categotySave
@@ -77,6 +129,11 @@ class EditViewController: UIViewController {
         catch {
             
         }
+      }
+        if checkCode == 1 {
+            let item = edit_models
+            updateItem(item: item)
+        }
         
     }
     
@@ -87,6 +144,19 @@ class EditViewController: UIViewController {
             DispatchQueue.main.async {
                 
             }
+        }
+        catch {
+        }
+    }
+    
+    func updateItem(item: ProductListItem) {
+        item.productName = inputText.text
+        item.category = categotySave
+        item.buyDay = buyDayPicker.date
+        item.endDay = endDayPicker.date
+        item.imgURL = self.saveURL
+        do{
+            try context.save()
         }
         catch {
         }
