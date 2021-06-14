@@ -12,6 +12,7 @@ class CategoryViewController: UIViewController {
     var freshRecommendListViewController: freshRecommendListViewController!
     var iceRecommendListViewController: iceRecommendListViewController!
     var roomRecommendListViewController: roomRecommendListViewController!
+    var etcRecommendListViewController: etcRecommendListViewController!
    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -21,11 +22,12 @@ class CategoryViewController: UIViewController {
         } else if segue.identifier == "ice" {
             let destinationVC = segue.destination as? iceRecommendListViewController
             iceRecommendListViewController = destinationVC
-         
         } else if segue.identifier == "room" {
             let destinationVC = segue.destination as? roomRecommendListViewController
             roomRecommendListViewController = destinationVC
-         
+        } else if segue.identifier == "etc" {
+            let destinationVC = segue.destination as? etcRecommendListViewController
+            etcRecommendListViewController = destinationVC
         }
         
     }

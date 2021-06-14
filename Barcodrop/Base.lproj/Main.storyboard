@@ -756,11 +756,11 @@
             <objects>
                 <viewController title="카테고리" id="o2c-Xd-dq3" customClass="CategoryViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8hB-cX-GvU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-jK-zIO">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1117"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1317"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-rU-fly">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="496.66666666666669"/>
@@ -825,7 +825,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C61-tN-GrA">
-                                        <rect key="frame" x="0.0" y="516.66666666666663" width="414" height="599.99999999999989"/>
+                                        <rect key="frame" x="0.0" y="516.66666666666663" width="414" height="799.99999999999989"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYs-aI-iAz">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -854,6 +854,15 @@
                                                     <segue destination="abm-dx-60H" kind="embed" identifier="room" id="gUw-ur-FB5"/>
                                                 </connections>
                                             </containerView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k60-Lx-iYM">
+                                                <rect key="frame" x="0.0" y="600.00000000000011" width="414" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="EpU-BU-Djc"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="F37-Zz-rOA" kind="embed" identifier="etc" id="ku5-V8-4Yt"/>
+                                                </connections>
+                                            </containerView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -879,7 +888,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="카테고리" image="house.fill" catalog="system" id="cpl-9d-kki"/>
-                    <size key="freeformSize" width="414" height="1200"/>
+                    <size key="freeformSize" width="414" height="1400"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm1-Nu-GFk" sceneMemberID="firstResponder"/>
             </objects>
@@ -930,7 +939,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="thumbnailImage" destination="FhE-aV-29M" id="aOi-Mb-tkj"/>
+                                            <outlet property="freshImage" destination="FhE-aV-29M" id="fW9-f4-zZ8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1004,7 +1013,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="thumbnailImage" destination="vhG-kM-6mD" id="w7V-4Q-d5M"/>
+                                            <outlet property="iceImage" destination="vhG-kM-6mD" id="tki-9X-SRc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1078,7 +1087,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="thumbnailImage" destination="Ibo-Bc-Bic" id="R2K-SB-Jhb"/>
+                                            <outlet property="thumbnailImage" destination="Ibo-Bc-Bic" id="7nA-Ya-EYD"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1106,6 +1115,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vG-CT-qir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="392" y="436"/>
+        </scene>
+        <!--Etc Recommend List View Controller-->
+        <scene sceneID="Yyv-hO-Rko">
+            <objects>
+                <viewController id="F37-Zz-rOA" customClass="etcRecommendListViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gE7-dj-77J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평론가 호평 미국 코미디 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGs-iC-IDI">
+                                <rect key="frame" x="8" y="6" width="155" height="19.666666666666668"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3yt-R5-A63">
+                                <rect key="frame" x="0.0" y="30" width="414" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Igb-me-onI"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="4DD-6h-7Fy">
+                                    <size key="itemSize" width="120" height="160"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="etcRecommendCell" id="Kwp-Nz-9Df" customClass="etcRecommendCell" customModule="Barcodrop" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="120" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tWM-bs-Srf">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l6Z-mX-wcC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="l6Z-mX-wcC" secondAttribute="trailing" id="9aG-Gh-m9Z"/>
+                                                <constraint firstItem="l6Z-mX-wcC" firstAttribute="leading" secondItem="tWM-bs-Srf" secondAttribute="leading" id="Zaj-7T-HTa"/>
+                                                <constraint firstAttribute="bottom" secondItem="l6Z-mX-wcC" secondAttribute="bottom" id="xRw-Ih-OVJ"/>
+                                                <constraint firstItem="l6Z-mX-wcC" firstAttribute="top" secondItem="tWM-bs-Srf" secondAttribute="top" id="zmX-0b-DRC"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="etcImage" destination="l6Z-mX-wcC" id="ydz-Ie-BM8"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="F37-Zz-rOA" id="lRj-9x-sl6"/>
+                                    <outlet property="delegate" destination="F37-Zz-rOA" id="ySo-FI-5si"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0eL-yE-uZy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UGs-iC-IDI" firstAttribute="top" secondItem="gE7-dj-77J" secondAttribute="top" constant="6" id="6u3-jq-IUh"/>
+                            <constraint firstItem="3yt-R5-A63" firstAttribute="leading" secondItem="gE7-dj-77J" secondAttribute="leading" id="AMu-rF-Ttb"/>
+                            <constraint firstItem="UGs-iC-IDI" firstAttribute="leading" secondItem="gE7-dj-77J" secondAttribute="leading" constant="8" id="MTd-PO-qrw"/>
+                            <constraint firstAttribute="trailing" secondItem="3yt-R5-A63" secondAttribute="trailing" id="Xra-ba-2O4"/>
+                            <constraint firstAttribute="bottom" secondItem="3yt-R5-A63" secondAttribute="bottom" constant="10" id="dlR-cG-G3o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="3yt-R5-A63" id="Koy-Kv-amj"/>
+                        <outlet property="sectionTitle" destination="UGs-iC-IDI" id="2cR-9C-xqM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AiA-WR-2UZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="389" y="654"/>
         </scene>
     </scenes>
     <designables>

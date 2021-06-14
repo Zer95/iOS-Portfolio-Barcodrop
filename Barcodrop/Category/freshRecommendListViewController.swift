@@ -72,7 +72,7 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
 
             let image    = UIImage(contentsOfFile: imageURL.path)
-            cell.thumbnailImage.image = image
+            cell.freshImage.image = image
         }
         return cell
     }
@@ -85,11 +85,7 @@ extension freshRecommendListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
-
 class freshRecommendCell: UICollectionViewCell {
-    @IBOutlet weak var thumbnailImage:UIImageView!
+    @IBOutlet weak var freshImage:UIImageView!
 }
-
-
 

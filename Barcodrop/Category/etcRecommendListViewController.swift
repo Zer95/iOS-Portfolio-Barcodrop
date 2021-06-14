@@ -1,5 +1,5 @@
 //
-//  iceRecommendListViewController.swift
+//  etcRecommendListViewController.swift
 //  Barcodrop
 //
 //  Created by SG on 2021/06/14.
@@ -8,8 +8,7 @@
 import UIKit
 import CoreData
 
-class iceRecommendListViewController: UIViewController {
-
+class etcRecommendListViewController: UIViewController {
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var collectionView:UICollectionView!
    
@@ -19,7 +18,7 @@ class iceRecommendListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionTitle.text = "냉동"
+        sectionTitle.text = "기타"
         getAllItems()
     }
     
@@ -32,7 +31,7 @@ class iceRecommendListViewController: UIViewController {
         do {
            
             let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
-            let predite = NSPredicate(format: "category == %@","냉동")
+            let predite = NSPredicate(format: "category == %@","기타")
             fetchRequest.predicate = predite
             
             models = try context.fetch(fetchRequest)
@@ -46,7 +45,7 @@ class iceRecommendListViewController: UIViewController {
     }
 }
 
-extension iceRecommendListViewController: UICollectionViewDataSource {
+extension etcRecommendListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return viewModel.numOfItems
         return models.count
@@ -54,7 +53,7 @@ extension iceRecommendListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iceRecommendCell", for: indexPath) as? iceRecommendCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "etcRecommendCell", for: indexPath) as? etcRecommendCell else {
             return UICollectionViewCell()
         }
 
@@ -72,23 +71,20 @@ extension iceRecommendListViewController: UICollectionViewDataSource {
             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
 
             let image    = UIImage(contentsOfFile: imageURL.path)
-            cell.iceImage.image = image
+            cell.etcImage.image = image
         }
         return cell
     }
 }
 
 
-extension iceRecommendListViewController: UICollectionViewDelegateFlowLayout {
+extension etcRecommendListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 120, height: 160)
     }
 }
 
-class iceRecommendCell: UICollectionViewCell {
-    @IBOutlet weak var iceImage:UIImageView!
+class etcRecommendCell: UICollectionViewCell {
+    @IBOutlet weak var etcImage:UIImageView!
+    
 }
-
-
-
-
