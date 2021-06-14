@@ -48,9 +48,7 @@ class EditViewController: UIViewController {
     
         override func viewDidLoad() {
         super.viewDidLoad()
-            print("바코드에서 넘어온 값: \(barcodeTitle)")
-            print("수정에서 넘어온  값: \(edit_models)")
-            print("수정 값:\(edit_models.productName!)")
+
    
             if checkCode == 0 {
                 inputText.text = barcodeTitle // 바코드 스캔후 넘어온 상품명 입력

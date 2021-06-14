@@ -7,10 +7,11 @@
 
 import UIKit
 import MaterialComponents.MaterialButtons
+import CoreData
 
 class HomeViewController: UIViewController {
     
-    // longPress
+
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     
@@ -107,6 +108,7 @@ class HomeViewController: UIViewController {
     func getAllItems() {
         do {
             models = try context.fetch(ProductListItem.fetchRequest())
+     
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

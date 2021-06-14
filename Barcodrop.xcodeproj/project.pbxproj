@@ -10,6 +10,8 @@
 		6B8FB47B46F45EE468800B18 /* Pods_Barcodrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DF504C4C45D6ABBA3CE992 /* Pods_Barcodrop.framework */; };
 		7F6F0DF98443B8D521CC33F1 /* Pods_BarcodropTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9B128D7F4F8DB4FF811506 /* Pods_BarcodropTests.framework */; };
 		9CD183286D17F9B43F96120F /* Pods_Barcodrop_BarcodropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */; };
+		D2041B4826773E2600DEDAF4 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */; };
+		D2041B4A26773E4900DEDAF4 /* RecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B4926773E4900DEDAF4 /* RecommendListViewController.swift */; };
 		D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */; };
 		D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B3266536C3007CF148 /* AppDelegate.swift */; };
 		D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B5266536C3007CF148 /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		A26CAB178CE5A3E309217B18 /* Pods-Barcodrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barcodrop.release.xcconfig"; path = "Target Support Files/Pods-Barcodrop/Pods-Barcodrop.release.xcconfig"; sourceTree = "<group>"; };
 		AA9B128D7F4F8DB4FF811506 /* Pods_BarcodropTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarcodropTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop_BarcodropUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		D2041B4926773E4900DEDAF4 /* RecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewController.swift; sourceTree = "<group>"; };
 		D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuViewController.swift; sourceTree = "<group>"; };
 		D24611B0266536C3007CF148 /* Barcodrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barcodrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24611B3266536C3007CF148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		D24611E3266539C0007CF148 /* CBSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSampleViewController.swift; sourceTree = "<group>"; };
 		D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
-		D28973B4267101E000AE2F7C /* ProductListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductListItem+CoreDataProperties.swift"; path = "../../ProductListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D28973B4267101E000AE2F7C /* ProductListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductListItem+CoreDataProperties.swift"; path = "../Category/ProductListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D2A8204B26708F40005E04B1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D2041B4626773E0D00DEDAF4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */,
+				D2041B4926773E4900DEDAF4 /* RecommendListViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D208CE0D266F95D10025ECDE /* Edit */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +195,7 @@
 				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
 				D2A8205126709057005E04B1 /* Data */,
 				D2DB6E89266740F000598CCA /* Home */,
+				D2041B4626773E0D00DEDAF4 /* Category */,
 				D208CE0D266F95D10025ECDE /* Edit */,
 				D24611B9266536C3007CF148 /* Main.storyboard */,
 				D24611C1266536C4007CF148 /* Info.plist */,
@@ -482,10 +496,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2041B4A26773E4900DEDAF4 /* RecommendListViewController.swift in Sources */,
 				D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */,
 				D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */,
 				D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */,
 				D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */,
+				D2041B4826773E2600DEDAF4 /* CategoryViewController.swift in Sources */,
 				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,
 				D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */,
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
