@@ -9,27 +9,25 @@ import UIKit
 
 class CategoryViewController: UIViewController {
 
-    var awardRecommendListViewController: RecommendListViewController!
-    var hotRecommendListViewController: RecommendListViewController!
-    var myRecommendListViewController: RecommendListViewController!
+    var freshRecommendListViewController: freshRecommendListViewController!
+    var iceRecommendListViewController: iceRecommendListViewController!
+    var roomRecommendListViewController: roomRecommendListViewController!
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "award" {
-            let destinationVC = segue.destination as? RecommendListViewController
-            awardRecommendListViewController = destinationVC
-            awardRecommendListViewController.viewModel.updateType(.award)
-         //   awardRecommendListViewController.viewModel.fetchItems()
-        } else if segue.identifier == "hot" {
-            let destinationVC = segue.destination as? RecommendListViewController
-            hotRecommendListViewController = destinationVC
-            hotRecommendListViewController.viewModel.updateType(.hot)
-         //   hotRecommendListViewController.viewModel.fetchItems()
-        } else if segue.identifier == "my" {
-            let destinationVC = segue.destination as? RecommendListViewController
-            myRecommendListViewController = destinationVC
-            myRecommendListViewController.viewModel.updateType(.my)
-          //  myRecommendListViewController.viewModel.fetchItems()
+        if segue.identifier == "fresh" {
+            let destinationVC = segue.destination as? freshRecommendListViewController
+            freshRecommendListViewController = destinationVC
+        } else if segue.identifier == "ice" {
+            let destinationVC = segue.destination as? iceRecommendListViewController
+            iceRecommendListViewController = destinationVC
+         
+        } else if segue.identifier == "room" {
+            let destinationVC = segue.destination as? roomRecommendListViewController
+            roomRecommendListViewController = destinationVC
+         
         }
+        
     }
     
     override func viewDidLoad() {

@@ -11,7 +11,9 @@
 		7F6F0DF98443B8D521CC33F1 /* Pods_BarcodropTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9B128D7F4F8DB4FF811506 /* Pods_BarcodropTests.framework */; };
 		9CD183286D17F9B43F96120F /* Pods_Barcodrop_BarcodropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */; };
 		D2041B4826773E2600DEDAF4 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */; };
-		D2041B4A26773E4900DEDAF4 /* RecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B4926773E4900DEDAF4 /* RecommendListViewController.swift */; };
+		D2041B4A26773E4900DEDAF4 /* freshRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B4926773E4900DEDAF4 /* freshRecommendListViewController.swift */; };
+		D2041B52267763C700DEDAF4 /* iceRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B51267763C700DEDAF4 /* iceRecommendListViewController.swift */; };
+		D2041B5426776DFD00DEDAF4 /* roomRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B5326776DFD00DEDAF4 /* roomRecommendListViewController.swift */; };
 		D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */; };
 		D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B3266536C3007CF148 /* AppDelegate.swift */; };
 		D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B5266536C3007CF148 /* SceneDelegate.swift */; };
@@ -63,7 +65,9 @@
 		AA9B128D7F4F8DB4FF811506 /* Pods_BarcodropTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarcodropTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop_BarcodropUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		D2041B4926773E4900DEDAF4 /* RecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListViewController.swift; sourceTree = "<group>"; };
+		D2041B4926773E4900DEDAF4 /* freshRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freshRecommendListViewController.swift; sourceTree = "<group>"; };
+		D2041B51267763C700DEDAF4 /* iceRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iceRecommendListViewController.swift; sourceTree = "<group>"; };
+		D2041B5326776DFD00DEDAF4 /* roomRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomRecommendListViewController.swift; sourceTree = "<group>"; };
 		D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuViewController.swift; sourceTree = "<group>"; };
 		D24611B0266536C3007CF148 /* Barcodrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barcodrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24611B3266536C3007CF148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */,
-				D2041B4926773E4900DEDAF4 /* RecommendListViewController.swift */,
+				D2041B4926773E4900DEDAF4 /* freshRecommendListViewController.swift */,
+				D2041B51267763C700DEDAF4 /* iceRecommendListViewController.swift */,
+				D2041B5326776DFD00DEDAF4 /* roomRecommendListViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -496,12 +502,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2041B4A26773E4900DEDAF4 /* RecommendListViewController.swift in Sources */,
+				D2041B4A26773E4900DEDAF4 /* freshRecommendListViewController.swift in Sources */,
+				D2041B52267763C700DEDAF4 /* iceRecommendListViewController.swift in Sources */,
 				D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */,
 				D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */,
 				D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */,
 				D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */,
 				D2041B4826773E2600DEDAF4 /* CategoryViewController.swift in Sources */,
+				D2041B5426776DFD00DEDAF4 /* roomRecommendListViewController.swift in Sources */,
 				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,
 				D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */,
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
