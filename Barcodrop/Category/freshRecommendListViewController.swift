@@ -19,7 +19,8 @@ class freshRecommendListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionTitle.text = "냉장"
+        sectionTitle.text = "🍎냉장🍎"
+        
         getAllItems()
     }
     
@@ -73,6 +74,8 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
 
             let image    = UIImage(contentsOfFile: imageURL.path)
             cell.freshImage.image = image
+            cell.freshImage.layer.cornerRadius = 10
+            
         }
         return cell
     }

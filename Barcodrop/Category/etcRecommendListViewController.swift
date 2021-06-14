@@ -18,7 +18,7 @@ class etcRecommendListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionTitle.text = "기타"
+        sectionTitle.text = "🛍기타🛍"
         getAllItems()
     }
     
@@ -72,6 +72,7 @@ extension etcRecommendListViewController: UICollectionViewDataSource {
 
             let image    = UIImage(contentsOfFile: imageURL.path)
             cell.etcImage.image = image
+            cell.etcImage.layer.cornerRadius = 10
         }
         return cell
     }

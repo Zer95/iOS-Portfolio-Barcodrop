@@ -19,7 +19,7 @@ class iceRecommendListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionTitle.text = "냉동"
+        sectionTitle.text = "🧊냉동🧊"
         getAllItems()
     }
     
@@ -73,6 +73,7 @@ extension iceRecommendListViewController: UICollectionViewDataSource {
 
             let image    = UIImage(contentsOfFile: imageURL.path)
             cell.iceImage.image = image
+            cell.iceImage.layer.cornerRadius = 10
         }
         return cell
     }

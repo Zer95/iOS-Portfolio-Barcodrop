@@ -18,7 +18,7 @@ class roomRecommendListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionTitle.text = "실온"
+        sectionTitle.text = "🌡실온🌡"
         getAllItems()
     }
     
@@ -72,6 +72,7 @@ extension roomRecommendListViewController: UICollectionViewDataSource {
 
             let image    = UIImage(contentsOfFile: imageURL.path)
             cell.thumbnailImage.image = image
+            cell.thumbnailImage.layer.cornerRadius = 10
         }
         return cell
     }
