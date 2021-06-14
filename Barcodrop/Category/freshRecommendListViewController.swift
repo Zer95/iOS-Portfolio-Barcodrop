@@ -13,9 +13,13 @@ class freshRecommendListViewController: UIViewController {
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var collectionView:UICollectionView!
    
-
+    
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +85,20 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
     }
 }
 
+extension freshRecommendListViewController: UICollectionViewDelegate {
+    
+    // 셀 클릭시 동작하는 부분
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let VC =  self.storyboard?.instantiateViewController(withIdentifier:"showDetail") as! DetailViewController
+        VC.modalPresentationStyle = .automatic
+        let productInfo = models[indexPath.row]
+        VC.re_title = productInfo.productName!
+        VC.re_category = productInfo.category!
+        VC.re_buyDay = productInfo.buyDay!
+        VC.re_endDay = productInfo.endDay!
+    self.present(VC, animated: true, completion: nil)
+    }
+}
 
 extension freshRecommendListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

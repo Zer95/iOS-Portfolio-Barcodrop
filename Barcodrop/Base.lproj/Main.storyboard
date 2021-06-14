@@ -143,7 +143,7 @@
         <!--Detail View Controller-->
         <scene sceneID="gRa-wS-Stj">
             <objects>
-                <viewController id="GAZ-YS-Yv4" customClass="DetailViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showDetail" id="GAZ-YS-Yv4" customClass="DetailViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0hZ-GH-Rvd">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIH-ys-8Om" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="-581"/>
+            <point key="canvasLocation" x="1320" y="-541"/>
         </scene>
         <!--Flashy Tab Bar Controller-->
         <scene sceneID="FbO-kn-Siv">
@@ -356,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAV-bA-KqA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="893"/>
+            <point key="canvasLocation" x="1489" y="948"/>
         </scene>
         <!--Floating Menu View Controller-->
         <scene sceneID="O1f-kM-HRI">

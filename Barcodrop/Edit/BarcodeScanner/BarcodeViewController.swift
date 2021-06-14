@@ -173,7 +173,7 @@ extension BarcodeViewController: ReaderViewDelegate {
      
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { (action) in
-            let VC =  self.storyboard?.instantiateViewController(withIdentifier:"EditView") as! EditViewController
+        let VC =  self.storyboard?.instantiateViewController(withIdentifier:"EditView") as! EditViewController
             
 
             VC.barcodeTitle = self.sendTitle
