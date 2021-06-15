@@ -19,7 +19,9 @@ class freshRecommendListViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        getAllItems()
+    }
     
     
     override func viewDidLoad() {
