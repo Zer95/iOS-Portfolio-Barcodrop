@@ -1038,6 +1038,10 @@
                     <connections>
                         <outlet property="cellView" destination="9d4-3f-cAK" id="Ycm-hv-SsR"/>
                         <outlet property="collectionView" destination="08m-kS-4ze" id="Jr6-y5-iCw"/>
+                        <outlet property="dangerLable" destination="Vxe-5E-Ldq" id="nRf-qf-qFe"/>
+                        <outlet property="normalLable" destination="SRv-Da-hko" id="lSf-Xl-7jt"/>
+                        <outlet property="passLable" destination="Vbc-Um-Weo" id="N3n-GA-pQ7"/>
+                        <outlet property="safeLable" destination="AOX-QH-CxT" id="67F-bm-mjy"/>
                         <outlet property="sectionTitle" destination="iH7-9T-noP" id="v0e-UX-PJo"/>
                     </connections>
                 </viewController>
@@ -1169,6 +1173,10 @@
                     <connections>
                         <outlet property="cellView" destination="6TN-va-XW5" id="nPs-3j-1LH"/>
                         <outlet property="collectionView" destination="UsE-4K-Ty1" id="Jal-lV-C1B"/>
+                        <outlet property="dangerLable" destination="V4V-x9-CVv" id="MNJ-98-neK"/>
+                        <outlet property="normalLable" destination="T6w-ze-aSc" id="rQU-Pu-Yi9"/>
+                        <outlet property="passLable" destination="IRc-9n-5G3" id="AjJ-af-39s"/>
+                        <outlet property="safeLable" destination="zTo-Ke-geT" id="RXU-MH-uwk"/>
                         <outlet property="sectionTitle" destination="ovi-gC-vci" id="lxA-z0-jO0"/>
                     </connections>
                 </viewController>
@@ -1300,6 +1308,10 @@
                     <connections>
                         <outlet property="cellView" destination="Avn-Z5-ThS" id="qR6-Ia-FyG"/>
                         <outlet property="collectionView" destination="qKa-sC-vBK" id="YvT-B4-Stn"/>
+                        <outlet property="dangerLable" destination="BKD-ro-zWs" id="2Ob-ZF-sBI"/>
+                        <outlet property="normalLable" destination="jUP-k7-bo0" id="xts-1E-c3f"/>
+                        <outlet property="passLable" destination="tvG-CX-ctC" id="2rW-TB-atA"/>
+                        <outlet property="safeLable" destination="CwP-Ob-wrC" id="jbP-bS-smC"/>
                         <outlet property="sectionTitle" destination="P7u-ld-ryg" id="4w3-yS-je4"/>
                     </connections>
                 </viewController>
@@ -1431,6 +1443,10 @@
                     <connections>
                         <outlet property="cellView" destination="gE7-dj-77J" id="1Vc-9b-I7I"/>
                         <outlet property="collectionView" destination="3yt-R5-A63" id="Koy-Kv-amj"/>
+                        <outlet property="dangerLable" destination="o0f-oR-IaL" id="aN6-P3-zx7"/>
+                        <outlet property="normalLable" destination="h4j-Nd-ebo" id="Ngc-MM-4BH"/>
+                        <outlet property="passLable" destination="QWp-HQ-2NS" id="nom-RO-9t3"/>
+                        <outlet property="safeLable" destination="s7H-go-7K5" id="2zf-An-yWm"/>
                         <outlet property="sectionTitle" destination="UGs-iC-IDI" id="2cR-9C-xqM"/>
                     </connections>
                 </viewController>

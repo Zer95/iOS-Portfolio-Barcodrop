@@ -13,7 +13,17 @@ class roomRecommendListViewController: UIViewController {
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet var cellView: UIView!
     
-
+    @IBOutlet weak var safeLable: UILabel!
+    @IBOutlet weak var normalLable: UILabel!
+    @IBOutlet weak var dangerLable: UILabel!
+    @IBOutlet weak var passLable: UILabel!
+    
+    var dateCnt = [Date]()
+    var safeCnt = [Int]()
+    var normalCnt = [Int]()
+    var dangerCnt = [Int]()
+    var passCnt = [Int]()
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     
@@ -34,8 +44,50 @@ class roomRecommendListViewController: UIViewController {
              cellView.layer.shadowOpacity = 0.5
              cellView.layer.shadowRadius = 4.0
         getAllItems()
+        let checkCnt = models.count - 1
+        
+        for i in 0...checkCnt {
+
+            self.dateCnt.append(models[i].endDay!)
+        }
+        print("데이터 확인: \(dateCnt)")
+        
+        for i  in 0...checkCnt {
+            // 날짜 계산하기
+            let calendar = Calendar.current
+            let currentDate = Date()
+            func days(from date: Date) -> Int {
+                return calendar.dateComponents([.day], from: date, to: currentDate).day!
+            }
+            let dDay =  days(from: dateCnt[i])
+            // cell D-day
+            if dDay > 0 {
+                self.passCnt.append(dDay)
+            
+            }else if dDay == 0{
+                self.dangerCnt.append(dDay)
+      
+            }else if dDay < 0 && dDay > -3 {
+                self.dangerCnt.append(dDay)
+               
+            } else if dDay >= -5 {
+                self.normalCnt.append(dDay)
+              
+            } else if dDay < -5 {
+                self.safeCnt.append(dDay)
+            }
+            
+        }
+        
+        print("세이프 카운트\(self.safeCnt.count)")
+        print("노멀 카운트\(self.normalCnt.count)")
+        print("위험 카운트\(self.dangerCnt.count)")
+        print("지남 카운트\(self.passCnt.count)")
+        safeLable.text = "안전: \(self.safeCnt.count)"
+        normalLable.text = "보통: \(self.normalCnt.count)"
+        dangerLable.text = "위험: \(self.dangerCnt.count)"
+        passLable.text = "지남: \(self.passCnt.count)"
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
      
