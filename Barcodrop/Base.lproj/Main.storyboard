@@ -792,7 +792,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="C61-tN-GrA">
-                                        <rect key="frame" x="0.0" y="516.66666666666652" width="414" height="1021"/>
+                                        <rect key="frame" x="0.0" y="496.66666666666674" width="414" height="1021"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-GC-sQM">
                                                 <rect key="frame" x="15" y="15" width="384" height="229"/>
@@ -804,7 +804,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYs-aI-iAz">
-                                                        <rect key="frame" x="0.0" y="29" width="384" height="200"/>
+                                                        <rect key="frame" x="0.0" y="28.999999999999943" width="384" height="200"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="qSG-jw-aVn"/>
                                                         </constraints>
@@ -815,7 +815,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9d8-LL-nJV">
-                                                <rect key="frame" x="15" y="269" width="384" height="229"/>
+                                                <rect key="frame" x="15" y="268.99999999999994" width="384" height="229"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  냉동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgV-8Y-0cq">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
@@ -835,7 +835,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3hG-wM-hS3">
-                                                <rect key="frame" x="15" y="523.00000000000011" width="384" height="229"/>
+                                                <rect key="frame" x="15" y="523" width="384" height="229"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  실온" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr8-Pl-Z1c">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
@@ -844,7 +844,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raN-bc-SUJ">
-                                                        <rect key="frame" x="0.0" y="29" width="384" height="200"/>
+                                                        <rect key="frame" x="0.0" y="29.000000000000114" width="384" height="200"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="AeE-hE-p09"/>
                                                         </constraints>
@@ -855,7 +855,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f8L-rR-gTz">
-                                                <rect key="frame" x="15" y="777.00000000000011" width="384" height="229"/>
+                                                <rect key="frame" x="15" y="777" width="384" height="229"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  기타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFD-1p-a9o">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
@@ -884,7 +884,7 @@
                                     <constraint firstAttribute="trailing" secondItem="C61-tN-GrA" secondAttribute="trailing" id="JaM-AL-G2h"/>
                                     <constraint firstItem="C61-tN-GrA" firstAttribute="leading" secondItem="5vn-jK-zIO" secondAttribute="leading" id="PHs-LJ-o3z"/>
                                     <constraint firstItem="GhD-rU-fly" firstAttribute="top" secondItem="5vn-jK-zIO" secondAttribute="top" id="WAo-yJ-XqH"/>
-                                    <constraint firstItem="C61-tN-GrA" firstAttribute="top" secondItem="GhD-rU-fly" secondAttribute="bottom" constant="20" id="pfb-UP-Xb3"/>
+                                    <constraint firstItem="C61-tN-GrA" firstAttribute="top" secondItem="GhD-rU-fly" secondAttribute="bottom" id="pfb-UP-Xb3"/>
                                     <constraint firstItem="GhD-rU-fly" firstAttribute="leading" secondItem="5vn-jK-zIO" secondAttribute="leading" id="vaS-B0-nP9"/>
                                 </constraints>
                             </scrollView>
