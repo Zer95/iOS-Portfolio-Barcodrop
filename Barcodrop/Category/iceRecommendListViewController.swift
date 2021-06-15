@@ -77,6 +77,8 @@ extension iceRecommendListViewController: UICollectionViewDataSource {
         // 각 cell에 데이터 매칭
         let model = models[indexPath.row]
         
+        cell.iceTitle.text = model.productName
+        
         // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
@@ -118,6 +120,7 @@ extension iceRecommendListViewController: UICollectionViewDelegateFlowLayout {
 
 class iceRecommendCell: UICollectionViewCell {
     @IBOutlet weak var iceImage:UIImageView!
+    @IBOutlet weak var iceTitle: UILabel!
 }
 
 

@@ -76,6 +76,8 @@ extension etcRecommendListViewController: UICollectionViewDataSource {
         // 각 cell에 데이터 매칭
         let model = models[indexPath.row]
         
+        cell.etcTitle.text = model.productName
+        
         // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
@@ -116,5 +118,6 @@ extension etcRecommendListViewController: UICollectionViewDelegateFlowLayout {
 
 class etcRecommendCell: UICollectionViewCell {
     @IBOutlet weak var etcImage:UIImageView!
+    @IBOutlet weak var etcTitle: UILabel!
     
 }

@@ -87,6 +87,28 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
         // 각 cell에 데이터 매칭
         let model = models[indexPath.row]
         
+        cell.freshTitle.text = model.productName
+        
+        // 날짜 계산하기
+        let calendar = Calendar.current
+        let currentDate = Date()
+        func days(from date: Date) -> Int {
+            return calendar.dateComponents([.day], from: date, to: currentDate).day!
+        }
+        let dDay =  days(from: model.endDay!)
+        
+        // cell D-day
+        if dDay > 0 {
+            
+            cell.freshDday.text = "D-\(dDay)"
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else if dDay < 0{
+            
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+        } else {
+          
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+        }
         
         // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
@@ -129,5 +151,10 @@ extension freshRecommendListViewController: UICollectionViewDelegateFlowLayout {
 
 class freshRecommendCell: UICollectionViewCell {
     @IBOutlet weak var freshImage:UIImageView!
+    @IBOutlet weak var freshTitle: UILabel!
+    @IBOutlet weak var freshDday: UILabel!
+    
+    
+    
 }
 
