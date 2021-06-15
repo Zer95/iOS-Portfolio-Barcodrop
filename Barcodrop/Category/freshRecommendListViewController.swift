@@ -10,9 +10,10 @@ import CoreData
 
 class freshRecommendListViewController: UIViewController {
 
+    // cell 표시
     @IBOutlet weak var sectionTitle: UILabel!
+    
     @IBOutlet weak var collectionView:UICollectionView!
-   
     @IBOutlet var cellView: UIView!
     
     
@@ -40,6 +41,8 @@ class freshRecommendListViewController: UIViewController {
              cellView.layer.shadowOffset = CGSize(width: 1 , height: 1)
              cellView.layer.shadowOpacity = 0.5
              cellView.layer.shadowRadius = 4.0
+        
+
         
         getAllItems()
     }
@@ -70,6 +73,7 @@ class freshRecommendListViewController: UIViewController {
 extension freshRecommendListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return viewModel.numOfItems
+        self.sectionTitle.text = "TOTAL: \(models.count)"
         return models.count
         print("카테고리 개수는\(models.count)")
     }
@@ -82,6 +86,7 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
         
         // 각 cell에 데이터 매칭
         let model = models[indexPath.row]
+        
         
         // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory

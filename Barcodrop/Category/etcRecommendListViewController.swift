@@ -62,6 +62,7 @@ class etcRecommendListViewController: UIViewController {
 extension etcRecommendListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return viewModel.numOfItems
+        self.sectionTitle.text = "TOTAL: \(models.count)"
         return models.count
         print("카테고리 개수는\(models.count)")
     }
