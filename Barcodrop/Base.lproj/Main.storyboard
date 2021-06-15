@@ -1016,26 +1016,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="D-7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgP-kX-Lg8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="20"/>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOf-a2-yqo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Quv-cB-cL8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Y9C-Ns-rjx" secondAttribute="bottom" id="4ca-Ls-piY"/>
+                                                <constraint firstItem="sOf-a2-yqo" firstAttribute="leading" secondItem="P6Z-hC-HzC" secondAttribute="leading" id="7Px-QC-BBM"/>
                                                 <constraint firstItem="Y9C-Ns-rjx" firstAttribute="top" secondItem="FhE-aV-29M" secondAttribute="bottom" constant="3" id="NnU-HC-CHO"/>
-                                                <constraint firstItem="MgP-kX-Lg8" firstAttribute="leading" secondItem="P6Z-hC-HzC" secondAttribute="leading" id="XBl-pU-nF2"/>
                                                 <constraint firstItem="Y9C-Ns-rjx" firstAttribute="leading" secondItem="P6Z-hC-HzC" secondAttribute="leading" constant="5" id="dz0-30-8JT"/>
                                                 <constraint firstAttribute="trailing" secondItem="FhE-aV-29M" secondAttribute="trailing" id="hfW-f3-ouC"/>
+                                                <constraint firstAttribute="trailing" secondItem="sOf-a2-yqo" secondAttribute="trailing" constant="60" id="mHm-E2-dDX"/>
                                                 <constraint firstItem="FhE-aV-29M" firstAttribute="leading" secondItem="P6Z-hC-HzC" secondAttribute="leading" id="r4j-f0-Qf7"/>
+                                                <constraint firstItem="sOf-a2-yqo" firstAttribute="top" secondItem="P6Z-hC-HzC" secondAttribute="top" id="v1b-Op-J9h"/>
                                                 <constraint firstItem="FhE-aV-29M" firstAttribute="top" secondItem="P6Z-hC-HzC" secondAttribute="top" id="wnC-qd-fog"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="freshDday" destination="MgP-kX-Lg8" id="uIH-tJ-2Yo"/>
+                                            <outlet property="freshDday" destination="sOf-a2-yqo" id="dFz-YW-R9R"/>
                                             <outlet property="freshImage" destination="FhE-aV-29M" id="fW9-f4-zZ8"/>
                                             <outlet property="freshTitle" destination="Y9C-Ns-rjx" id="cyW-Rk-woF"/>
                                         </connections>
@@ -1144,17 +1147,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fw-A9-ieu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="O7z-Tu-0P3"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="4fw-A9-ieu" secondAttribute="trailing" constant="60" id="29j-iv-duO"/>
                                                 <constraint firstAttribute="trailing" secondItem="vhG-kM-6mD" secondAttribute="trailing" id="CMn-6m-E3L"/>
+                                                <constraint firstItem="4fw-A9-ieu" firstAttribute="leading" secondItem="VjB-uP-vqF" secondAttribute="leading" id="GAg-BW-rkC"/>
                                                 <constraint firstItem="vhG-kM-6mD" firstAttribute="leading" secondItem="VjB-uP-vqF" secondAttribute="leading" id="JAM-Uc-Aly"/>
                                                 <constraint firstItem="vhG-kM-6mD" firstAttribute="top" secondItem="VjB-uP-vqF" secondAttribute="top" id="KYG-9K-NM8"/>
                                                 <constraint firstItem="XZD-cH-cko" firstAttribute="top" secondItem="vhG-kM-6mD" secondAttribute="bottom" constant="3" id="NeX-Dv-g9X"/>
+                                                <constraint firstItem="4fw-A9-ieu" firstAttribute="top" secondItem="VjB-uP-vqF" secondAttribute="top" id="eH9-iF-U6n"/>
                                                 <constraint firstItem="XZD-cH-cko" firstAttribute="leading" secondItem="VjB-uP-vqF" secondAttribute="leading" constant="5" id="lXf-9k-thm"/>
                                                 <constraint firstAttribute="bottom" secondItem="XZD-cH-cko" secondAttribute="bottom" id="p8N-R9-Iu1"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="iceDday" destination="4fw-A9-ieu" id="aWf-eC-2aR"/>
                                             <outlet property="iceImage" destination="vhG-kM-6mD" id="tki-9X-SRc"/>
                                             <outlet property="iceTitle" destination="XZD-cH-cko" id="D3p-Xp-f22"/>
                                         </connections>
@@ -1263,17 +1278,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqa-Gr-nWh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Q7R-33-5lk"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mkj-MH-e8q" firstAttribute="top" secondItem="Ibo-Bc-Bic" secondAttribute="bottom" constant="3" id="Fkg-jw-UUG"/>
                                                 <constraint firstItem="Ibo-Bc-Bic" firstAttribute="top" secondItem="WSb-2g-BAi" secondAttribute="top" id="FwZ-T2-pz4"/>
+                                                <constraint firstItem="Gqa-Gr-nWh" firstAttribute="leading" secondItem="WSb-2g-BAi" secondAttribute="leading" id="MO1-Nf-dkG"/>
                                                 <constraint firstItem="mkj-MH-e8q" firstAttribute="leading" secondItem="WSb-2g-BAi" secondAttribute="leading" constant="5" id="bcQ-Og-Rzj"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gqa-Gr-nWh" secondAttribute="trailing" constant="60" id="dAF-oa-JAR"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ibo-Bc-Bic" secondAttribute="trailing" id="f5B-K2-gUv"/>
+                                                <constraint firstItem="Gqa-Gr-nWh" firstAttribute="top" secondItem="WSb-2g-BAi" secondAttribute="top" id="fn0-4V-5Ad"/>
                                                 <constraint firstAttribute="bottom" secondItem="mkj-MH-e8q" secondAttribute="bottom" id="gTk-IF-Oae"/>
                                                 <constraint firstItem="Ibo-Bc-Bic" firstAttribute="leading" secondItem="WSb-2g-BAi" secondAttribute="leading" id="vgp-n4-PgB"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="roomDday" destination="Gqa-Gr-nWh" id="bPT-gC-caK"/>
                                             <outlet property="roomTitle" destination="mkj-MH-e8q" id="gHI-ZV-Pc1"/>
                                             <outlet property="thumbnailImage" destination="Ibo-Bc-Bic" id="7nA-Ya-EYD"/>
                                         </connections>
@@ -1382,17 +1409,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oj-Az-zcS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="I39-hN-JPg"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="0oj-Az-zcS" secondAttribute="trailing" constant="60" id="1de-9N-ibf"/>
+                                                <constraint firstItem="0oj-Az-zcS" firstAttribute="leading" secondItem="tWM-bs-Srf" secondAttribute="leading" id="2lw-uI-QQh"/>
                                                 <constraint firstAttribute="trailing" secondItem="l6Z-mX-wcC" secondAttribute="trailing" id="9aG-Gh-m9Z"/>
                                                 <constraint firstAttribute="bottom" secondItem="M0Q-Sj-H3I" secondAttribute="bottom" id="KrL-ow-b5K"/>
                                                 <constraint firstItem="M0Q-Sj-H3I" firstAttribute="leading" secondItem="tWM-bs-Srf" secondAttribute="leading" constant="5" id="V5W-U3-FJ3"/>
                                                 <constraint firstItem="l6Z-mX-wcC" firstAttribute="leading" secondItem="tWM-bs-Srf" secondAttribute="leading" id="Zaj-7T-HTa"/>
+                                                <constraint firstItem="0oj-Az-zcS" firstAttribute="top" secondItem="tWM-bs-Srf" secondAttribute="top" id="ne5-Dc-NAF"/>
                                                 <constraint firstItem="M0Q-Sj-H3I" firstAttribute="top" secondItem="l6Z-mX-wcC" secondAttribute="bottom" constant="3" id="t1w-TH-ZEt"/>
                                                 <constraint firstItem="l6Z-mX-wcC" firstAttribute="top" secondItem="tWM-bs-Srf" secondAttribute="top" id="zmX-0b-DRC"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="etcDday" destination="0oj-Az-zcS" id="tbM-iy-h3c"/>
                                             <outlet property="etcImage" destination="l6Z-mX-wcC" id="ydz-Ie-BM8"/>
                                             <outlet property="etcTitle" destination="M0Q-Sj-H3I" id="GIb-Q4-CB3"/>
                                         </connections>
@@ -1477,6 +1516,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

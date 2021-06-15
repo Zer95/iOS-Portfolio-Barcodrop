@@ -97,17 +97,32 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
         }
         let dDay =  days(from: model.endDay!)
         
+        cell.freshDday.layer.cornerRadius = 10
+        cell.freshDday.layer.borderWidth = 1
+        
         // cell D-day
         if dDay > 0 {
-            
-            cell.freshDday.text = "D-\(dDay)"
+            cell.freshDday.setTitle("D+\(dDay)", for: .normal)
+            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+      
+        }else if dDay == 0{
+            cell.freshDday.setTitle("D-day", for: .normal)
+            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        }else if dDay < 0 && dDay > -3 {
+            cell.freshDday.setTitle("D\(dDay)", for: .normal)
+            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+           
+        } else if dDay >= -5 {
+            cell.freshDday.setTitle("D\(dDay)", for: .normal)
+            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        } else if dDay < -5 {
+            cell.freshDday.setTitle("D\(dDay)", for: .normal)
+            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             cell.freshDday.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        } else if dDay < 0{
-            
-            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
-        } else {
-          
-            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
         }
         
         // cell <- 데이터 이미지 load
@@ -152,8 +167,7 @@ extension freshRecommendListViewController: UICollectionViewDelegateFlowLayout {
 class freshRecommendCell: UICollectionViewCell {
     @IBOutlet weak var freshImage:UIImageView!
     @IBOutlet weak var freshTitle: UILabel!
-    @IBOutlet weak var freshDday: UILabel!
-    
+    @IBOutlet weak var freshDday: UIButton!
     
     
 }

@@ -78,6 +78,42 @@ extension roomRecommendListViewController: UICollectionViewDataSource {
         
         cell.roomTitle.text = model.productName
         
+        // 날짜 계산하기
+        let calendar = Calendar.current
+        let currentDate = Date()
+        func days(from date: Date) -> Int {
+            return calendar.dateComponents([.day], from: date, to: currentDate).day!
+        }
+        let dDay =  days(from: model.endDay!)
+        
+        cell.roomDday.layer.cornerRadius = 10
+        cell.roomDday.layer.borderWidth = 1
+        
+        // cell D-day
+        if dDay > 0 {
+            cell.roomDday.setTitle("D+\(dDay)", for: .normal)
+            cell.roomDday.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            cell.roomDday.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+      
+        }else if dDay == 0{
+            cell.roomDday.setTitle("D-day", for: .normal)
+            cell.roomDday.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            cell.roomDday.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        }else if dDay < 0 && dDay > -3 {
+            cell.roomDday.setTitle("D\(dDay)", for: .normal)
+            cell.roomDday.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            cell.roomDday.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+           
+        } else if dDay >= -5 {
+            cell.roomDday.setTitle("D\(dDay)", for: .normal)
+            cell.roomDday.layer.borderColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            cell.roomDday.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        } else if dDay < -5 {
+            cell.roomDday.setTitle("D\(dDay)", for: .normal)
+            cell.roomDday.layer.borderColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            cell.roomDday.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        }
+        
         // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
@@ -122,6 +158,7 @@ extension roomRecommendListViewController: UICollectionViewDelegateFlowLayout {
 class roomRecommendCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImage:UIImageView!
     @IBOutlet weak var roomTitle: UILabel!
+    @IBOutlet weak var roomDday: UIButton!
 }
 
 
