@@ -14,6 +14,10 @@ class CategoryViewController: UIViewController {
     var roomRecommendListViewController: roomRecommendListViewController!
     var etcRecommendListViewController: etcRecommendListViewController!
    
+    @IBOutlet weak var freshLable: UILabel!
+    @IBOutlet weak var iceLable: UILabel!
+    @IBOutlet weak var roomLable: UILabel!
+    @IBOutlet weak var etcLable: UILabel!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fresh" {
@@ -34,7 +38,29 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        freshLable.attributedText = settingLable(title: "  냉장 ", imgName: "fresh_on.png")
+        freshLable.sizeToFit()
+        iceLable.attributedText = settingLable(title: "  냉동 ", imgName: "iceIcon_on.png")
+        iceLable.sizeToFit()
+        roomLable.attributedText = settingLable(title: "  실온 ", imgName: "room temperature_on.png")
+        roomLable.sizeToFit()
+        etcLable.attributedText = settingLable(title: "  기타 ", imgName: "etc_on.png")
+        etcLable.sizeToFit()
+
+
+      
+    }
+    
+    func settingLable(title:String, imgName:String) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: "")
+        let imageAttachment = NSTextAttachment()
+        attributedString.append(NSAttributedString(string:"\(title)"))
+        imageAttachment.image = UIImage(named: "\(imgName)")
+        imageAttachment.bounds = CGRect(x: 0, y: 0, width: 20, height: 20)
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        return attributedString
+        
     }
     
 }

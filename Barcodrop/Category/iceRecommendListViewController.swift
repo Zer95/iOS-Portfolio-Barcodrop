@@ -20,7 +20,7 @@ class iceRecommendListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionTitle.text = "🧊냉동🧊"
+        sectionTitle.text = ""
         
         // corner radius
              cellView.layer.cornerRadius = 10
@@ -31,9 +31,9 @@ class iceRecommendListViewController: UIViewController {
 
              // shadow
              cellView.layer.shadowColor = UIColor.black.cgColor
-             cellView.layer.shadowOffset = CGSize(width: 3, height: 3)
-             cellView.layer.shadowOpacity = 0.7
-             cellView.layer.shadowRadius = 4.0
+             cellView.layer.shadowOffset = CGSize(width: 1 , height: 1)
+             cellView.layer.shadowOpacity = 0.5
+            cellView.layer.shadowRadius = 4.0
         getAllItems()
     }
     

@@ -756,11 +756,11 @@
             <objects>
                 <viewController title="카테고리" id="o2c-Xd-dq3" customClass="CategoryViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8hB-cX-GvU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-jK-zIO">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1417"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1617"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-rU-fly">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="496.66666666666669"/>
@@ -824,45 +824,89 @@
                                             <constraint firstItem="z4l-ls-CTn" firstAttribute="top" secondItem="GhD-rU-fly" secondAttribute="top" id="qMr-RC-U94"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="C61-tN-GrA">
-                                        <rect key="frame" x="0.0" y="516.66666666666663" width="414" height="874.99999999999989"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="C61-tN-GrA">
+                                        <rect key="frame" x="0.0" y="516.66666666666652" width="414" height="1021"/>
                                         <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYs-aI-iAz">
-                                                <rect key="frame" x="15" y="15" width="384" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="qSG-jw-aVn"/>
-                                                </constraints>
-                                                <connections>
-                                                    <segue destination="mby-Un-onM" kind="embed" identifier="fresh" id="6KZ-Po-Ll2"/>
-                                                </connections>
-                                            </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voT-Iz-GRo">
-                                                <rect key="frame" x="15" y="230" width="384" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="YZh-Nw-5Ao"/>
-                                                </constraints>
-                                                <connections>
-                                                    <segue destination="8t3-2Z-Ps2" kind="embed" identifier="ice" id="yHf-JU-cG7"/>
-                                                </connections>
-                                            </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raN-bc-SUJ">
-                                                <rect key="frame" x="15" y="445" width="384" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="AeE-hE-p09"/>
-                                                </constraints>
-                                                <connections>
-                                                    <segue destination="abm-dx-60H" kind="embed" identifier="room" id="gUw-ur-FB5"/>
-                                                </connections>
-                                            </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k60-Lx-iYM">
-                                                <rect key="frame" x="15" y="660.00000000000011" width="384" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="EpU-BU-Djc"/>
-                                                </constraints>
-                                                <connections>
-                                                    <segue destination="F37-Zz-rOA" kind="embed" identifier="etc" id="ku5-V8-4Yt"/>
-                                                </connections>
-                                            </containerView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-GC-sQM">
+                                                <rect key="frame" x="15" y="15" width="384" height="229"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  냉장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNV-ga-ABF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYs-aI-iAz">
+                                                        <rect key="frame" x="0.0" y="29" width="384" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="qSG-jw-aVn"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <segue destination="mby-Un-onM" kind="embed" identifier="fresh" id="6KZ-Po-Ll2"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9d8-LL-nJV">
+                                                <rect key="frame" x="15" y="269" width="384" height="229"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  냉동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgV-8Y-0cq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voT-Iz-GRo">
+                                                        <rect key="frame" x="0.0" y="29" width="384" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="YZh-Nw-5Ao"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <segue destination="8t3-2Z-Ps2" kind="embed" identifier="ice" id="yHf-JU-cG7"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3hG-wM-hS3">
+                                                <rect key="frame" x="15" y="523.00000000000011" width="384" height="229"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  실온" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr8-Pl-Z1c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raN-bc-SUJ">
+                                                        <rect key="frame" x="0.0" y="29" width="384" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="AeE-hE-p09"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <segue destination="abm-dx-60H" kind="embed" identifier="room" id="gUw-ur-FB5"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f8L-rR-gTz">
+                                                <rect key="frame" x="15" y="777.00000000000011" width="384" height="229"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  기타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFD-1p-a9o">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k60-Lx-iYM">
+                                                        <rect key="frame" x="0.0" y="29" width="384" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="EpU-BU-Djc"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <segue destination="F37-Zz-rOA" kind="embed" identifier="etc" id="ku5-V8-4Yt"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="15" bottom="15" trailing="15"/>
                                     </stackView>
@@ -889,7 +933,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="카테고리" image="house.fill" catalog="system" id="cpl-9d-kki"/>
-                    <size key="freeformSize" width="414" height="1500"/>
+                    <size key="freeformSize" width="414" height="1700"/>
+                    <connections>
+                        <outlet property="etcLable" destination="dFD-1p-a9o" id="kc0-R5-HkB"/>
+                        <outlet property="freshLable" destination="uNV-ga-ABF" id="B7e-J8-nWX"/>
+                        <outlet property="iceLable" destination="SgV-8Y-0cq" id="1cX-XO-lAA"/>
+                        <outlet property="roomLable" destination="Mr8-Pl-Z1c" id="un4-Wk-m0P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm1-Nu-GFk" sceneMemberID="firstResponder"/>
             </objects>
