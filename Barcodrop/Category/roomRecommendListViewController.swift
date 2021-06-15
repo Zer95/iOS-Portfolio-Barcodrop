@@ -11,7 +11,8 @@ import CoreData
 class roomRecommendListViewController: UIViewController {
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var collectionView:UICollectionView!
-   
+    @IBOutlet var cellView: UIView!
+    
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
@@ -19,6 +20,19 @@ class roomRecommendListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionTitle.text = "🌡실온🌡"
+        
+        // corner radius
+             cellView.layer.cornerRadius = 10
+
+             // border
+             cellView.layer.borderWidth = 1.0
+             cellView.layer.borderColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+
+             // shadow
+             cellView.layer.shadowColor = UIColor.black.cgColor
+             cellView.layer.shadowOffset = CGSize(width: 3, height: 3)
+             cellView.layer.shadowOpacity = 0.7
+             cellView.layer.shadowRadius = 4.0
         getAllItems()
     }
     
