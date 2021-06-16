@@ -21,6 +21,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
+    @IBOutlet weak var upDownBtn: UIBarButtonItem!
+    var upDownBtnState = false
+    var upDownDate = "입력순"
     
     // DropDown
     let dropDown = DropDown()
@@ -46,7 +49,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
-        
+                
         // DropDown
         openDropDown()
      
@@ -56,6 +59,20 @@ class HomeViewController: UIViewController {
         // longPress
         longpress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized))
         collectionView.addGestureRecognizer(longpress)
+    }
+    
+    @IBAction func upDownBtn(_ sender: Any) {
+        if self.upDownBtnState == false {
+            upDownBtn.title = "⇡"
+            self.upDownBtnState = true
+            updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
+            
+        }
+        else if self.upDownBtnState == true {
+            upDownBtn.title = "⇣"
+            self.upDownBtnState = false
+            updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
+        }
     }
     
     @objc func longPressGestureRecognized(gestureRecognizer: UIGestureRecognizer) {
@@ -85,15 +102,16 @@ class HomeViewController: UIViewController {
     
     func openDropDown() {
         // DropDown
-        dropDown.dataSource = ["입력순 ⇣","날짜순 ⇣","이름순 ⇣","구입순 ⇣"]
+        dropDown.dataSource = ["입력순","날짜순","이름순","구입순"]
         dropDown.anchorView = menuBtn // 나타나는 위치 지정
         dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!) // 출력방식 가리지 않고 표현
-        dropDown.width = 120
+        dropDown.width = 90
         dropDown.cellHeight = 50
         dropDown.cornerRadius = 15
         dropDown.selectedTextColor = UIColor.white // 선택된 글씨 색상
         dropDown.selectionBackgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1) // 선택된 배경 색상
         dropDown.textFont = UIFont.systemFont(ofSize: 20)
+        
         
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("선택한 아이템 : \(item)")
@@ -103,11 +121,14 @@ class HomeViewController: UIViewController {
             
             switch index {
             case 1:
-                updateSort(sortSelect: "endDay")
+                self.upDownDate = "endDay"
+                updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
             case 2:
-                updateSort(sortSelect: "productName")
+                self.upDownDate = "productName"
+                updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
             case 3:
-                updateSort(sortSelect: "buyDay")
+                self.upDownDate = "buyDay"
+                updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
             default:
                 getAllItems()
             }
@@ -160,10 +181,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func updateSort(sortSelect: String) {
+    func updateSort(sortSelect: String, upDownState: Bool) {
+        if sortSelect == "입력순"{
+            getAllItems()
+        } else {
             do {
                 let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
-                let sort = NSSortDescriptor(key: sortSelect, ascending: false)
+                let sort = NSSortDescriptor(key: sortSelect, ascending: upDownState)
                 fetchRequest.sortDescriptors = [sort]
                 
                 models = try context.fetch(fetchRequest)
@@ -174,6 +198,7 @@ class HomeViewController: UIViewController {
             catch {
                 print("getAllItmes 오류")
             }
+        }
     }
     
     func createItem(title: String) {
