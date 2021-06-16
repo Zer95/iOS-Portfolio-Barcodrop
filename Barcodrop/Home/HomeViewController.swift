@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     
     // DropDown
     let dropDown = DropDown()
-   
+
     
     // view 로드전 준비 -> detailView 전송시 필요한 객체 담기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -100,6 +100,17 @@ class HomeViewController: UIViewController {
             print("인덱스 : \(index)")
             self.menuBtn.title = "\(item)"
             // self.dropDown.clearSelection() // 이전 선택 값 클리어
+            
+            switch index {
+            case 1:
+                updateSort(sortSelect: "endDay")
+            case 2:
+                updateSort(sortSelect: "productName")
+            case 3:
+                updateSort(sortSelect: "buyDay")
+            default:
+                getAllItems()
+            }
         }
         
     }
@@ -147,6 +158,22 @@ class HomeViewController: UIViewController {
         catch {
             print("getAllItmes 오류")
         }
+    }
+    
+    func updateSort(sortSelect: String) {
+            do {
+                let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
+                let sort = NSSortDescriptor(key: sortSelect, ascending: false)
+                fetchRequest.sortDescriptors = [sort]
+                
+                models = try context.fetch(fetchRequest)
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+            catch {
+                print("getAllItmes 오류")
+            }
     }
     
     func createItem(title: String) {
