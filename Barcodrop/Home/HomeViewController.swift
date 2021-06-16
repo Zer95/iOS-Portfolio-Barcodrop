@@ -8,6 +8,7 @@
 import UIKit
 import MaterialComponents.MaterialButtons
 import CoreData
+import DropDown
 
 class HomeViewController: UIViewController {
     
@@ -19,6 +20,11 @@ class HomeViewController: UIViewController {
     var longpress = UILongPressGestureRecognizer()
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var menuBtn: UIBarButtonItem!
+    
+    // DropDown
+    let dropDown = DropDown()
+   
     
     // view 로드전 준비 -> detailView 전송시 필요한 객체 담기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +47,9 @@ class HomeViewController: UIViewController {
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
         
+        // DropDown
+        openDropDown()
+     
         // 데이터 저장 후 바로 reload 옵저버
         NotificationCenter.default.addObserver(self,selector: #selector(obServing),name: NSNotification.Name(rawValue: "reload"),object: nil)
     
@@ -74,13 +83,35 @@ class HomeViewController: UIViewController {
             }
     }
     
+    func openDropDown() {
+        // DropDown
+        dropDown.dataSource = ["입력순 ⇣","날짜순 ⇣","이름순 ⇣","구입순 ⇣"]
+        dropDown.anchorView = menuBtn // 나타나는 위치 지정
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!) // 출력방식 가리지 않고 표현
+        dropDown.width = 120
+        dropDown.cellHeight = 50
+        dropDown.cornerRadius = 15
+        dropDown.selectedTextColor = UIColor.white // 선택된 글씨 색상
+        dropDown.selectionBackgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1) // 선택된 배경 색상
+        dropDown.textFont = UIFont.systemFont(ofSize: 20)
+        
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("선택한 아이템 : \(item)")
+            print("인덱스 : \(index)")
+            self.menuBtn.title = "\(item)"
+            // self.dropDown.clearSelection() // 이전 선택 값 클리어
+        }
+        
+    }
+    
     @objc private func obServing(){
         getAllItems()
     }
   
     // 수동갱신
     @IBAction func didTapAddd(_ sender: Any) {
-            getAllItems()
+            //getAllItems()
+            dropDown.show()
         }
                 
     // 플로팅 버튼 클릭시 -> 바코드 & 입력창 띄우기
@@ -189,7 +220,7 @@ extension HomeViewController: UICollectionViewDataSource{
             cell.D_day?.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
         }
 
-        print("디데이는 정확할까:\(dDay)")
+       // print("디데이는 정확할까:\(dDay)")
     
        
         // cell <- 데이터 이미지 load

@@ -123,7 +123,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YBF-eL-cFZ">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="bFN-C8-olH">
+                        <barButtonItem key="leftBarButtonItem" title="정렬순 ⇣" id="bFN-C8-olH">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapAddd:" destination="Oay-1E-cAc" id="mpJ-eK-t2k"/>
@@ -132,6 +132,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="ljL-5p-gwF" id="r0z-N2-vxC"/>
+                        <outlet property="menuBtn" destination="bFN-C8-olH" id="vMS-UC-Tvm"/>
                         <segue destination="GAZ-YS-Yv4" kind="presentation" identifier="showDetail" id="8YN-Wu-4pd"/>
                         <segue destination="uwf-1h-TrA" kind="presentation" identifier="showFloating" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="MYq-r4-kEJ"/>
                     </connections>
