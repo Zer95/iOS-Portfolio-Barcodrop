@@ -47,6 +47,11 @@ class HomeViewController: UIViewController {
             
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 알림 권한 체크 및 받기
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+        })
+        
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
                 
