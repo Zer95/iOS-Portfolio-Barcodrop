@@ -11,9 +11,14 @@ import CoreData
 class SettingTableViewController: UITableViewController {
 
     @IBOutlet weak var onOffLable: UILabel!
+    @IBOutlet weak var onOffSwitch: UISwitch!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,7 @@ class SettingTableViewController: UITableViewController {
      
             DispatchQueue.main.async {
                 self.getData()
+                self.updateUI()
             }
         }
         catch {
@@ -47,13 +53,33 @@ class SettingTableViewController: UITableViewController {
         print("알람 데이터 가져오기!!\(model.onOff)")
         print("알람 데이터 가져오기!!\(model.selectTime!)")
     }
+    
+    func updateUI(){
+        let model = models[0]
+        if model.onOff == true {
+            onOffSwitch.setOn(true, animated: false)
+        }  else if model.onOff == false {
+            onOffSwitch.setOn(false, animated: false)
+        }
+    }
 
     @IBAction func onOffSwitch(_ sender: UISwitch) {
+        let model = models[0]
         if sender.isOn {
             onOffLable.text = "ON"
+            model.onOff = true
         } else {
             onOffLable.text = "OFF"
+            model.onOff = false
         }
+        do{
+            try context.save()
+     
+        }
+        catch {
+            
+        }
+        
     }
     
     
