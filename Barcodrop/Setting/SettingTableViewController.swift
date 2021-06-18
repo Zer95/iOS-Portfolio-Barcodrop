@@ -44,16 +44,16 @@ class SettingTableViewController: UITableViewController {
     
     func getData(){
         let model = models[0]
-        print("알람 데이터 가져오기!!\(model.dDay0)")
-        print("알람 데이터 가져오기!!\(model.dDay1)")
-        print("알람 데이터 가져오기!!\(model.dDay2)")
-        print("알람 데이터 가져오기!!\(model.dDay3)")
-        print("알람 데이터 가져오기!!\(model.dDay4)")
-        print("알람 데이터 가져오기!!\(model.dDay5)")
-        print("알람 데이터 가져오기!!\(model.dDay6)")
-        print("알람 데이터 가져오기!!\(model.dDay7)")
-        print("알람 데이터 가져오기!!\(model.onOff)")
-        print("알람 데이터 가져오기!!\(model.selectTime!)")
+//        print("알람 데이터 가져오기!!\(model.dDay0)")
+//        print("알람 데이터 가져오기!!\(model.dDay1)")
+//        print("알람 데이터 가져오기!!\(model.dDay2)")
+//        print("알람 데이터 가져오기!!\(model.dDay3)")
+//        print("알람 데이터 가져오기!!\(model.dDay4)")
+//        print("알람 데이터 가져오기!!\(model.dDay5)")
+//        print("알람 데이터 가져오기!!\(model.dDay6)")
+//        print("알람 데이터 가져오기!!\(model.dDay7)")
+//        print("알람 데이터 가져오기!!\(model.onOff)")
+//        print("알람 데이터 가져오기!!\(model.selectTime!)")
     }
     
     func updateUI(){

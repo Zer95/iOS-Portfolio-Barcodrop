@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AlarmSelectViewController: UIViewController {
 
@@ -22,13 +23,54 @@ class AlarmSelectViewController: UIViewController {
     
     @IBOutlet var viewMain: UIView!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var models = [AlarmSetting]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewMapTapped))
         viewMain.addGestureRecognizer(tapGestureRecognizer)
         
         selectTime.setValue(UIColor.white, forKeyPath: "textColor")
-
+        
+        getAllItems()
+    }
+    
+    func getAllItems() {
+        do {
+            models = try context.fetch(AlarmSetting.fetchRequest())
+     
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
+    
+    func updateUI(){
+        let model = models[0]
+        if model.dDay0 == true{dDay.isSelected = true}
+        if model.dDay1 == true{dDay1.isSelected = true}
+        if model.dDay2 == true{dDay2.isSelected = true}
+        if model.dDay3 == true{dDay3.isSelected = true}
+        if model.dDay4 == true{dDay4.isSelected = true}
+        if model.dDay5 == true{dDay5.isSelected = true}
+        if model.dDay6 == true{dDay6.isSelected = true}
+        if model.dDay7 == true{dDay7.isSelected = true}
+    
+     
+        let dateString:String = model.selectTime!
+        let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .none
+            dateformatter.timeStyle = .short
+        let date:Date = dateformatter.date(from: dateString)!
+        print("시간 값 출력쓰:\(date)")
+        selectTime.setDate(date, animated: false)
+        
+        
     }
 
     @objc func viewMapTapped(sender: UITapGestureRecognizer) {
@@ -36,6 +78,34 @@ class AlarmSelectViewController: UIViewController {
     }
     
     @IBAction func saveBtn(_ sender: Any) {
+        
+        let saveValue = models[0]
+        saveValue.dDay0 = dDay.isSelected
+        saveValue.dDay1 = dDay1.isSelected
+        saveValue.dDay2 = dDay2.isSelected
+        saveValue.dDay3 = dDay3.isSelected
+        saveValue.dDay4 = dDay4.isSelected
+        saveValue.dDay5 = dDay5.isSelected
+        saveValue.dDay6 = dDay6.isSelected
+        saveValue.dDay7 = dDay7.isSelected
+        
+        
+        
+        let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .none
+            dateformatter.timeStyle = .short
+        let date = dateformatter.string(from: selectTime.date)
+        print("저장될 시간 값은\(date)")
+        saveValue.selectTime = date
+       
+        do{
+            try context.save()
+     
+        }
+        catch {
+            
+        }
+
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func cancleBtn(_ sender: Any) {
@@ -46,7 +116,6 @@ class AlarmSelectViewController: UIViewController {
     @IBAction func dDay(_ sender: Any) {
         dDay.isSelected = !dDay.isSelected
     }
-    
     @IBAction func dDay1(_ sender: Any) {
         dDay1.isSelected = !dDay1.isSelected
     }
@@ -69,3 +138,8 @@ class AlarmSelectViewController: UIViewController {
         dDay7.isSelected = !dDay7.isSelected
     }
 }
+
+
+
+
+
