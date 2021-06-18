@@ -52,6 +52,9 @@ class HomeViewController: UIViewController {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
         })
         
+        // 앱 처음 실행시
+        appStartCheck()
+        
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
                 
@@ -64,6 +67,43 @@ class HomeViewController: UIViewController {
         // longPress
         longpress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized))
         collectionView.addGestureRecognizer(longpress)
+    }
+    
+    func appStartCheck(){
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+                if launchedBefore
+                {
+                    print("Not first launch.")
+                }
+                else
+                {
+                    print("First launch")
+                    UserDefaults.standard.set(true, forKey: "launchedBefore")
+                    startAlarmDataSetting()
+
+                }
+    }
+
+    func startAlarmDataSetting(){
+        let alarmItem = AlarmSetting(context: context)
+        alarmItem.onOff = true
+        alarmItem.dDay0 = true
+        alarmItem.dDay1 = true
+        alarmItem.dDay2 = true
+        alarmItem.dDay3 = true
+        alarmItem.dDay4 = false
+        alarmItem.dDay5 = false
+        alarmItem.dDay6 = false
+        alarmItem.dDay7 = false
+        alarmItem.selectTime = "10:00"
+        do{
+            try context.save()
+            print("알람 초기 데이터 생성 완료!!")
+
+        }
+        catch {
+            print("알람 초기 데이터 생성 실패!!")
+        }
     }
         
     

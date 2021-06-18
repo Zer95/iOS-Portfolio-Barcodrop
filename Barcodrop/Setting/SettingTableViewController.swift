@@ -6,15 +6,46 @@
 //
 
 import UIKit
+import CoreData
 
 class SettingTableViewController: UITableViewController {
 
     @IBOutlet weak var onOffLable: UILabel!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var models = [AlarmSetting]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "설정"
+        getAllItems()
+    }
+    
+    func getAllItems() {
+        do {
+            models = try context.fetch(AlarmSetting.fetchRequest())
+     
+            DispatchQueue.main.async {
+                self.getData()
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
+    
+    func getData(){
+        let model = models[0]
+        print("알람 데이터 가져오기!!\(model.dDay0)")
+        print("알람 데이터 가져오기!!\(model.dDay1)")
+        print("알람 데이터 가져오기!!\(model.dDay2)")
+        print("알람 데이터 가져오기!!\(model.dDay3)")
+        print("알람 데이터 가져오기!!\(model.dDay4)")
+        print("알람 데이터 가져오기!!\(model.dDay5)")
+        print("알람 데이터 가져오기!!\(model.dDay6)")
+        print("알람 데이터 가져오기!!\(model.dDay7)")
+        print("알람 데이터 가져오기!!\(model.onOff)")
+        print("알람 데이터 가져오기!!\(model.selectTime!)")
     }
 
     @IBAction func onOffSwitch(_ sender: UISwitch) {
