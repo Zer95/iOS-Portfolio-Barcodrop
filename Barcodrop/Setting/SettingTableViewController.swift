@@ -12,6 +12,8 @@ class SettingTableViewController: UITableViewController {
 
     @IBOutlet weak var onOffLable: UILabel!
     @IBOutlet weak var onOffSwitch: UISwitch!
+    @IBOutlet weak var alarmSelect: UIButton!
+    var onOffState = true
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
@@ -56,10 +58,20 @@ class SettingTableViewController: UITableViewController {
     
     func updateUI(){
         let model = models[0]
+        
+        
         if model.onOff == true {
             onOffSwitch.setOn(true, animated: false)
-        }  else if model.onOff == false {
+            onOffLable.text = "ON"
+            alarmSelect.setTitleColor(.black, for: .normal)
+            self.onOffState = true
+        }
+        
+        else if model.onOff == false {
             onOffSwitch.setOn(false, animated: false)
+            onOffLable.text = "OFF"
+            alarmSelect.setTitleColor(.systemGray2, for: .normal)
+            self.onOffState = false
         }
     }
 
@@ -67,9 +79,11 @@ class SettingTableViewController: UITableViewController {
         let model = models[0]
         if sender.isOn {
             onOffLable.text = "ON"
+            alarmSelect.setTitleColor(.black, for: .normal)
             model.onOff = true
         } else {
             onOffLable.text = "OFF"
+            alarmSelect.setTitleColor(.systemGray2, for: .normal)
             model.onOff = false
         }
         do{

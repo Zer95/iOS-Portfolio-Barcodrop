@@ -407,6 +407,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="49C-Bc-j4f"/>
                     <connections>
+                        <outlet property="alarmSelect" destination="SAG-5s-O0u" id="Oub-6I-PoL"/>
                         <outlet property="onOffLable" destination="yWb-g5-36q" id="aU0-6y-Nvl"/>
                         <outlet property="onOffSwitch" destination="BEx-Zl-lCJ" id="keE-W7-I86"/>
                     </connections>
