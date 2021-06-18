@@ -81,10 +81,12 @@ class SettingTableViewController: UITableViewController {
             onOffLable.text = "ON"
             alarmSelect.setTitleColor(.black, for: .normal)
             model.onOff = true
+            getAllItems()
         } else {
             onOffLable.text = "OFF"
             alarmSelect.setTitleColor(.systemGray2, for: .normal)
             model.onOff = false
+            getAllItems()
         }
         do{
             try context.save()
@@ -95,6 +97,28 @@ class SettingTableViewController: UITableViewController {
         }
         
     }
+    
+    @IBAction func selectAlarm(_ sender: Any) {
+        
+        if self.onOffState == true {
+        let VC =  self.storyboard?.instantiateViewController(withIdentifier:"AlarmSelectView") as! AlarmSelectViewController
+        VC.modalPresentationStyle = .overFullScreen
+        self.present(VC, animated: false, completion: nil)
+        }
+        
+        else{
+            let alert = UIAlertController(title: "알림", message: "알람설정을 켜주세요!", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                self.dismiss(animated: false, completion: nil)
+                   }
+            alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
+                       
+                   }
+        }
+        
+        
+    
     
     
     
