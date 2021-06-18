@@ -65,6 +65,7 @@ class HomeViewController: UIViewController {
         longpress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized))
         collectionView.addGestureRecognizer(longpress)
     }
+        
     
     @IBAction func upDownBtn(_ sender: Any) {
         if self.upDownBtnState == false {

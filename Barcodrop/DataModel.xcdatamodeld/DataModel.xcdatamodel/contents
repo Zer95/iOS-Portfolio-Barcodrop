@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlarmSetting" representedClassName="AlarmSetting" syncable="YES">
+        <attribute name="dDay0" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="dDay1" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="dDay2" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="dDay3" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="dDay4" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="dDay5" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="dDay6" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="dDay7" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="onOff" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="selectTime" optional="YES" attributeType="String" defaultValueString="10:00"/>
+    </entity>
     <entity name="ProductListItem" representedClassName="ProductListItem" syncable="YES">
         <attribute name="buyDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="category" optional="YES" attributeType="String"/>
@@ -9,5 +21,6 @@
     </entity>
     <elements>
         <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="104"/>
+        <element name="AlarmSetting" positionX="-18" positionY="63" width="128" height="179"/>
     </elements>
 </model>
