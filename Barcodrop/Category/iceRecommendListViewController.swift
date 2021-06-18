@@ -47,6 +47,8 @@ class iceRecommendListViewController: UIViewController {
              cellView.layer.shadowOpacity = 0.5
             cellView.layer.shadowRadius = 4.0
         getAllItems()
+        
+        if models.count != 0 {
         let checkCnt = models.count - 1
         
         for i in 0...checkCnt {
@@ -90,6 +92,7 @@ class iceRecommendListViewController: UIViewController {
         normalLable.text = "보통: \(self.normalCnt.count)"
         dangerLable.text = "위험: \(self.dangerCnt.count)"
         passLable.text = "지남: \(self.passCnt.count)"
+    }
     }
     
     override func viewWillAppear(_ animated: Bool) {
