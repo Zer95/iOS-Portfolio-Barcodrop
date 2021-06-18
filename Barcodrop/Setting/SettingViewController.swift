@@ -10,12 +10,29 @@ import UIKit
 class SettingViewController: UIViewController {
 
     @IBOutlet weak var alarmBtn: UIButton!
+    @IBOutlet weak var selectBtn: UIButton!
+    @IBOutlet weak var onOffLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.isHidden = true
         alarmBtn.layer.cornerRadius = 10
+        selectBtn.layer.cornerRadius = 10
     }
+    
+    @IBAction func onOffSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            onOffLable.text = "ON"
+        } else {
+            onOffLable.text = "OFF"
+        }
+        
+    }
+    
+    
+    
+    
+    
     
     @IBAction func alarmBtn(_ sender: Any) {
 

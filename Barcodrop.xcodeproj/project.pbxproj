@@ -171,7 +171,6 @@
 			children = (
 				D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */,
 				D2CA6F882669CD0100DE2AA8 /* EditViewController.swift */,
-				D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */,
 				D26C7EF6266CAA7000133504 /* BarcodeScanner */,
 			);
 			path = Edit;
@@ -181,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				D2354A12267B67F50006D8E3 /* SettingViewController.swift */,
+				D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
