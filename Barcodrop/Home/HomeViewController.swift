@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
+    private var alarm = [AlarmSetting]()
     
     // 길게 클릭
     var longpress = UILongPressGestureRecognizer()
@@ -44,6 +45,11 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+     override func viewDidAppear(_ animated: Bool) {
+        getAllItems() // 컬렉션 뷰 실시간
+        getAlarm()
+    }
             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +63,7 @@ class HomeViewController: UIViewController {
         
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
+        getAlarm()
                 
         // DropDown
         openDropDown()
@@ -104,6 +111,92 @@ class HomeViewController: UIViewController {
         catch {
             print("알람 초기 데이터 생성 실패!!")
         }
+    }
+    
+    func getAlarm() {
+        do {
+            alarm = try context.fetch(AlarmSetting.fetchRequest())
+     
+            DispatchQueue.main.async {
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
+    
+    func getAlarmData(modelDday:Int, modelIndex:Int){
+        let alarm = alarm[0]
+        if alarm.onOff == true {
+            if alarm.dDay0 == true && modelDday == 0 {sendAlarm(dayCnt: 0, modelIndex: modelIndex)}
+            if alarm.dDay1 == true && modelDday == -1 {sendAlarm(dayCnt: 1, modelIndex: modelIndex)}
+            if alarm.dDay2 == true && modelDday == -2 {sendAlarm(dayCnt: 2, modelIndex: modelIndex)}
+            if alarm.dDay3 == true && modelDday == -3 {sendAlarm(dayCnt: 3, modelIndex: modelIndex)}
+            if alarm.dDay4 == true && modelDday == -4 {sendAlarm(dayCnt: 4, modelIndex: modelIndex)}
+            if alarm.dDay5 == true && modelDday == -5 {sendAlarm(dayCnt: 5, modelIndex: modelIndex)}
+            if alarm.dDay6 == true && modelDday == -6 {sendAlarm(dayCnt: 6, modelIndex: modelIndex)}
+            if alarm.dDay7 == true && modelDday == -7 {sendAlarm(dayCnt: 7, modelIndex: modelIndex)}
+        }
+    }
+    
+    func sendAlarm(dayCnt: Int, modelIndex:Int){
+        let model = models[modelIndex]
+        let alarm = alarm[0]
+      
+        let dataName = model.productName
+        
+        
+        
+        // 알림 전송
+        let timeText = alarm.selectTime!+":00"
+        print("입력 받은 값\(timeText)")
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let realHour = calendar.component(.hour, from: date)
+        let realMinute = calendar.component(.minute, from: date)
+        let realSecond = calendar.component(.second, from: date)
+        
+        let time = timeText.split(separator: ":").map { val -> Int in
+            return Int(val)!
+        }
+        
+        // 현재 시간과 사용자에게 입력받은 시간 차를 계산
+        let timeDiffer = Double((time[0] - realHour) * 3600 + (time[1] - realMinute) * 60 + (time[2] - realSecond))
+        print("timeDiffer : \(timeDiffer)")
+        
+        if timeDiffer >= 0 {
+        
+        let content = UNMutableNotificationContent() // 노티피케이션 메세지 객체
+        content.title = NSString.localizedUserNotificationString(forKey: dataName!, arguments: nil)
+        //content.body = NSString.localizedUserNotificationString(forKey: "\(time[0]):\(time[1]) 입니다!", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "유통기한이 \(dayCnt)일 남았습니다!", arguments: nil)
+        
+        
+        let imageName="logo_kor"
+        guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: ".png") else {return}
+        
+        let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
+        content.attachments = [attachment]
+        
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeDiffer, repeats: false) // 얼마 후 실행?
+
+        let request = UNNotificationRequest(
+            identifier: "LocalNotification",
+            content: content,
+            trigger: trigger
+        ) // 노티피케이션 전송 객체
+
+        let center = UNUserNotificationCenter.current() // 노티피케이션 센터
+        center.add(request) { (error : Error?) in // 노티피케이션 객체 추가 -> 전송
+            if let theError = error {
+                print(theError.localizedDescription)
+            }
+        }
+        print("yes!!")
+        }
+        print("시간 지나서 낼 다시 실행")
     }
         
     
@@ -184,6 +277,7 @@ class HomeViewController: UIViewController {
     
     @objc private func obServing(){
         getAllItems()
+        getAlarm()
     }
   
     // 수동갱신
@@ -313,9 +407,11 @@ extension HomeViewController: UICollectionViewDataSource{
         } else if dDay < 0{
             cell.D_day?.text = "D\(dDay)"
             cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
         } else {
             cell.D_day?.text = "D-day"
             cell.D_day?.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
         }
 
        // print("디데이는 정확할까:\(dDay)")
