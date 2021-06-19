@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
     let dropDown = DropDown()
 
     
+ 
+    
     // view 로드전 준비 -> detailView 전송시 필요한 객체 담기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -172,14 +174,24 @@ class HomeViewController: UIViewController {
         //content.body = NSString.localizedUserNotificationString(forKey: "\(time[0]):\(time[1]) 입니다!", arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: "유통기한이 \(dayCnt)일 남았습니다!", arguments: nil)
         
-        
-        let imageName="logo_kor"
-        guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: ".png") else {return}
-        
-        let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
-        content.attachments = [attachment]
-        
-        
+            // cell <- 데이터 이미지 load
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+           let dirPath          = paths.first
+              
+            let fileNameRead = "\(model.productName!).jpg"
+           // let imageURL = URL(fileURLWithPath: dirPath!).appendingPathComponent(fileNameRead)//Pass the image name fetched from core data here
+            let imageURL = URL(fileURLWithPath: dirPath!).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
+
+            let image    = UIImage(contentsOfFile: imageURL.path)
+         
+            if let attachment =  UNNotificationAttachment.create(identifier: model.productName!, image: image!, options: nil) {
+                // where myImage is any UIImage
+                content.attachments = [attachment]
+            }
+            
+                    
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeDiffer, repeats: false) // 얼마 후 실행?
 
         let request = UNNotificationRequest(
@@ -458,4 +470,25 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// Push 할 때 이미지 이동하지 않고 새로 다운받아 전송
+extension UNNotificationAttachment {
+
+    static func create(identifier: String, image: UIImage, options: [NSObject : AnyObject]?) -> UNNotificationAttachment? {
+        let fileManager = FileManager.default
+        let tmpSubFolderName = ProcessInfo.processInfo.globallyUniqueString
+        let tmpSubFolderURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(tmpSubFolderName, isDirectory: true)
+        do {
+            try fileManager.createDirectory(at: tmpSubFolderURL, withIntermediateDirectories: true, attributes: nil)
+            let imageFileIdentifier = identifier+".jpg"
+            let fileURL = tmpSubFolderURL.appendingPathComponent(imageFileIdentifier)
+            let imageData = UIImage.pngData(image)
+            try imageData()?.write(to: fileURL)
+            let imageAttachment = try UNNotificationAttachment.init(identifier: imageFileIdentifier, url: fileURL, options: options)
+            return imageAttachment
+        } catch {
+            print("error " + error.localizedDescription)
+        }
+        return nil
+    }
+}
 
