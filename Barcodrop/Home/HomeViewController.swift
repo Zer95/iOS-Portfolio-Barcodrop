@@ -165,7 +165,7 @@ class HomeViewController: UIViewController {
         let timeDiffer = Double((time[0] - realHour) * 3600 + (time[1] - realMinute) * 60 + (time[2] - realSecond))
         print("timeDiffer : \(timeDiffer)")
         
-        if timeDiffer >= 0 {
+        if timeDiffer >= 0 { // 알림시간 지나면 실행안되게 구분
         
         let content = UNMutableNotificationContent() // 노티피케이션 메세지 객체
         content.title = NSString.localizedUserNotificationString(forKey: dataName!, arguments: nil)
@@ -183,7 +183,7 @@ class HomeViewController: UIViewController {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeDiffer, repeats: false) // 얼마 후 실행?
 
         let request = UNNotificationRequest(
-            identifier: "LocalNotification",
+            identifier: dataName!,
             content: content,
             trigger: trigger
         ) // 노티피케이션 전송 객체
