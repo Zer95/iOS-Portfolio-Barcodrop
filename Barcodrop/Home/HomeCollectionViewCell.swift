@@ -14,7 +14,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib() // view 로드전에 실행
-        Thumbnail.layer.cornerRadius = 4
+        Thumbnail.layer.cornerRadius = 10
         D_day.textColor = UIColor.systemGray2
     }
     

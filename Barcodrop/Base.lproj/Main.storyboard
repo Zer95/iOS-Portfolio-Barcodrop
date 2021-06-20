@@ -471,7 +471,7 @@
         <scene sceneID="Kqw-bb-0bc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LvQ-Pe-UsG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="Events" id="2C2-1S-9QN"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="2C2-1S-9QN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ITs-yh-pW6">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -1139,7 +1139,7 @@
                             <constraint firstItem="GhD-rU-fly" firstAttribute="width" secondItem="8hB-cX-GvU" secondAttribute="width" id="uaY-nB-0Fd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="카테고리" image="house.fill" catalog="system" id="cpl-9d-kki"/>
+                    <tabBarItem key="tabBarItem" title="카테고리" image="list.bullet.rectangle" catalog="system" id="cpl-9d-kki"/>
                     <size key="freeformSize" width="414" height="1700"/>
                     <connections>
                         <outlet property="etcLable" destination="dFD-1p-a9o" id="kc0-R5-HkB"/>
@@ -1698,7 +1698,7 @@
         <scene sceneID="dO9-6D-MA5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YpU-41-FEF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="설정" id="aZz-P4-VM5"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="gearshape.fill" catalog="system" id="aZz-P4-VM5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pw2-jy-PGG">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -1745,7 +1745,6 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
-        <image name="Events" width="22" height="22"/>
         <image name="Highlights" width="12" height="21"/>
         <image name="apple" width="2614" height="3116"/>
         <image name="background" width="5000" height="5000"/>
@@ -1755,9 +1754,11 @@
         <image name="etc_on" width="512" height="512"/>
         <image name="fresh_off" width="512" height="512"/>
         <image name="fresh_on" width="512" height="512"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="iceIcon_off" width="512" height="512"/>
         <image name="iceIcon_on" width="512" height="512"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="menu_edit" width="1007" height="1007"/>
         <image name="menu_scan" width="512" height="512"/>
         <image name="room temperature_on" width="512" height="512"/>
