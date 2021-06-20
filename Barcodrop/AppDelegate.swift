@@ -8,17 +8,20 @@
 import UIKit
 import CBFlashyTabBarController
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         CBFlashyTabBar.appearance().tintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         CBFlashyTabBar.appearance().barTintColor = .white
         //sleep(2) 런치 화면 시간 조정
+        
+        //notification
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
 
@@ -85,6 +88,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
+// MARK: - Notifications
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+ 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+        
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let _ = response.notification.request.content.userInfo
+        
+        completionHandler()
+    }
+}
 
 

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--알림-->
+        <!--View Controller-->
         <scene sceneID="zXl-IX-qgF">
             <objects>
                 <viewController id="Rgi-KJ-scq" sceneMemberID="viewController">
@@ -35,11 +35,11 @@
                             <constraint firstItem="PvC-J3-uat" firstAttribute="centerY" secondItem="8Pa-NY-BxV" secondAttribute="centerY" id="Wzc-vY-xSc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="알림" image="Highlights" id="nxZ-xU-YdD"/>
+                    <navigationItem key="navigationItem" id="QR2-Ma-uzx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScD-qz-YbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="-591"/>
+            <point key="canvasLocation" x="4732.3076923076924" y="-591.46919431279616"/>
         </scene>
         <!--HomeViewController-->
         <scene sceneID="32b-QF-jIi">
@@ -255,7 +255,7 @@
                     <connections>
                         <segue destination="LvQ-Pe-UsG" kind="relationship" relationship="viewControllers" id="nwY-52-mJs"/>
                         <segue destination="o2c-Xd-dq3" kind="relationship" relationship="viewControllers" id="JEv-Z5-ytz"/>
-                        <segue destination="Rgi-KJ-scq" kind="relationship" relationship="viewControllers" id="Kf1-re-FFQ"/>
+                        <segue destination="eFx-MK-h9Z" kind="relationship" relationship="viewControllers" id="Kf1-re-FFQ"/>
                         <segue destination="YpU-41-FEF" kind="relationship" relationship="viewControllers" id="IgP-qi-n5l"/>
                     </connections>
                 </tabBarController>
@@ -414,7 +414,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tch-8x-RY4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5730.7692307692305" y="-591.46919431279616"/>
+            <point key="canvasLocation" x="6660" y="-591.46919431279616"/>
         </scene>
         <!--홈-->
         <scene sceneID="Kqw-bb-0bc">
@@ -938,7 +938,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc1-5E-K6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6726.1538461538457" y="-591.46919431279616"/>
+            <point key="canvasLocation" x="7655.3846153846152" y="-591.46919431279616"/>
         </scene>
         <!--카테고리-->
         <scene sceneID="DZu-IT-q2i">
@@ -1660,7 +1660,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sj-K7-Nh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4801.538461538461" y="-591.46919431279616"/>
+            <point key="canvasLocation" x="5729.2307692307686" y="-591.46919431279616"/>
+        </scene>
+        <!--알림-->
+        <scene sceneID="Z0S-IX-cOR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eFx-MK-h9Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="알림" image="Highlights" id="nxZ-xU-YdD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cHU-zC-FSu">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rgi-KJ-scq" kind="relationship" relationship="rootViewController" id="iI4-sf-xve"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1O-cK-hGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3803.0769230769229" y="-591.46919431279616"/>
         </scene>
     </scenes>
     <designables>
