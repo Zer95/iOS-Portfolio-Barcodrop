@@ -175,13 +175,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="YBF-eL-cFZ">
                         <leftBarButtonItems>
-                            <barButtonItem title="정렬순" id="bFN-C8-olH">
+                            <barButtonItem title="입력순" id="bFN-C8-olH">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="didTapAddd:" destination="Oay-1E-cAc" id="mpJ-eK-t2k"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="⇣" style="plain" id="gFY-PU-jRU">
+                            <barButtonItem title="↓" style="plain" id="gFY-PU-jRU">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="upDownBtn:" destination="Oay-1E-cAc" id="cof-oI-Z86"/>

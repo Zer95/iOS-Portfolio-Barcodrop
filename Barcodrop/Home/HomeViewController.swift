@@ -214,13 +214,13 @@ class HomeViewController: UIViewController {
     
     @IBAction func upDownBtn(_ sender: Any) {
         if self.upDownBtnState == false {
-            upDownBtn.title = "⇡"
+            upDownBtn.title = "↑"
             self.upDownBtnState = true
             updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
             
         }
         else if self.upDownBtnState == true {
-            upDownBtn.title = "⇣"
+            upDownBtn.title = "↓"
             self.upDownBtnState = false
             updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
         }
