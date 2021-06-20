@@ -99,6 +99,21 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let requestItemBody = notification.request.content.body
         let requestItemTime = notification.date.addingTimeInterval(32400)
      
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let alarmHistoryItem = AlarmHistory(context: context)
+        alarmHistoryItem.title = requestItem
+        alarmHistoryItem.content = requestItemBody
+        alarmHistoryItem.alarmTime = requestItemTime
+        
+        do{
+            try context.save()
+            print("알람 히스토리 데이터 생성 완료!!")
+
+        }
+        catch {
+            print("알람 히스토리 데이터 생성 실패!!")
+        }
+        
         
         print("보낸다 \(requestItem)")
         print("보낸내용 \(requestItemBody)")

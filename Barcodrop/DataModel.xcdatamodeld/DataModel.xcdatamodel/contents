@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlarmHistory" representedClassName="AlarmHistory" syncable="YES">
+        <attribute name="alarmTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="AlarmSetting" representedClassName="AlarmSetting" syncable="YES">
         <attribute name="dDay0" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="dDay1" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
@@ -20,7 +25,8 @@
         <attribute name="productName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="104"/>
         <element name="AlarmSetting" positionX="-18" positionY="63" width="128" height="179"/>
+        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="104"/>
+        <element name="AlarmHistory" positionX="-18" positionY="117" width="128" height="74"/>
     </elements>
 </model>
