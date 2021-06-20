@@ -95,10 +95,24 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound, .badge])
         
+        let requestItem = notification.request.identifier
+        let requestItemBody = notification.request.content.body
+        let requestItemTime = notification.date.addingTimeInterval(32400)
+     
+        
+        print("보낸다 \(requestItem)")
+        print("보낸내용 \(requestItemBody)")
+        print("보낸시간 \(requestItemTime)")
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let _ = response.notification.request.content.userInfo
+        
+        let responeItem = response.notification.request.identifier
+        let responeItemBody = response.notification.request.content.body
+        let responeItemTime = response.notification.date
+        print("알람을 클릭 \(responeItem)")
+        print("알람내용을 클릭 \(responeItemBody)")
+        print("알람 시간 클릭 \(responeItemTime)")
         
         completionHandler()
     }
