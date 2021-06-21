@@ -134,6 +134,8 @@ extension BarcodeViewController: ReaderViewDelegate {
                 do{
                     let decoder = JSONDecoder()
                     let respones = try decoder.decode(Response.self, from: resultData)
+                    
+                    if respones.C005.RESULT!.MSG == "정상처리되었습니다." {
                     self.sendTitle = respones.C005.row!.first!.PRDLST_NM
                     print(respones.C005.RESULT!.MSG)
                     print(respones.C005.row!.first!.BAR_CD)
@@ -144,7 +146,10 @@ extension BarcodeViewController: ReaderViewDelegate {
                     self.productCompany = "\(respones.C005.row!.first!.BSSH_NM)"
                     self.productName = "\(respones.C005.row!.first!.PRDLST_NM)"
                     self.wontEndDay = "\(respones.C005.row!.first!.POG_DAYCNT)"
-
+                    } else{
+                        title = "스캔실패"
+                        self.productCompany = "해당 상품은 아직 서비스 지원이 불가능합니다. \n 직접입력해주세요!"
+                    }
                 } catch let error{
                     print("\(error)")
                 }

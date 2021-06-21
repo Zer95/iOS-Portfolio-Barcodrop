@@ -394,7 +394,7 @@ extension HomeViewController: UICollectionViewDataSource{
         if models.count == 0 {
             collectionView.backgroundView = UIImageView(image: UIImage(named: "nullImage.png"))
         } else {
-            collectionView.backgroundView = UIImageView(image: UIImage(named: ""))
+   //         collectionView.backgroundView = UIImageView(image: UIImage(named: ""))
         }
         
         return models.count
