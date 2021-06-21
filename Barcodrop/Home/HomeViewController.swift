@@ -151,7 +151,7 @@ class HomeViewController: UIViewController {
         
         // 알림 전송
         let timeText = alarm.selectTime!+":00"
-        print("입력 받은 값\(timeText)")
+       // print("입력 받은 값\(timeText)")
         
         let date = Date()
         let calendar = Calendar.current
@@ -165,7 +165,7 @@ class HomeViewController: UIViewController {
         
         // 현재 시간과 사용자에게 입력받은 시간 차를 계산
         let timeDiffer = Double((time[0] - realHour) * 3600 + (time[1] - realMinute) * 60 + (time[2] - realSecond))
-        print("timeDiffer : \(timeDiffer)")
+      //  print("timeDiffer : \(timeDiffer)")
         
         if timeDiffer >= 0 { // 알림시간 지나면 실행안되게 구분
         
@@ -208,7 +208,7 @@ class HomeViewController: UIViewController {
         }
         print("yes!!")
         }
-        print("시간 지나서 낼 다시 실행")
+    //    print("시간 지나서 낼 다시 실행")
     }
         
     
@@ -410,19 +410,29 @@ extension HomeViewController: UICollectionViewDataSource{
         func days(from date: Date) -> Int {
             return calendar.dateComponents([.day], from: date, to: currentDate).day!
         }
-        let dDay =  days(from: model.endDay!)
+        var dDay =  days(from: model.endDay!)
+        
         
         // cell D-day
         if dDay > 0 {
             cell.D_day?.text = "D+\(dDay)"
-            cell.D_day?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        } else if dDay < 0{
+            cell.D_day?.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        } else if dDay == 0{
+            cell.D_day?.text = "D-day"
+            cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+        } else if dDay < 0 && dDay > -3 {
             cell.D_day?.text = "D\(dDay)"
             cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
             getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
-        } else {
-            cell.D_day?.text = "D-day"
+        } else if dDay >= -5 {
+            cell.D_day?.text = "D\(dDay)"
             cell.D_day?.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+        }
+        else if dDay < -5 {
+            cell.D_day?.text = "D\(dDay)"
+            cell.D_day?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
         }
 
@@ -451,7 +461,7 @@ extension HomeViewController: UICollectionViewDelegate {
     
     // 셀 클릭시 동작하는 부분
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("-->\(indexPath.row)")
+      //  print("-->\(indexPath.row)")
         performSegue(withIdentifier: "showDetail", sender: indexPath.row)
     }
 }

@@ -165,12 +165,12 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
       
         }else if dDay == 0{
             cell.freshDday.setTitle("D-day", for: .normal)
-            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
         }else if dDay < 0 && dDay > -3 {
             cell.freshDday.setTitle("D\(dDay)", for: .normal)
-            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+            cell.freshDday.backgroundColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
            
         } else if dDay >= -5 {
             cell.freshDday.setTitle("D\(dDay)", for: .normal)

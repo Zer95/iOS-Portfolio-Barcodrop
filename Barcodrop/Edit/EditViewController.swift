@@ -117,10 +117,10 @@ class EditViewController: UIViewController {
         let newItem = ProductListItem(context: context)
         newItem.productName = title
         newItem.category = categotySave
-        newItem.buyDay = buyDayPicker.date
-        newItem.endDay = endDayPicker.date
+        newItem.buyDay = buyDayPicker.date.addingTimeInterval(32400)
+        newItem.endDay = endDayPicker.date.addingTimeInterval(32400)
         newItem.imgURL = self.saveURL
-        newItem.saveTime = Date()
+        newItem.saveTime = Date().addingTimeInterval(32400)
         print("저장 날짜 시점\(Date())")
         do{
             try context.save()

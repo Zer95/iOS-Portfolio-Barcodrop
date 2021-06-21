@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
         category_lable.text = re_category
         buyDay_lable.text = "구입일: " + DateToString(RE_Date: re_buyDay)
         endDay_lable.text = "유통기한: " + DateToString(RE_Date: re_endDay)
-        print("넘어온 디데이 값은:\(re_dDay)")
+      //  print("넘어온 디데이 값은:\(re_dDay)")
         
         // D-day 값 세팅
         let calendar = Calendar.current
@@ -52,14 +52,21 @@ class DetailViewController: UIViewController {
         // cell D-day
         if dDay > 0 {
             d_day_lable.text = "D+\(dDay)"
-            d_day_lable.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        } else if dDay < 0{
+            d_day_lable.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        }  else if dDay == 0{
+            d_day_lable.text = "D-day"
+            d_day_lable.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+        } else if dDay < 0 && dDay > -3 {
             d_day_lable.text = "D\(dDay)"
             d_day_lable.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
-        } else {
-            d_day_lable.text = "D-day"
-            d_day_lable.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+        } else if dDay >= -5  {
+            d_day_lable.text = "D\(dDay)"
+            d_day_lable.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        } else if dDay < -5  {
+            d_day_lable.text = "D\(dDay)"
+            d_day_lable.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
+       
         
         // 이미지 세팅
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
