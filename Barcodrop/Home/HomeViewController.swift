@@ -23,8 +23,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuBtn: UIBarButtonItem!
     @IBOutlet weak var upDownBtn: UIBarButtonItem!
-    var upDownBtnState = false
-    var upDownDate = "입력순"
+    var upDownBtnState = true
+    var upDownDate = "saveTime"
     
     // DropDown
     let dropDown = DropDown()
@@ -214,13 +214,13 @@ class HomeViewController: UIViewController {
     
     @IBAction func upDownBtn(_ sender: Any) {
         if self.upDownBtnState == false {
-            upDownBtn.title = "↑"
+            upDownBtn.title = "↓"
             self.upDownBtnState = true
             updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
             
         }
         else if self.upDownBtnState == true {
-            upDownBtn.title = "↓"
+            upDownBtn.title = "↑"
             self.upDownBtnState = false
             updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
         }
@@ -271,6 +271,9 @@ class HomeViewController: UIViewController {
             // self.dropDown.clearSelection() // 이전 선택 값 클리어
             
             switch index {
+            case 0:
+                self.upDownDate = "saveTime"
+                updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
             case 1:
                 self.upDownDate = "endDay"
                 updateSort(sortSelect: self.upDownDate,upDownState: self.upDownBtnState)
@@ -334,9 +337,6 @@ class HomeViewController: UIViewController {
     }
     
     func updateSort(sortSelect: String, upDownState: Bool) {
-        if sortSelect == "입력순"{
-            getAllItems()
-        } else {
             do {
                 let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
                 let sort = NSSortDescriptor(key: sortSelect, ascending: upDownState)
@@ -350,7 +350,7 @@ class HomeViewController: UIViewController {
             catch {
                 print("getAllItmes 오류")
             }
-        }
+      
     }
     
     func createItem(title: String) {

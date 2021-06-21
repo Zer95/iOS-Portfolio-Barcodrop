@@ -120,6 +120,8 @@ class EditViewController: UIViewController {
         newItem.buyDay = buyDayPicker.date
         newItem.endDay = endDayPicker.date
         newItem.imgURL = self.saveURL
+        newItem.saveTime = Date()
+        print("저장 날짜 시점\(Date())")
         do{
             try context.save()
      

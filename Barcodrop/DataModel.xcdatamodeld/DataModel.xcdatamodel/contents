@@ -23,10 +23,11 @@
         <attribute name="endDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="imgURL" optional="YES" attributeType="String"/>
         <attribute name="productName" optional="YES" attributeType="String"/>
+        <attribute name="saveTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="AlarmSetting" positionX="-18" positionY="63" width="128" height="179"/>
-        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="104"/>
         <element name="AlarmHistory" positionX="-18" positionY="117" width="128" height="74"/>
+        <element name="AlarmSetting" positionX="-18" positionY="63" width="128" height="179"/>
+        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="119"/>
     </elements>
 </model>
