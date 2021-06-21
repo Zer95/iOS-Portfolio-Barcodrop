@@ -23,8 +23,7 @@ class BarcodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.readerView.delegate = self
-        self.readButton.layer.masksToBounds = true
-        self.readButton.layer.cornerRadius = 15
+        self.readerView.start()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,15 +34,7 @@ class BarcodeViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func scanButtonAction(_ sender: UIButton) {
-        if self.readerView.isRunning {
-            self.readerView.stop(isButtonTap: true)
-        } else {
-            self.readerView.start()
-        }
-        sender.isSelected = self.readerView.isRunning
-    }
+
     
     @IBAction func cancleBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -164,9 +155,8 @@ extension BarcodeViewController: ReaderViewDelegate {
             if isButtonTap {
                 title = "알림"
                 message = "바코드 읽기를 멈추었습니다."
-                self.readButton.isSelected = readerView.isRunning
             } else {
-                self.readButton.isSelected = readerView.isRunning
+
                 return
             }
         }

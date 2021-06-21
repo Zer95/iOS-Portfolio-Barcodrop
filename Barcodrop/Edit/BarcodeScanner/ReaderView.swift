@@ -118,7 +118,7 @@ class ReaderView: UIView {
         centerGuideLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         centerGuideLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         centerGuideLineView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        centerGuideLineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        centerGuideLineView.heightAnchor.constraint(equalToConstant: 3).isActive = true
 
         self.centerGuideLineView = centerGuideLineView
     }
