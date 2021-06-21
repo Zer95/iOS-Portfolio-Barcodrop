@@ -76,6 +76,8 @@ class HomeViewController: UIViewController {
         // longPress
         longpress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized))
         collectionView.addGestureRecognizer(longpress)
+        
+        
     }
     
     func appStartCheck(){
@@ -389,6 +391,12 @@ extension HomeViewController: UICollectionViewDataSource{
     
     // 표시할 항목 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if models.count == 0 {
+            collectionView.backgroundView = UIImageView(image: UIImage(named: "nullImage.png"))
+        } else {
+            collectionView.backgroundView = UIImageView(image: UIImage(named: ""))
+        }
+        
         return models.count
     }
     
