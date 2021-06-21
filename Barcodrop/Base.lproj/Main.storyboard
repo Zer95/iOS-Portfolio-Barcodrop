@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryListCell" rowHeight="100" id="BIk-fM-Ych" customClass="HistoryListCell" customModule="Barcodrop" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryListCell" rowHeight="100" id="BIk-fM-Ych" customClass="HistoryListCell" customModule="Barcodrop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BIk-fM-Ych" id="i41-2R-Yfq">
@@ -537,17 +537,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-EU-jqv">
-                                <rect key="frame" x="106" y="170" width="163" height="180"/>
+                                <rect key="frame" x="72" y="171" width="245" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="menu_scan"/>
+                                <state key="normal" image="newScan"/>
                                 <connections>
                                     <segue destination="Z1I-2h-Cwf" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Y4B-OQ-CZI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I61-q9-yYt">
-                                <rect key="frame" x="106" y="460" width="163" height="160"/>
+                                <rect key="frame" x="104" y="480" width="183" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="menu_edit"/>
+                                <state key="normal" image="edit1"/>
                                 <connections>
                                     <segue destination="ewc-Cw-ysj" kind="presentation" modalPresentationStyle="overFullScreen" id="ux4-fX-94b"/>
                                 </connections>
@@ -1738,6 +1738,7 @@
         <image name="background" width="5000" height="5000"/>
         <image name="close_ic" width="128" height="128"/>
         <image name="default_img" width="512" height="512"/>
+        <image name="edit1" width="512" height="512"/>
         <image name="etc_off" width="512" height="512"/>
         <image name="etc_on" width="512" height="512"/>
         <image name="fresh_off" width="512" height="512"/>
@@ -1747,8 +1748,8 @@
         <image name="iceIcon_off" width="512" height="512"/>
         <image name="iceIcon_on" width="512" height="512"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
-        <image name="menu_edit" width="1007" height="1007"/>
         <image name="menu_scan" width="512" height="512"/>
+        <image name="newScan" width="512" height="512"/>
         <image name="room temperature_on" width="512" height="512"/>
         <image name="roomtemperature_off" width="512" height="512"/>
         <image name="square" catalog="system" width="128" height="114"/>
