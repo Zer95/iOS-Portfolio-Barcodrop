@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 
+
 enum ReaderStatus {
     case success(_ code: String?)
     case fail
@@ -62,6 +63,10 @@ class ReaderView: UIView {
         let videoInput: AVCaptureDeviceInput
         
         do {
+       
+               
+          
+            
             videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
         } catch let error {
             print(error.localizedDescription)
@@ -74,6 +79,7 @@ class ReaderView: UIView {
         }
 
         if captureSession.canAddInput(videoInput) {
+          
             captureSession.addInput(videoInput)
         } else {
             self.fail()
@@ -127,34 +133,19 @@ class ReaderView: UIView {
         GuideLineView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
         self.GuideLineView = GuideLineView
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        let centerGuideLineView = UIView()
-//        centerGuideLineView.translatesAutoresizingMaskIntoConstraints = false
-//        centerGuideLineView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-//        self.addSubview(centerGuideLineView)
-//        self.bringSubviewToFront(centerGuideLineView)
-//
-//        centerGuideLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-//        centerGuideLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-//        centerGuideLineView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-//        centerGuideLineView.heightAnchor.constraint(equalToConstant: 3).isActive = true
-        
 
-      //  self.centerGuideLineView = centerGuideLineView
     }
+
+ 
 }
 
 extension ReaderView {
     func start() {
+     
         self.captureSession?.startRunning()
+       
+      
+        
     }
     
     func stop(isButtonTap: Bool) {
@@ -169,13 +160,15 @@ extension ReaderView {
     }
     
     func found(code: String) {
+
+
         self.delegate?.readerComplete(status: .success(code))
     }
 }
 
 extension ReaderView: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        
+     
         stop(isButtonTap: false)
         
         if let metadataObject = metadataObjects.first {

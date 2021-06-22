@@ -20,4 +20,6 @@ pod 'CBFlashyTabBarController'
 pod 'MaterialComponents/Buttons'
 pod 'TextFieldEffects'
 pod 'DropDown'
+pod "RSLoadingView"
+
 end

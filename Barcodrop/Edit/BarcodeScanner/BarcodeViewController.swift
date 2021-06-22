@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RSLoadingView
 
 class BarcodeViewController: UIViewController {
 
@@ -40,11 +41,24 @@ class BarcodeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    func showLoadingHub() {
+      let loadingView = RSLoadingView()
+      loadingView.show(on: view)
+    }
+
+    func showOnViewTwins() {
+      let loadingView = RSLoadingView(effectType: RSLoadingView.Effect.twins)
+      loadingView.show(on: view!)
+    }
+    
+    
 }
 
 extension BarcodeViewController: ReaderViewDelegate {
     func readerComplete(status: ReaderStatus) {
-
+        
+        
         var title = ""
         var message = ""
         
@@ -58,7 +72,11 @@ extension BarcodeViewController: ReaderViewDelegate {
 
             title = "스캔완료"
             print("\(code)")
-   
+            
+            // 프로그레스바
+            DispatchQueue.main.async {
+                self.showOnViewTwins()
+            }
             
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
@@ -106,7 +124,9 @@ extension BarcodeViewController: ReaderViewDelegate {
                 let PRDLST_REPORT_NO:String
                 
             }
-
+         
+           
+           
             let dataTask = session.dataTask(with: requestURL) { (data,response,error) in
                 guard error == nil else {return}
                 
@@ -123,6 +143,7 @@ extension BarcodeViewController: ReaderViewDelegate {
   
                 // 파싱 및 트랙 가져오기
                 do{
+                    
                     let decoder = JSONDecoder()
                     let respones = try decoder.decode(Response.self, from: resultData)
                     
@@ -159,8 +180,13 @@ extension BarcodeViewController: ReaderViewDelegate {
 
                 return
             }
+            
+            
         }
+      
         sleep(3)
+      
+    
         print("스캐너 출력값&&&&&&&&&&&&&&&&")
         print(self.productCompany)
         message = "\n\(self.productName)\n\(self.productCompany)\n\(self.wontEndDay)"
@@ -174,6 +200,7 @@ extension BarcodeViewController: ReaderViewDelegate {
             VC.barcodeTitle = self.sendTitle
             VC.modalPresentationStyle = .currentContext
             
+            sleep(2)
             self.present(VC, animated: false, completion: nil)
             
         }
