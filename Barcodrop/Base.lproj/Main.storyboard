@@ -602,8 +602,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82x-26-2NH">
+                                <rect key="frame" x="348" y="45" width="32" height="57"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="37"/>
+                                <state key="normal" title="✔︎">
+                                    <color key="titleColor" red="0.34646296375125624" green="0.68567470238380823" blue="0.35335123908540012" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="success_Btn:" destination="ewc-Cw-ysj" eventType="touchUpInside" id="MNP-nL-JLt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgJ-Lc-fMR">
+                                <rect key="frame" x="10" y="43" width="30" height="57"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="37"/>
+                                <state key="normal" title="✘">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancle_Btn:" destination="ewc-Cw-ysj" eventType="touchUpInside" id="j3X-Mw-bE2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBZ-xh-3M6">
+                                <rect key="frame" x="176.66666666666666" y="64" width="37" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArH-Bn-Vdz">
-                                <rect key="frame" x="0.0" y="94" width="390" height="667"/>
+                                <rect key="frame" x="0.0" y="114" width="390" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikW-Ei-xnf">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
@@ -781,41 +807,28 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="7uZ-za-l6d"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Mpb-Gv-TNi"/>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VFg-Z0-AXf">
-                                <rect key="frame" x="0.0" y="79" width="414" height="10"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VFg-Z0-AXf">
+                                <rect key="frame" x="0.0" y="101" width="390" height="1"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82x-26-2NH">
-                                <rect key="frame" x="342" y="21" width="32" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="37"/>
-                                <state key="normal" title="✔︎">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="success_Btn:" destination="ewc-Cw-ysj" eventType="touchUpInside" id="MNP-nL-JLt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgJ-Lc-fMR">
-                                <rect key="frame" x="16" y="29" width="30" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="37"/>
-                                <state key="normal" title="✘">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancle_Btn:" destination="ewc-Cw-ysj" eventType="touchUpInside" id="j3X-Mw-bE2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iup-LR-EPL"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ArH-Bn-Vdz" firstAttribute="top" secondItem="Iup-LR-EPL" secondAttribute="top" constant="50" id="1EI-SC-Oa1"/>
+                            <constraint firstItem="ArH-Bn-Vdz" firstAttribute="top" secondItem="Iup-LR-EPL" secondAttribute="top" constant="70" id="1EI-SC-Oa1"/>
+                            <constraint firstItem="XgJ-Lc-fMR" firstAttribute="leading" secondItem="Iup-LR-EPL" secondAttribute="leading" constant="10" id="1WJ-4u-Sf4"/>
                             <constraint firstItem="ArH-Bn-Vdz" firstAttribute="leading" secondItem="Iup-LR-EPL" secondAttribute="leading" id="AOd-KL-Msd"/>
+                            <constraint firstItem="Iup-LR-EPL" firstAttribute="trailing" secondItem="VFg-Z0-AXf" secondAttribute="trailing" id="BWG-di-1lU"/>
+                            <constraint firstItem="VFg-Z0-AXf" firstAttribute="top" secondItem="bBZ-xh-3M6" secondAttribute="bottom" constant="11" id="Igh-li-QkO"/>
                             <constraint firstItem="Iup-LR-EPL" firstAttribute="bottom" secondItem="ArH-Bn-Vdz" secondAttribute="bottom" id="Lmi-qH-3qs"/>
                             <constraint firstItem="Iup-LR-EPL" firstAttribute="trailing" secondItem="ArH-Bn-Vdz" secondAttribute="trailing" id="PTt-l0-cj8"/>
+                            <constraint firstItem="Iup-LR-EPL" firstAttribute="trailing" secondItem="82x-26-2NH" secondAttribute="trailing" constant="10" id="TFe-d4-Wy5"/>
+                            <constraint firstItem="bBZ-xh-3M6" firstAttribute="centerX" secondItem="Iup-LR-EPL" secondAttribute="centerX" id="VXs-3z-8ul"/>
+                            <constraint firstItem="82x-26-2NH" firstAttribute="top" secondItem="Iup-LR-EPL" secondAttribute="top" constant="1" id="Wct-mQ-DdN"/>
+                            <constraint firstItem="VFg-Z0-AXf" firstAttribute="leading" secondItem="Iup-LR-EPL" secondAttribute="leading" id="cjZ-UC-tG0"/>
+                            <constraint firstItem="bBZ-xh-3M6" firstAttribute="top" secondItem="Iup-LR-EPL" secondAttribute="top" constant="20" id="iQN-Zo-Lio"/>
+                            <constraint firstItem="Iup-LR-EPL" firstAttribute="top" secondItem="XgJ-Lc-fMR" secondAttribute="top" constant="1" id="ol0-8t-bIK"/>
+                            <constraint firstItem="ArH-Bn-Vdz" firstAttribute="top" secondItem="VFg-Z0-AXf" secondAttribute="bottom" constant="12" id="peD-4A-cbg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1757,7 +1770,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Y4B-OQ-CZI"/>
+        <segue reference="G5p-QD-ZO4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>

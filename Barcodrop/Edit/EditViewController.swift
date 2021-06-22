@@ -74,12 +74,14 @@ class EditViewController: UIViewController {
         ScrollView.addGestureRecognizer(singleTapGestureRecognizer)
   
             getAllItems()
+            
+            if checkCode == 1 {
             for i in 0...self.models.count - 1 {
             
                 dataNameList.append("\(self.models[i].productName!)")
             }
             print("프린터한다.  \(self.dataNameList)")
-        
+            }
         }
     
     // 수정시 로드 한 값 세팅
