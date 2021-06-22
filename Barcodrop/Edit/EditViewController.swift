@@ -33,7 +33,7 @@ class EditViewController: UIViewController {
     var datadistinct = false
     
     // Data Input 아웃렛 연결
-    @IBOutlet weak var inputText: HoshiTextField!  // 제목
+    @IBOutlet weak var inputText: UITextField!  // 제목
     @IBOutlet weak var endDayPicker: UIDatePicker! // 유통기한
     @IBOutlet weak var buyDayPicker: UIDatePicker! // 구입일
     
@@ -52,6 +52,7 @@ class EditViewController: UIViewController {
         override func viewDidLoad() {
         super.viewDidLoad()
 
+            imageView.layer.cornerRadius = 15
    
             if checkCode == 0 {
                 inputText.text = barcodeTitle // 바코드 스캔후 넘어온 상품명 입력
@@ -194,13 +195,14 @@ class EditViewController: UIViewController {
         }
    
         // 데이터 중복검사
-        for i in 0...self.dataNameList.count - 1 {
-            if title == "\(self.models[i].productName!)" {
-                self.datadistinct = true
-            }
-        }
-        
+      
+     
         if checkCode == 1 {
+            for i in 0...self.dataNameList.count - 1 {
+                if title == "\(self.models[i].productName!)" {
+                    self.datadistinct = true
+                }
+            }
         if edit_models.productName == inputText.text {
             self.datadistinct = false
         }
