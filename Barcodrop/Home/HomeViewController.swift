@@ -29,7 +29,6 @@ class HomeViewController: UIViewController {
     // DropDown
     let dropDown = DropDown()
 
-    
  
     
     // view 로드전 준비 -> detailView 전송시 필요한 객체 담기
@@ -67,6 +66,7 @@ class HomeViewController: UIViewController {
         getAllItems() // 컬렉션 뷰 실시간
         getAlarm()
                 
+        
         // DropDown
         openDropDown()
      
@@ -120,7 +120,7 @@ class HomeViewController: UIViewController {
     func getAlarm() {
         do {
             alarm = try context.fetch(AlarmSetting.fetchRequest())
-     
+            
             DispatchQueue.main.async {
             }
         }

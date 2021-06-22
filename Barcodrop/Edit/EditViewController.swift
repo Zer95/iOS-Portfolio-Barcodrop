@@ -28,7 +28,9 @@ class EditViewController: UIViewController {
     // 수정 데이터 모델 받기
     var edit_models = ProductListItem()
     
-   
+    // 데이터 제목 비교
+    var dataNameList = [String]()
+    var datadistinct = false
     
     // Data Input 아웃렛 연결
     @IBOutlet weak var inputText: HoshiTextField!  // 제목
@@ -70,7 +72,15 @@ class EditViewController: UIViewController {
         singleTapGestureRecognizer.isEnabled = true
         singleTapGestureRecognizer.cancelsTouchesInView = false
         ScrollView.addGestureRecognizer(singleTapGestureRecognizer)
-    }
+  
+            getAllItems()
+            for i in 0...self.models.count - 1 {
+            
+                dataNameList.append("\(self.models[i].productName!)")
+            }
+            print("프린터한다.  \(self.dataNameList)")
+        
+        }
     
     // 수정시 로드 한 값 세팅
     func updateUI(){
@@ -175,7 +185,31 @@ class EditViewController: UIViewController {
         guard let title = inputText.text else {
             return
         }
-    
+   
+        // 데이터 중복검사
+        for i in 0...self.dataNameList.count - 1 {
+            if title == "\(self.models[i].productName!)" {
+                self.datadistinct = true
+            }
+        }
+        
+        if checkCode == 1 {
+        if edit_models.productName == inputText.text {
+            self.datadistinct = false
+        }
+        }
+        
+        if self.datadistinct == true {
+            let alert = UIAlertController(title: "알림", message: "해당하는 상품명이 이미 있습니다. \n 다른 상품명으로 변경해주세요!", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+              
+                   }
+            alert.addAction(okAction)
+            present(alert, animated: false, completion: nil)
+        }
+        
+        // 데이터 저장 및 수정
+        else {
         self.createItem(title: title)
         print("현재 입력된 값--------")
         print("상품명:\(title)")
@@ -208,6 +242,7 @@ class EditViewController: UIViewController {
                }
         alert.addAction(okAction)
         present(alert, animated: false, completion: nil)
+        }
    
     }
     
