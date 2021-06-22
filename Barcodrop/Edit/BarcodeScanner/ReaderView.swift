@@ -24,6 +24,8 @@ class ReaderView: UIView {
     
     var previewLayer: AVCaptureVideoPreviewLayer?
     var centerGuideLineView: UIView?
+    var GuideLineView: UIImageView?
+    
     
     var captureSession: AVCaptureSession?
     
@@ -109,18 +111,44 @@ class ReaderView: UIView {
     }
 
     private func setCenterGuideLineView() {
-        let centerGuideLineView = UIView()
-        centerGuideLineView.translatesAutoresizingMaskIntoConstraints = false
-        centerGuideLineView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        self.addSubview(centerGuideLineView)
-        self.bringSubviewToFront(centerGuideLineView)
+        
+        let GuideLineView = UIImageView()
+        GuideLineView.image = UIImage(named:"scanline.png")
+        GuideLineView.translatesAutoresizingMaskIntoConstraints = false
+       // GuideLineView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        self.addSubview(GuideLineView)
+        self.bringSubviewToFront(GuideLineView)
+        
 
-        centerGuideLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        centerGuideLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        centerGuideLineView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        centerGuideLineView.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        GuideLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -40).isActive = true
+        GuideLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        GuideLineView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        GuideLineView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        GuideLineView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        self.GuideLineView = GuideLineView
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        let centerGuideLineView = UIView()
+//        centerGuideLineView.translatesAutoresizingMaskIntoConstraints = false
+//        centerGuideLineView.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+//        self.addSubview(centerGuideLineView)
+//        self.bringSubviewToFront(centerGuideLineView)
+//
+//        centerGuideLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+//        centerGuideLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+//        centerGuideLineView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+//        centerGuideLineView.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        
 
-        self.centerGuideLineView = centerGuideLineView
+      //  self.centerGuideLineView = centerGuideLineView
     }
 }
 

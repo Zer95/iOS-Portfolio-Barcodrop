@@ -536,20 +536,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-EU-jqv">
-                                <rect key="frame" x="72" y="171" width="245" height="212"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="newScan"/>
-                                <connections>
-                                    <segue destination="Z1I-2h-Cwf" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Y4B-OQ-CZI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I61-q9-yYt">
-                                <rect key="frame" x="104" y="480" width="183" height="160"/>
+                                <rect key="frame" x="93" y="471" width="194" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="edit1"/>
                                 <connections>
                                     <segue destination="ewc-Cw-ysj" kind="presentation" modalPresentationStyle="overFullScreen" id="ux4-fX-94b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-EU-jqv">
+                                <rect key="frame" x="93" y="187" width="205" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="scannerline"/>
+                                <connections>
+                                    <segue destination="Z1I-2h-Cwf" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Y4B-OQ-CZI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1729,7 +1729,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="G5p-QD-ZO4"/>
+        <segue reference="Y4B-OQ-CZI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
@@ -1749,9 +1749,9 @@
         <image name="iceIcon_on" width="512" height="512"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="menu_scan" width="512" height="512"/>
-        <image name="newScan" width="512" height="512"/>
         <image name="room temperature_on" width="512" height="512"/>
         <image name="roomtemperature_off" width="512" height="512"/>
+        <image name="scannerline" width="2000" height="2000"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <image name="water" width="3024" height="4032"/>
