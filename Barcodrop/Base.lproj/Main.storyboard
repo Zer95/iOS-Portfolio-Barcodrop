@@ -536,18 +536,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I61-q9-yYt">
-                                <rect key="frame" x="93" y="471" width="194" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I61-q9-yYt">
+                                <rect key="frame" x="103" y="459.66666666666669" width="184" height="204.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I61-q9-yYt" secondAttribute="height" multiplier="9:10" id="NDt-GI-P9o"/>
+                                </constraints>
                                 <state key="normal" image="edit1"/>
                                 <connections>
                                     <segue destination="ewc-Cw-ysj" kind="presentation" modalPresentationStyle="overFullScreen" id="ux4-fX-94b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-EU-jqv">
-                                <rect key="frame" x="93" y="187" width="205" height="172"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="scannerline"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-EU-jqv">
+                                <rect key="frame" x="80" y="123.99999999999999" width="230" height="255.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="14e-EU-jqv" secondAttribute="height" multiplier="9:10" id="61Q-mX-Avj"/>
+                                </constraints>
+                                <state key="normal" image="menu_scan"/>
                                 <connections>
                                     <segue destination="Z1I-2h-Cwf" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Y4B-OQ-CZI"/>
                                 </connections>
@@ -555,6 +559,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J9q-zn-qvW"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66218112244897964" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="I61-q9-yYt" firstAttribute="centerX" secondItem="14e-EU-jqv" secondAttribute="centerX" id="9Uj-hr-IhI"/>
+                            <constraint firstItem="I61-q9-yYt" firstAttribute="width" secondItem="14e-EU-jqv" secondAttribute="width" multiplier="0.8" id="RUu-8B-s0m"/>
+                            <constraint firstItem="I61-q9-yYt" firstAttribute="top" secondItem="14e-EU-jqv" secondAttribute="bottom" constant="80" id="Rbs-68-fht"/>
+                            <constraint firstItem="14e-EU-jqv" firstAttribute="leading" secondItem="J9q-zn-qvW" secondAttribute="leading" constant="80" id="SnC-0P-alx"/>
+                            <constraint firstAttribute="trailing" secondItem="14e-EU-jqv" secondAttribute="trailing" constant="80" id="ZzN-BE-bVI"/>
+                            <constraint firstAttribute="bottom" secondItem="I61-q9-yYt" secondAttribute="bottom" constant="180" id="c95-K2-N5B"/>
+                            <constraint firstItem="14e-EU-jqv" firstAttribute="top" secondItem="J9q-zn-qvW" secondAttribute="top" constant="80" id="lXB-C5-gET"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yj1-fW-cNc"/>
                     <connections>
@@ -1751,7 +1764,6 @@
         <image name="menu_scan" width="512" height="512"/>
         <image name="room temperature_on" width="512" height="512"/>
         <image name="roomtemperature_off" width="512" height="512"/>
-        <image name="scannerline" width="2000" height="2000"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <image name="water" width="3024" height="4032"/>
