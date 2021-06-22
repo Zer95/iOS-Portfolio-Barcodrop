@@ -22,7 +22,7 @@ class EditViewController: UIViewController {
     
     // 입력 데이터 저장변수
     var barcodeTitle = ""
-    var categotySave = ""
+    var categorySave = ""
     var saveURL = ""
     
     // 수정 데이터 모델 받기
@@ -91,12 +91,16 @@ class EditViewController: UIViewController {
         let re_Category = edit_models.category
         switch re_Category {
         case "냉장":
+            self.categorySave = "냉장"
             freshBtn.isSelected = true
         case "냉동":
+            self.categorySave = "냉동"
             iceBtn.isSelected = true
         case "실온":
+            self.categorySave = "실온"
             roomtemperatureBtn.isSelected = true
         case "기타":
+            self.categorySave = "기타"
             etcBtn.isSelected = true
         default:
             print("none")
@@ -128,7 +132,7 @@ class EditViewController: UIViewController {
         if checkCode == 0 {
         let newItem = ProductListItem(context: context)
         newItem.productName = title
-        newItem.category = categotySave
+        newItem.category = categorySave
         newItem.buyDay = buyDayPicker.date.addingTimeInterval(32400)
         newItem.endDay = endDayPicker.date.addingTimeInterval(32400)
         newItem.imgURL = self.saveURL
@@ -163,7 +167,7 @@ class EditViewController: UIViewController {
     
     func updateItem(item: ProductListItem) {
         item.productName = inputText.text
-        item.category = categotySave
+        item.category = categorySave
         item.buyDay = buyDayPicker.date
         item.endDay = endDayPicker.date
         item.imgURL = self.saveURL
@@ -200,13 +204,16 @@ class EditViewController: UIViewController {
         }
         }
         
-        if self.datadistinct == true {
-            let alert = UIAlertController(title: "알림", message: "해당하는 상품명이 이미 있습니다. \n 다른 상품명으로 변경해주세요!", preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-              
-                   }
-            alert.addAction(okAction)
-            present(alert, animated: false, completion: nil)
+        if title == "" {
+            alertMessage(msg: "상품명을 입력해주세요!")
+        }
+        else if self.categorySave == "" {
+            alertMessage(msg: "카테고리를 선택해주세요!")
+        }
+        
+        
+        else if self.datadistinct == true {
+            alertMessage(msg: "해당하는 상품명이 이미 있습니다. \n 다른 상품명으로 변경해주세요!")
         }
         
         // 데이터 저장 및 수정
@@ -214,7 +221,7 @@ class EditViewController: UIViewController {
         self.createItem(title: title)
         print("현재 입력된 값--------")
         print("상품명:\(title)")
-        print("카테고리: \(categotySave)")
+        print("카테고리: \(categorySave)")
         print("구입일: \(buyDayPicker.date)")
         print("유통기한: \(endDayPicker.date)")
         print("알람일: ")
@@ -245,6 +252,16 @@ class EditViewController: UIViewController {
         present(alert, animated: false, completion: nil)
         }
    
+    }
+    
+    func alertMessage(msg:String) {
+        let alert = UIAlertController(title: "알림", message: msg, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+          
+               }
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
+        
     }
     
     // 카메라 & 앨범 load
@@ -285,7 +302,7 @@ class EditViewController: UIViewController {
     
     
     @IBAction func freshBtn(_ sender: Any) {
-        categotySave = "냉장"
+        categorySave = "냉장"
         freshBtn.isSelected = true
         iceBtn.isSelected = false
         roomtemperatureBtn.isSelected = false
@@ -295,7 +312,7 @@ class EditViewController: UIViewController {
     
     
     @IBAction func iceBtn(_ sender: Any) {
-        categotySave = "냉동"
+        categorySave = "냉동"
         iceBtn.isSelected = true
         freshBtn.isSelected = false
         roomtemperatureBtn.isSelected = false
@@ -303,7 +320,7 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func roomtemperatureBtn(_ sender: Any) {
-        categotySave = "실온"
+        categorySave = "실온"
         roomtemperatureBtn.isSelected = true
         freshBtn.isSelected = false
         iceBtn.isSelected = false
@@ -311,7 +328,7 @@ class EditViewController: UIViewController {
     }
 
     @IBAction func etcBtn(_ sender: Any) {
-        categotySave = "기타"
+        categorySave = "기타"
         etcBtn.isSelected = true
         freshBtn.isSelected = false
         iceBtn.isSelected = false
