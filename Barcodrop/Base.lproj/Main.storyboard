@@ -650,26 +650,26 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구입일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJ7-CK-h1q">
-                                                <rect key="frame" x="25" y="569.66666666666663" width="52" height="24"/>
+                                                <rect key="frame" x="25" y="581" width="52" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유통기한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhV-Hh-hP6">
-                                                <rect key="frame" x="25" y="683.66666666666663" width="69.333333333333329" height="24"/>
+                                                <rect key="frame" x="25" y="695" width="69.333333333333329" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9Kn-ol-PUY">
-                                                <rect key="frame" x="25" y="604" width="320" height="50"/>
+                                                <rect key="frame" x="25" y="615" width="320" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VSh-iD-aro"/>
                                                 </constraints>
                                                 <locale key="locale" localeIdentifier="ko_KR"/>
                                             </datePicker>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rTB-2a-X3m">
-                                                <rect key="frame" x="25" y="459.33333333333337" width="290" height="80.333333333333371"/>
+                                                <rect key="frame" x="25" y="470.66666666666663" width="290" height="80.333333333333371"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="67x-x7-VF3">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="80.333333333333329"/>
@@ -768,12 +768,14 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cpf-lD-jw8">
-                                                <rect key="frame" x="25" y="366.66666666666669" width="250" height="28.666666666666686"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상품명을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cpf-lD-jw8">
+                                                <rect key="frame" x="25" y="366.66666666666669" width="250" height="40"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="gY4-pu-NJH"/>
+                                                    <constraint firstAttribute="height" constant="40" id="qlw-J8-OiP"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFg-bL-tD8">
@@ -783,7 +785,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC6-5O-5NQ">
-                                                <rect key="frame" x="285" y="361.66666666666669" width="70" height="40"/>
+                                                <rect key="frame" x="285" y="366.66666666666669" width="70" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="PvE-EG-aTb"/>
                                                     <constraint firstAttribute="width" constant="70" id="wHZ-bu-pbM"/>
@@ -794,13 +796,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUd-5H-f8W">
-                                                <rect key="frame" x="25" y="425.33333333333337" width="69.333333333333329" height="24"/>
+                                                <rect key="frame" x="25" y="436.66666666666663" width="69.333333333333329" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BLY-35-DRZ">
-                                                <rect key="frame" x="25" y="718" width="320" height="50"/>
+                                                <rect key="frame" x="25" y="729" width="320" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
@@ -836,7 +838,7 @@
                                             <constraint firstItem="PhV-Hh-hP6" firstAttribute="leading" secondItem="ikW-Ei-xnf" secondAttribute="leading" constant="25" id="tf5-kI-p1C"/>
                                             <constraint firstItem="BLY-35-DRZ" firstAttribute="leading" secondItem="ikW-Ei-xnf" secondAttribute="leading" constant="25" id="tnu-0S-pHA"/>
                                             <constraint firstItem="HNE-ua-egL" firstAttribute="top" secondItem="ikW-Ei-xnf" secondAttribute="top" constant="10" id="vhl-Bf-4zL"/>
-                                            <constraint firstItem="AC6-5O-5NQ" firstAttribute="top" secondItem="eFg-bL-tD8" secondAttribute="bottom" constant="5" id="wMP-CD-3wK"/>
+                                            <constraint firstItem="AC6-5O-5NQ" firstAttribute="top" secondItem="eFg-bL-tD8" secondAttribute="bottom" constant="10" id="wMP-CD-3wK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -879,6 +881,7 @@
                     <connections>
                         <outlet property="ScrollView" destination="ArH-Bn-Vdz" id="0vg-ez-V7p"/>
                         <outlet property="buyDayPicker" destination="9Kn-ol-PUY" id="3Sc-UG-icd"/>
+                        <outlet property="categoryStack" destination="rTB-2a-X3m" id="Bkk-gj-Rq9"/>
                         <outlet property="endDayPicker" destination="BLY-35-DRZ" id="daQ-TI-Zbk"/>
                         <outlet property="etcBtn" destination="cc5-Ea-ku4" id="7kf-DU-X4S"/>
                         <outlet property="freshBtn" destination="eEV-U1-Goy" id="UFD-fM-XTl"/>

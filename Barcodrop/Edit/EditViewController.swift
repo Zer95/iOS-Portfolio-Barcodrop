@@ -43,6 +43,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var roomtemperatureBtn: UIButton! // 실온
     @IBOutlet weak var etcBtn: UIButton! // 기타
     
+    @IBOutlet weak var categoryStack: UIStackView!
     private var datePicker: UIDatePicker? // 데이터 피커
     let picker = UIImagePickerController() // 이미지 컨트롤러
 
@@ -54,6 +55,8 @@ class EditViewController: UIViewController {
 
             imageView.layer.cornerRadius = 15
    
+            addShadowToTextField(color: .gray,cornerRadius: 15)
+            
             if checkCode == 0 {
                 inputText.text = barcodeTitle // 바코드 스캔후 넘어온 상품명 입력
             }
@@ -62,9 +65,11 @@ class EditViewController: UIViewController {
                 updateUI()
             }
             
-            // 유통기한 피커 UI 설정
+            // 피커 UI 설정
             endDayPicker.backgroundColor = .white
             endDayPicker.tintColor = .orange
+            buyDayPicker.backgroundColor = .white
+            buyDayPicker.tintColor = .orange
             picker.delegate = self
             
         // scrollView 클릭시 키보드 내리기
@@ -84,6 +89,16 @@ class EditViewController: UIViewController {
             print("프린터한다.  \(self.dataNameList)")
             }
         }
+    
+    func addShadowToTextField(color: UIColor = UIColor.gray, cornerRadius: CGFloat) {
+        inputText.layer.masksToBounds = false
+        inputText.layer.shadowColor = color.cgColor
+        inputText.layer.shadowOffset = CGSize(width: 0, height: 0)
+        inputText.layer.shadowOpacity = 1.0
+        inputText.layer.cornerRadius = cornerRadius
+        
+    }
+    
     
     // 수정시 로드 한 값 세팅
     func updateUI(){
