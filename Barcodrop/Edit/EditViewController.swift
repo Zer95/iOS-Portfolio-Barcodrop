@@ -283,7 +283,7 @@ class EditViewController: UIViewController {
       func openLibrary()
       {
           picker.sourceType = .photoLibrary
-          present(picker, animated: false, completion: nil)
+          present(picker, animated: true, completion: nil)
 
       }
       func openCamera()
