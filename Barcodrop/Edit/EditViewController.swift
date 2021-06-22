@@ -180,6 +180,7 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func success_Btn(_ sender: Any) {
+        self.datadistinct = false // 값 초기화
         
         //coredata 저장
         guard let title = inputText.text else {

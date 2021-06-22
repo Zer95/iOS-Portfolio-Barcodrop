@@ -697,7 +697,7 @@
                                                     <action selector="addImage:" destination="ewc-Cw-ysj" eventType="touchUpInside" id="pjw-R7-3kM"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_img" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-T8-ZI0">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_img" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-T8-ZI0">
                                                 <rect key="frame" x="94" y="5" width="226" height="219"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -1729,7 +1729,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Y4B-OQ-CZI"/>
+        <segue reference="G5p-QD-ZO4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
