@@ -328,7 +328,11 @@ class HomeViewController: UIViewController {
     func getAllItems() {
         do {
             models = try context.fetch(ProductListItem.fetchRequest())
-     
+            if models.count == 0 {
+                collectionView.backgroundView = UIImageView(image: UIImage(named: "notdata.png"))
+            } else {
+                collectionView.backgroundView = UIImageView(image: nil)
+            }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -391,11 +395,6 @@ extension HomeViewController: UICollectionViewDataSource{
     
     // 표시할 항목 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if models.count == 0 {
-            collectionView.backgroundView = UIImageView(image: UIImage(named: "nullImage.png"))
-        } else {
-   //         collectionView.backgroundView = UIImageView(image: UIImage(named: ""))
-        }
         
         return models.count
     }
