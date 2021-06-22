@@ -120,7 +120,7 @@ class ReaderView: UIView {
         self.bringSubviewToFront(GuideLineView)
         
 
-        GuideLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -40).isActive = true
+        GuideLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         GuideLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         GuideLineView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         GuideLineView.heightAnchor.constraint(equalToConstant: 300).isActive = true
