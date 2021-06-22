@@ -18,6 +18,7 @@ class EditViewController: UIViewController {
 
     // CODE=0 생성모드, CODE=1 수정모드
     var checkCode = 0
+    var checkMessage = "저장이 완료되었습니다."
     
     // 입력 데이터 저장변수
     var barcodeTitle = ""
@@ -54,6 +55,7 @@ class EditViewController: UIViewController {
                 inputText.text = barcodeTitle // 바코드 스캔후 넘어온 상품명 입력
             }
             else if checkCode == 1{
+                checkMessage = "수정이 완료되었습니다."
                 updateUI()
             }
             
@@ -199,7 +201,14 @@ class EditViewController: UIViewController {
            }
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"),object: nil) // 실시간 reload 되게 Notification 보내기
-        self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
+        
+        let alert = UIAlertController(title: "알림", message: self.checkMessage, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
+               }
+        alert.addAction(okAction)
+        present(alert, animated: false, completion: nil)
+   
     }
     
     // 카메라 & 앨범 load
