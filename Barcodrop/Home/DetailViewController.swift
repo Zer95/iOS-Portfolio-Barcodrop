@@ -29,17 +29,38 @@ class DetailViewController: UIViewController {
     var re_endDay:Date = Date()
     var re_dDay:Int = 0
  
-    
+    // 카테고리 설정 저장 값
+    var categoryValue = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         Thumbnail.layer.cornerRadius = 10
         
         // 넘어온 값 세팅
         Name_lable.text = re_title
-        category_lable.text = re_category
         buyDay_lable.text = "구입일: " + DateToString(RE_Date: re_buyDay)
         endDay_lable.text = "유통기한: " + DateToString(RE_Date: re_endDay)
       //  print("넘어온 디데이 값은:\(re_dDay)")
+        
+        // 카테고리 세팅
+        
+        if re_category == "냉장" {
+            category_lable.attributedText = settingLable(title: "  냉장 ", imgName: "fresh_on.png")
+            category_lable.sizeToFit()
+        } else if re_category == "냉동" {
+            category_lable.attributedText = settingLable(title: "  냉동 ", imgName: "iceIcon_on.png")
+            category_lable.sizeToFit()
+        } else if re_category == "실온" {
+            category_lable.attributedText = settingLable(title: "  실온 ", imgName: "room temperature_on.png")
+            category_lable.sizeToFit()
+        } else if re_category == "기타" {
+            category_lable.attributedText = settingLable(title: "  기타 ", imgName: "etc_on.png")
+            category_lable.sizeToFit()
+        } else {
+            print("not category")
+        }
+        
+      
+        
         
         // D-day 값 세팅
         let calendar = Calendar.current
@@ -139,5 +160,16 @@ class DetailViewController: UIViewController {
 
     @IBAction func closeBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func settingLable(title:String, imgName:String) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: "")
+        let imageAttachment = NSTextAttachment()
+        attributedString.append(NSAttributedString(string:"\(title)"))
+        imageAttachment.image = UIImage(named: "\(imgName)")
+        imageAttachment.bounds = CGRect(x: 0, y: 0, width: 20, height: 20)
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        return attributedString
+        
     }
 }

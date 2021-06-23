@@ -104,7 +104,7 @@ class SettingTableViewController: UITableViewController {
         let VC =  self.storyboard?.instantiateViewController(withIdentifier:"AlarmSelectView") as! AlarmSelectViewController
         VC.modalPresentationStyle = .overFullScreen
         VC.modalTransitionStyle = .crossDissolve
-        self.present(VC, animated: false, completion: nil)
+        self.present(VC, animated: true, completion: nil)
         }
         
         else{

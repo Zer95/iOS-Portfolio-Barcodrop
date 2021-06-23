@@ -221,38 +221,38 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="olS-9h-WvI">
-                                <rect key="frame" x="55" y="90" width="280" height="400"/>
+                                <rect key="frame" x="55" y="90" width="280" height="294"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="olS-9h-WvI" secondAttribute="height" multiplier="7:10" id="WsZ-Ab-OdC"/>
+                                    <constraint firstAttribute="width" secondItem="olS-9h-WvI" secondAttribute="height" multiplier="6000:6300" id="WsZ-Ab-OdC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엑티비아" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-LT-zye">
-                                <rect key="frame" x="143" y="514.66666666666663" width="104" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="엑티비아" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-LT-zye">
+                                <rect key="frame" x="143" y="408.5" width="104" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과일/야채" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-R3-hpk">
-                                <rect key="frame" x="153" y="569.66666666666663" width="84" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="과일/야채" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1G-R3-hpk">
+                                <rect key="frame" x="153" y="463.5" width="84" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매일자: 2021-11-11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1R-Ec-Tlj">
-                                <rect key="frame" x="92" y="619.66666666666663" width="206" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="구매일자: 2021-11-11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1R-Ec-Tlj">
+                                <rect key="frame" x="92" y="513.5" width="206" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유통기한: 2021-11-11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zJ-Kh-zLo">
-                                <rect key="frame" x="92" y="670.66666666666663" width="206" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="유통기한: 2021-11-11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zJ-Kh-zLo">
+                                <rect key="frame" x="92" y="564.5" width="206" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남은기간: D-3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSE-oD-sXc">
-                                <rect key="frame" x="131" y="720.66666666666663" width="128" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="남은기간: D-3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSE-oD-sXc">
+                                <rect key="frame" x="131" y="614.5" width="128" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -275,7 +275,8 @@
                             <constraint firstItem="olS-9h-WvI" firstAttribute="top" secondItem="4im-Z3-wWz" secondAttribute="top" constant="90" id="fxR-YN-4g9"/>
                             <constraint firstItem="Q1R-Ec-Tlj" firstAttribute="centerX" secondItem="l1G-R3-hpk" secondAttribute="centerX" id="g5Q-g8-wAP"/>
                             <constraint firstItem="2zJ-Kh-zLo" firstAttribute="top" secondItem="Q1R-Ec-Tlj" secondAttribute="bottom" constant="24" id="k5f-R6-9ET"/>
-                            <constraint firstItem="1Xb-LT-zye" firstAttribute="top" secondItem="olS-9h-WvI" secondAttribute="bottom" constant="24.5" id="lfF-qy-ESh"/>
+                            <constraint firstItem="1Xb-LT-zye" firstAttribute="top" secondItem="olS-9h-WvI" secondAttribute="bottom" constant="30" id="lfF-qy-ESh"/>
+                            <constraint firstItem="4im-Z3-wWz" firstAttribute="bottom" secondItem="hSE-oD-sXc" secondAttribute="bottom" constant="5.5" id="oqd-Tg-AL2"/>
                         </constraints>
                     </view>
                     <connections>
