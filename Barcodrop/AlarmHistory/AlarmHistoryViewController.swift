@@ -15,7 +15,10 @@ class AlarmHistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var deleteBtn: UIBarButtonItem!
+    @IBOutlet weak var deleteAllBtn: UIButton!
     var deleteBtnState = true
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,7 @@ class AlarmHistoryViewController: UIViewController {
       
         if self.deleteBtnState == false {
             deleteBtn.title = "🗑"
+            deleteAllBtn.isHidden = true
             self.deleteBtnState = true
             self.getAllItems()
            
@@ -60,10 +64,32 @@ class AlarmHistoryViewController: UIViewController {
         }
         else if self.deleteBtnState == true {
             deleteBtn.title = "✔️"
+            deleteAllBtn.isHidden = false
             self.deleteBtnState = false
             self.getAllItems()
         }
     }
+    
+    func deleteAll() {
+        let dataAll = models.count - 1
+        for i in 0...dataAll {
+            let model = models[i]
+           context.delete(model)
+        }
+           do{
+               try context.save()
+               getAllItems()
+           }
+           catch {
+           }
+       
+    }
+    
+    @IBAction func deleteAllBtn(_ sender: Any) {
+        deleteAll()
+    }
+    
+    
     
 }
 
@@ -151,7 +177,7 @@ class HistoryListCell: UITableViewCell {
     @IBOutlet weak var Title:UILabel!
     @IBOutlet weak var Content:UILabel!
     @IBOutlet weak var AlarmTime:UILabel!
-    @IBOutlet weak var deletSelect: UIButton!
+    @IBOutlet weak var deletSelect: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib() // view 로드전에 실행
