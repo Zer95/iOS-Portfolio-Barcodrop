@@ -113,17 +113,21 @@ extension AlarmHistoryViewController:UITableViewDataSource {
         let model = models[indexPath.row]
         cell.Title.text = model.title
         cell.Content.text = model.content
-        cell.AlarmTime.text = "\(model.alarmTime!)"
-        
      
+        
+        var now = model.alarmTime!
+        let lastTime = now.timeAgoDisplay()
+        
+        print("\(lastTime)")
+        cell.AlarmTime.text = "\(lastTime)"
         if deleteBtnState == false {
-            print("btn 상태는\(deleteBtnState)")
+      //      print("btn 상태는\(deleteBtnState)")
             cell.titleLine.constant = 50
             cell.contentLine.constant = 50
             cell.alarmTimeLine.constant = 50
             cell.deletSelect.isHidden = false
             } else if deleteBtnState == true {
-                print("btn 상태는\(deleteBtnState)")
+      //          print("btn 상태는\(deleteBtnState)")
                 cell.titleLine.constant = 15
                 cell.contentLine.constant = 15
                 cell.alarmTimeLine.constant = 15
@@ -203,4 +207,30 @@ class HistoryListCell: UITableViewCell {
 
 
     
+}
+extension Date {
+    func timeAgoDisplay() -> String {
+
+        let calendar = Calendar.current
+        let minuteAgo = calendar.date(byAdding: .minute, value: -1, to: Date().addingTimeInterval(32400))!
+        let hourAgo = calendar.date(byAdding: .hour, value: -1, to: Date().addingTimeInterval(32400))!
+        let dayAgo = calendar.date(byAdding: .day, value: -1, to: Date().addingTimeInterval(32400))!
+        let weekAgo = calendar.date(byAdding: .day, value: -7, to: Date().addingTimeInterval(32400))!
+
+        if minuteAgo < self {
+            let diff = Calendar.current.dateComponents([.second], from: self, to: Date().addingTimeInterval(32400)).second ?? 0
+            return "\(diff) 초전"
+        } else if hourAgo < self {
+            let diff = Calendar.current.dateComponents([.minute], from: self, to: Date().addingTimeInterval(32400)).minute ?? 0
+            return "\(diff) 분전"
+        } else if dayAgo < self {
+            let diff = Calendar.current.dateComponents([.hour], from: self, to: Date().addingTimeInterval(32400)).hour ?? 0
+            return "\(diff) 시간전"
+        } else if weekAgo < self {
+            let diff = Calendar.current.dateComponents([.day], from: self, to: Date().addingTimeInterval(32400)).day ?? 0
+            return "\(diff) 일전"
+        }
+        let diff = Calendar.current.dateComponents([.weekOfYear], from: self, to: Date().addingTimeInterval(32400)).weekOfYear ?? 0
+        return "\(diff) 주전"
+    }
 }
