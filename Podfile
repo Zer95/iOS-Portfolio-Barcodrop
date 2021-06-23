@@ -21,5 +21,6 @@ pod 'MaterialComponents/Buttons'
 pod 'TextFieldEffects'
 pod 'DropDown'
 pod "RSLoadingView"
+pod 'lottie-ios'
 
 end

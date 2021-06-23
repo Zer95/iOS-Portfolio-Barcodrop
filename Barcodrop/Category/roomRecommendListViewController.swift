@@ -7,8 +7,12 @@
 
 import UIKit
 import CoreData
+import Lottie
 
 class roomRecommendListViewController: UIViewController {
+    
+    let animationView = AnimationView()
+    
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet var cellView: UIView!
@@ -30,11 +34,13 @@ class roomRecommendListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
+        animationView.play()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllItems()
+        animationView.play()
      
     }
     
@@ -117,9 +123,16 @@ class roomRecommendListViewController: UIViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
                 if self.models.count == 0 {
-                    self.collectionView.backgroundView = UIImageView(image: UIImage(named: "eco2.png"))
-                    self.collectionView.backgroundView?.contentMode = .scaleAspectFit
+                    self.animationView.animation = Animation.named("carrot")
+                    self.animationView.frame = self.view.bounds
+                    self.animationView.contentMode = .scaleAspectFit
+                    self.animationView.loopMode = .loop
+                    self.animationView.play()
+                    self.view.addSubview(self.animationView)
+                    
+                    self.collectionView.backgroundView?.addSubview(self.animationView)
                 } else {
+                    self.animationView.stop()
                     self.collectionView.backgroundView = UIImageView(image: nil)
                 }
             }

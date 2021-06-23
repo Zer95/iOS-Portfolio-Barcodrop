@@ -1,6 +1,7 @@
 PODS:
   - CBFlashyTabBarController (0.8.3)
   - DropDown (2.3.13)
+  - lottie-ios (3.2.3)
   - MaterialComponents/AnimationTiming (124.2.0)
   - MaterialComponents/Availability (124.2.0)
   - MaterialComponents/Buttons (124.2.0):
@@ -57,6 +58,7 @@ PODS:
 DEPENDENCIES:
   - CBFlashyTabBarController
   - DropDown
+  - lottie-ios
   - MaterialComponents/Buttons
   - RSLoadingView
   - TextFieldEffects
@@ -65,6 +67,7 @@ SPEC REPOS:
   trunk:
     - CBFlashyTabBarController
     - DropDown
+    - lottie-ios
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -74,12 +77,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
   MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
   MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
   RSLoadingView: c7749afdd455229643e8f34277d0695973a15b1a
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 6286c44aca875c684139e27c0d3fb1f3ee21f37e
+PODFILE CHECKSUM: 146717bbd5711be62dd1c7c8d74004d15d393c34
 
 COCOAPODS: 1.10.1

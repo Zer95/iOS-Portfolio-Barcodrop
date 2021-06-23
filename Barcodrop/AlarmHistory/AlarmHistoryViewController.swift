@@ -7,9 +7,12 @@
 
 import UIKit
 import CoreData
+import Lottie
 
 class AlarmHistoryViewController: UIViewController {
    
+    let animationView = AnimationView()
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmHistory]()
     
@@ -18,7 +21,15 @@ class AlarmHistoryViewController: UIViewController {
     @IBOutlet weak var deleteAllBtn: UIButton!
     var deleteBtnState = true
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        animationView.play()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animationView.play()
+     
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +45,18 @@ class AlarmHistoryViewController: UIViewController {
             
             models = try context.fetch(fetchRequest)
             if models.count == 0 {
-                tableView.backgroundView = UIImageView(image: UIImage(named: "notdata.png"))
+                
+                animationView.animation = Animation.named("notiSleep")
+                animationView.frame = view.bounds
+                animationView.contentMode = .scaleAspectFit
+                animationView.loopMode = .loop
+                animationView.play()
+                view.addSubview(animationView)
+                
+                tableView.backgroundView?.addSubview(animationView)
+                
             } else {
+                animationView.stop()
                 tableView.backgroundView = UIImageView(image: nil)
             }
             DispatchQueue.main.async {
