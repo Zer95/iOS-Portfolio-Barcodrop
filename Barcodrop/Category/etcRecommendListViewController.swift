@@ -103,6 +103,8 @@ class etcRecommendListViewController: UIViewController {
             let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
             let predite = NSPredicate(format: "category == %@","기타")
             fetchRequest.predicate = predite
+            let sort = NSSortDescriptor(key: "endDay", ascending: true)
+            fetchRequest.sortDescriptors = [sort]
             
             models = try context.fetch(fetchRequest)
             DispatchQueue.main.async {
