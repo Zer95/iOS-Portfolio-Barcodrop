@@ -59,7 +59,7 @@ class AlarmHistoryViewController: UIViewController {
             
         }
         else if self.deleteBtnState == true {
-            deleteBtn.title = "📌"
+            deleteBtn.title = "✔️"
             self.deleteBtnState = false
             self.getAllItems()
         }
@@ -121,6 +121,19 @@ extension AlarmHistoryViewController:UITableViewDataSource {
 }
 
 extension AlarmHistoryViewController:UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if self.deleteBtnState == false {
+         let model = models[indexPath.row]
+        context.delete(model)
+        do{
+            try context.save()
+            getAllItems()
+        }
+        catch {
+        }
+    }
+    }
     
 }
 
@@ -154,9 +167,6 @@ class HistoryListCell: UITableViewCell {
     }
     
     
-    @IBAction func deleteSelect(_ sender: Any) {
-        deletSelect.isSelected = !deletSelect.isSelected
-    }
 
 
 
