@@ -30,6 +30,16 @@ class iceRecommendListViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     
+    override func viewDidAppear(_ animated: Bool) {
+        getAllItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllItems()
+     
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionTitle.text = ""
@@ -95,10 +105,7 @@ class iceRecommendListViewController: UIViewController {
     }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-     
-    }
+   
     
     func getAllItems() {
         do {

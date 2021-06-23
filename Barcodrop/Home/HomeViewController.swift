@@ -80,6 +80,8 @@ class HomeViewController: UIViewController {
         
     }
     
+    
+    
     func appStartCheck(){
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
                 if launchedBefore

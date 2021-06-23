@@ -36,6 +36,12 @@ class freshRecommendListViewController: UIViewController {
         getAllItems()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllItems()
+     
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +63,7 @@ class freshRecommendListViewController: UIViewController {
 
         
         getAllItems()
+        
         
         if models.count != 0 {
         let checkCnt = models.count - 1
@@ -104,10 +111,9 @@ class freshRecommendListViewController: UIViewController {
         passLable.text = "지남: \(self.passCnt.count)"
     }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-     
-    }
+   
+    
+    
     
     func getAllItems() {
         do {
