@@ -22,6 +22,7 @@ class AlarmHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView() // 테이블뷰 빈칸일때 표시 x
         getAllItems()
     }
     
@@ -32,6 +33,11 @@ class AlarmHistoryViewController: UIViewController {
             fetchRequest.sortDescriptors = [sort]
             
             models = try context.fetch(fetchRequest)
+            if models.count == 0 {
+                tableView.backgroundView = UIImageView(image: UIImage(named: "notdata.png"))
+            } else {
+                tableView.backgroundView = UIImageView(image: nil)
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
