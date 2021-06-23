@@ -106,6 +106,12 @@ class roomRecommendListViewController: UIViewController {
             models = try context.fetch(fetchRequest)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                if self.models.count == 0 {
+                    self.collectionView.backgroundView = UIImageView(image: UIImage(named: "eco2.png"))
+                    self.collectionView.backgroundView?.contentMode = .scaleAspectFit
+                } else {
+                    self.collectionView.backgroundView = UIImageView(image: nil)
+                }
             }
         }
         catch {
