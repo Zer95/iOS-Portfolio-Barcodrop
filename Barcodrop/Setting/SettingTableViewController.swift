@@ -13,21 +13,32 @@ class SettingTableViewController: UITableViewController {
     @IBOutlet weak var onOffLable: UILabel!
     @IBOutlet weak var onOffSwitch: UISwitch!
     @IBOutlet weak var alarmSelect: UIButton!
+    @IBOutlet weak var languageLable: UILabel!
     var onOffState = true
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
+    private var systemmodels = [SystemSetting]()
     
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = "설정"
         getData()
+        getAllItems()
+        systemgetAllItems()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllItems()
+        systemgetAllItems()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "설정"
         getAllItems()
+        systemgetAllItems()
     }
     
     func getAllItems() {
@@ -43,6 +54,29 @@ class SettingTableViewController: UITableViewController {
             print("getAllItmes 오류")
         }
     }
+    
+    func systemgetAllItems() {
+        do {
+            systemmodels = try context.fetch(SystemSetting.fetchRequest())
+         
+            DispatchQueue.main.async {
+                self.settingSelect()
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
+    
+    func settingSelect(){
+        let loadLanguage =  systemmodels[0].dateLanguage
+        if loadLanguage == "kr" {
+            languageLable.text = "한국어"
+        } else if loadLanguage == "eng" {
+            languageLable.text = "영어"
+        }
+    }
+    
     
     func getData(){
         let model = models[0]

@@ -24,6 +24,15 @@ class LanguageTableViewController: UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [SystemSetting]()
     
+    override func viewDidAppear(_ animated: Bool) {
+        getAllItems()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllItems()
+    }
+     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = .white
@@ -39,7 +48,7 @@ class LanguageTableViewController: UITableViewController {
         screenView.addSubview(animationView)
         
         getAllItems()
-      
+        
     }
     
     func getAllItems() {
@@ -57,17 +66,27 @@ class LanguageTableViewController: UITableViewController {
     
     func settingSelect(){
         let loadLanguage =  models[0].dateLanguage
-        
         if loadLanguage == "kr" {
             selectKr.isHidden = false
             selectEng.isHidden = true
             self.selectLanguage = "kr"
-        } else if loadLanguage == "end" {
+        } else if loadLanguage == "eng" {
             selectKr.isHidden = true
             selectEng.isHidden = false
             self.selectLanguage = "eng"
         }
-        
+    }
+    
+    
+    func updateItem(select:String){
+        let loadLanguage =  models[0]
+        loadLanguage.dateLanguage = select
+        do{
+            
+            try context.save()
+        }
+        catch {
+        }
     }
     // MARK: - Table view data source
 
@@ -84,15 +103,33 @@ class LanguageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("클릭인식 \(indexPath.row)")
+        
+        // 한국어 세팅
         if indexPath.row == 0 {
         selectKr.isHidden = false
         selectEng.isHidden = true
+            if self.selectLanguage != "kr"  {
+                updateItem(select: "kr")
+            } else if self.selectLanguage == "kr" {
+                print("이미 선택한 값 입니다.")
+            }
         self.selectLanguage = "kr"
         }
+        
+        
+        // 영어 세팅
         else if  indexPath.row == 1 {
         selectKr.isHidden = true
         selectEng.isHidden = false
+            if self.selectLanguage != "eng"  {
+                updateItem(select: "eng")
+            } else if self.selectLanguage == "eng" {
+                print("이미 선택한 값 입니다.")
+            }
+
         self.selectLanguage = "eng"
+            
+            
         }
     }
     
