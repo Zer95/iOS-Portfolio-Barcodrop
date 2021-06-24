@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     private var alarm = [AlarmSetting]()
+    private var systemmodels = [SystemSetting]()
     
     // 길게 클릭
     var longpress = UILongPressGestureRecognizer()
@@ -48,8 +49,16 @@ class HomeViewController: UIViewController {
     }
     
      override func viewDidAppear(_ animated: Bool) {
-        getAllItems() // 컬렉션 뷰 실시간
+        getAllItems()
         getAlarm()
+        systemgetAllItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getAllItems()
+        getAlarm()
+        systemgetAllItems()
     }
             
     override func viewDidLoad() {
@@ -65,7 +74,7 @@ class HomeViewController: UIViewController {
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
         getAlarm()
-                
+        systemgetAllItems()
         
         // DropDown
         openDropDown()
@@ -79,6 +88,23 @@ class HomeViewController: UIViewController {
         
         
     }
+    
+    
+    func systemgetAllItems() {
+        do {
+            systemmodels = try context.fetch(SystemSetting.fetchRequest())
+         
+            DispatchQueue.main.async {
+        
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
+    
+
+    
     
     
     
@@ -436,7 +462,13 @@ extension HomeViewController: UICollectionViewDataSource{
         var dDay =  days(from: model.endDay!)
         
         
+        
         // cell D-day
+        
+        let loadLanguage =  systemmodels[0].dateLanguage
+        
+        if loadLanguage == "eng" {
+        
         if dDay > 0 {
             cell.D_day?.text = "D+\(dDay)"
             cell.D_day?.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
@@ -458,7 +490,34 @@ extension HomeViewController: UICollectionViewDataSource{
             cell.D_day?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
         }
+            
+        }  else if loadLanguage == "kr" {
+            
+            if dDay > 0 {
+                cell.D_day?.text = "\(dDay)일 지남"
+                cell.D_day?.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            } else if dDay == 0{
+                cell.D_day?.text = "오늘까지"
+                cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            } else if dDay < 0 && dDay > -3 {
+                cell.D_day?.text = "\(dDay * -1)일 남음"
+                cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            } else if dDay >= -5 {
+                cell.D_day?.text = "\(dDay * -1)일 남음"
+                cell.D_day?.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            }
+            else if dDay < -5 {
+                cell.D_day?.text = "\(dDay * -1)일 남음"
+                cell.D_day?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            }
+            }
 
+        
+        
        // print("디데이는 정확할까:\(dDay)")
     
        

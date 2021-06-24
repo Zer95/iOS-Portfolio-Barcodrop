@@ -26,6 +26,7 @@ class freshRecommendListViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
+    private var systemmodels = [SystemSetting]()
     
 
     var dateCnt = [Date]()
@@ -38,12 +39,14 @@ class freshRecommendListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
         animationView.play()
+        systemgetAllItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllItems()
         animationView.play()
+        systemgetAllItems()
      
     }
     
@@ -68,7 +71,7 @@ class freshRecommendListViewController: UIViewController {
 
         
         getAllItems()
-        
+        systemgetAllItems()
         
         if models.count != 0 {
         let checkCnt = models.count - 1
@@ -118,7 +121,18 @@ class freshRecommendListViewController: UIViewController {
     }
    
     
-    
+    func systemgetAllItems() {
+        do {
+            systemmodels = try context.fetch(SystemSetting.fetchRequest())
+         
+            DispatchQueue.main.async {
+        
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
     
     func getAllItems() {
         do {
@@ -184,6 +198,9 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
         cell.freshDday.layer.borderWidth = 1
         
         // cell D-day
+        
+        let loadLanguage =  systemmodels[0].dateLanguage
+        if loadLanguage == "eng" {
         if dDay > 0 {
             cell.freshDday.setTitle("D+\(dDay)", for: .normal)
             cell.freshDday.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
@@ -208,6 +225,36 @@ extension freshRecommendListViewController: UICollectionViewDataSource {
             cell.freshDday.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             
         }
+        } else if loadLanguage == "kr" {
+            if dDay > 0 {
+                cell.freshDday.setTitle("\(dDay)일 지남", for: .normal)
+                cell.freshDday.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+                cell.freshDday.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+          
+            }else if dDay == 0{
+                cell.freshDday.setTitle("오늘까지", for: .normal)
+                cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+                cell.freshDday.backgroundColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+            }else if dDay < 0 && dDay > -3 {
+                cell.freshDday.setTitle("\(dDay * -1)일 남음", for: .normal)
+                cell.freshDday.layer.borderColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+                cell.freshDday.backgroundColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+               
+            } else if dDay >= -5 {
+                cell.freshDday.setTitle("\(dDay * -1)일 남음", for: .normal)
+                cell.freshDday.layer.borderColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+                cell.freshDday.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            } else if dDay < -5 {
+                cell.freshDday.setTitle("\(dDay * -1)일 남음", for: .normal)
+                cell.freshDday.layer.borderColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                cell.freshDday.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                
+            }
+        }
+        
+        
+        
+        
         
         // cell <- 데이터 이미지 load
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory

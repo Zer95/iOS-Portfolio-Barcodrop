@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
@@ -31,8 +32,27 @@ class DetailViewController: UIViewController {
  
     // 카테고리 설정 저장 값
     var categoryValue = ""
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var systemmodels = [SystemSetting]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showAnimation()
+        systemgetAllItems()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showAnimation()
+        systemgetAllItems()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        systemgetAllItems()
+        
         Thumbnail.layer.cornerRadius = 10
         
         // 넘어온 값 세팅
@@ -70,24 +90,54 @@ class DetailViewController: UIViewController {
         }
         let dDay =  days(from: re_endDay)
         
+        
+        
         // cell D-day
+        let loadLanguage =  systemmodels[0].dateLanguage
+        
+        if loadLanguage == "eng" {
+        
         if dDay > 0 {
             d_day_lable.text = "D+\(dDay)"
             d_day_lable.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        }  else if dDay == 0{
+        } else if dDay == 0{
             d_day_lable.text = "D-day"
             d_day_lable.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
         } else if dDay < 0 && dDay > -3 {
             d_day_lable.text = "D\(dDay)"
             d_day_lable.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
-        } else if dDay >= -5  {
+        } else if dDay >= -5 {
             d_day_lable.text = "D\(dDay)"
-            d_day_lable.textColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        } else if dDay < -5  {
+            d_day_lable.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+        }
+        else if dDay < -5 {
             d_day_lable.text = "D\(dDay)"
             d_day_lable.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
+            
+        }  else if loadLanguage == "kr" {
+            
+            if dDay > 0 {
+                d_day_lable.text = "\(dDay)일 지남"
+                d_day_lable.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            } else if dDay == 0{
+                d_day_lable.text = "오늘까지"
+                d_day_lable.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+            } else if dDay < 0 && dDay > -3 {
+                d_day_lable.text = "\(dDay * -1)일 남음"
+                d_day_lable.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
+            } else if dDay >= -5 {
+                d_day_lable.text = "\(dDay * -1)일 남음"
+                d_day_lable.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
+            }
+            else if dDay < -5 {
+                d_day_lable.text = "\(dDay * -1)일 남음"
+                d_day_lable.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            } 
+            }
        
+        
+        
         
         // 이미지 세팅
         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
@@ -104,9 +154,17 @@ class DetailViewController: UIViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        showAnimation()
+    func systemgetAllItems() {
+        do {
+            systemmodels = try context.fetch(SystemSetting.fetchRequest())
+         
+            DispatchQueue.main.async {
+        
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
     }
     
     // 날짜 데이터 문자열로 변환
