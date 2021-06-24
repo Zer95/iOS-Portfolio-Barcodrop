@@ -34,6 +34,8 @@
 		D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611E3266539C0007CF148 /* CBSampleViewController.swift */; };
 		D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */; };
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
+		D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136142684503A00E36069 /* LanguageTableViewController.swift */; };
+		D27136172684551F00E36069 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = D27136162684551F00E36069 /* language.json */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */; };
@@ -104,6 +106,8 @@
 		D24611E3266539C0007CF148 /* CBSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSampleViewController.swift; sourceTree = "<group>"; };
 		D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		D27136142684503A00E36069 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
+		D27136162684551F00E36069 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D2A8204B26708F40005E04B1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				D2354A12267B67F50006D8E3 /* SettingOldViewController.swift */,
 				D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */,
 				D2DFB5DD267C4B8B001DBA69 /* SettingTableViewController.swift */,
+				D27136142684503A00E36069 /* LanguageTableViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 		D24611B2266536C3007CF148 /* Barcodrop */ = {
 			isa = PBXGroup;
 			children = (
+				D27136162684551F00E36069 /* language.json */,
 				D21538B92683974E002FB33E /* carrot.json */,
 				D21538BB268398A8002FB33E /* notiSleep.json */,
 				D24611B3266536C3007CF148 /* AppDelegate.swift */,
@@ -417,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28D5889266640D0000426D4 /* logo_kor.png in Resources */,
+				D27136172684551F00E36069 /* language.json in Resources */,
 				D28D5888266640D0000426D4 /* logo_eng.png in Resources */,
 				D24611C0266536C4007CF148 /* LaunchScreen.storyboard in Resources */,
 				D24611BD266536C4007CF148 /* Assets.xcassets in Resources */,
@@ -571,6 +578,7 @@
 				D21BDA50267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift in Sources */,
 				D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */,
 				D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */,
+				D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */,
 				D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */,
 				D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */,
 				D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */,

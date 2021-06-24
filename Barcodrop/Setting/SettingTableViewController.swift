@@ -19,7 +19,9 @@ class SettingTableViewController: UITableViewController {
     private var models = [AlarmSetting]()
     
     override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "설정"
         getData()
+
     }
     
     override func viewDidLoad() {
