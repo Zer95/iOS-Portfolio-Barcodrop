@@ -540,7 +540,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKl-eU-d2u">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKl-eU-d2u">
                                                     <rect key="frame" x="335" y="5" width="25" height="33"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                     <color key="textColor" red="1" green="0.64114833650000003" blue="0.22810291160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -566,7 +566,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIW-Av-ZmT">
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIW-Av-ZmT">
                                                     <rect key="frame" x="335" y="5" width="25" height="33"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                     <color key="textColor" red="1" green="0.64114833650000003" blue="0.22810291160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -597,6 +597,8 @@
                     <connections>
                         <outlet property="languagetableView" destination="Gs1-Qg-93F" id="ZyZ-jJ-byD"/>
                         <outlet property="screenView" destination="OxO-sb-CRs" id="zEC-pv-cni"/>
+                        <outlet property="selectEng" destination="IIW-Av-ZmT" id="90a-Fx-jVT"/>
+                        <outlet property="selectKr" destination="XKl-eU-d2u" id="mqh-lI-IAn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75Z-Av-l60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
