@@ -11,6 +11,7 @@ class LanguageTableViewController: UITableViewController {
 
     let animationView = AnimationView()
     @IBOutlet var languagetableView: UITableView!
+    @IBOutlet weak var screenView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class LanguageTableViewController: UITableViewController {
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.play()
-        languagetableView.addSubview(animationView)
+        screenView.addSubview(animationView)
         
       
     }
