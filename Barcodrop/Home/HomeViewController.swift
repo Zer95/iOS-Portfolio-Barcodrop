@@ -93,8 +93,22 @@ class HomeViewController: UIViewController {
                     print("First launch")
                     UserDefaults.standard.set(true, forKey: "launchedBefore")
                     startAlarmDataSetting()
+                    systemSetting()
 
                 }
+    }
+    
+    func systemSetting() {
+        let settingItem = SystemSetting(context: context)
+        settingItem.dateLanguage = "kr"
+      
+        do{
+            try context.save()
+            print("시스템 초기 데이터 생성 완료!!")
+        }
+        catch {
+            print("시스템 초기 데이터 생성 실패!!")
+        }
     }
 
     func startAlarmDataSetting(){

@@ -36,6 +36,8 @@
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
 		D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136142684503A00E36069 /* LanguageTableViewController.swift */; };
 		D27136172684551F00E36069 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = D27136162684551F00E36069 /* language.json */; };
+		D271361A2684639800E36069 /* SystemSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */; };
+		D271361B2684639800E36069 /* SystemSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */; };
@@ -108,6 +110,8 @@
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		D27136142684503A00E36069 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
 		D27136162684551F00E36069 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
+		D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataClass.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataProperties.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D2A8204B26708F40005E04B1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 		D2A8205126709057005E04B1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */,
+				D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */,
 				D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */,
 				D2AA9C4626804ABF0058DDD4 /* ProductListItem+CoreDataProperties.swift */,
 				D21BDA4E267C88A400CB7ED3 /* AlarmSetting+CoreDataClass.swift */,
@@ -562,6 +568,7 @@
 				D213E279267F24BA00765BA7 /* AlarmHistory+CoreDataClass.swift in Sources */,
 				D2041B4A26773E4900DEDAF4 /* freshRecommendListViewController.swift in Sources */,
 				D2041B52267763C700DEDAF4 /* iceRecommendListViewController.swift in Sources */,
+				D271361A2684639800E36069 /* SystemSetting+CoreDataProperties.swift in Sources */,
 				D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */,
 				D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */,
 				D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */,
@@ -581,6 +588,7 @@
 				D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */,
 				D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */,
 				D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */,
+				D271361B2684639800E36069 /* SystemSetting+CoreDataClass.swift in Sources */,
 				D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */,
 				D2DFB5DE267C4B8B001DBA69 /* SettingTableViewController.swift in Sources */,
 				D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */,

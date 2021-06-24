@@ -7,6 +7,8 @@
 
 import UIKit
 import Lottie
+import CoreData
+
 class LanguageTableViewController: UITableViewController {
 
     let animationView = AnimationView()
@@ -18,6 +20,9 @@ class LanguageTableViewController: UITableViewController {
     @IBOutlet weak var selectEng: UILabel!
     
     var selectLanguage = ""
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var models = [SystemSetting]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +38,37 @@ class LanguageTableViewController: UITableViewController {
         animationView.play()
         screenView.addSubview(animationView)
         
+        getAllItems()
       
     }
-
+    
+    func getAllItems() {
+        do {
+            models = try context.fetch(SystemSetting.fetchRequest())
+         
+            DispatchQueue.main.async {
+                self.settingSelect()
+            }
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
+    
+    func settingSelect(){
+        let loadLanguage =  models[0].dateLanguage
+        
+        if loadLanguage == "kr" {
+            selectKr.isHidden = false
+            selectEng.isHidden = true
+            self.selectLanguage = "kr"
+        } else if loadLanguage == "end" {
+            selectKr.isHidden = true
+            selectEng.isHidden = false
+            self.selectLanguage = "eng"
+        }
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

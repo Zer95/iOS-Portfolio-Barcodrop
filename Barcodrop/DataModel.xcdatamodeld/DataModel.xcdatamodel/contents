@@ -25,9 +25,13 @@
         <attribute name="productName" optional="YES" attributeType="String"/>
         <attribute name="saveTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="SystemSetting" representedClassName="SystemSetting" syncable="YES">
+        <attribute name="dateLanguage" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="AlarmHistory" positionX="-18" positionY="117" width="128" height="74"/>
         <element name="AlarmSetting" positionX="-18" positionY="63" width="128" height="179"/>
         <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="119"/>
+        <element name="SystemSetting" positionX="-27" positionY="108" width="128" height="44"/>
     </elements>
 </model>
