@@ -120,10 +120,18 @@ class HomeViewController: UIViewController {
                     UserDefaults.standard.set(true, forKey: "launchedBefore")
                     startAlarmDataSetting()
                     systemSetting()
+                    openTutorial() 
 
                 }
     }
     
+    
+    func openTutorial() {
+        let VC =  self.storyboard?.instantiateViewController(withIdentifier:"TutorialView") as! TutorialViewController
+        VC.modalPresentationStyle = .overFullScreen
+        VC.modalTransitionStyle = .crossDissolve
+        self.present(VC, animated: true, completion: nil)
+    }
     func systemSetting() {
         let settingItem = SystemSetting(context: context)
         settingItem.dateLanguage = "eng"

@@ -186,6 +186,12 @@ class SettingTableViewController: UITableViewController {
         }
         
     }
+    @IBAction func tutorialBtn(_ sender: Any) {
+        let VC =  self.storyboard?.instantiateViewController(withIdentifier:"TutorialView") as! TutorialViewController
+        VC.modalPresentationStyle = .overFullScreen
+        VC.modalTransitionStyle = .crossDissolve
+        self.present(VC, animated: true, completion: nil)
+    }
     
     @IBAction func selectAlarm(_ sender: Any) {
         
