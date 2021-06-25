@@ -19,12 +19,14 @@ class SettingTableViewController: UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
     private var systemmodels = [SystemSetting]()
+    private var datamodels = [ProductListItem]()
     
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = "설정"
         getData()
         getAllItems()
         systemgetAllItems()
+        getDataAllItems()
 
     }
     
@@ -32,6 +34,7 @@ class SettingTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         getAllItems()
         systemgetAllItems()
+        getDataAllItems()
     }
     
     override func viewDidLoad() {
@@ -40,6 +43,7 @@ class SettingTableViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = .white
         getAllItems()
         systemgetAllItems()
+        getDataAllItems()
     }
     
     func getAllItems() {
@@ -54,6 +58,51 @@ class SettingTableViewController: UITableViewController {
         catch {
             print("getAllItmes 오류")
         }
+    }
+    
+    @IBAction func dataReset(_ sender: Any) {
+        // alert창
+        let alert =  UIAlertController(title: "데이터 초기화", message: "정말로 초기화 하시겠습니까?", preferredStyle:  UIAlertController.Style.alert)
+                let yes =  UIAlertAction(title: "확인", style: .default) { (action) in
+                    self.deleteDataAll()
+                }
+                let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+              
+                alert.addAction(cancel)
+                alert.addAction(yes)
+                present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func getDataAllItems() {
+        do {
+            datamodels = try context.fetch(ProductListItem.fetchRequest())
+    
+          
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
+    
+    func deleteDataAll() {
+        if datamodels.count > 0 {
+        let dataAll = datamodels.count - 1
+        for i in 0...dataAll {
+            let model = datamodels[i]
+           context.delete(model)
+        }
+           do{
+               try context.save()
+               getDataAllItems()
+           }
+           catch {
+           }
+        }
+        let alert =  UIAlertController(title: "데이터 초기화", message: "초기화가 완료 되었습니다.", preferredStyle:  UIAlertController.Style.alert)
+                let yes = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                alert.addAction(yes)
+                present(alert, animated: true, completion: nil)
     }
     
     func systemgetAllItems() {
@@ -92,6 +141,9 @@ class SettingTableViewController: UITableViewController {
 //        print("알람 데이터 가져오기!!\(model.onOff)")
 //        print("알람 데이터 가져오기!!\(model.selectTime!)")
     }
+    
+  
+    
     
     func updateUI(){
         let model = models[0]
