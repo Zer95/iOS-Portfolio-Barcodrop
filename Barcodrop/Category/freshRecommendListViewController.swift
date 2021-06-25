@@ -40,6 +40,9 @@ class freshRecommendListViewController: UIViewController {
         getAllItems()
         animationView.play()
         systemgetAllItems()
+        print("~~~~~~~~~~~~~~남은 값 확인한다\(models.count)")
+        dataCnt()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,9 +50,20 @@ class freshRecommendListViewController: UIViewController {
         getAllItems()
         animationView.play()
         systemgetAllItems()
+        print("~~~~~~~~~~~~~~남은 값 확인한다\(models.count)")
+        dataCnt()
+      
      
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        animationView.stop()
+        self.collectionView.backgroundView = UIImageView(image: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        animationView.stop()
+        self.collectionView.backgroundView = UIImageView(image: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,8 +86,20 @@ class freshRecommendListViewController: UIViewController {
         
         getAllItems()
         systemgetAllItems()
+        dataCnt()
+    }
+    
+    func dataCnt(){
+        print("~~~~~~~~~~~~~~cnt 확인\(models.count)")
         
-        if models.count != 0 {
+        dateCnt = [Date]()
+       safeCnt = [Int]()
+       normalCnt = [Int]()
+        dangerCnt = [Int]()
+        passCnt = [Int]()
+        print("~~~~~~~~~~~~~~덴져 확인\(dangerCnt)")
+        print("~~~~~~~~~~~~~~덴져 수 확인\(dangerCnt.count)")
+        if models.count > 0 {
         let checkCnt = models.count - 1
         
         for i in 0...checkCnt {
@@ -113,11 +139,15 @@ class freshRecommendListViewController: UIViewController {
         print("노멀 카운트\(self.normalCnt.count)")
         print("위험 카운트\(self.dangerCnt.count)")
         print("지남 카운트\(self.passCnt.count)")
+  
+    }
+        
         safeLable.text = "안전: \(self.safeCnt.count)"
         normalLable.text = "보통: \(self.normalCnt.count)"
         dangerLable.text = "위험: \(self.dangerCnt.count)"
         passLable.text = "지남: \(self.passCnt.count)"
-    }
+        
+        
     }
    
     
@@ -134,8 +164,26 @@ class freshRecommendListViewController: UIViewController {
         }
     }
     
+    func animationStartStop(){
+        if self.models.count == 0 {
+            self.animationView.animation = Animation.named("carrot")
+            self.animationView.frame = self.view.bounds
+            self.animationView.contentMode = .scaleAspectFit
+            self.animationView.loopMode = .loop
+            self.animationView.play()
+            self.view.addSubview(self.animationView)
+            
+            self.collectionView.backgroundView?.addSubview(self.animationView)
+        } else {
+            self.animationView.stop()
+            self.collectionView.backgroundView = UIImageView(image: nil)
+        }
+
+    }
+    
     func getAllItems() {
         do {
+            animationStartStop()
            
             let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
             let predite = NSPredicate(format: "category == %@","냉장")
@@ -146,19 +194,7 @@ class freshRecommendListViewController: UIViewController {
             models = try context.fetch(fetchRequest)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                if self.models.count == 0 {
-                    self.animationView.animation = Animation.named("carrot")
-                    self.animationView.frame = self.view.bounds
-                    self.animationView.contentMode = .scaleAspectFit
-                    self.animationView.loopMode = .loop
-                    self.animationView.play()
-                    self.view.addSubview(self.animationView)
-                    
-                    self.collectionView.backgroundView?.addSubview(self.animationView)
-                } else {
-                    self.animationView.stop()
-                    self.collectionView.backgroundView = UIImageView(image: nil)
-                }
+             
             }
         }
         catch {

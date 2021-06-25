@@ -30,6 +30,7 @@ class iceRecommendListViewController: UIViewController {
     var passCnt = [Int]()
     
     
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [ProductListItem]()
     private var systemmodels = [SystemSetting]()
@@ -38,6 +39,7 @@ class iceRecommendListViewController: UIViewController {
         getAllItems()
         animationView.play()
         systemgetAllItems()
+        dataCnt()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +47,17 @@ class iceRecommendListViewController: UIViewController {
         getAllItems()
         animationView.play()
         systemgetAllItems()
+        dataCnt()
      
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        animationView.stop()
+        self.collectionView.backgroundView = UIImageView(image: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        animationView.stop()
+        self.collectionView.backgroundView = UIImageView(image: nil)
     }
     
     override func viewDidLoad() {
@@ -66,7 +78,20 @@ class iceRecommendListViewController: UIViewController {
             cellView.layer.shadowRadius = 4.0
         getAllItems()
         systemgetAllItems()
-        if models.count != 0 {
+        dataCnt()
+    }
+    
+    func dataCnt(){
+        print("~~~~~~~~~~~~~~cnt 확인\(models.count)")
+        
+        dateCnt = [Date]()
+       safeCnt = [Int]()
+       normalCnt = [Int]()
+        dangerCnt = [Int]()
+        passCnt = [Int]()
+        print("~~~~~~~~~~~~~~덴져 확인\(dangerCnt)")
+        print("~~~~~~~~~~~~~~덴져 수 확인\(dangerCnt.count)")
+        if models.count > 0 {
         let checkCnt = models.count - 1
         
         for i in 0...checkCnt {
@@ -106,11 +131,15 @@ class iceRecommendListViewController: UIViewController {
         print("노멀 카운트\(self.normalCnt.count)")
         print("위험 카운트\(self.dangerCnt.count)")
         print("지남 카운트\(self.passCnt.count)")
+  
+    }
+        
         safeLable.text = "안전: \(self.safeCnt.count)"
         normalLable.text = "보통: \(self.normalCnt.count)"
         dangerLable.text = "위험: \(self.dangerCnt.count)"
         passLable.text = "지남: \(self.passCnt.count)"
-    }
+        
+        
     }
     
     func systemgetAllItems() {
@@ -125,10 +154,29 @@ class iceRecommendListViewController: UIViewController {
             print("getAllItmes 오류")
         }
     }
+    func animationStartStop(){
+        if self.models.count == 0 {
+            self.animationView.animation = Animation.named("carrot")
+            self.animationView.frame = self.view.bounds
+            self.animationView.contentMode = .scaleAspectFit
+            self.animationView.loopMode = .loop
+            self.animationView.play()
+            self.view.addSubview(self.animationView)
+            
+            self.collectionView.backgroundView?.addSubview(self.animationView)
+        } else {
+            self.animationView.stop()
+            self.collectionView.backgroundView = UIImageView(image: nil)
+        }
+
+    }
     
     func getAllItems() {
         do {
-           
+         
+            animationStartStop()
+         
+            print("애니 실행 몇번이냐")
             let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
             let predite = NSPredicate(format: "category == %@","냉동")
             fetchRequest.predicate = predite
@@ -138,19 +186,7 @@ class iceRecommendListViewController: UIViewController {
             models = try context.fetch(fetchRequest)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                if self.models.count == 0 {
-                    self.animationView.animation = Animation.named("carrot")
-                    self.animationView.frame = self.view.bounds
-                    self.animationView.contentMode = .scaleAspectFit
-                    self.animationView.loopMode = .loop
-                    self.animationView.play()
-                    self.view.addSubview(self.animationView)
-                    
-                    self.collectionView.backgroundView?.addSubview(self.animationView)
-                } else {
-                    self.animationView.stop()
-                    self.collectionView.backgroundView = UIImageView(image: nil)
-                }
+                
             }
         }
         catch {
@@ -164,7 +200,7 @@ extension iceRecommendListViewController: UICollectionViewDataSource {
         //return viewModel.numOfItems
         self.sectionTitle.text = "TOTAL: \(models.count)"
         return models.count
-        print("카테고리 개수는\(models.count)")
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
