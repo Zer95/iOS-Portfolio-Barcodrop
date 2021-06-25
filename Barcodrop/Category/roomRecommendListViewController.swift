@@ -7,11 +7,9 @@
 
 import UIKit
 import CoreData
-import Lottie
 
 class roomRecommendListViewController: UIViewController {
     
-    let animationView = AnimationView()
     
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var collectionView:UICollectionView!
@@ -35,7 +33,6 @@ class roomRecommendListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
-        animationView.play()
         systemgetAllItems()
         dataCnt()
     }
@@ -43,21 +40,12 @@ class roomRecommendListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllItems()
-        animationView.play()
         systemgetAllItems()
         dataCnt()
      
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        animationView.stop()
-        self.collectionView.backgroundView = UIImageView(image: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        animationView.stop()
-        self.collectionView.backgroundView = UIImageView(image: nil)
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionTitle.text = ""
@@ -153,26 +141,18 @@ class roomRecommendListViewController: UIViewController {
         }
     }
     
-    func animationStartStop(){
-        if self.models.count == 0 {
-            self.animationView.animation = Animation.named("carrot")
-            self.animationView.frame = self.view.bounds
-            self.animationView.contentMode = .scaleAspectFit
-            self.animationView.loopMode = .loop
-            self.animationView.play()
-            self.view.addSubview(self.animationView)
-            
-            self.collectionView.backgroundView?.addSubview(self.animationView)
+    func backImageOnOff(){
+        if models.count == 0 {
+            collectionView.backgroundView = UIImageView(image: UIImage(named: "room temperature_on.png"))
+            collectionView.backgroundView?.contentMode = .scaleAspectFit
         } else {
-            self.animationView.stop()
-            self.collectionView.backgroundView = UIImageView(image: nil)
+            collectionView.backgroundView = UIImageView(image: nil)
         }
-
     }
     
     func getAllItems() {
         do {
-            animationStartStop()
+            backImageOnOff()
            
             let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
             let predite = NSPredicate(format: "category == %@","실온")
@@ -197,7 +177,6 @@ extension roomRecommendListViewController: UICollectionViewDataSource {
         //return viewModel.numOfItems
         self.sectionTitle.text = "TOTAL: \(models.count)"
         return models.count
-        print("카테고리 개수는\(models.count)")
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

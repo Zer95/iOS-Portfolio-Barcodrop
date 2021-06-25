@@ -126,7 +126,7 @@ class HomeViewController: UIViewController {
     
     func systemSetting() {
         let settingItem = SystemSetting(context: context)
-        settingItem.dateLanguage = "kr"
+        settingItem.dateLanguage = "eng"
       
         do{
             try context.save()

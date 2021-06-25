@@ -7,11 +7,11 @@
 
 import UIKit
 import CoreData
-import Lottie
+
 
 class iceRecommendListViewController: UIViewController {
     
-    let animationView = AnimationView()
+
 
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var collectionView:UICollectionView!
@@ -37,7 +37,7 @@ class iceRecommendListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         getAllItems()
-        animationView.play()
+
         systemgetAllItems()
         dataCnt()
     }
@@ -45,20 +45,13 @@ class iceRecommendListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getAllItems()
-        animationView.play()
+
         systemgetAllItems()
         dataCnt()
      
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        animationView.stop()
-        self.collectionView.backgroundView = UIImageView(image: nil)
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        animationView.stop()
-        self.collectionView.backgroundView = UIImageView(image: nil)
-    }
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,29 +147,22 @@ class iceRecommendListViewController: UIViewController {
             print("getAllItmes 오류")
         }
     }
-    func animationStartStop(){
-        if self.models.count == 0 {
-            self.animationView.animation = Animation.named("carrot")
-            self.animationView.frame = self.view.bounds
-            self.animationView.contentMode = .scaleAspectFit
-            self.animationView.loopMode = .loop
-            self.animationView.play()
-            self.view.addSubview(self.animationView)
-            
-            self.collectionView.backgroundView?.addSubview(self.animationView)
+    
+    func backImageOnOff(){
+        if models.count == 0 {
+            collectionView.backgroundView = UIImageView(image: UIImage(named: "iceIcon_on.png"))
+            collectionView.backgroundView?.contentMode = .scaleAspectFit
         } else {
-            self.animationView.stop()
-            self.collectionView.backgroundView = UIImageView(image: nil)
+            collectionView.backgroundView = UIImageView(image: nil)
         }
-
     }
     
     func getAllItems() {
         do {
          
-            animationStartStop()
+            backImageOnOff()
          
-            print("애니 실행 몇번이냐")
+ 
             let fetchRequest: NSFetchRequest<ProductListItem> = ProductListItem.fetchRequest()
             let predite = NSPredicate(format: "category == %@","냉동")
             fetchRequest.predicate = predite
