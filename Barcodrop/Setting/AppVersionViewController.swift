@@ -25,10 +25,10 @@ class AppVersionViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewMapTapped))
         viewMain.addGestureRecognizer(tapGestureRecognizer)
         
-        animationDisplay.animation = Animation.named("check3")
+        animationDisplay.animation = Animation.named("versionCheck")
         animationDisplay.frame = animationView.bounds
         animationDisplay.contentMode = .scaleAspectFit
-        animationDisplay.loopMode = .loop
+        animationDisplay.loopMode = .playOnce
         animationDisplay.play()
         animationView.addSubview(animationDisplay)
  
