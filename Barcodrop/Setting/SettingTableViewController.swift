@@ -193,6 +193,12 @@ class SettingTableViewController: UITableViewController {
         self.present(VC, animated: true, completion: nil)
     }
     
+    @IBAction func appVersionBtn(_ sender: Any) {
+        let VC = self.storyboard?.instantiateViewController(withIdentifier:"AppVersionView") as! AppVersionViewController
+        VC.modalPresentationStyle = .overFullScreen
+        VC.modalTransitionStyle = .crossDissolve
+        self.present(VC, animated: true, completion: nil)
+    }
     @IBAction func selectAlarm(_ sender: Any) {
         
         if self.onOffState == true {
