@@ -39,6 +39,9 @@
 		D27136172684551F00E36069 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = D27136162684551F00E36069 /* language.json */; };
 		D271361A2684639800E36069 /* SystemSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */; };
 		D271361B2684639800E36069 /* SystemSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */; };
+		D278031426876F6D00577C02 /* check1.json in Resources */ = {isa = PBXBuildFile; fileRef = D278031326876F6D00577C02 /* check1.json */; };
+		D2780317268770A000577C02 /* check3.json in Resources */ = {isa = PBXBuildFile; fileRef = D2780315268770A000577C02 /* check3.json */; };
+		D2780318268770A000577C02 /* check2.json in Resources */ = {isa = PBXBuildFile; fileRef = D2780316268770A000577C02 /* check2.json */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D2A18FEF2685D31700AD630D /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A18FEE2685D31700AD630D /* TutorialViewController.swift */; };
@@ -117,6 +120,9 @@
 		D27136162684551F00E36069 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
 		D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataClass.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataProperties.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		D278031326876F6D00577C02 /* check1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check1.json; sourceTree = "<group>"; };
+		D2780315268770A000577C02 /* check3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check3.json; sourceTree = "<group>"; };
+		D2780316268770A000577C02 /* check2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check2.json; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D2A18FEE2685D31700AD630D /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +260,9 @@
 		D24611B2266536C3007CF148 /* Barcodrop */ = {
 			isa = PBXGroup;
 			children = (
+				D278031326876F6D00577C02 /* check1.json */,
+				D2780316268770A000577C02 /* check2.json */,
+				D2780315268770A000577C02 /* check3.json */,
 				D27136162684551F00E36069 /* language.json */,
 				D21538B92683974E002FB33E /* carrot.json */,
 				D21538BB268398A8002FB33E /* notiSleep.json */,
@@ -451,10 +460,13 @@
 				D28D5889266640D0000426D4 /* logo_kor.png in Resources */,
 				D27136172684551F00E36069 /* language.json in Resources */,
 				D28D5888266640D0000426D4 /* logo_eng.png in Resources */,
+				D278031426876F6D00577C02 /* check1.json in Resources */,
+				D2780318268770A000577C02 /* check2.json in Resources */,
 				D24611C0266536C4007CF148 /* LaunchScreen.storyboard in Resources */,
 				D24611BD266536C4007CF148 /* Assets.xcassets in Resources */,
 				D21538BC268398A8002FB33E /* notiSleep.json in Resources */,
 				D21538BA2683974E002FB33E /* carrot.json in Resources */,
+				D2780317268770A000577C02 /* check3.json in Resources */,
 				D24611BB266536C3007CF148 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

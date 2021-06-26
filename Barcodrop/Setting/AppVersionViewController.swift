@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Lottie
 
 class AppVersionViewController: UIViewController {
-
+    
+    let animationDisplay = AnimationView()
+    
     @IBOutlet var viewMain: UIView!
     @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var animationView: UIView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +24,15 @@ class AppVersionViewController: UIViewController {
         // 화면 터치시 view dismiss
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewMapTapped))
         viewMain.addGestureRecognizer(tapGestureRecognizer)
+        
+        animationDisplay.animation = Animation.named("check3")
+        animationDisplay.frame = animationView.bounds
+        animationDisplay.contentMode = .scaleAspectFit
+        animationDisplay.loopMode = .loop
+        animationDisplay.play()
+        animationView.addSubview(animationDisplay)
+ 
+        
     }
     
     @objc func viewMapTapped(sender: UITapGestureRecognizer) {
