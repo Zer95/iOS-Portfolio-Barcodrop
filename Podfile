@@ -22,5 +22,5 @@ pod 'TextFieldEffects'
 pod 'DropDown'
 pod "RSLoadingView"
 pod 'lottie-ios'
-
+pod 'ExpyTableView'
 end

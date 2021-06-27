@@ -41,6 +41,7 @@
 		D2780317268770A000577C02 /* versionCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = D2780315268770A000577C02 /* versionCheck.json */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
+		D29A8AF22688C41B0005386E /* faq1.json in Resources */ = {isa = PBXBuildFile; fileRef = D29A8AF12688C41B0005386E /* faq1.json */; };
 		D2A18FEF2685D31700AD630D /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A18FEE2685D31700AD630D /* TutorialViewController.swift */; };
 		D2A18FF12685D6AC00AD630D /* TutorialSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A18FF02685D6AC00AD630D /* TutorialSlide.swift */; };
 		D2A18FF32685D89100AD630D /* TutorialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A18FF22685D89100AD630D /* TutorialCollectionViewCell.swift */; };
@@ -54,6 +55,7 @@
 		D2DFB5DE267C4B8B001DBA69 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFB5DD267C4B8B001DBA69 /* SettingTableViewController.swift */; };
 		D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0826689D59001E1CC1 /* DetailViewController.swift */; };
 		D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0A2668D945001E1CC1 /* ProductInfo.swift */; };
+		D2FD485F2688BB360095D1B1 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FD485E2688BB360095D1B1 /* FAQViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,7 @@
 		D2780315268770A000577C02 /* versionCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = versionCheck.json; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
+		D29A8AF12688C41B0005386E /* faq1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faq1.json; sourceTree = "<group>"; };
 		D2A18FEE2685D31700AD630D /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		D2A18FF02685D6AC00AD630D /* TutorialSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSlide.swift; sourceTree = "<group>"; };
 		D2A18FF22685D89100AD630D /* TutorialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		D2DFB5DD267C4B8B001DBA69 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D2E17D0826689D59001E1CC1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D2E17D0A2668D945001E1CC1 /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
+		D2FD485E2688BB360095D1B1 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		D8DF504C4C45D6ABBA3CE992 /* Pods_Barcodrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -224,6 +228,7 @@
 				D2DFB5DD267C4B8B001DBA69 /* SettingTableViewController.swift */,
 				D27136142684503A00E36069 /* LanguageTableViewController.swift */,
 				D2587C85268763DB00B42D46 /* AppVersionViewController.swift */,
+				D2FD485E2688BB360095D1B1 /* FAQViewController.swift */,
 				D2A18FF42685E3CC00AD630D /* Tutorial */,
 			);
 			path = Setting;
@@ -254,6 +259,7 @@
 		D24611B2266536C3007CF148 /* Barcodrop */ = {
 			isa = PBXGroup;
 			children = (
+				D29A8AF12688C41B0005386E /* faq1.json */,
 				D2780315268770A000577C02 /* versionCheck.json */,
 				D27136162684551F00E36069 /* language.json */,
 				D21538BB268398A8002FB33E /* notiSleep.json */,
@@ -451,6 +457,7 @@
 				D28D5889266640D0000426D4 /* logo_kor.png in Resources */,
 				D27136172684551F00E36069 /* language.json in Resources */,
 				D28D5888266640D0000426D4 /* logo_eng.png in Resources */,
+				D29A8AF22688C41B0005386E /* faq1.json in Resources */,
 				D24611C0266536C4007CF148 /* LaunchScreen.storyboard in Resources */,
 				D24611BD266536C4007CF148 /* Assets.xcassets in Resources */,
 				D21538BC268398A8002FB33E /* notiSleep.json in Resources */,
@@ -601,6 +608,7 @@
 				D213E27C267F25C700765BA7 /* AlarmHistoryViewController.swift in Sources */,
 				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,
 				D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */,
+				D2FD485F2688BB360095D1B1 /* FAQViewController.swift in Sources */,
 				D2AA9C4726804ABF0058DDD4 /* ProductListItem+CoreDataProperties.swift in Sources */,
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
 				D2A18FF12685D6AC00AD630D /* TutorialSlide.swift in Sources */,
