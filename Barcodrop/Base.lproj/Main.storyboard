@@ -982,7 +982,7 @@
                                                 <locale key="locale" localeIdentifier="ko_KR"/>
                                             </datePicker>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rTB-2a-X3m">
-                                                <rect key="frame" x="25" y="470.66666666666697" width="290" height="80.333333333333371"/>
+                                                <rect key="frame" x="25" y="470.66666666666663" width="290" height="80.333333333333371"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="67x-x7-VF3">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="80.333333333333329"/>
@@ -1082,7 +1082,7 @@
                                                 </subviews>
                                             </stackView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상품명을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cpf-lD-jw8">
-                                                <rect key="frame" x="25" y="366.66666666666697" width="250" height="40"/>
+                                                <rect key="frame" x="25" y="366.66666666666669" width="250" height="40"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="gY4-pu-NJH"/>
@@ -1092,13 +1092,13 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFg-bL-tD8">
-                                                <rect key="frame" x="25" y="332.66666666666697" width="52" height="24"/>
+                                                <rect key="frame" x="25" y="332.66666666666669" width="52" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC6-5O-5NQ">
-                                                <rect key="frame" x="285" y="366.66666666666697" width="70" height="40"/>
+                                                <rect key="frame" x="285" y="366.66666666666669" width="70" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="PvE-EG-aTb"/>
                                                     <constraint firstAttribute="width" constant="70" id="wHZ-bu-pbM"/>
@@ -1109,7 +1109,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUd-5H-f8W">
-                                                <rect key="frame" x="25" y="436.66666666666697" width="69.333333333333329" height="24"/>
+                                                <rect key="frame" x="25" y="436.66666666666663" width="69.333333333333329" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
