@@ -82,11 +82,14 @@ class DetailViewController: UIViewController {
       
         
         
-        // D-day 값 세팅
+        // 날짜 계산하기
+        let today = dateReMake(date: Date())
+        let endDay = dateReMake(date: re_endDay)
+        
+   
         let calendar = Calendar.current
-        let currentDate = Date()
         func days(from date: Date) -> Int {
-            return calendar.dateComponents([.day], from: date, to: currentDate).day!
+            return calendar.dateComponents([.day], from: endDay!, to: today!).day!
         }
         let dDay =  days(from: re_endDay)
         
@@ -153,6 +156,18 @@ class DetailViewController: UIViewController {
         prepareAnimation()
     }
     
+    func dateReMake(date: Date) -> Date? {
+     
+        let Year = Calendar.current.dateComponents([.year], from: date)
+        let Month = Calendar.current.dateComponents([.month], from: date)
+        let Day = Calendar.current.dateComponents([.day], from: date)
+        print(Year.year!, Month.month!, Day.day!)
+        
+        let dateComponents = DateComponents(year: Year.year!, month: Month.month!, day: Day.day!, hour: 0, minute: 00, second: 00)
+        let result = Calendar.current.date(from: dateComponents)
+        
+        return result
+    }
     
     func systemgetAllItems() {
         do {

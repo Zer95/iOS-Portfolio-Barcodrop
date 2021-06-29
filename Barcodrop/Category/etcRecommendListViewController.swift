@@ -72,6 +72,20 @@ class etcRecommendListViewController: UIViewController {
         dataCnt()
     }
     
+    
+    func dateReMake(date: Date) -> Date? {
+     
+        let Year = Calendar.current.dateComponents([.year], from: date)
+        let Month = Calendar.current.dateComponents([.month], from: date)
+        let Day = Calendar.current.dateComponents([.day], from: date)
+        print(Year.year!, Month.month!, Day.day!)
+        
+        let dateComponents = DateComponents(year: Year.year!, month: Month.month!, day: Day.day!, hour: 0, minute: 00, second: 00)
+        let result = Calendar.current.date(from: dateComponents)
+        
+        return result
+    }
+    
     func dataCnt(){
         print("~~~~~~~~~~~~~~cnt 확인\(models.count)")
         
@@ -195,10 +209,13 @@ extension etcRecommendListViewController: UICollectionViewDataSource {
         cell.etcTitle.text = model.productName
         
         // 날짜 계산하기
+        let today = dateReMake(date: Date())
+        let endDay = dateReMake(date: model.endDay!)
+        
+   
         let calendar = Calendar.current
-        let currentDate = Date()
         func days(from date: Date) -> Int {
-            return calendar.dateComponents([.day], from: date, to: currentDate).day!
+            return calendar.dateComponents([.day], from: endDay!, to: today!).day!
         }
         let dDay =  days(from: model.endDay!)
         
