@@ -265,6 +265,8 @@
 				D21538BB268398A8002FB33E /* notiSleep.json */,
 				D24611B3266536C3007CF148 /* AppDelegate.swift */,
 				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
+				D28D5886266640D0000426D4 /* logo_eng.png */,
+				D28D5887266640D0000426D4 /* logo_kor.png */,
 				D2A8205126709057005E04B1 /* Data */,
 				D2DB6E89266740F000598CCA /* Home */,
 				D208CE0D266F95D10025ECDE /* Edit */,
@@ -277,8 +279,6 @@
 				D24611BE266536C4007CF148 /* LaunchScreen.storyboard */,
 				D24611E3266539C0007CF148 /* CBSampleViewController.swift */,
 				D24611BC266536C4007CF148 /* Assets.xcassets */,
-				D28D5886266640D0000426D4 /* logo_eng.png */,
-				D28D5887266640D0000426D4 /* logo_kor.png */,
 			);
 			path = Barcodrop;
 			sourceTree = "<group>";
