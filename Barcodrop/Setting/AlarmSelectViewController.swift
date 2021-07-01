@@ -105,7 +105,7 @@ class AlarmSelectViewController: UIViewController {
         catch {
             
         }
-
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alarmPetch"),object: nil)
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func cancleBtn(_ sender: Any) {

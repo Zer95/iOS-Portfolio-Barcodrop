@@ -81,7 +81,7 @@ class HomeViewController: UIViewController {
      
         // 데이터 저장 후 바로 reload 옵저버
         NotificationCenter.default.addObserver(self,selector: #selector(obServing),name: NSNotification.Name(rawValue: "reload"),object: nil)
-    
+        NotificationCenter.default.addObserver(self,selector: #selector(obServingAlarm),name: NSNotification.Name(rawValue: "alarmPetch"),object: nil)
         // longPress
         longpress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized))
         collectionView.addGestureRecognizer(longpress)
@@ -387,8 +387,21 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func obServing(){
+        print("받는다리 옵저")
         getAllItems()
         getAlarm()
+    }
+    @objc private func obServingAlarm(){
+        print("받는다리 옵저")
+        getAllItems()
+        getAlarm()
+        
+        for i in 0...models.count - 1 {
+            print("처리 \(i)")
+            getAlarmData(modelIndex:i)
+        }
+        
+       
     }
   
     // 수동갱신
