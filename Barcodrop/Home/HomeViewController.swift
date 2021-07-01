@@ -303,7 +303,7 @@ class HomeViewController: UIViewController {
     //    print("시간 지나서 낼 다시 실행")
     }
         
-    
+  
     
     
     
@@ -466,6 +466,7 @@ class HomeViewController: UIViewController {
     }
     
     func deleteItem(item: ProductListItem) {
+        deleteAlarm(item: item)
         context.delete(item)
         do{
             try context.save()
@@ -473,6 +474,18 @@ class HomeViewController: UIViewController {
         }
         catch {
         }
+    }
+    
+    // 해당 상품의 알람도 삭제
+    func deleteAlarm(item: ProductListItem){
+        for i in 0...7 {
+            let deleteProduct = item.productName! + "\(i)"
+           // print("알람개별삭제 확인\(deleteProduct)")
+            let center = UNUserNotificationCenter.current()
+            center.removePendingNotificationRequests(withIdentifiers: [deleteProduct])
+            
+        }
+        
     }
     
     func dateReMake(date: Date) -> Date? {

@@ -86,6 +86,10 @@ class SettingTableViewController: UITableViewController {
     }
     
     func deleteDataAll() {
+        
+        let center = UNUserNotificationCenter.current() // 노티피케이션 센터
+        center.removeAllPendingNotificationRequests()
+        
         if datamodels.count > 0 {
         let dataAll = datamodels.count - 1
         for i in 0...dataAll {
