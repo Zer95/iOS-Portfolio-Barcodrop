@@ -179,51 +179,46 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func getAlarmData(modelDday:Int, modelIndex:Int){
+    func getAlarmData(modelIndex:Int){
         let alarm = alarm[0]
         if alarm.onOff == true {
-            if alarm.dDay0 == true && modelDday == 0 {sendAlarm(dayCnt: 0, modelIndex: modelIndex)}
-            if alarm.dDay1 == true && modelDday == -1 {sendAlarm(dayCnt: 1, modelIndex: modelIndex)}
-            if alarm.dDay2 == true && modelDday == -2 {sendAlarm(dayCnt: 2, modelIndex: modelIndex)}
-            if alarm.dDay3 == true && modelDday == -3 {sendAlarm(dayCnt: 3, modelIndex: modelIndex)}
-            if alarm.dDay4 == true && modelDday == -4 {sendAlarm(dayCnt: 4, modelIndex: modelIndex)}
-            if alarm.dDay5 == true && modelDday == -5 {sendAlarm(dayCnt: 5, modelIndex: modelIndex)}
-            if alarm.dDay6 == true && modelDday == -6 {sendAlarm(dayCnt: 6, modelIndex: modelIndex)}
-            if alarm.dDay7 == true && modelDday == -7 {sendAlarm(dayCnt: 7, modelIndex: modelIndex)}
-        }
+            
+            let model = models[modelIndex]
+            let dataEndDay = model.endDay
+            print("해당 유통기한 마지막 날은\(dataEndDay!)")
+      
+            let ago1 = Calendar.current.date(byAdding: .day, value: -1, to: dataEndDay!)
+            let ago2 = Calendar.current.date(byAdding: .day, value: -2, to: dataEndDay!)
+            let ago3 = Calendar.current.date(byAdding: .day, value: -3, to: dataEndDay!)
+            let ago4 = Calendar.current.date(byAdding: .day, value: -4, to: dataEndDay!)
+            let ago5 = Calendar.current.date(byAdding: .day, value: -5, to: dataEndDay!)
+            let ago6 = Calendar.current.date(byAdding: .day, value: -6, to: dataEndDay!)
+            let ago7 = Calendar.current.date(byAdding: .day, value: -7, to: dataEndDay!)
+        
+  
+        
+            if alarm.dDay0 == true { sendAlarm(dayCnt: 0, modelIndex: modelIndex, sendDay: dataEndDay!)}
+            if alarm.dDay1 == true { sendAlarm(dayCnt: 1, modelIndex: modelIndex, sendDay: ago1!)}
+            if alarm.dDay2 == true { sendAlarm(dayCnt: 2, modelIndex: modelIndex, sendDay: ago2!)}
+            if alarm.dDay3 == true { sendAlarm(dayCnt: 3, modelIndex: modelIndex, sendDay: ago3!)}
+            if alarm.dDay4 == true { sendAlarm(dayCnt: 4, modelIndex: modelIndex, sendDay: ago4!)}
+            if alarm.dDay5 == true { sendAlarm(dayCnt: 5, modelIndex: modelIndex, sendDay: ago5!)}
+            if alarm.dDay6 == true { sendAlarm(dayCnt: 6, modelIndex: modelIndex, sendDay: ago6!)}
+            if alarm.dDay7 == true { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!)}
+            
+            
+        } // 5 7 8
     }
     
-    func sendAlarm(dayCnt: Int, modelIndex:Int){
+    func sendAlarm(dayCnt: Int, modelIndex:Int, sendDay:Date){
         let model = models[modelIndex]
-        let alarm = alarm[0]
-      
         let dataName = model.productName
+        let date = sendDay
+       
         
-        
-        
-        // 알림 전송
-        let timeText = alarm.selectTime!+":00"
-       // print("입력 받은 값\(timeText)")
-        
-        let date = Date()
-        let calendar = Calendar.current
-        let realHour = calendar.component(.hour, from: date)
-        let realMinute = calendar.component(.minute, from: date)
-        let realSecond = calendar.component(.second, from: date)
-        
-        let time = timeText.split(separator: ":").map { val -> Int in
-            return Int(val)!
-        }
-        
-        // 현재 시간과 사용자에게 입력받은 시간 차를 계산
-        let timeDiffer = Double((time[0] - realHour) * 3600 + (time[1] - realMinute) * 60 + (time[2] - realSecond))
-      //  print("timeDiffer : \(timeDiffer)")
-        
-        if timeDiffer >= 0 { // 알림시간 지나면 실행안되게 구분
-        
+
         let content = UNMutableNotificationContent() // 노티피케이션 메세지 객체
         content.title = NSString.localizedUserNotificationString(forKey: dataName!, arguments: nil)
-        //content.body = NSString.localizedUserNotificationString(forKey: "\(time[0]):\(time[1]) 입니다!", arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: "유통기한이 \(dayCnt)일 남았습니다!", arguments: nil)
         
             // cell <- 데이터 이미지 load
@@ -243,13 +238,32 @@ class HomeViewController: UIViewController {
                 content.attachments = [attachment]
             }
             
-                    
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeDiffer, repeats: false) // 얼마 후 실행?
+        let alarm = alarm[0]
+        let timeText = alarm.selectTime!+":00"
+        print("사용자 전체시간 \(timeText)")
+        let time = timeText.split(separator: ":").map { val -> Int in
+            return Int(val)!
+        }
 
+        let userHour = time[0]
+        let userMinute = time[1]
+        
+        print("사용자 지정 시간: \(userHour)")
+        print("사용자 지정 분: \(userMinute)")
+            
+       // 210701 푸쉬 전송 트리거 날짜 지정식
+        var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        dateComponents.hour = userHour
+        dateComponents.minute = userMinute
+        dateComponents.second = 00
+        let trigger1 = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        //print("트리거 값\(trigger1)")
+            
+            
         let request = UNNotificationRequest(
-            identifier: dataName!,
+            identifier: dataName! + "\(dayCnt)",
             content: content,
-            trigger: trigger
+            trigger: trigger1
         ) // 노티피케이션 전송 객체
 
         let center = UNUserNotificationCenter.current() // 노티피케이션 센터
@@ -259,10 +273,14 @@ class HomeViewController: UIViewController {
             }
         }
         print("yes!!")
-        }
+        
     //    print("시간 지나서 낼 다시 실행")
     }
         
+    
+    
+    
+    
     
     @IBAction func upDownBtn(_ sender: Any) {
         if self.upDownBtnState == false {
@@ -499,20 +517,20 @@ extension HomeViewController: UICollectionViewDataSource{
         } else if dDay == 0{
             cell.D_day?.text = "D-day"
             cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
-            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            getAlarmData(modelIndex: indexPath.row)
         } else if dDay < 0 && dDay > -3 {
             cell.D_day?.text = "D\(dDay)"
             cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
-            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            getAlarmData(modelIndex: indexPath.row)
         } else if dDay >= -5 {
             cell.D_day?.text = "D\(dDay)"
             cell.D_day?.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
-            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            getAlarmData(modelIndex: indexPath.row)
         }
         else if dDay < -5 {
             cell.D_day?.text = "D\(dDay)"
             cell.D_day?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+            getAlarmData(modelIndex: indexPath.row)
         }
             
         }  else if loadLanguage == "kr" {
@@ -523,20 +541,20 @@ extension HomeViewController: UICollectionViewDataSource{
             } else if dDay == 0{
                 cell.D_day?.text = "오늘까지"
                 cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
-                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+                getAlarmData( modelIndex: indexPath.row)
             } else if dDay < 0 && dDay > -3 {
                 cell.D_day?.text = "\(dDay * -1)일 남음"
                 cell.D_day?.textColor = #colorLiteral(red: 0.8275327086, green: 0, blue: 0, alpha: 1)
-                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+                getAlarmData(modelIndex: indexPath.row)
             } else if dDay >= -5 {
                 cell.D_day?.text = "\(dDay * -1)일 남음"
                 cell.D_day?.textColor = #colorLiteral(red: 0.8022823334, green: 0.473616302, blue: 0, alpha: 1)
-                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+                getAlarmData( modelIndex: indexPath.row)
             }
             else if dDay < -5 {
                 cell.D_day?.text = "\(dDay * -1)일 남음"
                 cell.D_day?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-                getAlarmData(modelDday: dDay, modelIndex: indexPath.row)
+                getAlarmData( modelIndex: indexPath.row)
             }
             }
 
