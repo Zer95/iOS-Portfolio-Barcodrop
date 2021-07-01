@@ -197,24 +197,41 @@ class HomeViewController: UIViewController {
         
   
         
-            if alarm.dDay0 == true { sendAlarm(dayCnt: 0, modelIndex: modelIndex, sendDay: dataEndDay!)}
-            if alarm.dDay1 == true { sendAlarm(dayCnt: 1, modelIndex: modelIndex, sendDay: ago1!)}
-            if alarm.dDay2 == true { sendAlarm(dayCnt: 2, modelIndex: modelIndex, sendDay: ago2!)}
-            if alarm.dDay3 == true { sendAlarm(dayCnt: 3, modelIndex: modelIndex, sendDay: ago3!)}
-            if alarm.dDay4 == true { sendAlarm(dayCnt: 4, modelIndex: modelIndex, sendDay: ago4!)}
-            if alarm.dDay5 == true { sendAlarm(dayCnt: 5, modelIndex: modelIndex, sendDay: ago5!)}
-            if alarm.dDay6 == true { sendAlarm(dayCnt: 6, modelIndex: modelIndex, sendDay: ago6!)}
-            if alarm.dDay7 == true { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!)}
+            if alarm.dDay0 == true { sendAlarm(dayCnt: 0, modelIndex: modelIndex, sendDay: dataEndDay!, onOFF: true)}
+            else if alarm.dDay0 == true { sendAlarm(dayCnt: 0, modelIndex: modelIndex, sendDay: dataEndDay!, onOFF: false)}
+            
+            if alarm.dDay1 == true { sendAlarm(dayCnt: 1, modelIndex: modelIndex, sendDay: ago1!, onOFF: true)}
+            else if alarm.dDay1 == true { sendAlarm(dayCnt: 1, modelIndex: modelIndex, sendDay: ago1!, onOFF: false)}
+            
+            if alarm.dDay2 == true { sendAlarm(dayCnt: 2, modelIndex: modelIndex, sendDay: ago2!, onOFF: true)}
+            else if alarm.dDay2 == true { sendAlarm(dayCnt: 2, modelIndex: modelIndex, sendDay: ago2!, onOFF: false)}
+            
+            if alarm.dDay3 == true { sendAlarm(dayCnt: 3, modelIndex: modelIndex, sendDay: ago3!, onOFF: true)}
+            else if alarm.dDay3 == true { sendAlarm(dayCnt: 3, modelIndex: modelIndex, sendDay: ago3!, onOFF: false)}
+            
+            if alarm.dDay4 == true { sendAlarm(dayCnt: 4, modelIndex: modelIndex, sendDay: ago4!, onOFF: true)}
+            else if alarm.dDay4 == true { sendAlarm(dayCnt: 4, modelIndex: modelIndex, sendDay: ago4!, onOFF: false)}
+            
+            if alarm.dDay5 == true { sendAlarm(dayCnt: 5, modelIndex: modelIndex, sendDay: ago5!, onOFF: true)}
+            else if alarm.dDay5 == true { sendAlarm(dayCnt: 5, modelIndex: modelIndex, sendDay: ago5!, onOFF: false)}
+            
+            if alarm.dDay6 == true { sendAlarm(dayCnt: 6, modelIndex: modelIndex, sendDay: ago6!, onOFF: true)}
+            else if alarm.dDay6 == true { sendAlarm(dayCnt: 6, modelIndex: modelIndex, sendDay: ago6!, onOFF: false)}
+            
+            if alarm.dDay7 == true { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!, onOFF: true)}
+            else if alarm.dDay7 == true { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!, onOFF: false)}
             
             
         } // 5 7 8
     }
     
-    func sendAlarm(dayCnt: Int, modelIndex:Int, sendDay:Date){
+    func sendAlarm(dayCnt: Int, modelIndex:Int, sendDay:Date,onOFF:Bool){
         let model = models[modelIndex]
         let dataName = model.productName
         let date = sendDay
-       
+        let onOffMode = onOFF
+        let inIdentifier = dataName! + "\(dayCnt)"
+        print("고유 식별값\(inIdentifier)")
         
 
         let content = UNMutableNotificationContent() // 노티피케이션 메세지 객체
@@ -261,16 +278,22 @@ class HomeViewController: UIViewController {
             
             
         let request = UNNotificationRequest(
-            identifier: dataName! + "\(dayCnt)",
+            identifier: inIdentifier,
             content: content,
             trigger: trigger1
         ) // 노티피케이션 전송 객체
 
         let center = UNUserNotificationCenter.current() // 노티피케이션 센터
+        
+        if onOffMode == true {
         center.add(request) { (error : Error?) in // 노티피케이션 객체 추가 -> 전송
             if let theError = error {
                 print(theError.localizedDescription)
             }
+        }
+        }
+        else if onOffMode == false {
+            center.removePendingNotificationRequests(withIdentifiers: [inIdentifier])
         }
         print("yes!!")
         
