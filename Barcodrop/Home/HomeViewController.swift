@@ -222,6 +222,9 @@ class HomeViewController: UIViewController {
             else  { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!, onOFF: false)}
             
             
+        } else {
+            let center = UNUserNotificationCenter.current() // 노티피케이션 센터
+            center.removeAllPendingNotificationRequests()
         } // 5 7 8
     }
     
