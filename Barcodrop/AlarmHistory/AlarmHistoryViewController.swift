@@ -23,11 +23,13 @@ class AlarmHistoryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         animationView.play()
+        getAllItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animationView.play()
+        getAllItems()
      
     }
     

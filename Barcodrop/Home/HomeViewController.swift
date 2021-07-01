@@ -436,7 +436,7 @@ class HomeViewController: UIViewController {
         let Year = Calendar.current.dateComponents([.year], from: date)
         let Month = Calendar.current.dateComponents([.month], from: date)
         let Day = Calendar.current.dateComponents([.day], from: date)
-        print(Year.year!, Month.month!, Day.day!)
+      //  print(Year.year!, Month.month!, Day.day!)
         
         let dateComponents = DateComponents(year: Year.year!, month: Month.month!, day: Day.day!, hour: 0, minute: 00, second: 00)
         let result = Calendar.current.date(from: dateComponents)
