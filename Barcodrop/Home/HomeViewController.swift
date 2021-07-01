@@ -198,28 +198,28 @@ class HomeViewController: UIViewController {
   
         
             if alarm.dDay0 == true { sendAlarm(dayCnt: 0, modelIndex: modelIndex, sendDay: dataEndDay!, onOFF: true)}
-            else if alarm.dDay0 == true { sendAlarm(dayCnt: 0, modelIndex: modelIndex, sendDay: dataEndDay!, onOFF: false)}
+            else  { sendAlarm(dayCnt: 0, modelIndex: modelIndex, sendDay: dataEndDay!, onOFF: false)}
             
             if alarm.dDay1 == true { sendAlarm(dayCnt: 1, modelIndex: modelIndex, sendDay: ago1!, onOFF: true)}
-            else if alarm.dDay1 == true { sendAlarm(dayCnt: 1, modelIndex: modelIndex, sendDay: ago1!, onOFF: false)}
+            else  { sendAlarm(dayCnt: 1, modelIndex: modelIndex, sendDay: ago1!, onOFF: false)}
             
             if alarm.dDay2 == true { sendAlarm(dayCnt: 2, modelIndex: modelIndex, sendDay: ago2!, onOFF: true)}
-            else if alarm.dDay2 == true { sendAlarm(dayCnt: 2, modelIndex: modelIndex, sendDay: ago2!, onOFF: false)}
+            else  { sendAlarm(dayCnt: 2, modelIndex: modelIndex, sendDay: ago2!, onOFF: false)}
             
             if alarm.dDay3 == true { sendAlarm(dayCnt: 3, modelIndex: modelIndex, sendDay: ago3!, onOFF: true)}
-            else if alarm.dDay3 == true { sendAlarm(dayCnt: 3, modelIndex: modelIndex, sendDay: ago3!, onOFF: false)}
+            else  { sendAlarm(dayCnt: 3, modelIndex: modelIndex, sendDay: ago3!, onOFF: false)}
             
             if alarm.dDay4 == true { sendAlarm(dayCnt: 4, modelIndex: modelIndex, sendDay: ago4!, onOFF: true)}
-            else if alarm.dDay4 == true { sendAlarm(dayCnt: 4, modelIndex: modelIndex, sendDay: ago4!, onOFF: false)}
+            else  { sendAlarm(dayCnt: 4, modelIndex: modelIndex, sendDay: ago4!, onOFF: false)}
             
             if alarm.dDay5 == true { sendAlarm(dayCnt: 5, modelIndex: modelIndex, sendDay: ago5!, onOFF: true)}
-            else if alarm.dDay5 == true { sendAlarm(dayCnt: 5, modelIndex: modelIndex, sendDay: ago5!, onOFF: false)}
+            else  { sendAlarm(dayCnt: 5, modelIndex: modelIndex, sendDay: ago5!, onOFF: false)}
             
             if alarm.dDay6 == true { sendAlarm(dayCnt: 6, modelIndex: modelIndex, sendDay: ago6!, onOFF: true)}
-            else if alarm.dDay6 == true { sendAlarm(dayCnt: 6, modelIndex: modelIndex, sendDay: ago6!, onOFF: false)}
+            else { sendAlarm(dayCnt: 6, modelIndex: modelIndex, sendDay: ago6!, onOFF: false)}
             
             if alarm.dDay7 == true { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!, onOFF: true)}
-            else if alarm.dDay7 == true { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!, onOFF: false)}
+            else  { sendAlarm(dayCnt: 7, modelIndex: modelIndex, sendDay: ago7!, onOFF: false)}
             
             
         } // 5 7 8
