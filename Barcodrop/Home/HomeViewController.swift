@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     private var models = [ProductListItem]()
     private var alarm = [AlarmSetting]()
     private var systemmodels = [SystemSetting]()
+    private var alarmHistoryModels = [AlarmHistory]()
     
     // 길게 클릭
     var longpress = UILongPressGestureRecognizer()
@@ -535,13 +536,34 @@ class HomeViewController: UIViewController {
         }
     }
     
+ 
+    
     // 해당 상품의 알람도 삭제
     func deleteAlarm(item: ProductListItem){
         for i in 0...7 {
+            // nofitication 삭제
             let deleteProduct = item.productName! + "\(i)"
-           // print("알람개별삭제 확인\(deleteProduct)")
+            print("알람개별삭제 확인 \(deleteProduct)")
             let center = UNUserNotificationCenter.current()
             center.removePendingNotificationRequests(withIdentifiers: [deleteProduct])
+            
+            do{
+                let fetchRequest: NSFetchRequest<AlarmHistory> = AlarmHistory.fetchRequest()
+                let predite = NSPredicate(format: "title == %@","\(deleteProduct)")
+                fetchRequest.predicate = predite
+                alarmHistoryModels = try context.fetch(fetchRequest)
+                
+                if alarmHistoryModels.count > 0 {
+                    context.delete(alarmHistoryModels[0])
+                    print("알람개별출력\(alarmHistoryModels[0])")
+                }
+              
+              //  context.delete(alarmHistoryModels[i])
+            } catch {
+                
+            }
+            
+            // history 데이터 삭제
             
         }
         
