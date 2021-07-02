@@ -293,6 +293,36 @@ class HomeViewController: UIViewController {
         let center = UNUserNotificationCenter.current() // 노티피케이션 센터
         
         if onOffMode == true {
+            
+            // 알림 히스토리 생성
+            let alarmHistoryItem = AlarmHistory(context: context)
+            alarmHistoryItem.title = request.identifier
+            alarmHistoryItem.content = request.content.body
+            
+            let Year = Calendar.current.dateComponents([.year], from: date)
+            let Month = Calendar.current.dateComponents([.month], from: date)
+            let Day = Calendar.current.dateComponents([.day], from: date)
+          //  print(Year.year!, Month.month!, Day.day!)
+            
+            let dateComponents = DateComponents(year: Year.year!, month: Month.month!, day: Day.day!, hour: userHour, minute: userMinute, second: 00)
+            let result = Calendar.current.date(from: dateComponents)
+            
+            
+            alarmHistoryItem.alarmTime = result
+            
+            do{
+                try context.save()
+                print("알람 히스토리 데이터 생성 완료!!")
+
+            }
+            catch {
+                print("알람 히스토리 데이터 생성 실패!!")
+            }
+            
+            
+            
+            
+            
         center.add(request) { (error : Error?) in // 노티피케이션 객체 추가 -> 전송
             if let theError = error {
                 print(theError.localizedDescription)
