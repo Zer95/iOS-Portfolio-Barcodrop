@@ -229,12 +229,16 @@ class HomeViewController: UIViewController {
     }
     
     func sendAlarm(dayCnt: Int, modelIndex:Int, sendDay:Date,onOFF:Bool){
+        
+    
         let model = models[modelIndex]
         let dataName = model.productName
         let date = sendDay
         let onOffMode = onOFF
         let inIdentifier = dataName! + "\(dayCnt)"
         print("고유 식별값\(inIdentifier)")
+        
+        if model.alarmSend == false {
         
 
         let content = UNMutableNotificationContent() // 노티피케이션 메세지 객체
@@ -300,7 +304,19 @@ class HomeViewController: UIViewController {
         }
         print("yes!!")
         
-    //    print("시간 지나서 낼 다시 실행")
+            
+            if dayCnt == 7 {
+                print("마지막 기점 체크")
+                model.alarmSend = true
+                do{
+                    try context.save()
+                }
+                catch {
+                }
+            }
+            
+
+        }
     }
         
   

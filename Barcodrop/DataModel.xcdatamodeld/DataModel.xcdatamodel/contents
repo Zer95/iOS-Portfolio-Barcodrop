@@ -18,6 +18,7 @@
         <attribute name="selectTime" optional="YES" attributeType="String" defaultValueString="10:00"/>
     </entity>
     <entity name="ProductListItem" representedClassName="ProductListItem" syncable="YES">
+        <attribute name="alarmSend" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="buyDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="endDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -31,7 +32,7 @@
     <elements>
         <element name="AlarmHistory" positionX="-18" positionY="117" width="128" height="74"/>
         <element name="AlarmSetting" positionX="-18" positionY="63" width="128" height="179"/>
-        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="119"/>
+        <element name="ProductListItem" positionX="-45" positionY="0" width="128" height="134"/>
         <element name="SystemSetting" positionX="-27" positionY="108" width="128" height="44"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  ProductListItem+CoreDataProperties.swift
 //  
 //
-//  Created by SG on 2021/06/21.
+//  Created by SG on 2021/07/02.
 //
 //
 
@@ -22,5 +22,6 @@ extension ProductListItem {
     @NSManaged public var imgURL: String?
     @NSManaged public var productName: String?
     @NSManaged public var saveTime: Date?
+    @NSManaged public var alarmSend: Bool
 
 }
