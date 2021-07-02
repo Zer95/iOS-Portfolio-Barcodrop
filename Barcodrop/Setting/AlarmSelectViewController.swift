@@ -25,6 +25,7 @@ class AlarmSelectViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
+    private var productModels = [ProductListItem]()
     
     
     override func viewDidLoad() {
@@ -35,8 +36,18 @@ class AlarmSelectViewController: UIViewController {
         selectTime.setValue(UIColor.white, forKeyPath: "textColor")
         
         getAllItems()
+        productGet()
     }
-    
+    func productGet() {
+        do {
+            productModels = try context.fetch(ProductListItem.fetchRequest())
+          
+         
+        }
+        catch {
+            print("getAllItmes 오류")
+        }
+    }
     func getAllItems() {
         do {
             models = try context.fetch(AlarmSetting.fetchRequest())
@@ -100,6 +111,14 @@ class AlarmSelectViewController: UIViewController {
        
         do{
             try context.save()
+            
+            let productCount =  productModels.count
+          
+            if productCount > 0 {
+                for i in 0...productCount-1 {
+                    productModels[i].alarmSend = false
+                }
+            }
      
         }
         catch {
