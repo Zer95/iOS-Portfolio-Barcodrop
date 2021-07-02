@@ -294,11 +294,7 @@ class HomeViewController: UIViewController {
         let center = UNUserNotificationCenter.current() // 노티피케이션 센터
         
         if onOffMode == true {
-            
-            // 알림 히스토리 생성
-            let alarmHistoryItem = AlarmHistory(context: context)
-            alarmHistoryItem.title = request.identifier
-            alarmHistoryItem.content = request.content.body
+       
             
             let Year = Calendar.current.dateComponents([.year], from: date)
             let Month = Calendar.current.dateComponents([.month], from: date)
@@ -309,7 +305,40 @@ class HomeViewController: UIViewController {
             let result = Calendar.current.date(from: dateComponents)
             
             
-            alarmHistoryItem.alarmTime = result
+            
+            
+            
+            // nofitication 삭제
+            let deleteProduct = inIdentifier
+            print("알람개별삭제 확인 \(deleteProduct)")
+      
+            
+            do{
+                let fetchRequest: NSFetchRequest<AlarmHistory> = AlarmHistory.fetchRequest()
+                let predite = NSPredicate(format: "title == %@","\(deleteProduct)")
+                fetchRequest.predicate = predite
+                alarmHistoryModels = try context.fetch(fetchRequest)
+                
+                if alarmHistoryModels.count > 0 {
+                  
+                    print("이미 존재합니다.")
+                } else{
+                    // 알림 히스토리 생성
+                    let alarmHistoryItem = AlarmHistory(context: context)
+                    alarmHistoryItem.title = request.identifier
+                    alarmHistoryItem.content = request.content.body
+                    alarmHistoryItem.alarmTime = result
+                }
+              
+              //  context.delete(alarmHistoryModels[i])
+            } catch {
+                
+            }
+            
+            
+
+            
+            
             
             do{
                 try context.save()
@@ -332,6 +361,22 @@ class HomeViewController: UIViewController {
         }
         else if onOffMode == false {
             center.removePendingNotificationRequests(withIdentifiers: [inIdentifier])
+            
+            do{
+                let fetchRequest: NSFetchRequest<AlarmHistory> = AlarmHistory.fetchRequest()
+                let predite = NSPredicate(format: "title == %@","\(inIdentifier)")
+                fetchRequest.predicate = predite
+                alarmHistoryModels = try context.fetch(fetchRequest)
+                
+                if alarmHistoryModels.count > 0 {
+                    context.delete(alarmHistoryModels[0])
+                    print("알람개별출력\(alarmHistoryModels[0])")
+                }
+              
+              //  context.delete(alarmHistoryModels[i])
+            } catch {
+                
+            }
         }
         print("yes!!")
         
@@ -546,6 +591,8 @@ class HomeViewController: UIViewController {
             print("알람개별삭제 확인 \(deleteProduct)")
             let center = UNUserNotificationCenter.current()
             center.removePendingNotificationRequests(withIdentifiers: [deleteProduct])
+            
+            
             
             do{
                 let fetchRequest: NSFetchRequest<AlarmHistory> = AlarmHistory.fetchRequest()
