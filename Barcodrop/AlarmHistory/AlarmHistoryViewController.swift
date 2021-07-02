@@ -136,7 +136,11 @@ extension AlarmHistoryViewController:UITableViewDataSource {
             return UITableViewCell()
         }
         let model = models[indexPath.row]
-        cell.Title.text = model.title
+        
+        var displayTitle = model.title
+        displayTitle!.removeLast(1)
+     
+        cell.Title.text = displayTitle
         cell.Content.text = model.content
      
         
@@ -167,7 +171,7 @@ extension AlarmHistoryViewController:UITableViewDataSource {
         let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
         if let dirPath          = paths.first
             {
-            let fileNameRead = "\(model.title!).jpg"
+            let fileNameRead = "\(displayTitle!).jpg"
             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(fileNameRead) //Pass the image name fetched from core data here
 
             let image    = UIImage(contentsOfFile: imageURL.path)
