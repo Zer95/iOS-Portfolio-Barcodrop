@@ -32,7 +32,11 @@ class AlarmHistoryViewController: UIViewController {
         getAllItems()
      
     }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+       
+        tableView.backgroundView = nil
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView() // 테이블뷰 빈칸일때 표시 x
@@ -49,7 +53,7 @@ class AlarmHistoryViewController: UIViewController {
             
             models = try context.fetch(fetchRequest)
             if models.count == 0 {
-                
+            
                 animationView.animation = Animation.named("notiSleep")
                 animationView.frame = view.bounds
                 animationView.contentMode = .scaleAspectFit
@@ -58,10 +62,11 @@ class AlarmHistoryViewController: UIViewController {
                 view.addSubview(animationView)
                 
                 tableView.backgroundView?.addSubview(animationView)
+              
                 
             } else {
                 animationView.stop()
-                tableView.backgroundView = UIImageView(image: nil)
+              //  tableView.backgroundView = UIImageView(image: nil)
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -127,7 +132,8 @@ class AlarmHistoryViewController: UIViewController {
 
 extension AlarmHistoryViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        models.count
+        
+        return models.count
         
     }
     
