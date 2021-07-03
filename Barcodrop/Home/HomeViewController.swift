@@ -510,7 +510,7 @@ class HomeViewController: UIViewController {
     // 플로팅 버튼 정의
     func setFloatingButton() {
             let floatingButton = MDCFloatingButton()
-            let image = UIImage(named: "scanner.jpg")
+            let image = UIImage(named: "scanIcon.jpg")
             floatingButton.sizeToFit()
             floatingButton.translatesAutoresizingMaskIntoConstraints = false
             floatingButton.setImage(image, for: .normal)
@@ -529,6 +529,7 @@ class HomeViewController: UIViewController {
             models = try context.fetch(ProductListItem.fetchRequest())
             if models.count == 0 {
                 collectionView.backgroundView = UIImageView(image: UIImage(named: "notdata.png"))
+                collectionView.backgroundView?.contentMode = .scaleAspectFit
             } else {
                 collectionView.backgroundView = UIImageView(image: nil)
             }
