@@ -259,10 +259,7 @@
 		D24611B2266536C3007CF148 /* Barcodrop */ = {
 			isa = PBXGroup;
 			children = (
-				D29A8AF12688C41B0005386E /* faq1.json */,
-				D2780315268770A000577C02 /* versionCheck.json */,
-				D27136162684551F00E36069 /* language.json */,
-				D21538BB268398A8002FB33E /* notiSleep.json */,
+				D2D77C01269337E9003B9F19 /* Animation */,
 				D24611B3266536C3007CF148 /* AppDelegate.swift */,
 				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
 				D28D5886266640D0000426D4 /* logo_eng.png */,
@@ -333,6 +330,17 @@
 				D213E276267F24BA00765BA7 /* AlarmHistory+CoreDataProperties.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		D2D77C01269337E9003B9F19 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				D29A8AF12688C41B0005386E /* faq1.json */,
+				D2780315268770A000577C02 /* versionCheck.json */,
+				D27136162684551F00E36069 /* language.json */,
+				D21538BB268398A8002FB33E /* notiSleep.json */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		D2DB6E89266740F000598CCA /* Home */ = {
