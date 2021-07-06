@@ -40,7 +40,7 @@ class freshRecommendListViewController: UIViewController {
         getAllItems()
 
         systemgetAllItems()
-        print("~~~~~~~~~~~~~~남은 값 확인한다\(models.count)")
+
         dataCnt()
 
     }
@@ -50,7 +50,7 @@ class freshRecommendListViewController: UIViewController {
         getAllItems()
    
         systemgetAllItems()
-        print("~~~~~~~~~~~~~~남은 값 확인한다\(models.count)")
+ 
         dataCnt()
       
      
@@ -96,15 +96,14 @@ class freshRecommendListViewController: UIViewController {
     }
     
     func dataCnt(){
-        print("~~~~~~~~~~~~~~cnt 확인\(models.count)")
+    
         
         dateCnt = [Date]()
        safeCnt = [Int]()
        normalCnt = [Int]()
         dangerCnt = [Int]()
         passCnt = [Int]()
-        print("~~~~~~~~~~~~~~덴져 확인\(dangerCnt)")
-        print("~~~~~~~~~~~~~~덴져 수 확인\(dangerCnt.count)")
+      
         if models.count > 0 {
         let checkCnt = models.count - 1
         

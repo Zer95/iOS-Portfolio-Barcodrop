@@ -259,22 +259,18 @@
 		D24611B2266536C3007CF148 /* Barcodrop */ = {
 			isa = PBXGroup;
 			children = (
-				D2D77C01269337E9003B9F19 /* Animation */,
-				D24611B3266536C3007CF148 /* AppDelegate.swift */,
-				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
-				D28D5886266640D0000426D4 /* logo_eng.png */,
-				D28D5887266640D0000426D4 /* logo_kor.png */,
+				D2C1AC60269474630016B0C0 /* App */,
 				D2A8205126709057005E04B1 /* Data */,
 				D2DB6E89266740F000598CCA /* Home */,
 				D208CE0D266F95D10025ECDE /* Edit */,
 				D2041B4626773E0D00DEDAF4 /* Category */,
 				D213E27A267F259B00765BA7 /* AlarmHistory */,
 				D2354A11267B67E20006D8E3 /* Setting */,
+				D2D77C01269337E9003B9F19 /* Animation */,
 				D24611B9266536C3007CF148 /* Main.storyboard */,
-				D24611C1266536C4007CF148 /* Info.plist */,
-				D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */,
 				D24611BE266536C4007CF148 /* LaunchScreen.storyboard */,
-				D24611E3266539C0007CF148 /* CBSampleViewController.swift */,
+				D2A8204A26708F40005E04B1 /* DataModel.xcdatamodeld */,
+				D24611C1266536C4007CF148 /* Info.plist */,
 				D24611BC266536C4007CF148 /* Assets.xcassets */,
 			);
 			path = Barcodrop;
@@ -332,6 +328,16 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		D2C1AC60269474630016B0C0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D24611E3266539C0007CF148 /* CBSampleViewController.swift */,
+				D24611B3266536C3007CF148 /* AppDelegate.swift */,
+				D24611B5266536C3007CF148 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		D2D77C01269337E9003B9F19 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +345,8 @@
 				D2780315268770A000577C02 /* versionCheck.json */,
 				D27136162684551F00E36069 /* language.json */,
 				D21538BB268398A8002FB33E /* notiSleep.json */,
+				D28D5886266640D0000426D4 /* logo_eng.png */,
+				D28D5887266640D0000426D4 /* logo_kor.png */,
 			);
 			path = Animation;
 			sourceTree = "<group>";

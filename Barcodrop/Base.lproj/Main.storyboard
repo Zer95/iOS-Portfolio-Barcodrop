@@ -1422,7 +1422,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-rU-fly">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="496.66666666666669"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="z4l-ls-CTn">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="z4l-ls-CTn">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="465.66666666666669"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="z4l-ls-CTn" secondAttribute="height" multiplier="40:45" id="AwP-Ci-l8V"/>
@@ -2322,7 +2322,6 @@
     <resources>
         <image name="Highlights" width="12" height="21"/>
         <image name="addinsert" width="1280" height="781"/>
-        <image name="apple" width="2614" height="3116"/>
         <image name="background" width="5000" height="5000"/>
         <image name="chevron.right.circle" catalog="system" width="128" height="121"/>
         <image name="close_ic" width="128" height="128"/>
