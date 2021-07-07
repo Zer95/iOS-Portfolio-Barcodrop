@@ -7,6 +7,7 @@
 
 import UIKit
 import TextFieldEffects
+import ProgressHUD
 
 
 
@@ -31,6 +32,12 @@ class EditViewController: UIViewController {
     // 데이터 제목 비교
     var dataNameList = [String]()
     var datadistinct = false
+    
+    // 프로그레스 애니메이션
+    private var timer: Timer?
+    private var status: String?
+    private let textShort    = "Please wait..."
+    private let textSucceed    = "저장완료!"
     
     // Data Input 아웃렛 연결
     @IBOutlet weak var inputText: UITextField!  // 제목
@@ -144,6 +151,37 @@ class EditViewController: UIViewController {
     @objc func MyTapMethod(sender: UITapGestureRecognizer) {
           self.view.endEditing(true)
       }
+    // MARK: - Progress Animation
+    
+    func actionProgressStart(_ status: String? = nil) {
+
+        timer?.invalidate()
+        timer = nil
+
+        var intervalCount: CGFloat = 0.0
+        ProgressHUD.showProgress(status, intervalCount/100)
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: true) { timer in
+            intervalCount += 1
+            ProgressHUD.showProgress(status, intervalCount/100)
+            if (intervalCount >= 100) {
+                self.actionProgressStop()
+            }
+        }
+    }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------
+    func actionProgressStop() {
+
+        timer?.invalidate()
+        timer = nil
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            ProgressHUD.showSucceed(interaction: false)
+        }
+    }
+
+    
     
     // MARK: - Core Data 사용 기능
     func createItem(title: String) {
@@ -203,7 +241,7 @@ class EditViewController: UIViewController {
     
     @IBAction func success_Btn(_ sender: Any) {
         self.datadistinct = false // 값 초기화
-        
+    
         //coredata 저장
         guard let title = inputText.text else {
             return
@@ -237,38 +275,53 @@ class EditViewController: UIViewController {
         
         // 데이터 저장 및 수정
         else {
-        self.createItem(title: title)
-        print("현재 입력된 값--------")
-        print("상품명:\(title)")
-        print("카테고리: \(categorySave)")
-        print("구입일: \(buyDayPicker.date)")
-        print("유통기한: \(endDayPicker.date)")
-        print("알람일: ")
-        print("이미지값: \(self.saveURL)")
-        
-        
-        // 카메라 저장
-        let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
-           let newPath = path.appendingPathComponent("\(title).jpg") //Possibly you Can pass the dynamic name here
-           // Save this name in core Data using you code as a String.
-        
-        self.saveURL =  ("\(newPath)")
-        
-        let jpgImageData = self.imageView.image?.jpegData(compressionQuality: 1.0)
-           do {
-               try jpgImageData!.write(to: newPath)
-           } catch {
-               print(error)
-           }
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"),object: nil) // 실시간 reload 되게 Notification 보내기
-        
-        let alert = UIAlertController(title: "알림", message: self.checkMessage, preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
+            
+            ProgressHUD.animationType = .circleStrokeSpin
+            ProgressHUD.show(textShort)
+            ProgressHUD.colorAnimation = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            status = textShort
+            
+            DispatchQueue.main.async {
+             
+                
+            self.createItem(title: title)
+            print("현재 입력된 값--------")
+            print("상품명:\(title)")
+                print("카테고리: \(self.categorySave)")
+                print("구입일: \(self.buyDayPicker.date)")
+                print("유통기한: \(self.endDayPicker.date)")
+            print("알람일: ")
+            print("이미지값: \(self.saveURL)")
+            
+               
+            // 카메라 저장
+            let path = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
+               let newPath = path.appendingPathComponent("\(title).jpg") //Possibly you Can pass the dynamic name here
+               // Save this name in core Data using you code as a String.
+            
+            self.saveURL =  ("\(newPath)")
+            
+            let jpgImageData = self.imageView.image?.jpegData(compressionQuality: 1.0)
+               do {
+                   try jpgImageData!.write(to: newPath)
+               } catch {
+                   print(error)
                }
-        alert.addAction(okAction)
-        present(alert, animated: false, completion: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"),object: nil) // 실시간 reload 되게 Notification 보내기
+                
+                let alert = UIAlertController(title: "알림", message: self.checkMessage, preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    
+                    ProgressHUD.showSucceed(self.textSucceed)
+                    
+                    self.view.window?.rootViewController?.dismiss(animated: false, completion:nil) // 메인화면으로 이동
+                       }
+                alert.addAction(okAction)
+                self.present(alert, animated: false, completion: nil)
+            }
+       
+        
+      
         }
    
     }

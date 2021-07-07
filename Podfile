@@ -23,4 +23,5 @@ pod 'DropDown'
 pod "RSLoadingView"
 pod 'lottie-ios'
 pod 'ExpyTableView'
+pod 'ProgressHUD'
 end

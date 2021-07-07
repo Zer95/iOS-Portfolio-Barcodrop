@@ -10,6 +10,7 @@ import MaterialComponents.MaterialButtons
 import CoreData
 import DropDown
 
+
 class HomeViewController: UIViewController {
     
 
@@ -71,7 +72,6 @@ class HomeViewController: UIViewController {
         
         // 앱 처음 실행시
         appStartCheck()
-        
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
         getAlarm()
