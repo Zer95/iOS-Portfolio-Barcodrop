@@ -20,9 +20,15 @@ class BarcodeViewController: UIViewController {
     var productCompany = ""
     var wontEndDay = ""
     
-    
+    // 바코드
+    let C005 = BarcodeC005()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
+        
         self.readerView.delegate = self
         self.readerView.start()
     }
@@ -81,7 +87,7 @@ extension BarcodeViewController: ReaderViewDelegate {
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
 
-            let basicURL = "http://openapi.foodsafetykorea.go.kr/api/8ec4f851bb8a45deb394/C005/json/1/1/BAR_CD="
+            let basicURL = C005.RequestURL
             let insertURL = code
             let totalURL = basicURL + insertURL
             
@@ -93,37 +99,8 @@ extension BarcodeViewController: ReaderViewDelegate {
 
             //let requestURL = "http://openapi.foodsafetykorea.go.kr/api/sample/C005/json/1/5/BAR_CD=8801649120355"
 
-            // JSON 구조정의 #클래스 분리 예정
-            struct Response: Codable {
-                let C005:reC005
-            }
-
-            struct reC005: Codable {
-                let RESULT: reRESULT?
-                let total_count: String?
-                let row:[rerow]?
-            }
-
-            struct reRESULT:Codable {
-                let MSG:String
-                let CODE:String
-                
-            }
-
-            struct rerow:Codable {
-                let BAR_CD:String
-                let PRDLST_NM:String
-                let PRDLST_DCNM:String
-                let PRMS_DT:String
-                let BSSH_NM:String
-                let CLSBIZ_DT:String
-                let INDUTY_NM:String
-                let SITE_ADDR:String
-                let POG_DAYCNT:String
-                let END_DT:String
-                let PRDLST_REPORT_NO:String
-                
-            }
+          
+       
          
            
            
@@ -142,10 +119,13 @@ extension BarcodeViewController: ReaderViewDelegate {
                 guard let resultData = data else {return}
   
                 // 파싱 및 트랙 가져오기
+               
+                
+           
                 do{
                     
                     let decoder = JSONDecoder()
-                    let respones = try decoder.decode(Response.self, from: resultData)
+                    let respones = try decoder.decode(ResponseC005.self, from: resultData)
                     
                     if respones.C005.RESULT!.MSG == "정상처리되었습니다." {
                     self.sendTitle = respones.C005.row!.first!.PRDLST_NM
@@ -157,14 +137,24 @@ extension BarcodeViewController: ReaderViewDelegate {
                     
                     self.productCompany = "\(respones.C005.row!.first!.BSSH_NM)"
                     self.productName = "\(respones.C005.row!.first!.PRDLST_NM)"
-                    self.wontEndDay = "\(respones.C005.row!.first!.POG_DAYCNT)"
-                    } else{
+                    self.wontEndDay = "권장 유통기한: \(respones.C005.row!.first!.POG_DAYCNT)"
+                    }
+                    
+                    
+                    else{
+                      
                         title = "스캔실패"
                         self.productCompany = "해당 상품은 아직 서비스 지원이 불가능합니다. \n 직접입력해주세요!"
                     }
+                    
+
+                    
                 } catch let error{
                     print("\(error)")
                 }
+                
+                
+                
             }
             dataTask.resume()
 
@@ -187,7 +177,6 @@ extension BarcodeViewController: ReaderViewDelegate {
         sleep(3)
       
     
-        print("스캐너 출력값&&&&&&&&&&&&&&&&")
         print(self.productCompany)
         message = "\n\(self.productName)\n\(self.productCompany)\n\(self.wontEndDay)"
         
@@ -200,7 +189,7 @@ extension BarcodeViewController: ReaderViewDelegate {
             VC.barcodeTitle = self.sendTitle
             VC.modalPresentationStyle = .currentContext
             
-            sleep(2)
+            sleep(1)
             self.present(VC, animated: false, completion: nil)
             
         }

@@ -31,6 +31,8 @@
 		D24611CB266536C4007CF148 /* BarcodropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611CA266536C4007CF148 /* BarcodropTests.swift */; };
 		D24611D6266536C4007CF148 /* BarcodropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611D5266536C4007CF148 /* BarcodropUITests.swift */; };
 		D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611E3266539C0007CF148 /* CBSampleViewController.swift */; };
+		D2469A7F2695562300EAB061 /* BarcodeC005.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2469A7E2695562300EAB061 /* BarcodeC005.swift */; };
+		D2469A81269558AE00EAB061 /* BarcodeI2570.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2469A80269558AE00EAB061 /* BarcodeI2570.swift */; };
 		D2587C86268763DB00B42D46 /* AppVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2587C85268763DB00B42D46 /* AppVersionViewController.swift */; };
 		D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */; };
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
@@ -111,6 +113,8 @@
 		D24611D5266536C4007CF148 /* BarcodropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodropUITests.swift; sourceTree = "<group>"; };
 		D24611D7266536C4007CF148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D24611E3266539C0007CF148 /* CBSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBSampleViewController.swift; sourceTree = "<group>"; };
+		D2469A7E2695562300EAB061 /* BarcodeC005.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeC005.swift; sourceTree = "<group>"; };
+		D2469A80269558AE00EAB061 /* BarcodeI2570.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeI2570.swift; sourceTree = "<group>"; };
 		D2587C85268763DB00B42D46 /* AppVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionViewController.swift; sourceTree = "<group>"; };
 		D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 			children = (
 				D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */,
 				D26C7EF9266CAAB500133504 /* ReaderView.swift */,
+				D2469A7E2695562300EAB061 /* BarcodeC005.swift */,
+				D2469A80269558AE00EAB061 /* BarcodeI2570.swift */,
 			);
 			path = BarcodeScanner;
 			sourceTree = "<group>";
@@ -626,6 +632,8 @@
 				D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */,
 				D2FD485F2688BB360095D1B1 /* FAQViewController.swift in Sources */,
 				D2AA9C4726804ABF0058DDD4 /* ProductListItem+CoreDataProperties.swift in Sources */,
+				D2469A81269558AE00EAB061 /* BarcodeI2570.swift in Sources */,
+				D2469A7F2695562300EAB061 /* BarcodeC005.swift in Sources */,
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
 				D2A18FF12685D6AC00AD630D /* TutorialSlide.swift in Sources */,
 				D21BDA50267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift in Sources */,
