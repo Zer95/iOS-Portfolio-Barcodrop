@@ -379,6 +379,8 @@ class EditViewController: UIViewController {
         iceBtn.isSelected = false
         roomtemperatureBtn.isSelected = false
         etcBtn.isSelected = false
+        ProgressHUD.imageSuccess = UIImage(named: "fresh_on.png")!
+        ProgressHUD.showSuccess("냉장")
         
     }
     
@@ -389,6 +391,9 @@ class EditViewController: UIViewController {
         freshBtn.isSelected = false
         roomtemperatureBtn.isSelected = false
         etcBtn.isSelected = false
+        
+        ProgressHUD.imageSuccess = UIImage(named: "iceIcon_on.png")!
+        ProgressHUD.showSuccess("냉동")
     }
     
     @IBAction func roomtemperatureBtn(_ sender: Any) {
@@ -397,6 +402,8 @@ class EditViewController: UIViewController {
         freshBtn.isSelected = false
         iceBtn.isSelected = false
         etcBtn.isSelected = false
+        ProgressHUD.imageSuccess = UIImage(named: "room temperature_on.png")!
+        ProgressHUD.showSuccess("실온")
     }
 
     @IBAction func etcBtn(_ sender: Any) {
@@ -405,6 +412,8 @@ class EditViewController: UIViewController {
         freshBtn.isSelected = false
         iceBtn.isSelected = false
         roomtemperatureBtn.isSelected = false
+        ProgressHUD.imageSuccess = UIImage(named: "etc_on.png")!
+        ProgressHUD.showSuccess("기타")
     }
     
     
