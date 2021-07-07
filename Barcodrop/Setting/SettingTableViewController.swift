@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import ProgressHUD
 
 class SettingTableViewController: UITableViewController {
 
@@ -15,6 +16,12 @@ class SettingTableViewController: UITableViewController {
     @IBOutlet weak var alarmSelect: UIButton!
     @IBOutlet weak var languageLable: UILabel!
     var onOffState = true
+    
+    // 프로그레스 애니메이션
+    private var timer: Timer?
+    private var status: String?
+    private let textShort    = "Please wait..."
+    private let textSucceed    = "초기화 완료!"
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
@@ -103,10 +110,9 @@ class SettingTableViewController: UITableViewController {
            catch {
            }
         }
-        let alert =  UIAlertController(title: "데이터 초기화", message: "초기화가 완료 되었습니다.", preferredStyle:  UIAlertController.Style.alert)
-                let yes = UIAlertAction(title: "확인", style: .cancel, handler: nil)
-                alert.addAction(yes)
-                present(alert, animated: true, completion: nil)
+        ProgressHUD.colorAnimation = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        ProgressHUD.showSucceed(self.textSucceed)
+    
     }
     
     func systemgetAllItems() {
