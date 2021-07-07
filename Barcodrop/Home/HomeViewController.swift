@@ -488,11 +488,12 @@ class HomeViewController: UIViewController {
         getAllItems()
         getAlarm()
         
+        if models.count > 0 {
         for i in 0...models.count - 1 {
             print("처리 \(i)")
             getAlarmData(modelIndex:i)
         }
-        
+        }
        
     }
   
