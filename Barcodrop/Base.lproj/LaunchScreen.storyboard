@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_eng.png" translatesAutoresizingMaskIntoConstraints="NO" id="81E-1D-ZTL">
-                                <rect key="frame" x="15" y="179" width="384" height="314"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImg" translatesAutoresizingMaskIntoConstraints="NO" id="81E-1D-ZTL">
+                                <rect key="frame" x="-2293" y="179" width="5000" height="314"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -36,7 +36,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo_eng.png" width="288" height="235.5"/>
+        <image name="logoImg" width="5000" height="5000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -875,7 +875,7 @@
                                     <constraint firstAttribute="height" constant="220" id="3VK-Gp-uWr"/>
                                     <constraint firstAttribute="width" constant="200" id="g1f-Wi-Im6"/>
                                 </constraints>
-                                <state key="normal" image="edit1"/>
+                                <state key="normal" image="edit2"/>
                                 <connections>
                                     <segue destination="ewc-Cw-ysj" kind="presentation" modalPresentationStyle="overFullScreen" id="ux4-fX-94b"/>
                                 </connections>
@@ -886,7 +886,7 @@
                                     <constraint firstAttribute="height" constant="220" id="TsY-Ey-4Ib"/>
                                     <constraint firstAttribute="width" constant="200" id="dKS-9f-ZOm"/>
                                 </constraints>
-                                <state key="normal" image="scanIn"/>
+                                <state key="normal" image="scanII"/>
                                 <connections>
                                     <segue destination="Z1I-2h-Cwf" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Y4B-OQ-CZI"/>
                                 </connections>
@@ -2306,20 +2306,20 @@
         <image name="background" width="5000" height="5000"/>
         <image name="chevron.right.circle" catalog="system" width="128" height="121"/>
         <image name="close_ic" width="128" height="128"/>
-        <image name="edit1" width="512" height="512"/>
+        <image name="edit2" width="179" height="219"/>
         <image name="etc_off" width="512" height="512"/>
         <image name="etc_on" width="512" height="512"/>
         <image name="fresh_off" width="2000" height="2000"/>
-        <image name="fresh_on" width="2000" height="2000"/>
+        <image name="fresh_on" width="1000" height="1000"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="iceIcon_off" width="2000" height="2000"/>
         <image name="iceIcon_on" width="2000" height="2000"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
         <image name="menu_scan" width="512" height="512"/>
-        <image name="room temperature_on" width="512" height="512"/>
+        <image name="room temperature_on" width="2000" height="2000"/>
         <image name="roomtemperature_off" width="512" height="512"/>
-        <image name="scanIn" width="2000" height="2000"/>
+        <image name="scanII" width="273" height="292"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
