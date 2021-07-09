@@ -30,6 +30,8 @@ class AlarmSelectViewController: UIViewController {
     
     @IBOutlet weak var timeView: UIView!
     
+    var userTimeType:Bool!
+    
     let animationDisplay = AnimationView()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -48,12 +50,15 @@ class AlarmSelectViewController: UIViewController {
         getAllItems()
         productGet()
         
-        animationDisplay.animation = Animation.named("time")
+        animationDisplay.animation = Animation.named("time1")
         animationDisplay.frame = timeView.bounds
         animationDisplay.contentMode = .scaleAspectFit
-        animationDisplay.loopMode = .loop
+        animationDisplay.loopMode = .playOnce
         animationDisplay.play()
         timeView.addSubview(animationDisplay)
+        
+        userTimeType = is24Hour()
+    
     }
     func productGet() {
         do {
@@ -94,7 +99,20 @@ class AlarmSelectViewController: UIViewController {
         let dateformatter = DateFormatter()
             dateformatter.dateStyle = .none
             dateformatter.timeStyle = .short
+        
+        // 사용자의 시간 타입에 따라 표시형식 변경
+        if userTimeType == false {
+            dateformatter.dateFormat = "HH-mm"
+
+        } else {
+            dateformatter.dateFormat = "hh-mm"
+        }
+   
+
+
+        print("날짜 값 \(dateString)")
         let date:Date = dateformatter.date(from: dateString)!
+
         print("시간 값 출력쓰:\(date)")
         selectTime.setDate(date, animated: false)
         
@@ -140,6 +158,7 @@ class AlarmSelectViewController: UIViewController {
         let dateformatter = DateFormatter()
             dateformatter.dateStyle = .none
             dateformatter.timeStyle = .short
+            dateformatter.dateFormat = "hh-mm" // 24시간 형식 으로 저장
             let date = dateformatter.string(from: self.selectTime.date)
         print("저장될 시간 값은\(date)")
         saveValue.selectTime = date
@@ -192,6 +211,19 @@ class AlarmSelectViewController: UIViewController {
     }
     @IBAction func dDay7(_ sender: Any) {
         dDay7.isSelected = !dDay7.isSelected
+    }
+    
+    func is24Hour() -> Bool {
+        let locale = NSLocale.current
+        let timeFormat = DateFormatter.dateFormat(fromTemplate: "j", options:0, locale:locale)!
+        
+        if timeFormat.contains("a") {
+            print("12시간제")
+            return false
+        } else {
+            print("24시간제")
+            return true
+        }
     }
 }
 

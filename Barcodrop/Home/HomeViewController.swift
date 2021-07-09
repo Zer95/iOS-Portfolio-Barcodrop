@@ -267,6 +267,7 @@ class HomeViewController: UIViewController {
         let timeText = alarm.selectTime!+":00"
         print("사용자 전체시간 \(timeText)")
         let time = timeText.split(separator: ":").map { val -> Int in
+            print("val값은 \(val)")
             return Int(val)!
         }
 
