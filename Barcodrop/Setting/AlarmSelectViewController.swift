@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Lottie
 
 class AlarmSelectViewController: UIViewController {
 
@@ -27,6 +28,9 @@ class AlarmSelectViewController: UIViewController {
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var cancleBtn: UIButton!
     
+    @IBOutlet weak var timeView: UIView!
+    
+    let animationDisplay = AnimationView()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
@@ -43,6 +47,13 @@ class AlarmSelectViewController: UIViewController {
         
         getAllItems()
         productGet()
+        
+        animationDisplay.animation = Animation.named("time")
+        animationDisplay.frame = timeView.bounds
+        animationDisplay.contentMode = .scaleAspectFit
+        animationDisplay.loopMode = .loop
+        animationDisplay.play()
+        timeView.addSubview(animationDisplay)
     }
     func productGet() {
         do {
@@ -109,6 +120,7 @@ class AlarmSelectViewController: UIViewController {
         selectTime.isHidden = true
         saveBtn.isHidden = true
         cancleBtn.isHidden = true
+        timeView.isHidden = true
         
         sleep(1)
     
