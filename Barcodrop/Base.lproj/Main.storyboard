@@ -1229,6 +1229,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="잠시만 기다려주세요! 시간이 다소 걸릴수 있습니다!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7H-3q-lAE">
+                                <rect key="frame" x="42" y="390" width="306.66666666666669" height="64.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJq-wO-NUA">
                                 <rect key="frame" x="50" y="722" width="37" height="38"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
@@ -1369,10 +1375,13 @@
                             <constraint firstItem="e1T-vk-rVn" firstAttribute="leading" secondItem="w4A-tr-XgW" secondAttribute="leading" constant="16" id="DoI-g4-abX"/>
                             <constraint firstItem="YJq-wO-NUA" firstAttribute="leading" secondItem="w4A-tr-XgW" secondAttribute="leading" constant="50" id="Lqz-S8-LgS"/>
                             <constraint firstItem="w4A-tr-XgW" firstAttribute="bottom" secondItem="YJq-wO-NUA" secondAttribute="bottom" constant="50" id="Yge-AS-wu7"/>
+                            <constraint firstItem="y7H-3q-lAE" firstAttribute="centerX" secondItem="w4A-tr-XgW" secondAttribute="centerX" id="hQF-4U-LFo"/>
                             <constraint firstItem="w4A-tr-XgW" firstAttribute="bottom" secondItem="pPg-kg-KP9" secondAttribute="bottom" constant="50" id="lw9-mB-rjX"/>
+                            <constraint firstItem="y7H-3q-lAE" firstAttribute="centerY" secondItem="w4A-tr-XgW" secondAttribute="centerY" id="x3A-vw-2Ih"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancleBtn" destination="pPg-kg-KP9" id="lBp-JP-iLN"/>
                         <outlet property="dDay" destination="ZHI-lc-k5L" id="v1S-bc-pwD"/>
                         <outlet property="dDay1" destination="rlI-bB-LvE" id="fNy-ie-NAx"/>
                         <outlet property="dDay2" destination="9N6-Zo-Xrn" id="fV7-ig-Avi"/>
@@ -1381,13 +1390,15 @@
                         <outlet property="dDay5" destination="Ypl-Hj-N9e" id="Rv5-Cu-m5A"/>
                         <outlet property="dDay6" destination="ZWi-qo-NQ7" id="w1d-4B-Iss"/>
                         <outlet property="dDay7" destination="qR5-by-b7B" id="99E-SQ-h3u"/>
+                        <outlet property="saveBtn" destination="YJq-wO-NUA" id="VHn-cV-VmX"/>
                         <outlet property="selectTime" destination="rDQ-FA-nfG" id="Ghx-dW-irF"/>
                         <outlet property="viewMain" destination="QfV-6e-vPC" id="M2f-YY-kVc"/>
+                        <outlet property="waitText" destination="y7H-3q-lAE" id="noQ-fJ-Gm1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc1-5E-K6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7410.7692307692305" y="-1222.0379146919431"/>
+            <point key="canvasLocation" x="7410.3999999999996" y="-1222.0389805097452"/>
         </scene>
         <!--카테고리-->
         <scene sceneID="DZu-IT-q2i">

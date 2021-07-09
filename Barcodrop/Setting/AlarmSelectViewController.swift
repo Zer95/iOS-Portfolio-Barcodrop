@@ -23,6 +23,11 @@ class AlarmSelectViewController: UIViewController {
     
     @IBOutlet var viewMain: UIView!
     
+    @IBOutlet weak var waitText: UILabel!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var cancleBtn: UIButton!
+    
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private var models = [AlarmSetting]()
     private var productModels = [ProductListItem]()
@@ -30,6 +35,7 @@ class AlarmSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewMapTapped))
         viewMain.addGestureRecognizer(tapGestureRecognizer)
         
@@ -90,33 +96,50 @@ class AlarmSelectViewController: UIViewController {
     
     @IBAction func saveBtn(_ sender: Any) {
         
-        let saveValue = models[0]
-        saveValue.dDay0 = dDay.isSelected
-        saveValue.dDay1 = dDay1.isSelected
-        saveValue.dDay2 = dDay2.isSelected
-        saveValue.dDay3 = dDay3.isSelected
-        saveValue.dDay4 = dDay4.isSelected
-        saveValue.dDay5 = dDay5.isSelected
-        saveValue.dDay6 = dDay6.isSelected
-        saveValue.dDay7 = dDay7.isSelected
+        
+        waitText.isHidden = false
+        dDay.isHidden = true
+        dDay1.isHidden = true
+        dDay2.isHidden = true
+        dDay3.isHidden = true
+        dDay4.isHidden = true
+        dDay5.isHidden = true
+        dDay6.isHidden = true
+        dDay7.isHidden = true
+        selectTime.isHidden = true
+        saveBtn.isHidden = true
+        cancleBtn.isHidden = true
+        
+        sleep(1)
+    
+        DispatchQueue.main.async {
+            let saveValue = self.models[0]
+            saveValue.dDay0 = self.dDay.isSelected
+            saveValue.dDay1 = self.dDay1.isSelected
+            saveValue.dDay2 = self.dDay2.isSelected
+            saveValue.dDay3 = self.dDay3.isSelected
+            saveValue.dDay4 = self.dDay4.isSelected
+            saveValue.dDay5 = self.dDay5.isSelected
+            saveValue.dDay6 = self.dDay6.isSelected
+            saveValue.dDay7 = self.dDay7.isSelected
         
         
         
         let dateformatter = DateFormatter()
             dateformatter.dateStyle = .none
             dateformatter.timeStyle = .short
-        let date = dateformatter.string(from: selectTime.date)
+            let date = dateformatter.string(from: self.selectTime.date)
         print("저장될 시간 값은\(date)")
         saveValue.selectTime = date
        
         do{
-            try context.save()
+            try self.context.save()
             
-            let productCount =  productModels.count
+            let productCount =  self.productModels.count
           
             if productCount > 0 {
                 for i in 0...productCount-1 {
-                    productModels[i].alarmSend = false
+                    self.productModels[i].alarmSend = false
                 }
             }
      
@@ -126,6 +149,7 @@ class AlarmSelectViewController: UIViewController {
         }
         self.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alarmPetch"),object: nil)
+        }
     
     }
     @IBAction func cancleBtn(_ sender: Any) {
