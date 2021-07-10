@@ -12,6 +12,7 @@
 		9CD183286D17F9B43F96120F /* Pods_Barcodrop_BarcodropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */; };
 		D203D26B269856B80093752C /* time.json in Resources */ = {isa = PBXBuildFile; fileRef = D203D26A269856B70093752C /* time.json */; };
 		D203D26D26985D6C0093752C /* time1.json in Resources */ = {isa = PBXBuildFile; fileRef = D203D26C26985D6C0093752C /* time1.json */; };
+		D203D27D269870890093752C /* versionCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = D203D27C269870890093752C /* versionCheck.json */; };
 		D2041B4826773E2600DEDAF4 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */; };
 		D2041B4A26773E4900DEDAF4 /* freshRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B4926773E4900DEDAF4 /* freshRecommendListViewController.swift */; };
 		D2041B52267763C700DEDAF4 /* iceRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B51267763C700DEDAF4 /* iceRecommendListViewController.swift */; };
@@ -42,7 +43,6 @@
 		D27136172684551F00E36069 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = D27136162684551F00E36069 /* language.json */; };
 		D271361A2684639800E36069 /* SystemSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */; };
 		D271361B2684639800E36069 /* SystemSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */; };
-		D2780317268770A000577C02 /* versionCheck.json in Resources */ = {isa = PBXBuildFile; fileRef = D2780315268770A000577C02 /* versionCheck.json */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D29A8AF22688C41B0005386E /* faq1.json in Resources */ = {isa = PBXBuildFile; fileRef = D29A8AF12688C41B0005386E /* faq1.json */; };
@@ -90,6 +90,7 @@
 		B1C900A0F20FFBB1B4B800A0 /* Pods_Barcodrop_BarcodropUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barcodrop_BarcodropUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D203D26A269856B70093752C /* time.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = time.json; sourceTree = "<group>"; };
 		D203D26C26985D6C0093752C /* time1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = time1.json; sourceTree = "<group>"; };
+		D203D27C269870890093752C /* versionCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = versionCheck.json; path = ../../../../../../Downloads/versionCheck.json; sourceTree = "<group>"; };
 		D2041B4726773E2600DEDAF4 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D2041B4926773E4900DEDAF4 /* freshRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freshRecommendListViewController.swift; sourceTree = "<group>"; };
 		D2041B51267763C700DEDAF4 /* iceRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iceRecommendListViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		D27136162684551F00E36069 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
 		D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataClass.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataProperties.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		D2780315268770A000577C02 /* versionCheck.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = versionCheck.json; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D29A8AF12688C41B0005386E /* faq1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faq1.json; sourceTree = "<group>"; };
@@ -354,8 +354,8 @@
 				D203D26C26985D6C0093752C /* time1.json */,
 				D203D26A269856B70093752C /* time.json */,
 				D29A8AF12688C41B0005386E /* faq1.json */,
-				D2780315268770A000577C02 /* versionCheck.json */,
 				D27136162684551F00E36069 /* language.json */,
+				D203D27C269870890093752C /* versionCheck.json */,
 				D21538BB268398A8002FB33E /* notiSleep.json */,
 				D28D5886266640D0000426D4 /* logo_eng.png */,
 				D28D5887266640D0000426D4 /* logo_kor.png */,
@@ -484,13 +484,13 @@
 			files = (
 				D28D5889266640D0000426D4 /* logo_kor.png in Resources */,
 				D27136172684551F00E36069 /* language.json in Resources */,
+				D203D27D269870890093752C /* versionCheck.json in Resources */,
 				D203D26B269856B80093752C /* time.json in Resources */,
 				D28D5888266640D0000426D4 /* logo_eng.png in Resources */,
 				D29A8AF22688C41B0005386E /* faq1.json in Resources */,
 				D24611C0266536C4007CF148 /* LaunchScreen.storyboard in Resources */,
 				D24611BD266536C4007CF148 /* Assets.xcassets in Resources */,
 				D21538BC268398A8002FB33E /* notiSleep.json in Resources */,
-				D2780317268770A000577C02 /* versionCheck.json in Resources */,
 				D203D26D26985D6C0093752C /* time1.json in Resources */,
 				D24611BB266536C3007CF148 /* Main.storyboard in Resources */,
 			);
