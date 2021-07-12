@@ -37,6 +37,7 @@
 		D2469A7F2695562300EAB061 /* BarcodeC005.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2469A7E2695562300EAB061 /* BarcodeC005.swift */; };
 		D2469A81269558AE00EAB061 /* BarcodeI2570.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2469A80269558AE00EAB061 /* BarcodeI2570.swift */; };
 		D2587C86268763DB00B42D46 /* AppVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2587C85268763DB00B42D46 /* AppVersionViewController.swift */; };
+		D267B3CA269C391D0012E925 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D267B3C9269C391D0012E925 /* AlarmViewController.swift */; };
 		D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */; };
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
 		D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136142684503A00E36069 /* LanguageTableViewController.swift */; };
@@ -121,6 +122,7 @@
 		D2469A7E2695562300EAB061 /* BarcodeC005.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeC005.swift; sourceTree = "<group>"; };
 		D2469A80269558AE00EAB061 /* BarcodeI2570.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeI2570.swift; sourceTree = "<group>"; };
 		D2587C85268763DB00B42D46 /* AppVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionViewController.swift; sourceTree = "<group>"; };
+		D267B3C9269C391D0012E925 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		D27136142684503A00E36069 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				D213E27B267F25C700765BA7 /* AlarmHistoryViewController.swift */,
+				D267B3C9269C391D0012E925 /* AlarmViewController.swift */,
 			);
 			path = AlarmHistory;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				D2469A7F2695562300EAB061 /* BarcodeC005.swift in Sources */,
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
 				D2A18FF12685D6AC00AD630D /* TutorialSlide.swift in Sources */,
+				D267B3CA269C391D0012E925 /* AlarmViewController.swift in Sources */,
 				D21BDA50267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift in Sources */,
 				D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */,
 				D2587C86268763DB00B42D46 /* AppVersionViewController.swift in Sources */,
