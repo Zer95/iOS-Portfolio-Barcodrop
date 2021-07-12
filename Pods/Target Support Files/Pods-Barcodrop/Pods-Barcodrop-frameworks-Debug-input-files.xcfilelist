@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-Barcodrop/Pods-Barcodrop-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CBFlashyTabBarController/CBFlashyTabBarController.framework
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
 ${BUILT_PRODUCTS_DIR}/ExpyTableView/ExpyTableView.framework
 ${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework

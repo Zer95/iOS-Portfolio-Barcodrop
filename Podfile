@@ -24,4 +24,6 @@ pod "RSLoadingView"
 pod 'lottie-ios'
 pod 'ExpyTableView'
 pod 'ProgressHUD'
+pod 'Charts'
+
 end

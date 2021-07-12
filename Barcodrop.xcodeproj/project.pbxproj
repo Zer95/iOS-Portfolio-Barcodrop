@@ -38,6 +38,7 @@
 		D2469A81269558AE00EAB061 /* BarcodeI2570.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2469A80269558AE00EAB061 /* BarcodeI2570.swift */; };
 		D2587C86268763DB00B42D46 /* AppVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2587C85268763DB00B42D46 /* AppVersionViewController.swift */; };
 		D267B3CA269C391D0012E925 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D267B3C9269C391D0012E925 /* AlarmViewController.swift */; };
+		D267B3D9269C55480012E925 /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D267B3D8269C55480012E925 /* NSUIColor+Hex.swift */; };
 		D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */; };
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
 		D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136142684503A00E36069 /* LanguageTableViewController.swift */; };
@@ -123,6 +124,7 @@
 		D2469A80269558AE00EAB061 /* BarcodeI2570.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeI2570.swift; sourceTree = "<group>"; };
 		D2587C85268763DB00B42D46 /* AppVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionViewController.swift; sourceTree = "<group>"; };
 		D267B3C9269C391D0012E925 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		D267B3D8269C55480012E925 /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		D26C7EF7266CAAA800133504 /* BarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeViewController.swift; sourceTree = "<group>"; };
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		D27136142684503A00E36069 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				D213E27B267F25C700765BA7 /* AlarmHistoryViewController.swift */,
+				D267B3D8269C55480012E925 /* NSUIColor+Hex.swift */,
 				D267B3C9269C391D0012E925 /* AlarmViewController.swift */,
 			);
 			path = AlarmHistory;
@@ -628,6 +631,7 @@
 				D21BDA4F267C88A400CB7ED3 /* AlarmSetting+CoreDataClass.swift in Sources */,
 				D213E279267F24BA00765BA7 /* AlarmHistory+CoreDataClass.swift in Sources */,
 				D2041B4A26773E4900DEDAF4 /* freshRecommendListViewController.swift in Sources */,
+				D267B3D9269C55480012E925 /* NSUIColor+Hex.swift in Sources */,
 				D2041B52267763C700DEDAF4 /* iceRecommendListViewController.swift in Sources */,
 				D271361A2684639800E36069 /* SystemSetting+CoreDataProperties.swift in Sources */,
 				D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */,
