@@ -237,11 +237,24 @@ class HomeViewController: UIViewController {
         let date = sendDay
         let onOffMode = onOFF
         let inIdentifier = dataName! + "\(dayCnt)"
-        print("고유 식별값\(inIdentifier)")
+
+        
+        // 날짜 계산하기
+        let today = dateReMake(date: Date())
+        let endDay = dateReMake(date: model.endDay!)
+        
+   
+        let calendar = Calendar.current
+        func days(from date: Date) -> Int {
+            return calendar.dateComponents([.day], from: endDay!, to: today!).day!
+        }
+        let dDay =  days(from: model.endDay!)
+        print("고유 식별값\(inIdentifier) 디데이\(dDay)")
+        print("알림 확인 여부\(model.alarmSend)")
         
         if model.alarmSend == false {
-        
-
+          let countDday = dDay * -1
+            if countDday > dayCnt {
         let content = UNMutableNotificationContent() // 노티피케이션 메세지 객체
         content.title = NSString.localizedUserNotificationString(forKey: dataName!, arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey: "유통기한이 \(dayCnt)일 남았습니다!", arguments: nil)
@@ -381,7 +394,7 @@ class HomeViewController: UIViewController {
         }
         print("yes!!")
         
-            
+            }
             if dayCnt == 7 {
                 print("마지막 기점 체크")
                 model.alarmSend = true
@@ -393,6 +406,7 @@ class HomeViewController: UIViewController {
             }
             
 
+      
         }
     }
         

@@ -158,7 +158,7 @@ class AlarmSelectViewController: UIViewController {
         let dateformatter = DateFormatter()
             dateformatter.dateStyle = .none
             dateformatter.timeStyle = .short
-            dateformatter.dateFormat = "hh-mm" // 24시간 형식 으로 저장
+            dateformatter.dateFormat = "hh:mm" // 24시간 형식 으로 저장
             let date = dateformatter.string(from: self.selectTime.date)
         print("저장될 시간 값은\(date)")
         saveValue.selectTime = date
