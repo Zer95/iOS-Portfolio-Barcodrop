@@ -26,6 +26,16 @@ class AlarmViewController: UIViewController {
     @IBOutlet weak var passCntLabel: UILabel!
     
     
+    @IBOutlet weak var dangerCotent: UIView!
+    @IBOutlet weak var dangerMessage: UILabel!
+    @IBOutlet weak var dangerBtn: UIButton!
+    
+    
+    @IBOutlet weak var passContent: UIView!
+    @IBOutlet weak var passMessage: UILabel!
+    @IBOutlet weak var passBtn: UIButton!
+    
+    
     var freshDataEntry = PieChartDataEntry(value: 0)
     var iceDataEntry = PieChartDataEntry(value: 0)
     var roomDataEntry = PieChartDataEntry(value: 0)
@@ -51,7 +61,7 @@ class AlarmViewController: UIViewController {
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             navigationController?.setNavigationBarHidden(false, animated: animated)
-            
+        
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +71,7 @@ class AlarmViewController: UIViewController {
         categoryGet()
         getAllItems()
         dataCnt()
+     
         
         pieView.spin(duration: 2,
                                fromAngle: pieView.rotationAngle,
@@ -73,29 +84,15 @@ class AlarmViewController: UIViewController {
         super.viewDidLoad()
 
         
-        pieView.chartDescription?.text = ""
-        
-        freshDataEntry.value = 1.0
-        freshDataEntry.label = "냉장"
-        
-        iceDataEntry.value = 1.0
-        iceDataEntry.label = "냉동"
-        
-        roomDataEntry.value = 1.0
-        roomDataEntry.label = "실온"
-        
-        etcDataEntry.value = 1.0
-        etcDataEntry.label = "기타"
-        
-        numberOifDownloadsDataEntries = [freshDataEntry, iceDataEntry, roomDataEntry, etcDataEntry]
-        
-        updateChartData()
-        
-        self.navigationController?.navigationBar.barTintColor = .white
-        
         categoryGet()
         getAllItems()
         dataCnt()
+        
+ 
+        
+        self.navigationController?.navigationBar.barTintColor = .white
+        
+      
 //        floatingView.layer.cornerRadius = 10
 //
 //        // border
@@ -112,13 +109,56 @@ class AlarmViewController: UIViewController {
         
       //  setupPieChart()
    
-        
+     
 
      
-        
+        contentSetting()
 
         
     }
+    
+    func contentSetting() {
+        dangerCotent.layer.cornerRadius = 10
+        
+                // border
+        dangerCotent.layer.borderWidth = 1.0
+        dangerCotent.layer.borderColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
+                // shadow
+        dangerCotent.layer.shadowColor = UIColor.black.cgColor
+        dangerCotent.layer.shadowOffset = CGSize(width: 1 , height: 1)
+        dangerCotent.layer.shadowOpacity = 0.5
+        dangerCotent.layer.shadowRadius = 4.0
+        
+        
+        passContent.layer.cornerRadius = 10
+        
+                // border
+        passContent.layer.borderWidth = 1.0
+        passContent.layer.borderColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
+                // shadow
+        passContent.layer.shadowColor = UIColor.black.cgColor
+        passContent.layer.shadowOffset = CGSize(width: 1 , height: 1)
+        passContent.layer.shadowOpacity = 0.5
+        passContent.layer.shadowRadius = 4.0
+        
+        
+        
+    }
+    
+    @IBAction func dangerBtn(_ sender: Any) {
+        performSegue(withIdentifier: "showAlarm", sender:nil)
+
+    }
+    
+    @IBAction func passBtn(_ sender: Any) {
+        performSegue(withIdentifier: "showAlarm", sender:nil)
+
+    }
+    
+    
+    
     // MARK: - Core Data
     
     func getAllItems() {
@@ -182,15 +222,61 @@ class AlarmViewController: UIViewController {
         catch {
             print("getAllItmes 오류")
         }
-        
+     
         freshCntLabel.text = "\(freshModels.count)"
+        freshCntLabel.textColor = #colorLiteral(red: 0.9349866509, green: 0.6843166351, blue: 0.7154654264, alpha: 1)
         iceCntLabel.text = "\(iceModels.count)"
+        iceCntLabel.textColor = #colorLiteral(red: 0, green: 0.7157182097, blue: 0.9544565082, alpha: 1)
         roomCntLabel.text = "\(roomModels.count)"
+        roomCntLabel.textColor = #colorLiteral(red: 0.4865615368, green: 0.9425002933, blue: 0.7065398097, alpha: 1)
         etcCntLabel.text = "\(etcModels.count)"
+        etcCntLabel.textColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         print("냉장의 개수는: \(freshModels.count)")
         print("냉동의 개수는: \(iceModels.count)")
         print("실온의 개수는: \(roomModels.count)")
         print("기타의 개수는: \(etcModels.count)")
+        
+        
+        pieView.chartDescription?.text = ""
+        
+
+        
+        if freshModels.count == 0 && iceModels.count == 0 && roomModels.count == 0 && etcModels.count == 0 {
+            freshDataEntry.value = 1
+            freshDataEntry.label = "냉장"
+
+            iceDataEntry.value =  1
+            iceDataEntry.label = "냉동"
+
+            roomDataEntry.value =  1
+            roomDataEntry.label = "실온"
+
+            etcDataEntry.value =  1
+            etcDataEntry.label = "기타"
+            numberOifDownloadsDataEntries = [freshDataEntry, iceDataEntry, roomDataEntry, etcDataEntry]
+
+        } else {
+            print("냉동 값은\(iceModels.count)")
+                    freshDataEntry.value =  Double(freshModels.count)
+                    freshDataEntry.label = "냉장"
+            
+                    iceDataEntry.value =  Double(iceModels.count)
+                    iceDataEntry.label = "냉동"
+            
+                    roomDataEntry.value =  Double(roomModels.count)
+                    roomDataEntry.label = "실온"
+            
+                    etcDataEntry.value =  Double(etcModels.count)
+                    etcDataEntry.label = "기타"
+            numberOifDownloadsDataEntries = [freshDataEntry, iceDataEntry, roomDataEntry, etcDataEntry]
+        }
+        
+      
+        
+        updateChartData()
+
+        
+        
         
     }
     
@@ -251,6 +337,25 @@ class AlarmViewController: UIViewController {
         dangerCntLabel.text = "\(self.dangerCnt.count)"
         passCntLabel.text = "\(self.passCnt.count)"
         
+        if dangerCnt.count > 0 {
+            dangerMessage.text = "기간 임박 상품이 \(dangerCnt.count)건 있습니다"
+            dangerBtn.isHidden = false
+         
+        } else{
+            dangerMessage.text = "기간 임박 상품이 없습니다"
+            dangerBtn.isHidden = true
+        }
+        
+        if passCnt.count > 0 {
+            passMessage.text = "기간 지난 상품이 \(passCnt.count)건 있습니다"
+            passBtn.isHidden = false
+        } else{
+            passMessage.text = "기간 지난 상품이 없습니다"
+            passBtn.isHidden = true
+        }
+        
+        
+        
         
     }
     
@@ -275,11 +380,18 @@ class AlarmViewController: UIViewController {
            l.form = .circle
             l.formSize = 10
       
+        pieView.drawHoleEnabled = true // 차트 스타일 변경
+        chartDataSet.sliceSpace = 2 // 데이터 간격
+        pieView.centerText = "ALL"
+        chartDataSet.entryLabelFont = UIFont.systemFont(ofSize: 0.1, weight: .bold)
+        chartDataSet.valueFont = UIFont.systemFont(ofSize: 0.1, weight: .bold)
 
-
-        
         
         }
+    
+    
+    
+    
     func setupPieChart() {
         pieView.chartDescription?.enabled = false
         pieView.drawHoleEnabled = false
@@ -321,34 +433,5 @@ class AlarmViewController: UIViewController {
 
 }
 
-// MARK: - TableView
 
-extension AlarmViewController:UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmViewCell", for: indexPath) as? AlarmViewCell else {
-            return UITableViewCell()
-        }
-        return cell
-    }
-    
 
-}
-
-extension AlarmViewController:UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "showAlarm", sender:nil)
-    }
-}
-
-class AlarmViewCell: UITableViewCell {
-    @IBOutlet  weak var content:UILabel!
-    
-    
-}
