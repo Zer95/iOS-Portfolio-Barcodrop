@@ -379,10 +379,13 @@ class AlarmViewController: UIViewController {
            l.orientation = .horizontal
            l.form = .circle
             l.formSize = 10
+        l.horizontalAlignment = .center
       
         pieView.drawHoleEnabled = true // 차트 스타일 변경
         chartDataSet.sliceSpace = 2 // 데이터 간격
         pieView.centerText = "ALL"
+        
+        
         chartDataSet.entryLabelFont = UIFont.systemFont(ofSize: 0.1, weight: .bold)
         chartDataSet.valueFont = UIFont.systemFont(ofSize: 0.1, weight: .bold)
 
