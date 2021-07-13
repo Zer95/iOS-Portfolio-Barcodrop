@@ -730,8 +730,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Ch-Yz-AQJ"/>
                     <connections>
+                        <outlet property="dangerCntLabel" destination="3dI-tg-yai" id="g32-uP-z0H"/>
+                        <outlet property="etcCntLabel" destination="zyc-1H-eHB" id="WYb-Fd-H7c"/>
                         <outlet property="floatingView" destination="cVb-IT-MEr" id="EKB-v3-iaC"/>
+                        <outlet property="freshCntLabel" destination="dtQ-ou-0AF" id="LRw-VP-43X"/>
+                        <outlet property="iceCntLabel" destination="vME-Jp-tHi" id="7tU-my-Otv"/>
+                        <outlet property="normalCntLabel" destination="WxR-ez-vzB" id="Nex-dK-5bI"/>
+                        <outlet property="passCntLabel" destination="op6-Pn-o7b" id="00r-NV-wtp"/>
                         <outlet property="pieView" destination="3fb-O0-JEK" id="cY6-9s-c0C"/>
+                        <outlet property="roomCntLabel" destination="Wev-57-7AB" id="cfW-vz-2X4"/>
+                        <outlet property="safeCntLabel" destination="jOY-bR-P1B" id="6hu-TM-Aid"/>
                         <outlet property="tableView" destination="LUv-QQ-fLk" id="Aas-kC-9Gm"/>
                         <segue destination="Rgi-KJ-scq" kind="push" identifier="showAlarm" id="X1N-6c-fSq"/>
                     </connections>
