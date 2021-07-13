@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     private var models = [ProductListItem]()
     private var alarm = [AlarmSetting]()
     private var systemmodels = [SystemSetting]()
-    private var alarmHistoryModels = [AlarmHistory]()
+
     
     // 길게 클릭
     var longpress = UILongPressGestureRecognizer()
@@ -325,33 +325,7 @@ class HomeViewController: UIViewController {
             // nofitication 삭제
             let deleteProduct = inIdentifier
             print("알람개별삭제 확인 \(deleteProduct)")
-      
-            
-            do{
-                let fetchRequest: NSFetchRequest<AlarmHistory> = AlarmHistory.fetchRequest()
-                let predite = NSPredicate(format: "title == %@","\(deleteProduct)")
-                fetchRequest.predicate = predite
-                alarmHistoryModels = try context.fetch(fetchRequest)
-                
-                if alarmHistoryModels.count > 0 {
-                  
-                    print("이미 존재합니다.")
-                } else{
-                    // 알림 히스토리 생성
-                    let alarmHistoryItem = AlarmHistory(context: context)
-                    alarmHistoryItem.title = request.identifier
-                    alarmHistoryItem.content = request.content.body
-                    alarmHistoryItem.alarmTime = result
-                }
-              
-              //  context.delete(alarmHistoryModels[i])
-            } catch {
-                
-            }
-            
-            
-
-            
+   
             
             
             do{
@@ -376,21 +350,6 @@ class HomeViewController: UIViewController {
         else if onOffMode == false {
             center.removePendingNotificationRequests(withIdentifiers: [inIdentifier])
             
-            do{
-                let fetchRequest: NSFetchRequest<AlarmHistory> = AlarmHistory.fetchRequest()
-                let predite = NSPredicate(format: "title == %@","\(inIdentifier)")
-                fetchRequest.predicate = predite
-                alarmHistoryModels = try context.fetch(fetchRequest)
-                
-                if alarmHistoryModels.count > 0 {
-                    context.delete(alarmHistoryModels[0])
-                    print("알람개별출력\(alarmHistoryModels[0])")
-                }
-              
-              //  context.delete(alarmHistoryModels[i])
-            } catch {
-                
-            }
         }
         print("yes!!")
         
@@ -610,24 +569,6 @@ class HomeViewController: UIViewController {
             center.removePendingNotificationRequests(withIdentifiers: [deleteProduct])
             
             
-            
-            do{
-                let fetchRequest: NSFetchRequest<AlarmHistory> = AlarmHistory.fetchRequest()
-                let predite = NSPredicate(format: "title == %@","\(deleteProduct)")
-                fetchRequest.predicate = predite
-                alarmHistoryModels = try context.fetch(fetchRequest)
-                
-                if alarmHistoryModels.count > 0 {
-                    context.delete(alarmHistoryModels[0])
-                    print("알람개별출력\(alarmHistoryModels[0])")
-                }
-              
-              //  context.delete(alarmHistoryModels[i])
-            } catch {
-                
-            }
-            
-            // history 데이터 삭제
             
         }
         

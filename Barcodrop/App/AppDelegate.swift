@@ -95,29 +95,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound, .badge])
         
-        let requestItem = notification.request.identifier
-        let requestItemBody = notification.request.content.body
-        let requestItemTime = notification.date.addingTimeInterval(32400)
      
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let alarmHistoryItem = AlarmHistory(context: context)
-        alarmHistoryItem.title = requestItem
-        alarmHistoryItem.content = requestItemBody
-        alarmHistoryItem.alarmTime = requestItemTime
-        
-        do{
-            try context.save()
-            print("알람 히스토리 데이터 생성 완료!!")
-
-        }
-        catch {
-            print("알람 히스토리 데이터 생성 실패!!")
-        }
-        
-        
-        print("보낸다 \(requestItem)")
-        print("보낸내용 \(requestItemBody)")
-        print("보낸시간 \(requestItemTime)")
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {

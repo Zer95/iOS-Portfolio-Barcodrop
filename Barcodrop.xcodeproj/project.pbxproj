@@ -19,12 +19,7 @@
 		D2041B5426776DFD00DEDAF4 /* roomRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B5326776DFD00DEDAF4 /* roomRecommendListViewController.swift */; };
 		D2041B562677726E00DEDAF4 /* etcRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2041B552677726E00DEDAF4 /* etcRecommendListViewController.swift */; };
 		D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */; };
-		D213E278267F24BA00765BA7 /* AlarmHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D213E276267F24BA00765BA7 /* AlarmHistory+CoreDataProperties.swift */; };
-		D213E279267F24BA00765BA7 /* AlarmHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D213E277267F24BA00765BA7 /* AlarmHistory+CoreDataClass.swift */; };
-		D213E27C267F25C700765BA7 /* AlarmHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D213E27B267F25C700765BA7 /* AlarmHistoryViewController.swift */; };
 		D21538BC268398A8002FB33E /* notiSleep.json in Resources */ = {isa = PBXBuildFile; fileRef = D21538BB268398A8002FB33E /* notiSleep.json */; };
-		D21BDA4F267C88A400CB7ED3 /* AlarmSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BDA4E267C88A400CB7ED3 /* AlarmSetting+CoreDataClass.swift */; };
-		D21BDA50267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21BDA4D267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift */; };
 		D2354A13267B67F50006D8E3 /* SettingOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2354A12267B67F50006D8E3 /* SettingOldViewController.swift */; };
 		D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B3266536C3007CF148 /* AppDelegate.swift */; };
 		D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24611B5266536C3007CF148 /* SceneDelegate.swift */; };
@@ -43,8 +38,6 @@
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
 		D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136142684503A00E36069 /* LanguageTableViewController.swift */; };
 		D27136172684551F00E36069 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = D27136162684551F00E36069 /* language.json */; };
-		D271361A2684639800E36069 /* SystemSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */; };
-		D271361B2684639800E36069 /* SystemSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D29A8AF22688C41B0005386E /* faq1.json in Resources */ = {isa = PBXBuildFile; fileRef = D29A8AF12688C41B0005386E /* faq1.json */; };
@@ -58,6 +51,10 @@
 		D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */; };
 		D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8B2667410900598CCA /* HomeViewController.swift */; };
 		D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */; };
+		D2DD1030269D24F70035FCD8 /* AlarmSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD102F269D24F70035FCD8 /* AlarmSetting+CoreDataClass.swift */; };
+		D2DD1031269D24F70035FCD8 /* SystemSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD102E269D24F60035FCD8 /* SystemSetting+CoreDataClass.swift */; };
+		D2DD1032269D24F70035FCD8 /* AlarmSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD102D269D24F60035FCD8 /* AlarmSetting+CoreDataProperties.swift */; };
+		D2DD1033269D24F70035FCD8 /* SystemSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DD102C269D24F60035FCD8 /* SystemSetting+CoreDataProperties.swift */; };
 		D2DFB5DE267C4B8B001DBA69 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DFB5DD267C4B8B001DBA69 /* SettingTableViewController.swift */; };
 		D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0826689D59001E1CC1 /* DetailViewController.swift */; };
 		D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E17D0A2668D945001E1CC1 /* ProductInfo.swift */; };
@@ -99,12 +96,7 @@
 		D2041B5326776DFD00DEDAF4 /* roomRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomRecommendListViewController.swift; sourceTree = "<group>"; };
 		D2041B552677726E00DEDAF4 /* etcRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = etcRecommendListViewController.swift; sourceTree = "<group>"; };
 		D20534B826691B1500CAD0E6 /* FloatingMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenuViewController.swift; sourceTree = "<group>"; };
-		D213E276267F24BA00765BA7 /* AlarmHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AlarmHistory+CoreDataProperties.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/AlarmHistory+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		D213E277267F24BA00765BA7 /* AlarmHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AlarmHistory+CoreDataClass.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/AlarmHistory+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		D213E27B267F25C700765BA7 /* AlarmHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHistoryViewController.swift; sourceTree = "<group>"; };
 		D21538BB268398A8002FB33E /* notiSleep.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notiSleep.json; sourceTree = "<group>"; };
-		D21BDA4D267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AlarmSetting+CoreDataProperties.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/AlarmSetting+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		D21BDA4E267C88A400CB7ED3 /* AlarmSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AlarmSetting+CoreDataClass.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/AlarmSetting+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		D2354A12267B67F50006D8E3 /* SettingOldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOldViewController.swift; sourceTree = "<group>"; };
 		D24611B0266536C3007CF148 /* Barcodrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barcodrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24611B3266536C3007CF148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,8 +121,6 @@
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		D27136142684503A00E36069 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
 		D27136162684551F00E36069 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
-		D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataClass.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataProperties.swift"; path = "/Users/sg/Desktop/iOS/project/Barcodrop/Barcodrop/Data/SystemSetting+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D29A8AF12688C41B0005386E /* faq1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faq1.json; sourceTree = "<group>"; };
@@ -144,6 +134,10 @@
 		D2D7B351266DD96500E0877C /* AlarmSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSelectViewController.swift; sourceTree = "<group>"; };
 		D2DB6E8B2667410900598CCA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D2DB6E8D266745D500598CCA /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2DD102C269D24F60035FCD8 /* SystemSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataProperties.swift"; path = "../../SystemSetting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D2DD102D269D24F60035FCD8 /* AlarmSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AlarmSetting+CoreDataProperties.swift"; path = "../../AlarmSetting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D2DD102E269D24F60035FCD8 /* SystemSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SystemSetting+CoreDataClass.swift"; path = "../../SystemSetting+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D2DD102F269D24F70035FCD8 /* AlarmSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AlarmSetting+CoreDataClass.swift"; path = "../../AlarmSetting+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D2DFB5DD267C4B8B001DBA69 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D2E17D0826689D59001E1CC1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D2E17D0A2668D945001E1CC1 /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
@@ -224,14 +218,13 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
-		D213E27A267F259B00765BA7 /* AlarmHistory */ = {
+		D213E27A267F259B00765BA7 /* AlarmChart */ = {
 			isa = PBXGroup;
 			children = (
-				D213E27B267F25C700765BA7 /* AlarmHistoryViewController.swift */,
 				D267B3D8269C55480012E925 /* NSUIColor+Hex.swift */,
 				D267B3C9269C391D0012E925 /* AlarmViewController.swift */,
 			);
-			path = AlarmHistory;
+			path = AlarmChart;
 			sourceTree = "<group>";
 		};
 		D2354A11267B67E20006D8E3 /* Setting */ = {
@@ -274,11 +267,11 @@
 			isa = PBXGroup;
 			children = (
 				D2C1AC60269474630016B0C0 /* App */,
-				D2A8205126709057005E04B1 /* Data */,
+				D2A8205126709057005E04B1 /* CoreData */,
 				D2DB6E89266740F000598CCA /* Home */,
 				D208CE0D266F95D10025ECDE /* Edit */,
 				D2041B4626773E0D00DEDAF4 /* Category */,
-				D213E27A267F259B00765BA7 /* AlarmHistory */,
+				D213E27A267F259B00765BA7 /* AlarmChart */,
 				D2354A11267B67E20006D8E3 /* Setting */,
 				D2D77C01269337E9003B9F19 /* Animation */,
 				D24611B9266536C3007CF148 /* Main.storyboard */,
@@ -329,19 +322,17 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
-		D2A8205126709057005E04B1 /* Data */ = {
+		D2A8205126709057005E04B1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				D27136182684639800E36069 /* SystemSetting+CoreDataClass.swift */,
-				D27136192684639800E36069 /* SystemSetting+CoreDataProperties.swift */,
+				D2DD102F269D24F70035FCD8 /* AlarmSetting+CoreDataClass.swift */,
+				D2DD102D269D24F60035FCD8 /* AlarmSetting+CoreDataProperties.swift */,
+				D2DD102E269D24F60035FCD8 /* SystemSetting+CoreDataClass.swift */,
+				D2DD102C269D24F60035FCD8 /* SystemSetting+CoreDataProperties.swift */,
 				D2A82053267090D7005E04B1 /* ProductListItem+CoreDataClass.swift */,
 				D2AA9C4626804ABF0058DDD4 /* ProductListItem+CoreDataProperties.swift */,
-				D21BDA4E267C88A400CB7ED3 /* AlarmSetting+CoreDataClass.swift */,
-				D21BDA4D267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift */,
-				D213E277267F24BA00765BA7 /* AlarmHistory+CoreDataClass.swift */,
-				D213E276267F24BA00765BA7 /* AlarmHistory+CoreDataProperties.swift */,
 			);
-			path = Data;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		D2C1AC60269474630016B0C0 /* App */ = {
@@ -627,24 +618,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A18FF32685D89100AD630D /* TutorialCollectionViewCell.swift in Sources */,
-				D213E278267F24BA00765BA7 /* AlarmHistory+CoreDataProperties.swift in Sources */,
-				D21BDA4F267C88A400CB7ED3 /* AlarmSetting+CoreDataClass.swift in Sources */,
-				D213E279267F24BA00765BA7 /* AlarmHistory+CoreDataClass.swift in Sources */,
 				D2041B4A26773E4900DEDAF4 /* freshRecommendListViewController.swift in Sources */,
 				D267B3D9269C55480012E925 /* NSUIColor+Hex.swift in Sources */,
 				D2041B52267763C700DEDAF4 /* iceRecommendListViewController.swift in Sources */,
-				D271361A2684639800E36069 /* SystemSetting+CoreDataProperties.swift in Sources */,
 				D2DB6E8E266745D500598CCA /* HomeCollectionViewCell.swift in Sources */,
 				D2D7B352266DD96500E0877C /* AlarmSelectViewController.swift in Sources */,
 				D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */,
 				D2354A13267B67F50006D8E3 /* SettingOldViewController.swift in Sources */,
+				D2DD1030269D24F70035FCD8 /* AlarmSetting+CoreDataClass.swift in Sources */,
 				D24611E4266539C0007CF148 /* CBSampleViewController.swift in Sources */,
 				D2041B4826773E2600DEDAF4 /* CategoryViewController.swift in Sources */,
 				D2041B5426776DFD00DEDAF4 /* roomRecommendListViewController.swift in Sources */,
 				D2041B562677726E00DEDAF4 /* etcRecommendListViewController.swift in Sources */,
-				D213E27C267F25C700765BA7 /* AlarmHistoryViewController.swift in Sources */,
 				D24611B4266536C3007CF148 /* AppDelegate.swift in Sources */,
 				D2A82055267090D7005E04B1 /* ProductListItem+CoreDataClass.swift in Sources */,
+				D2DD1033269D24F70035FCD8 /* SystemSetting+CoreDataProperties.swift in Sources */,
 				D2FD485F2688BB360095D1B1 /* FAQViewController.swift in Sources */,
 				D2AA9C4726804ABF0058DDD4 /* ProductListItem+CoreDataProperties.swift in Sources */,
 				D2469A81269558AE00EAB061 /* BarcodeI2570.swift in Sources */,
@@ -652,15 +640,15 @@
 				D2E17D0926689D59001E1CC1 /* DetailViewController.swift in Sources */,
 				D2A18FF12685D6AC00AD630D /* TutorialSlide.swift in Sources */,
 				D267B3CA269C391D0012E925 /* AlarmViewController.swift in Sources */,
-				D21BDA50267C88A400CB7ED3 /* AlarmSetting+CoreDataProperties.swift in Sources */,
 				D2A8204C26708F40005E04B1 /* DataModel.xcdatamodeld in Sources */,
+				D2DD1031269D24F70035FCD8 /* SystemSetting+CoreDataClass.swift in Sources */,
 				D2587C86268763DB00B42D46 /* AppVersionViewController.swift in Sources */,
 				D24611B6266536C3007CF148 /* SceneDelegate.swift in Sources */,
 				D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */,
 				D2DB6E8C2667410900598CCA /* HomeViewController.swift in Sources */,
 				D20534B926691B1500CAD0E6 /* FloatingMenuViewController.swift in Sources */,
-				D271361B2684639800E36069 /* SystemSetting+CoreDataClass.swift in Sources */,
 				D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */,
+				D2DD1032269D24F70035FCD8 /* AlarmSetting+CoreDataProperties.swift in Sources */,
 				D2A18FEF2685D31700AD630D /* TutorialViewController.swift in Sources */,
 				D2DFB5DE267C4B8B001DBA69 /* SettingTableViewController.swift in Sources */,
 				D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */,
