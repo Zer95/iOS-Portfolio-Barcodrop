@@ -503,7 +503,7 @@ class HomeViewController: UIViewController {
         do {
             models = try context.fetch(ProductListItem.fetchRequest())
             if models.count == 0 {
-                collectionView.backgroundView = UIImageView(image: UIImage(named: "notdata.png"))
+                collectionView.backgroundView = UIImageView(image: UIImage(named: "nodata.png"))
                 collectionView.backgroundView?.contentMode = .scaleAspectFit
             } else {
                 collectionView.backgroundView = UIImageView(image: nil)
