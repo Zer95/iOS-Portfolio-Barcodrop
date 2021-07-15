@@ -58,6 +58,12 @@ class AlarmViewController: UIViewController {
     var dangerCnt = [Int]()
     var passCnt = [Int]()
     
+    var sendDangerData = [ProductListItem]()
+    var sendPassData = [ProductListItem]()
+    var sendAlarmDetail = ""
+    
+
+    
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -148,12 +154,24 @@ class AlarmViewController: UIViewController {
     }
     
     @IBAction func dangerBtn(_ sender: Any) {
-        performSegue(withIdentifier: "showAlarm", sender:nil)
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "alarmDetail") as?
+        AlarmDetailViewController else {
+             return
+         }
+        vc.dayType = "danger"
+        vc.dayData  = self.sendDangerData
+         self.navigationController?.pushViewController(vc, animated: true)
 
     }
     
     @IBAction func passBtn(_ sender: Any) {
-        performSegue(withIdentifier: "showAlarm", sender:nil)
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "alarmDetail") as?
+        AlarmDetailViewController else {
+             return
+         }
+        vc.dayType = "pass"
+        vc.dayData  = self.sendPassData
+         self.navigationController?.pushViewController(vc, animated: true)
 
     }
     
@@ -288,7 +306,9 @@ class AlarmViewController: UIViewController {
        normalCnt = [Int]()
         dangerCnt = [Int]()
         passCnt = [Int]()
-      
+        sendDangerData = [ProductListItem]()
+        sendPassData = [ProductListItem]()
+        
         if models.count > 0 {
         let checkCnt = models.count - 1
         
@@ -309,12 +329,15 @@ class AlarmViewController: UIViewController {
             // cell D-day
             if dDay > 0 {
                 self.passCnt.append(dDay)
+                self.sendPassData.append(models[i])
             
             }else if dDay == 0{
                 self.dangerCnt.append(dDay)
+                self.sendDangerData.append(models[i])
       
             }else if dDay < 0 && dDay > -3 {
                 self.dangerCnt.append(dDay)
+                self.sendDangerData.append(models[i])
                
             } else if dDay >= -5 {
                 self.normalCnt.append(dDay)

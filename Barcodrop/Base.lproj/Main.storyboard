@@ -12,7 +12,7 @@
         <!--알림-->
         <scene sceneID="zXl-IX-qgF">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Rgi-KJ-scq" customClass="AlarmHistoryViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="alarmDetail" hidesBottomBarWhenPushed="YES" id="Rgi-KJ-scq" customClass="AlarmDetailViewController" customModule="Barcodrop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Rk-zd-j9H"/>
                         <viewControllerLayoutGuide type="bottom" id="JGU-iV-eih"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryListCell" rowHeight="100" id="BIk-fM-Ych" customClass="HistoryListCell" customModule="Barcodrop" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AlarmListCell" rowHeight="100" id="BIk-fM-Ych" customClass="AlarmListCell" customModule="Barcodrop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BIk-fM-Ych" id="i41-2R-Yfq">
@@ -77,8 +77,18 @@
                                                 <constraint firstItem="zCN-YG-jKt" firstAttribute="top" secondItem="iDE-T0-aYB" secondAttribute="bottom" constant="5" id="pIb-5M-IVF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Category" destination="It9-aF-LJF" id="kYn-nT-N9W"/>
+                                            <outlet property="Content" destination="zCN-YG-jKt" id="V3y-v4-wmV"/>
+                                            <outlet property="Title" destination="iDE-T0-aYB" id="NLd-Gw-bAy"/>
+                                            <outlet property="imgView" destination="5CH-wu-FuU" id="nJc-RQ-k83"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rgi-KJ-scq" id="leO-oz-G0d"/>
+                                    <outlet property="delegate" destination="Rgi-KJ-scq" id="mCa-zO-91x"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GQ0-lt-Yet"/>
@@ -107,6 +117,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="rgm-Fj-bSI" id="Xzv-ar-bLD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScD-qz-YbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

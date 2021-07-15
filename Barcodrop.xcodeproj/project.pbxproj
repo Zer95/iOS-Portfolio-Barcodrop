@@ -38,6 +38,7 @@
 		D26C7EFA266CAAB500133504 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C7EF9266CAAB500133504 /* ReaderView.swift */; };
 		D27136152684503A00E36069 /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27136142684503A00E36069 /* LanguageTableViewController.swift */; };
 		D27136172684551F00E36069 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = D27136162684551F00E36069 /* language.json */; };
+		D2854FA626A004EF00DD41B3 /* AlarmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2854FA526A004EF00DD41B3 /* AlarmDetailViewController.swift */; };
 		D28D5888266640D0000426D4 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5886266640D0000426D4 /* logo_eng.png */; };
 		D28D5889266640D0000426D4 /* logo_kor.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D5887266640D0000426D4 /* logo_kor.png */; };
 		D29A8AF22688C41B0005386E /* faq1.json in Resources */ = {isa = PBXBuildFile; fileRef = D29A8AF12688C41B0005386E /* faq1.json */; };
@@ -121,6 +122,7 @@
 		D26C7EF9266CAAB500133504 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		D27136142684503A00E36069 /* LanguageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
 		D27136162684551F00E36069 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = language.json; sourceTree = "<group>"; };
+		D2854FA526A004EF00DD41B3 /* AlarmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailViewController.swift; sourceTree = "<group>"; };
 		D28D5886266640D0000426D4 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
 		D28D5887266640D0000426D4 /* logo_kor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kor.png; sourceTree = "<group>"; };
 		D29A8AF12688C41B0005386E /* faq1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faq1.json; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				D267B3D8269C55480012E925 /* NSUIColor+Hex.swift */,
 				D267B3C9269C391D0012E925 /* AlarmViewController.swift */,
+				D2854FA526A004EF00DD41B3 /* AlarmDetailViewController.swift */,
 			);
 			path = AlarmChart;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				D2E17D0B2668D945001E1CC1 /* ProductInfo.swift in Sources */,
 				D2DD1032269D24F70035FCD8 /* AlarmSetting+CoreDataProperties.swift in Sources */,
 				D2A18FEF2685D31700AD630D /* TutorialViewController.swift in Sources */,
+				D2854FA626A004EF00DD41B3 /* AlarmDetailViewController.swift in Sources */,
 				D2DFB5DE267C4B8B001DBA69 /* SettingTableViewController.swift in Sources */,
 				D26C7EF8266CAAA800133504 /* BarcodeViewController.swift in Sources */,
 				D2CA6F892669CD0100DE2AA8 /* EditViewController.swift in Sources */,
