@@ -20,4 +20,6 @@
    MVVM 패턴 적용
    
   <br>
-![Hnet-image](https://user-images.githubusercontent.com/49187863/126888777-b8050cb1-f322-4905-b9a5-a3c1c1a6366b.gif)
+
+1.Home
+![home](https://user-images.githubusercontent.com/49187863/126888829-6ab50e2a-345d-4204-8559-c8270b065dae.gif)
