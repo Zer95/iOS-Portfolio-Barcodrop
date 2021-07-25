@@ -23,4 +23,6 @@
   
 ![Home1](https://user-images.githubusercontent.com/49187863/126889036-0d1b9f2d-d627-464e-b180-0a1c25cf0874.gif)
 
+![Home2](https://user-images.githubusercontent.com/49187863/126889165-93b08cf3-d8d3-44ec-b5ae-b329a45fa92b.gif)
+
 1.Home
