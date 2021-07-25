@@ -1,6 +1,8 @@
-# 바코드랍
-  유통기한 관리 APP
+# 바코드랍 (Barcodrop)
+  유통기한 관리 APP  <br> <br>
+  ![barcordrop](https://user-images.githubusercontent.com/49187863/126890996-d5879caf-ebec-467e-b820-c2e55190ff08.png)
   
+ <br> <br>
   프로젝트 기간: 2021.06 - 2021.07
   
   [핵심 기능]
