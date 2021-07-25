@@ -20,6 +20,7 @@
    MVVM 패턴 적용
    
   <br>
+  
+![Home1](https://user-images.githubusercontent.com/49187863/126889036-0d1b9f2d-d627-464e-b180-0a1c25cf0874.gif)
 
-![Home1](https://user-images.githubusercontent.com/49187863/126888969-dec1d5dd-7315-4996-8178-bf45ede078e8.gif)
 1.Home
