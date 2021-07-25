@@ -20,4 +20,4 @@
    MVVM 패턴 적용
    
   <br>
-https://user-images.githubusercontent.com/49187863/126888701-a02d6808-f0e6-4862-a4c2-2a6699c1a566.gif
+https://github.com/Zer95/iOS-PROJECT-Barcodrop/issues/1#issue-952199940
