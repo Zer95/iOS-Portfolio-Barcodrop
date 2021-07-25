@@ -25,7 +25,7 @@
   실행화면 <br> <br>
   <홈 화면 ><br><br>
   
-![Home1](https://user-images.githubusercontent.com/49187863/126889549-7d55b98c-d982-4142-85e4-9128fbdc0bdf.gif) - ![Home2](https://user-images.githubusercontent.com/49187863/126889571-4ae963c3-9477-4cb5-9265-0dcdbe8bbe05.gif) - ![Home3](https://user-images.githubusercontent.com/49187863/126889594-6018dbfb-afef-4c57-b13d-7e64cef25b94.gif)
+![Home1](https://user-images.githubusercontent.com/49187863/126889549-7d55b98c-d982-4142-85e4-9128fbdc0bdf.gif) - ![Home2](https://user-images.githubusercontent.com/49187863/126889571-4ae963c3-9477-4cb5-9265-0dcdbe8bbe05.gif) - ![Home3](https://user-images.githubusercontent.com/49187863/126889594-6018dbfb-afef-4c57-b13d-7e64cef25b94.gif) 
 
 
 <br><br>
@@ -39,7 +39,8 @@
  
 <br><br>
  <알림 화면 ><br><br>
- ![chart1](https://user-images.githubusercontent.com/49187863/126891598-43757cd3-d96b-48f3-ab46-beee0bf4d392.gif) - ![chart2](https://user-images.githubusercontent.com/49187863/126891590-a20afbbf-f7c7-483b-bcec-9e3e9195c917.gif)
+ ![chart1](https://user-images.githubusercontent.com/49187863/126891598-43757cd3-d96b-48f3-ab46-beee0bf4d392.gif) - ![chart2](https://user-images.githubusercontent.com/49187863/126891590-a20afbbf-f7c7-483b-bcec-9e3e9195c917.gif) - ![Home4](https://user-images.githubusercontent.com/49187863/126893480-885f92de-d9cf-436a-afe5-275c567bb073.gif)
+
  
  
   
