@@ -20,7 +20,5 @@ class TutorialCollectionViewCell: UICollectionViewCell {
         slideContentLbl.text = slide.description
         
     }
-    
-    
-    
+
 }

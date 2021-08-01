@@ -29,18 +29,10 @@ class SettingViewController: UIViewController {
         
     }
     
-    
-    
-    
-    
+
     
     @IBAction func alarmBtn(_ sender: Any) {
 
-    
-    // 사용자의 시간 입력 받아오기
-    //        guard let timeText = "18:14:00" else {
-    //            return
-    //        }
     
     let timeText = "18:16:00"
     print("입력 받은 값\(timeText)")

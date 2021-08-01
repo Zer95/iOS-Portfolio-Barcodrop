@@ -144,8 +144,7 @@ extension ReaderView {
      
         self.captureSession?.startRunning()
        
-      
-        
+
     }
     
     func stop(isButtonTap: Bool) {

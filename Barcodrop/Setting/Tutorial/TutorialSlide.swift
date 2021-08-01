@@ -12,5 +12,5 @@ struct TutorialSlide {
     let description: String
     var image: UIImage
    
-        
+
 }

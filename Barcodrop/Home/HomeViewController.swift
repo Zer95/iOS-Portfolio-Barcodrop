@@ -56,13 +56,6 @@ class HomeViewController: UIViewController {
         systemgetAllItems()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        getAllItems()
-        getAlarm()
-        systemgetAllItems()
-    }
-            
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,7 +63,6 @@ class HomeViewController: UIViewController {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
         })
         
-        // 앱 처음 실행시
         appStartCheck()
         setFloatingButton() // 플로팅 버튼 load
         getAllItems() // 컬렉션 뷰 실시간
@@ -83,6 +75,7 @@ class HomeViewController: UIViewController {
         // 데이터 저장 후 바로 reload 옵저버
         NotificationCenter.default.addObserver(self,selector: #selector(obServing),name: NSNotification.Name(rawValue: "reload"),object: nil)
         NotificationCenter.default.addObserver(self,selector: #selector(obServingAlarm),name: NSNotification.Name(rawValue: "alarmPetch"),object: nil)
+        
         // longPress
         longpress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureRecognized))
         collectionView.addGestureRecognizer(longpress)
@@ -96,17 +89,12 @@ class HomeViewController: UIViewController {
             systemmodels = try context.fetch(SystemSetting.fetchRequest())
          
             DispatchQueue.main.async {
-        
             }
         }
         catch {
             print("getAllItmes 오류")
         }
     }
-    
-
-    
-    
     
     
     func appStartCheck(){
@@ -319,9 +307,6 @@ class HomeViewController: UIViewController {
             let result = Calendar.current.date(from: dateComponents)
             
             
-            
-            
-            
             // nofitication 삭제
             let deleteProduct = inIdentifier
             print("알람개별삭제 확인 \(deleteProduct)")
@@ -337,9 +322,7 @@ class HomeViewController: UIViewController {
                 print("알람 히스토리 데이터 생성 실패!!")
             }
             
-            
-            
-            
+
             
         center.add(request) { (error : Error?) in // 노티피케이션 객체 추가 -> 전송
             if let theError = error {
@@ -370,9 +353,7 @@ class HomeViewController: UIViewController {
     }
         
   
-    
-    
-    
+
     
     @IBAction func upDownBtn(_ sender: Any) {
         if self.upDownBtnState == false {
@@ -628,8 +609,7 @@ extension HomeViewController: UICollectionViewDataSource{
         }
         let dDay =  days(from: model.endDay!)
         
-        
-        
+
         // cell D-day
         
         let loadLanguage =  systemmodels[0].dateLanguage
@@ -683,8 +663,7 @@ extension HomeViewController: UICollectionViewDataSource{
             }
             }
 
-        
-        
+
        // print("디데이는 정확할까:\(dDay)")
     
        

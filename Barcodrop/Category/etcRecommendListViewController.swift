@@ -56,17 +56,17 @@ class etcRecommendListViewController: UIViewController {
         sectionTitle.text = ""
         
         // corner radius
-             cellView.layer.cornerRadius = 10
+        cellView.layer.cornerRadius = 10
 
-             // border
-             cellView.layer.borderWidth = 1.0
-             cellView.layer.borderColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        // border
+        cellView.layer.borderWidth = 1.0
+        cellView.layer.borderColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 
-             // shadow
-             cellView.layer.shadowColor = UIColor.black.cgColor
-             cellView.layer.shadowOffset = CGSize(width: 1 , height: 1)
-             cellView.layer.shadowOpacity = 0.5
-             cellView.layer.shadowRadius = 4.0
+        // shadow
+        cellView.layer.shadowColor = UIColor.black.cgColor
+        cellView.layer.shadowOffset = CGSize(width: 1 , height: 1)
+        cellView.layer.shadowOpacity = 0.5
+        cellView.layer.shadowRadius = 4.0
         getAllItems()
         systemgetAllItems()
         dataCnt()
