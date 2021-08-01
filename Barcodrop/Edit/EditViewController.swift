@@ -84,6 +84,7 @@ class EditViewController: UIViewController {
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.isEnabled = true
         singleTapGestureRecognizer.cancelsTouchesInView = false
+            
         ScrollView.addGestureRecognizer(singleTapGestureRecognizer)
   
             getAllItems()

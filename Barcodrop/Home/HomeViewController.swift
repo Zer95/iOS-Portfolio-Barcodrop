@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     private var alarm = [AlarmSetting]()
     private var systemmodels = [SystemSetting]()
 
+    let viewModel = ProductViewModel()
     
     // 길게 클릭
     var longpress = UILongPressGestureRecognizer()
@@ -729,4 +730,5 @@ extension UNNotificationAttachment {
         return nil
     }
 }
+
 
